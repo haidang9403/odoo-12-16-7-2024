@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_delivery_info_report" model="ir.ui.view">
+        <field name="name">view.delivery.info.report</field>
+        <field name="model">delivery.info.report</field>
+        <field name="arch" type="xml">
+            <form string="Delivery Info">
+                <group>
+                    <field name="date" widget="date" attrs="{'required': True}"/>
+                </group>
+                <footer>
+                    <button name="button_export_xlsx_by_date" string="Print (Excel)" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_report_delivery_info" model="ir.actions.act_window">
+        <field name="name">Delivery Info</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">delivery.info.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <report string="Delivery Report XLSX By Date"
+            id="action_delivery_info_report_by_date"
+            model="delivery.info.report"
+            name="sea_report_delivery_info.delivery_info_report_xls"
+            file="Delivery Info"
+            report_type="xlsx"
+            attachment_use="False"/>
+    <menuitem
+            action="action_report_delivery_info"
+            id="menu_delivery_info"
+            name="Delivery Info"
+            parent="sea_menu_base.menu_item_stock"
+            sequence="6"
+    />
+</odoo>

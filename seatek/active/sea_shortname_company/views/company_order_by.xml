@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="company_view_form_inherit" model="ir.ui.view">
+            <field name="name">company.view.form.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="sea_company_extended.sea_company_foreign_view_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='sea_company_foreign']" position="after">
+                   <field name="short_name"/>
+                   <field name="code"/>
+                   <field name="active"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="company_view_tree_inherit" model="ir.ui.view">
+            <field name="name">company.view.tree.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_tree"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='partner_id']" position="after">
+                   <field name="short_name"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

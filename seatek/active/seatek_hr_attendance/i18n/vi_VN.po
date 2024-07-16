@@ -1,0 +1,1954 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* seatek_hr_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-12 08:28+0000\n"
+"PO-Revision-Date: 2023-12-12 08:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_10
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_10
+msgid "10"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_11
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_11
+msgid "11"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_12
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_12
+msgid "12"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_13
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_13
+msgid "13"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_14
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_14
+msgid "14"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_15
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_15
+msgid "15"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_16
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_16
+msgid "16"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_17
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_17
+msgid "17"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_18
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_18
+msgid "18"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_19
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_19
+msgid "19"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_20
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_20
+msgid "20"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_21
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_21
+msgid "21"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_22
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_22
+msgid "22"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_23
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_23
+msgid "23"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_24
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_24
+msgid "24"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_25
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_25
+msgid "25"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_26
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_26
+msgid "26"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_27
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_27
+msgid "27"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_28
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_28
+msgid "28"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_29
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_29
+msgid "29"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_30
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_30
+msgid "30"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_31
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__day_31
+msgid "31"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:res.groups,name:seatek_hr_attendance.hr_attendance_administrator
+msgid "Administrator"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.shift_employee_date_from_to_tree_apply
+msgid "Apply"
+msgstr "Áp dụng"
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1247
+#, python-format
+msgid "Are you sure you want to delete this record ?"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_shift_employee_view_search
+msgid "Attendance"
+msgstr "Chấm công"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__attendance_id_apply
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__attendance_id_apply_list
+msgid "Attendance Apply"
+msgstr "Áp dụng cho tháng"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_attendance_details
+msgid "Attendance Details"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_attendance_realtime
+msgid "Attendance Employee"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_attendance_details_overtime
+msgid "Attendance OverTime"
+msgstr "THỜI GIAN LÀM VIỆC NGOÀI GIỜ ĐƯỢC GHI NHẬN"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_attendance_realtime
+msgid "Attendance Realtime"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_attendance_shift_employee
+msgid "Attendance Shift for Employee"
+msgstr "KHAI BÁO CA MẶC ĐỊNH CHO NHÂN VIÊN"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_attendance_shift
+msgid "Attendance Shifts for Company"
+msgstr "KHAI BÁO CA LÀM VIỆC"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_attendance_details_violation
+msgid "Attendance Violation"
+msgstr "VI PHẠM LIÊN QUAN ĐẾN CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__attendance_realtime_id
+msgid "Attendance realtime"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: sql_constraint:sea.hr.attendance:0
+#: sql_constraint:sea.hr.attendance.month:0
+#: sql_constraint:sea.hr.attendance.realtime:0
+#: sql_constraint:sea.hr.calendar:0
+#: sql_constraint:sea.hr.calendar.employee:0
+msgid "Attendance with this month of company is  already exist!!"
+msgstr "Bảng chấm công của tháng này đã được tạo"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_action
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__attendance_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__attendance_id
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_hr_attendance_manage_attendances
+msgid "Attendances"
+msgstr "Chấm công"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_calendar_action
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_hr_attendance_calendar_view_attendances
+msgid "Attendances Calendar"
+msgstr "LỊCH LÀM VIỆC TỔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_shift_action
+msgid "Attendances Configuration Shift For Company"
+msgstr "KHAI BÁO CA LÀM VIỆC"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_detail_action
+msgid "Attendances Details"
+msgstr "Chi tiết chấm công"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_detail_overtime_action
+msgid "Attendances Details OverTime"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_detail_violation_action
+msgid "Attendances Details Violation"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.attendance_realtime_actions
+msgid "Attendances Realtime"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_shift_employee_action
+msgid "Attendances Shift Employee"
+msgstr "KHAI BÁO CA MẶC ĐỊNH CHO NHÂN VIÊN"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_hr_attendance_view_attendances
+msgid "Attendances Table"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_month_action
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_attendance_month
+msgid "Attendances of Month"
+msgstr "CHẤM CÔNG THEO THÁNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__user_id_create
+msgid "By"
+msgstr "Người tạo"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.report,name:seatek_hr_attendance.action_report_attendance
+msgid "BẢNG CHẤM CÔNG"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+msgid "Bảng chấm công"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Ca"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:sea.hr.attendance.shift,type_of_shift:0
+msgid "Ca gãy"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__shifts
+msgid "Ca làm viêc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__shift
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__shift
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__name
+msgid "Ca làm việc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__shifts_name
+msgid "Ca làm việc - NS"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:sea.hr.attendance.shift,type_of_shift:0
+msgid "Ca xuyên ngày"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:697
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_calendar_of_one_employee
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_calendar
+#, python-format
+msgid "Calendar"
+msgstr "BẢNG PHÂN CA CHI TIẾT"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_calendar
+msgid "Calendar for Month"
+msgstr "LỊCH LÀM VIỆC"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_calendar_employee_action
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_calendar_employee
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_calendar_employee
+msgid "Calendar of Employee for Month"
+msgstr "LỊCH LÀM VIỆC TỔNG DẠNG DANH SÁCH"
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,verify_mode:0
+msgid "Card"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_late_soon
+msgid "Check"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_in_late
+msgid "Check In Late"
+msgstr "Đi trễ"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_in_noon_late
+msgid "Check In noon Late"
+msgstr "Vào ca chiều trễ"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__check_managers
+msgid "Check Managers"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_out_soon
+msgid "Check Out Soon"
+msgstr "Về sớm"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_out_noon_soon
+msgid "Check Out noon Soon"
+msgstr "Về sớm sau ca sáng"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_overtime
+msgid "Check Overtime"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check in"
+msgstr "Check-in"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check in late"
+msgstr "Check-in trễ"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check in noon"
+msgstr "Check-in vào ca chiều"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check out"
+msgstr "Check-out"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check out noon"
+msgstr "Check-out sớm"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check out noon late"
+msgstr "Check-out ca chiều trễ"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check out noon soon"
+msgstr "Check-out ca chiều sớm"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Check out soon"
+msgstr "Check-out sớm"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__shift_details
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Chi tiết ca làm việc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:180
+#, python-format
+msgid "Chấm công ngày /"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:shift.employee.date.from.to,date_even_uneven:0
+msgid "Chẵn"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:shift.employee.date.from.to,type:0
+msgid "Chọn khoảng thời gian"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:shift.employee.date.from.to,type:0
+msgid "Chọn ngày"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__date_even_uneven
+msgid "Chọn ngày Chẵn/Lẻ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:shift.employee.date.from.to,type:0
+msgid "Chọn thứ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_8
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_8
+msgid "Chủ nhật"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__job_id
+msgid "Chức danh"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_shift_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Chức vụ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1258
+#, python-format
+msgid "Close"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__company_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__company_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__company_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__company_code
+msgid "Company Code"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_hr_attendance_configuration_shifts
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_hr_attendance_configuration_timekeeper
+msgid "Configuration Attendance"
+msgstr "THIẾT LẬP CÁC HÌNH THỨC CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1159
+#, python-format
+msgid "Create"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1142
+#, python-format
+msgid "Create: %s"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__create_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__create_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__company_id
+msgid "Công Ty"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__company_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__company_id
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_shift_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Công ty"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.report,name:seatek_hr_attendance.action_report_attendance_violation
+msgid "DANH SÁCH VI PHẠM"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__date_current
+msgid "Date Current"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_in
+msgid "Datetime check in"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_out
+msgid "Datetime check out"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_in_noon
+msgid "Datetime noon check in"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__check_out_noon
+msgid "Datetime noon check out"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__default_attendance
+msgid "Default Attendance"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__default_shift
+msgid "Default shift"
+msgstr "Là ca mặc định"
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1245
+#, python-format
+msgid "Delete"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__department_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__department_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__department_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__department_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__department_id
+msgid "Department"
+msgstr "Phòng/Ban"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__department_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__department_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__department_code
+msgid "Department Code"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_attendance_details
+msgid "Details Shifts"
+msgstr "DỮ LIỆU CHẤM CÔNG THỰC TẾ"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_report_seatek_hr_attendance_report_attendance_violation_xlsx__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_report_seatek_hr_attendance_report_attendance_xlsx__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__display_name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__domain_shift
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__domain_day
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__domain_day
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__domain_employee
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__domain_day
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__domain
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__domain_employee
+msgid "Domain"
+msgstr "Miền"
+
+#. module: seatek_hr_attendance
+#: sql_constraint:sea.network.domain:0
+msgid "Domain is  already exist!!"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__user_ids
+msgid "Dành cho QLTT"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1239
+#, python-format
+msgid "Edit"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_tree
+msgid "Employee"
+msgstr "Người lao động"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_shift_employee_date_from_to
+msgid "Employee calendar for a period of time"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__employee_multi_ids
+msgid "Employees"
+msgstr "Nhân viên"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__date_to
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__date_to
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__explanation_approved
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+msgid "Explanation Approved"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+msgid "Explanation Rejected"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,verify_mode:0
+msgid "Fingerprint"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__first_in_late_out
+msgid "First in - Late out"
+msgstr "Chấm công dựa vào lần check-in đầu tiên và check-out cuối cùng"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_start_noon_start
+msgid "GBĐ nghỉ giữa ca từ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_start_noon_end
+msgid "GBĐ nghỉ giữa ca đến"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_start_start
+msgid "GBĐ từ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_start_end
+msgid "GBĐ đến"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_end_noon_start
+msgid "GKT nghỉ giữa ca từ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_end_noon_end
+msgid "GKT nghỉ giữa ca đến"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_end_start
+msgid "GKT từ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_end_end
+msgid "GKT đến"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__gps
+msgid "GPS"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__gps_location
+msgid "GPS Location"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_gps_location
+msgid "GPS Location Information"
+msgstr "ĐỊNH VỊ GPS"
+
+#. module: seatek_hr_attendance
+#: sql_constraint:sea.gps.location:0
+msgid "GPS is  already exist!!"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_start
+msgid "Giờ bắt đầu"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_start_noon
+msgid "Giờ bắt đầu nghỉ giữa ca"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_end
+msgid "Giờ kết thúc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__hour_end_noon
+msgid "Giờ kết thúc nghỉ giữa ca"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_shift_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Group by..."
+msgstr "Nhóm theo..."
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_attendance_realtime_action
+msgid "HR Attendances Realtime"
+msgstr "DỮ LIỆU CHẤM CÔNG THỰC TẾ"
+
+#. module: seatek_hr_attendance
+#: model:ir.module.category,description:seatek_hr_attendance.module_category_seatek_hr_attendance
+msgid "Helps you manage your Attendances."
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__employee_multi_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__employee_multi_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__employee_multi_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__employee_multi_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__employee_multi_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__employee_multi_id
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Họ và tên"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_report_seatek_hr_attendance_report_attendance_violation_xlsx__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_report_seatek_hr_attendance_report_attendance_xlsx__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__id
+msgid "ID"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+msgid "In Bảng Chấm Công"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+msgid "In DS vi phạm"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__job_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__job_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__job_id
+msgid "Job"
+msgstr "Vị trí Công việc"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__job_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__job_code
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__job_code
+msgid "Job Code"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__job_code_compute
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__job_code_compute
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__job_code_compute
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__job_code_compute
+msgid "Job Code Compute"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__job_id
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.shift_employee_date_from_to_form
+msgid "Khoảng thời gian"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__symbol
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__symbol
+msgid "Ký hiệu"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__symbol_sign
+msgid "Ký hiệu từ trình ký"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_report_seatek_hr_attendance_report_attendance_violation_xlsx____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_report_seatek_hr_attendance_report_attendance_xlsx____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper____last_update
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__write_uid
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__write_date
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__location_check_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__location_check_id
+msgid "Location Check"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__category
+msgid "Loại chấm công"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_calendar_action_view_form
+msgid "Lịch làm việc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__calendar_of_month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__calendar_of_month_compute
+msgid "Lịch làm việc trong tháng"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__department_id_c
+msgid "Lọc theo Đơn Vị"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:res.groups,name:seatek_hr_attendance.hr_attendance_manager
+msgid "Manager"
+msgstr "Quản lý"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_calendar_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Mark as Todo"
+msgstr "Đánh dấu cần làm"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__mark_as_todo
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__mark_as_todo
+msgid "Mark as todo"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,type_attendance:0
+msgid "Máy chấm công"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__s_identification_id
+msgid "Mã nhân sự"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__name
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__network_domain
+msgid "Network Domain"
+msgstr "Tên miền của mạng"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_network_domain
+msgid "Network Domain Information"
+msgstr "KẾT NỐI WIFI"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__work_break
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__work_break
+msgid "Nghỉ giữa ca"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__day
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__day
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__datetime_compute
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__day
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__day
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.shift_employee_date_from_to_form
+msgid "Ngày"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_1
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 1"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_10
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 10"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_11
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 11"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_12
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 12"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_13
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 13"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_14
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 14"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_15
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 15"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_16
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 16"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_17
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 17"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_18
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 18"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_19
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 19"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_2
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 2"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_20
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 20"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_21
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 21"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_22
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 22"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_23
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 23"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_24
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 24"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_25
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 25"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_26
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 26"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_27
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 27"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_28
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 28"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_29
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 29"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_3
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 3"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_30
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 30"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_31
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 31"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_4
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 4"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_5
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 5"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_6
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 6"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_7
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 7"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_8
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 8"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__day_9
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_month_action_view_form
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_form
+msgid "Ngày 9"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:sea.hr.attendance.shift,for_full_time_shift:0
+msgid "Ngày check in"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:sea.hr.attendance.shift,for_full_time_shift:0
+msgid "Ngày check out"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__datetime
+msgid "Ngày giờ chấm công"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__attendance_of_month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__attendance_of_month_compute
+msgid "Ngày trong tháng"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__date
+msgid "Ngày tạo"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__not_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_shift_employee_view_search
+msgid "Not Attendance"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__note
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__note
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__year
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__year
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__year
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__year
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__year
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__year
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__year
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Năm"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Năm 2023"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Năm 2024"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Năm 2025"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_gps_location__sea_office_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_network_domain__sea_office_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__sea_office_id
+msgid "Office"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js:1225
+#, python-format
+msgid "Open: "
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__overtime
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__overtime
+msgid "Overtime"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__overtime_hr
+msgid "Overtime HR"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__overtime_sign
+msgid "Overtime Sign"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__overtime_sign_offline
+msgid "Overtime Sign Offline"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,verify_mode:0
+msgid "Password"
+msgstr "Mật khẩu"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__work_day
+msgid "Pay rate"
+msgstr "Hệ số công"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_shift_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Phòng Ban"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__department_id
+msgid "Phòng Ban/Đơn Vị"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,help:seatek_hr_attendance.field_sea_hr_attendance_month__department_id
+msgid "Phòng Ban/Đơn Vị vủa nhân sự"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+msgid "Phòng ban"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__s_identification_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__s_identification_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__s_identification_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__s_identification_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__s_identification_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__s_identification_id
+msgid "SC Code"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_gps_location_action
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_gps_location
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_gps_location_view_tree
+msgid "Sea GPS Location"
+msgstr "ĐỊNH VỊ GPS"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_network_domain_action
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_network_domain
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_network_domain_view_tree
+msgid "Sea Network Domain"
+msgstr "KẾT NỐI WIFI"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_timekeeper_action
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_timekeeper
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_timekeeper_view_tree
+msgid "Sea TimeKeeper"
+msgstr "KẾT NỐI MÁY CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_attendance_root
+msgid "SeaGroup Attendances"
+msgstr "Chấm công SeaGroup"
+
+#. module: seatek_hr_attendance
+#: model:ir.module.category,name:seatek_hr_attendance.module_category_seatek_hr_attendance
+msgid "Seatek Attendances"
+msgstr "Chấm công SeaGroup"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__serial_number
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_timekeeper__serial_number
+msgid "Serial Number"
+msgstr "Số sê-ri"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift_employee__attendance_config_ids
+msgid "Shift"
+msgstr "Loại ca"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.shift_employee_date_from_to_action
+msgid "Shift of employees"
+msgstr "Phân ca chi tiết cho nhân viên"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__shifts
+msgid "Shifts"
+msgstr "Ca"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_attendance_config_shifts_company
+msgid "Shifts for Company"
+msgstr "KHAI BÁO CA LÀM VIỆC"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_attendance_config_shifts_employee
+msgid "Shifts for Employee "
+msgstr "KHAI BÁO CA MẶC ĐỊNH CHO NHÂN VIÊN"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_shifts_employee_date_from_to
+msgid "Shifts for Employee Date from - to"
+msgstr "PHÂN CA CHI TIẾT CHO NHÂN VIÊN"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__only_sign
+msgid "Sign Only"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__date_from
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__date_from
+msgid "Start Date"
+msgstr "Ngày bắt đầu"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__symbol
+msgid "Symbol"
+msgstr "Biểu tượng"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__so_cong
+msgid "Số công thực tế"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__number_time
+msgid "Số giờ làm việc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.server,name:seatek_hr_attendance.sea_hr_calendar_of_one_employee_action
+msgid "Test"
+msgstr "Kiểm thử"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_details__month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_realtime__month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar__month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__month
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+msgid "Tháng"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 1"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 10"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 11"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 12"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 2"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 3"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 4"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 5"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 6"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 7"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 8"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_employee_view_search
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_calendar_view_search
+#: selection:sea.hr.attendance,month:0
+msgid "Tháng 9"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_details_view_search
+msgid "Tháng Hiện Tại"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__month_year_compute
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__month_year_compute
+msgid "Tháng/năm"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+msgid "Thêm ghi chú cho vi phạm"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.shift_employee_date_from_to_form
+msgid "Thứ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_2
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_2
+msgid "Thứ 2"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_3
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_3
+msgid "Thứ 3"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_4
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_4
+msgid "Thứ 4"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_5
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_5
+msgid "Thứ 5"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_6
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_6
+msgid "Thứ 6"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__thu_7
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__thu_7
+msgid "Thứ 7"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_attendance_realtime
+msgid "Timekeeper"
+msgstr "MÁY CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_attendance_attendances
+msgid "Timekeeper From Data"
+msgstr "DỮ LIỆU TỪ MÁY CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_timekeeper
+msgid "Timekeeper Information"
+msgstr "KẾT NỐI MÁY CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_attendance_realtime
+msgid "Timekeeping Details"
+msgstr "THỜI GIAN CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.actions.act_window,name:seatek_hr_attendance.sea_hr_timesheet_symbol_action
+#: model:ir.ui.menu,name:seatek_hr_attendance.menu_sea_hr_timesheet_symbol
+msgid "Timesheet Symbol"
+msgstr "KHAI BÁO KÝ HIỆU CHẤM CÔNG"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_shift_employee_date_from_to__type
+msgid "Type"
+msgstr "Loại"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__type_attendance
+msgid "Type of attendance"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__type_of_shift
+msgid "Type of shift"
+msgstr "Loại ca"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__abbreviations
+msgid "Tên viết tắt"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__department_id
+msgid "Tìm theo phòng ban"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__employee_id
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__employee_id_c
+msgid "Tìm theo tên nhân sự hoặc mã SeaCode"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,category:0
+msgid "Tăng ca"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance__department_all
+msgid "Tất cả Department của Company"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/xml/search_and_filter_template.xml:5
+#: code:addons/seatek_hr_attendance/static/src/xml/search_and_filter_template.xml:11
+#, python-format
+msgid "Tất cả văn bản"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_form
+msgid "Un Mark as Todo"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_action_view_form
+msgid "Upgrade attendance"
+msgstr "Cập nhật chấm công tổng"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_calendar_action_view_form
+msgid "Upgrade calendar"
+msgstr "Cập nhật lịch làm việc tổng"
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_calendar_action_view_form
+msgid "Upgrade calendar for shift"
+msgstr "Phân ca cho nhân viên và cập nhật lịch làm việc tổng"
+
+#. module: seatek_hr_attendance
+#: model:res.groups,name:seatek_hr_attendance.hr_attendance_user
+msgid "User"
+msgstr "Người dùng"
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_attendance_realtime__verify_mode
+msgid "Verify Mode"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_timesheet_symbol__work_number
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_realtime_view_tree
+msgid "Work number"
+msgstr "Số công"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_sea_hr_timesheet_symbol
+msgid "Work number for employees per day"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__for_full_time_shift
+msgid "Workday calculated for full time shift"
+msgstr "Tính chấm công dựa vào ngày check-in/ check-out"
+
+#. module: seatek_hr_attendance
+#: selection:shift.employee.date.from.to,date_even_uneven:0
+msgid "lẻ"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_calendar_action_view_form
+msgid "lịch làm việc"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.sea_hr_attendance_calendar_action_view_form
+msgid "lịch làm việc COMPUTE"
+msgstr "Lịch làm việc tổng hợp"
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_report_seatek_hr_attendance_report_attendance_violation_xlsx
+msgid "report.seatek_hr_attendance.report_attendance_violation_xlsx"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model,name:seatek_hr_attendance.model_report_seatek_hr_attendance_report_attendance_xlsx
+msgid "report.seatek_hr_attendance.report_attendance_xlsx"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: sql_constraint:sea.timekeeper:0
+msgid "serial number is  already exist!!"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__last_day_of_month
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_calendar_employee__last_day_of_month
+msgid "số ngày tối đa của tháng"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_10_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_11_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_12_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_13_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_14_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_15_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_16_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_17_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_18_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_19_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_1_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_20_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_21_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_22_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_23_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_24_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_25_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_26_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_27_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_28_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_29_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_2_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_30_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_31_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_3_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_4_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_5_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_6_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_7_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_8_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__day_9_soon_or_late
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_month__soon_or_late
+msgid "Đi trễ về sớm"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model_terms:ir.ui.view,arch_db:seatek_hr_attendance.shift_employee_date_from_to_tree_apply
+msgid "Điều này sẽ thay đổi ca làm việc của một số NS cho tháng"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,type_attendance:0
+msgid "Điện thoại"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,category:0
+msgid "Đăng nhập"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: model:ir.model.fields,field_description:seatek_hr_attendance.field_sea_hr_attendance_shift__login_logout
+msgid "Đăng nhập/Đăng xuất"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#: selection:attendance.realtime,category:0
+msgid "Đăng xuất"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/xml/search_and_filter_template.xml:23
+#, python-format
+msgid "Đơn Xin Nghỉ Phép"
+msgstr ""
+
+#. module: seatek_hr_attendance
+#. openerp-web
+#: code:addons/seatek_hr_attendance/static/src/xml/search_and_filter_template.xml:18
+#, python-format
+msgid "Đề Xuất Tài Sản"
+msgstr ""
+

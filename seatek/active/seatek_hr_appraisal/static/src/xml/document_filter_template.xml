@@ -1,0 +1,42 @@
+<templates>
+    <t t-name="AppraisalFilter">
+        <div class="sign_document_fileter" data-qweb="AppraisalFilter">
+            <a id='document-filter' type="button" class="btn btn-link dropdown-toggle document_text" data-toggle="dropdown">
+                <span class="fa fa-filter"/>
+               Tất cả văn bản
+            </a>
+            <div class="dropdown-menu o_filters_menu" role="menu">
+                <span>
+                    <button name="all" value="false" type="button" data-domain="[(all)]" data-field="manager_status" data-operator="!="
+                            data-filter="false"
+                            class="btn btn-secondary o_button_filter">
+                            Tất cả bài đánh giá
+                    </button>
+                </span>
+                <div>
+                    <button name="da_danh_gia" value="false" type="button"
+                            data-domain="[(|),(&amp;),(user_manager_id,=,uid),(manager_status,=,true),(&amp;),(user_smanager_id,=,uid),(smanager_status,=,true)]"
+                            data-field="manager_status"
+                            data-operator="=" data-filter="true"
+
+                            class="btn btn-secondary o_button_filter">
+                            Đã đánh giá
+                    </button>
+                </div>
+                <div>
+                    <button name="da_danh_gia" value="false" type="button"
+                            data-domain="[(|),(&amp;),(user_manager_id,=,uid),(manager_status,=,false),(&amp;),(user_smanager_id,=,uid),(smanager_status,=,false)]"
+                            data-field="manager_status"
+                            data-operator="=" data-filter="true"
+
+                            class="btn btn-secondary o_button_filter">
+                            Chưa đánh giá
+                    </button>
+                </div>
+            </div>
+        </div>
+    </t>
+
+
+
+</templates>

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sea_hr_attendance_view_search" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.search</field>
+        <field name="model">sea.hr.attendance</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="company_id"/>
+                <field name="month"/>
+                <field name="year"/>
+                <separator/>
+                <filter string="Tháng 1" domain="[('month', '=', 1)]" name="Jan"/>
+                <filter string="Tháng 2" domain="[('month', '=', 2)]" name="Feb"/>
+                <filter string="Tháng 3" domain="[('month', '=', 3)]" name="Mar"/>
+                <filter string="Tháng 4" domain="[('month', '=', 4)]" name="Apr"/>
+                <filter string="Tháng 5" domain="[('month', '=', 5)]" name="May"/>
+                <filter string="Tháng 6" domain="[('month', '=', 6)]" name="Jun"/>
+                <filter string="Tháng 7" domain="[('month', '=', 7)]" name="Jul"/>
+                <filter string="Tháng 8" domain="[('month', '=', 8)]" name="Aug"/>
+                <filter string="Tháng 9" domain="[('month', '=', 9)]" name="Sep"/>
+                <filter string="Tháng 10" domain="[('month', '=', 10)]" name="Oct"/>
+                <filter string="Tháng 11" domain="[('month', '=', 11)]" name="Nov"/>
+                <filter string="Tháng 12" domain="[('month', '=', 12)]" name="Dec"/>
+                <separator/>
+                <filter string="Năm 2023" domain="[('year', '=', 2023)]" name="Year"/>
+                <filter string="Năm 2024" domain="[('year', '=', 2024)]" name="Year"/>
+                <filter string="Năm 2025" domain="[('year', '=', 2025)]" name="Year"/>
+                <group expand='0' string='Group by...'>
+                    <filter string='Công ty' domain="[]" name="company_id_group" context="{'group_by': 'company_id'}"/>
+                    <filter string='Tháng' domain="[]" name="month_group" context="{'group_by': 'month'}"/>
+                    <filter string='Năm' domain="[]" name="year_group" context="{'group_by' : 'year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sea_hr_attendance_action" model="ir.actions.act_window">
+        <field name="name">Attendances</field>
+        <field name="res_model">sea.hr.attendance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('company_id','in',company_ids)]</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="sea_hr_attendance_view_search"/>
+    </record>
+
+    <record id="sea_hr_attendance_calendar_action" model="ir.actions.act_window">
+        <field name="name">Attendances Calendar</field>
+        <field name="res_model">sea.hr.attendance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('company_id','in',company_ids)]</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="sea_hr_attendance_view_search"/>
+    </record>
+
+    <record id="sea_hr_attendance_action_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.tree</field>
+        <field name="model">sea.hr.attendance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="company_id" readonly="0"/>
+                <field name="date" invisible="0"/>
+                <field name="month"/>
+                <field name="job_code_compute" invisible="1"/>
+                <field name="year"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sea_hr_attendance_action_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.form</field>
+        <field name="model">sea.hr.attendance</field>
+        <field name="arch" type="xml">
+            <form duplicate="false" options="{'no_edit': True}"  attrs="{'readonly':[('mark_as_todo','=',True)]}" js_class="attendance_form_view_hide_edit">
+                <header>
+                    <field name="mark_as_todo" invisible="1"/>
+                    <button groups="seatek_hr_attendance.hr_attendance_manager" string="Mark as Todo" name="action_confirm" type="object" class="btn-primary attendance_button"
+                            attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+                    <button groups="seatek_hr_attendance.hr_attendance_user" name="print_attendance" string="In Bảng Chấm Công" type="object" default_focus="1"
+                            class="btn-primary attendance_button"/>
+                    <button groups="seatek_hr_attendance.hr_attendance_user" name="print_attendance_violation" string="In DS vi phạm" type="object" default_focus="1"
+                            class="btn-primary attendance_button"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="date" attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="company_id" attrs="{'readonly':[('mark_as_todo','=',True)]}"
+                               options='{"no_open": True, "no_create": True}'/>
+                        <field name="department_id" class="attendance_department_id" groups="seatek_hr_attendance.hr_attendance_manager" invisible="1" options='{"no_open": True, "no_create": True}'/>
+                        <field name="employee_id" groups="seatek_hr_attendance.hr_attendance_manager" invisible="1"/>
+                        <field name="department_all" invisible="1"/>
+                        <field name="check_managers" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="month" attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="year" attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                    </group>
+                </group>
+                <group invisible="1">
+                    <notebook string="Bảng chấm công">
+                        <page string="Bảng chấm công">
+                            <field name="attendance_of_month">
+                                <tree delete="0" create="0" class="treeview_scrollable">
+                                    <field name="s_identification_id"/>
+                                    <field name="employee_multi_id" options="{'no_open': True,}"/>
+                                    <field name="job_code_compute" invisible="1"/>
+                                    <field name="company_code" invisible="1"/>
+                                    <field name="department_code" invisible="1"/>
+                                    <field name="job_code" invisible="1"/>
+
+                                    <field name="job_id" invisible="1"/>
+                                    <field name="last_day_of_month" invisible="1"/>
+                                    <field name="month" invisible="1"/>
+                                    <field name="year" invisible="1"/>
+                                    <field name="attendance_id" invisible="1"/>
+                                    <field name="day_1" options="{'no_open': True,}"/>
+                                    <field name="day_2" options="{'no_open': True,}"/>
+                                    <field name="day_3" options="{'no_open': True,}"/>
+                                    <field name="day_4" options="{'no_open': True,}" />
+                                    <field name="day_5" options="{'no_open': True,}" />
+                                    <field name="day_6" options="{'no_open': True,}"/>
+                                    <field name="day_7" options="{'no_open': True,}"/>
+                                    <field name="day_8" options="{'no_open': True,}"/>
+                                    <field name="day_9" options="{'no_open': True,}"/>
+                                    <field name="day_10" options="{'no_open': True,}"/>
+                                    <field name="day_11" options="{'no_open': True,}"/>
+                                    <field name="day_12" options="{'no_open': True,}"/>
+                                    <field name="day_13" options="{'no_open': True,}"/>
+                                    <field name="day_14" options="{'no_open': True,}"/>
+                                    <field name="day_15" options="{'no_open': True,}"/>
+                                    <field name="day_16" options="{'no_open': True,}"/>
+                                    <field name="day_17" options="{'no_open': True,}"/>
+                                    <field name="day_18" options="{'no_open': True,}"/>
+                                    <field name="day_19" options="{'no_open': True,}"/>
+                                    <field name="day_20" options="{'no_open': True,}"/>
+                                    <field name="day_21" options="{'no_open': True,}"/>
+                                    <field name="day_22" options="{'no_open': True,}"/>
+                                    <field name="day_23" options="{'no_open': True,}"/>
+                                    <field name="day_24" options="{'no_open': True,}"/>
+                                    <field name="day_25" options="{'no_open': True,}"/>
+                                    <field name="day_26" options="{'no_open': True,}"/>
+                                    <field name="day_27" options="{'no_open': True,}"/>
+                                    <field name="day_28" options="{'no_open': True,}"/>
+                                    <field name="day_29" options="{'no_open': True,}"/>
+                                    <field name="day_30" options="{'no_open': True,}"/>
+                                    <field name="day_31" options="{'no_open': True,}"/>
+
+                                    <field name="soon_or_late" invisible="1"/>
+                                    <field name="day_2_soon_or_late" invisible="1"/>
+                                    <field name="day_1_soon_or_late" invisible="1"/>
+                                    <field name="day_3_soon_or_late" invisible="1"/>
+                                    <field name="day_4_soon_or_late" invisible="1"/>
+                                    <field name="day_5_soon_or_late" invisible="1"/>
+                                    <field name="day_6_soon_or_late" invisible="1"/>
+                                    <field name="day_7_soon_or_late" invisible="1"/>
+                                    <field name="day_8_soon_or_late" invisible="1"/>
+                                    <field name="day_9_soon_or_late" invisible="1"/>
+                                    <field name="day_10_soon_or_late" invisible="1"/>
+                                    <field name="day_11_soon_or_late" invisible="1"/>
+                                    <field name="day_12_soon_or_late" invisible="1"/>
+                                    <field name="day_13_soon_or_late" invisible="1"/>
+                                    <field name="day_14_soon_or_late" invisible="1"/>
+                                    <field name="day_15_soon_or_late" invisible="1"/>
+                                    <field name="day_16_soon_or_late" invisible="1"/>
+                                    <field name="day_17_soon_or_late" invisible="1"/>
+                                    <field name="day_18_soon_or_late" invisible="1"/>
+                                    <field name="day_19_soon_or_late" invisible="1"/>
+                                    <field name="day_20_soon_or_late" invisible="1"/>
+                                    <field name="day_21_soon_or_late" invisible="1"/>
+                                    <field name="day_22_soon_or_late" invisible="1"/>
+                                    <field name="day_23_soon_or_late" invisible="1"/>
+                                    <field name="day_24_soon_or_late" invisible="1"/>
+                                    <field name="day_25_soon_or_late" invisible="1"/>
+                                    <field name="day_26_soon_or_late" invisible="1"/>
+                                    <field name="day_27_soon_or_late" invisible="1"/>
+                                    <field name="day_28_soon_or_late" invisible="1"/>
+                                    <field name="day_29_soon_or_late" invisible="1"/>
+                                    <field name="day_30_soon_or_late" invisible="1"/>
+                                    <field name="day_31_soon_or_late" invisible="1"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+                <group>
+                    <notebook string="Bảng chấm công">
+                        <page string="Bảng chấm công">
+                            <button groups="seatek_hr_attendance.hr_attendance_manager" name="upgrade_attendance" string="Upgrade attendance" type="object"
+                            class="btn-primary attendance_button" attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+                            <button groups="seatek_hr_attendance.hr_attendance_user" name="add_note_attendance_details" string="Thêm ghi chú cho vi phạm" type="object" default_focus="1"
+                            class="btn-primary attendance_button" attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+                             <button name="approved_attendance_details" string="Explanation Approved" type="object" default_focus="1"
+                            class="btn-primary attendance_button" attrs="{'invisible':['|', ('check_managers','=',False), ('mark_as_todo', '=', True)]}"/>
+                            <field name="attendance_of_month_compute" attrs="{'readonly':[('mark_as_todo','=',True)]}"
+                                   widget="attendance_one2many">
+                                <tree delete="0" condition="tree" create="0" class="treeview_scrollable" >
+                                    <field name="s_identification_id" rowspan="2" row-level="1" readonly="1"/>
+                                    <field name="employee_multi_id" options="{'no_open': True,}" rowspan="2"
+                                           row-level="1" readonly="1"/>
+
+                                    <field name="job_code_compute" invisible="1"/>
+                                    <field name="company_code" invisible="1"/>
+                                    <field name="department_code" invisible="1"/>
+                                    <field name="job_code" invisible="1"/>
+
+                                    <field name="job_id" invisible="1"/>
+                                    <field name="last_day_of_month" invisible="1"/>
+                                    <field name="month" invisible="1"/>
+                                    <field name="year" invisible="1"/>
+                                    <field name="attendance_id" invisible="1"/>
+                                    <field name="day_1" options="{'no_open': True,}" colspan="1" data-title="1" row-level="2"/>
+                                    <field name="day_2" options="{'no_open': True,}" colspan="1" data-title="2" row-level="2"/>
+                                    <field name="day_3" options="{'no_open': True,}" colspan="1" data-title="3" row-level="2"/>
+                                    <field name="day_4" options="{'no_open': True,}" colspan="1" data-title="4" row-level="2"/>
+                                    <field name="day_5" options="{'no_open': True,}" colspan="1" data-title="5" row-level="2"/>
+                                    <field name="day_6" options="{'no_open': True,}" colspan="1" data-title="6" row-level="2"/>
+                                    <field name="day_7" options="{'no_open': True,}" colspan="1" data-title="7" row-level="2"/>
+                                    <field name="day_8" options="{'no_open': True,}" colspan="1" data-title="8" row-level="2"/>
+                                    <field name="day_9" options="{'no_open': True,}" colspan="1" data-title="9" row-level="2"/>
+                                    <field name="day_10" options="{'no_open': True,}" colspan="1" data-title="10" row-level="2"/>
+                                    <field name="day_11" options="{'no_open': True,}" colspan="1" data-title="11" row-level="2"/>
+                                    <field name="day_12" options="{'no_open': True,}" colspan="1" data-title="12" row-level="2"/>
+                                    <field name="day_13" options="{'no_open': True,}" colspan="1" data-title="13" row-level="2"/>
+                                    <field name="day_14" options="{'no_open': True,}" colspan="1" data-title="14" row-level="2"/>
+                                    <field name="day_15" options="{'no_open': True,}" colspan="1" data-title="15" row-level="2"/>
+                                    <field name="day_16" options="{'no_open': True,}" colspan="1" data-title="16" row-level="2"/>
+                                    <field name="day_17" options="{'no_open': True,}" colspan="1" data-title="17" row-level="2"/>
+                                    <field name="day_18" options="{'no_open': True,}" colspan="1" data-title="18" row-level="2"/>
+                                    <field name="day_19" options="{'no_open': True,}" colspan="1" data-title="19" row-level="2"/>
+                                    <field name="day_20" options="{'no_open': True,}" colspan="1" data-title="20" row-level="2"/>
+                                    <field name="day_21" options="{'no_open': True,}" colspan="1" data-title="21" row-level="2"/>
+                                    <field name="day_22" options="{'no_open': True,}" colspan="1" data-title="22" row-level="2"/>
+                                    <field name="day_23" options="{'no_open': True,}" colspan="1" data-title="23" row-level="2"/>
+                                    <field name="day_24" options="{'no_open': True,}" colspan="1" data-title="24" row-level="2"/>
+                                    <field name="day_25" options="{'no_open': True,}" colspan="1" data-title="25" row-level="2"/>
+                                    <field name="day_26" options="{'no_open': True,}" colspan="1" data-title="26" row-level="2"/>
+                                    <field name="day_27" options="{'no_open': True,}" colspan="1" data-title="27" row-level="2"/>
+                                    <field name="day_28" options="{'no_open': True,}" colspan="1" data-title="28" row-level="2"/>
+                                    <field name="day_29" options="{'no_open': True,}" colspan="1" data-title="29" row-level="2"/>
+                                    <field name="day_30" options="{'no_open': True,}" colspan="1" data-title="30" row-level="2"/>
+                                    <field name="day_31" options="{'no_open': True,}" colspan="1" data-title="31" row-level="2"/>
+
+                                    <field name="soon_or_late" invisible="1"/>
+                                    <field name="day_2_soon_or_late" invisible="1"/>
+                                    <field name="day_1_soon_or_late" invisible="1"/>
+                                    <field name="day_3_soon_or_late" invisible="1"/>
+                                    <field name="day_4_soon_or_late" invisible="1"/>
+                                    <field name="day_5_soon_or_late" invisible="1"/>
+                                    <field name="day_6_soon_or_late" invisible="1"/>
+                                    <field name="day_7_soon_or_late" invisible="1"/>
+                                    <field name="day_8_soon_or_late" invisible="1"/>
+                                    <field name="day_9_soon_or_late" invisible="1"/>
+                                    <field name="day_10_soon_or_late" invisible="1"/>
+                                    <field name="day_11_soon_or_late" invisible="1"/>
+                                    <field name="day_12_soon_or_late" invisible="1"/>
+                                    <field name="day_13_soon_or_late" invisible="1"/>
+                                    <field name="day_14_soon_or_late" invisible="1"/>
+                                    <field name="day_15_soon_or_late" invisible="1"/>
+                                    <field name="day_16_soon_or_late" invisible="1"/>
+                                    <field name="day_17_soon_or_late" invisible="1"/>
+                                    <field name="day_18_soon_or_late" invisible="1"/>
+                                    <field name="day_19_soon_or_late" invisible="1"/>
+                                    <field name="day_20_soon_or_late" invisible="1"/>
+                                    <field name="day_21_soon_or_late" invisible="1"/>
+                                    <field name="day_22_soon_or_late" invisible="1"/>
+                                    <field name="day_23_soon_or_late" invisible="1"/>
+                                    <field name="day_24_soon_or_late" invisible="1"/>
+                                    <field name="day_25_soon_or_late" invisible="1"/>
+                                    <field name="day_26_soon_or_late" invisible="1"/>
+                                    <field name="day_27_soon_or_late" invisible="1"/>
+                                    <field name="day_28_soon_or_late" invisible="1"/>
+                                    <field name="day_29_soon_or_late" invisible="1"/>
+                                    <field name="day_30_soon_or_late" invisible="1"/>
+                                    <field name="day_31_soon_or_late" invisible="1"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+
+            </form>
+        </field>
+    </record>
+    <record id="sea_hr_attendance_calendar_action_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.form</field>
+        <field name="model">sea.hr.attendance</field>
+        <field name="arch" type="xml">
+            <form duplicate="false" options="{'no_edit': True}"  attrs="{'readonly':[('mark_as_todo','=',True)]}" js_class="attendance_form_view_hide_edit">
+                <header>
+                    <field name="mark_as_todo" invisible="1"/>
+                    <field name="date_current" invisible="1"/>
+                    <button string="Mark as Todo" groups="seatek_hr_attendance.hr_attendance_manager" name="action_confirm" type="object" class="btn-primary attendance_button"
+                            attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+<!--                    <button groups="seatek_hr_attendance.hr_attendance_manager" name="print_attendance_calendar" string="Print" type="object" default_focus="1"-->
+<!--                            class="btn-primary"/>-->
+                </header>
+                <group>
+                    <group>
+                        <field name="date" attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="company_id" attrs="{'readonly':[('mark_as_todo','=',True)]}"
+                               options='{"no_open": True, "no_create": True}'/>
+                        <field name="department_id_c"  class="attendance_department_id_c" readonly="0" options='{"no_open": True, "no_create": True}' groups="seatek_hr_attendance.hr_attendance_manager"/>
+                        <field name="department_all" invisible="1"/>
+                        <field name="employee_id_c" readonly="1" groups="seatek_hr_attendance.hr_attendance_manager"/>
+                    </group>
+                    <group>
+                        <field name="month" attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="year" attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                    </group>
+                </group>
+                <group invisible="1">
+                    <notebook string="Lịch làm việc">
+                        <page string="lịch làm việc">
+                            <div>
+                                <field name="calendar_of_month" attrs="{'readonly':[('mark_as_todo','=',True)]}">
+                                    <tree delete="0" create="0" class="treeview_scrollable">
+                                        <field name="s_identification_id"/>
+                                        <field name="employee_multi_id"/>
+
+                                        <field name="job_code_compute"/>
+                                        <field name="company_code"/>
+                                        <field name="department_code"/>
+                                        <field name="job_code"/>
+
+
+                                        <field name="last_day_of_month" invisible="1"/>
+                                        <field name="month" invisible="1"/>
+                                        <field name="year" invisible="1"/>
+                                        <field name="attendance_id" invisible="1"/>
+                                        <field name="day_1" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_2" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_3" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_4" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_5" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_6" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_7" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_8" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_9" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_10" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_11" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_12" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_13" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_14" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_15" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_16" options="{'no_open': True,}" widget="many2many_tags" />
+                                        <field name="day_17" options="{'no_open': True,}" widget="many2many_tags" />
+                                        <field name="day_18" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_19" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_20" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_21" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_22" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_23" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_24" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_25" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_26" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_27" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_28" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_29" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_30" options="{'no_open': True,}" widget="many2many_tags"/>
+                                        <field name="day_31" options="{'no_open': True,}" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </div>
+                        </page>
+                    </notebook>
+                </group>
+                <group>
+                    <notebook string="Lịch làm việc">
+                        <page string="lịch làm việc COMPUTE">
+                            <button name="upgrade_calendar" groups="seatek_hr_attendance.hr_attendance_manager" string="Upgrade calendar" type="object"
+                            class="btn-primary attendance_button" attrs="{'invisible': ['|',('mark_as_todo', '=', True), ('date_current', '=', True)]}"/>
+                            <button name="upgrade_calendar_for_shift" string="Upgrade calendar for shift" type="object"
+                            class="btn-primary attendance_button" attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+                            <field name="calendar_of_month_compute" attrs="{'readonly':[('mark_as_todo','=',True)]}" widget="attendance_one2many">
+                                <tree delete="0" create="0" condition="tree"  class="treeview_scrollable calendar">
+                                    <field name="s_identification_id" rowspan="2" row-level="1" readonly="1"/>
+                                    <field name="employee_multi_id" options="{'no_open': True,}" rowspan="2" row-level="1" readonly="1"/>
+
+                                    <field name="job_code_compute" invisible="1"/>
+                                    <field name="company_code" invisible="1"/>
+                                    <field name="department_code" invisible="1"/>
+                                    <field name="job_code" invisible="1"/>
+
+
+                                    <field name="last_day_of_month" invisible="1"/>
+                                    <field name="month" invisible="1"/>
+                                    <field name="year" invisible="1"/>
+                                    <field name="attendance_id" invisible="1"/>
+                                    <field name="day_1" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="1" row-level="2"/>
+                                    <field name="day_2" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="2" row-level="2"/>
+                                    <field name="day_3" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="3" row-level="2"/>
+                                    <field name="day_4" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="4" row-level="2"/>
+                                    <field name="day_5" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="5" row-level="2"/>
+                                    <field name="day_6" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="6" row-level="2"/>
+                                    <field name="day_7" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="7" row-level="2"/>
+                                    <field name="day_8" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="8" row-level="2"/>
+                                    <field name="day_9" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="9" row-level="2"/>
+                                    <field name="day_10" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="10" row-level="2"/>
+                                    <field name="day_11" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="11" row-level="2"/>
+                                    <field name="day_12" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="12" row-level="2"/>
+                                    <field name="day_13" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="13" row-level="2"/>
+                                    <field name="day_14" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="14" row-level="2"/>
+                                    <field name="day_15" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="15" row-level="2"/>
+                                    <field name="day_16" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="16" row-level="2"/>
+                                    <field name="day_17" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="17" row-level="2"/>
+                                    <field name="day_18" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="28" row-level="2"/>
+                                    <field name="day_19" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="19" row-level="2"/>
+                                    <field name="day_20" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="20" row-level="2"/>
+                                    <field name="day_21" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="21" row-level="2"/>
+                                    <field name="day_22" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="22" row-level="2"/>
+                                    <field name="day_23" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="23" row-level="2"/>
+                                    <field name="day_24" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="24" row-level="2"/>
+                                    <field name="day_25" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="25" row-level="2"/>
+                                    <field name="day_26" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="26" row-level="2"/>
+                                    <field name="day_27" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="27" row-level="2"/>
+                                    <field name="day_28" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="28" row-level="2"/>
+                                    <field name="day_29" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="29" row-level="2"/>
+                                    <field name="day_30" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="30" row-level="2"/>
+                                    <field name="day_31" options="{'no_open': True,}" widget="many2many_tags" colspan="1" data-title="31" row-level="2"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="sea_hr_attendance_action_view_tree_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sea_hr_attendance_action_view_tree"/>
+        <field name="act_window_id" ref="sea_hr_attendance_action"/>
+    </record>
+    <record id="sea_hr_attendance_action_view_form_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="5"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sea_hr_attendance_action_view_form"/>
+        <field name="act_window_id" ref="sea_hr_attendance_action"/>
+    </record>
+    <record id="sea_hr_attendance_calendar_action_view_form_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sea_hr_attendance_calendar_action_view_form"/>
+        <field name="act_window_id" ref="sea_hr_attendance_calendar_action"/>
+    </record>
+    <record id="sea_hr_attendance_calendar_action_view_tree_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sea_hr_attendance_action_view_tree"/>
+        <field name="act_window_id" ref="sea_hr_attendance_calendar_action"/>
+    </record>
+
+
+</odoo>

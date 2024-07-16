@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="attendance_seatek" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/seatek_hr_attendance/static/src/js/seatek_hr_calendar_employee.js"/>
+            <link rel="stylesheet" type="text/scss"
+                  href="/seatek_hr_attendance/static/src/scss/seatek_hr_attendance.scss"/>
+            <link rel="stylesheet" type="text/css"
+                      href="/seatek_hr_attendance/static/src/css/attendance.css"/>
+        </xpath>
+    </template>
+</odoo>
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <data>
+        <record id="hr_employee_view_form_inherit_expense" model="ir.ui.view">
+            <field name="name">hr.employee.view.form.inherit.expense</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="seatek_employees_optional.view_employees_optional"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//page[@name='sea_settings']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//page[@name='hr_settings']" position = "attributes">
+                    <attribute name="string">Company Setting</attribute>
+                </xpath>
+                <field name="expense_manager_id" position="replace">
+                    <field name="expense_manager_id_compute" readonly="0"/>
+                </field>
+<!--                <xpath expr="//page[@name='hr_settings']/group[1]/group[5]" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//page[@name='hr_settings']/group[1]/group[4]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='hr_settings']/group[1]/group[3]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='hr_settings']/group[1]/group[2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//page[@name='hr_settings']/group" position="before">
+                    <group string='Status'>
+                        <field name="company_id_compute" readonly="1" groups="base.group_multi_company"/>
+                        <field name="primary_company_compute" />
+                        <field name="joining_date_compute" readonly="0"/>
+                        <field name="official_contract_company" readonly="1"/>
+                    </group>
+                    <group>
+                        <group string="Contact Information">
+                            <field name="address_compute"/>
+<!--                                options='{"always_reload": True, "highlight_first_line": True}'/>-->
+                            <field name="work_location_compute" readonly="0"/>
+                            <field name="work_email_compute" widget="email" readonly="0"/>
+                            <field name="mobile_phone_compute" widget="phone" readonly="0"/>
+                            <field name="work_phone_compute" widget="phone" readonly="0"/>
+                        </group>
+                        <group string="Position">
+                            <field name="department_id_compute" readonly="0"/>
+                            <field name="operating_unit_id_compute" readonly="0"/>
+                            <field name="job_id_compute" readonly="0"/>
+                            <field name="job_title_compute" readonly="0"/>
+                            <field name="parent_id_compute" readonly="0"/>
+                            <field name="coach_id_compute" readonly="0"/>
+<!--                            <field name="manager"/>-->
+                            <field name="resource_calendar_id_compute" readonly="0"/>
+                            <field name="tz_compute" readonly="0"/>
+<!--                            <field name="resource_calendar_id" readonly="0"/>-->
+<!--                            <field name="tz" readonly="0"/>-->
+                        </group>
+                        <group>
+                            <field name="public_info"/>
+                        </group>
+                    </group>
+                    <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                    <group>
+<!--                        <group string="Social Insurance Status">-->
+                        <group string="Tình trạng tham gia Bảo hiểm xã hội">
+                            <field name="insurance_status_m_compute" readonly="0"/>
+                            <field name="note_insurance_status_compute" readonly="0"/>
+                        </group>
+                        <group string="Current Status">
+                            <field name="employee_current_status_compute" readonly="0"/>
+                            <field name="reason_leaving_compute" readonly="0"/>
+<!--                                   attrs="{'required' : [('employee_current_status_compute', '!=', 'working')]}"/>-->
+                            <field name="resignation_date_compute" readonly="0"
+                                   attrs="{'required' : [('employee_current_status_compute', '!=', 'working')]}"/>
+                            <field name="leaving_to_date_compute" readonly="0"/>
+<!--                                   attrs="{'required' : [('employee_current_status_compute', '!=', 'working')]}"/>-->
+                        </group>
+                        <group string="Salary Info Company (Sum)" groups="hr.group_hr_manager">
+                                <field name="sea_net_salary_company" class="oe_inline"/>
+                            <field name="sea_contract_salary_company" class="oe_inline" />
+                            <field name="sea_extend_salary_company" class="oe_inline"  />
+<!--                            <field name="sum_salary_company" class="oe_inline"  />-->
+                        </group>
+                    </group>
+
+                </xpath>
+
+            </field>
+        </record>
+
+
+
+
+
+    </data>
+</odoo>

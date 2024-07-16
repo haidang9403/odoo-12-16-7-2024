@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inventory_period,access_inventory_period,model_inventory_period,stock.group_stock_user,1,1,1,1
+access_inventory_period_management,access_inventory_period_management,model_inventory_period_management,stock.group_stock_user,1,1,1,1
+access_stock_closing_month,access_stock_closing_month,model_stock_closing_month,stock.group_stock_user,1,1,1,1
+access_vio_inventory_report,access_vio_inventory_report,model_vio_inventory_report,stock.group_stock_user,1,1,1,1
+

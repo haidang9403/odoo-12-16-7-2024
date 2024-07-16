@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="overdue_debit_seatek" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sea_report_overdue_debit/static/src/js/view_tree.js"/>
+            <link rel="stylesheet" type="text/scss"
+                  href="/sea_report_overdue_debit/static/src/scss/debit.scss"/>
+        </xpath>
+    </template>
+</odoo>
+

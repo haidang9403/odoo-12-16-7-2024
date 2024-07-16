@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="show_time_customer_receive_inherit" model="ir.ui.view">
+            <field name="name">sale.order.customer.receive.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div/button[@name='action_view_delivery']" position="inside">
+                    <h6 class="view_customer_receive">
+                        <pre>
+                            <field name="sea_delivery_name_one"/>
+                            <br/>
+                            <i class="fa fa-clock-o" title="Dates"
+                               attrs="{'invisible': [('sea_delivery_name_one', '=', False)]}"/>
+                            <field name="sea_customer_received_one"/>
+                            <p style="margin-top: -7px;"/>
+
+                            <field name="sea_delivery_name_two"/>
+                            <br/>
+                            <i class="fa fa-clock-o" title="Dates"
+                               attrs="{'invisible': [('sea_delivery_name_two', '=', False)]}"/>
+                            <field name="sea_customer_received_two"/>
+                            <p style="margin-top: -7px;"/>
+
+                            <field name="sea_delivery_name_three"/>
+                            <br/>
+                            <i class="fa fa-clock-o" title="Dates"
+                               attrs="{'invisible': [('sea_delivery_name_three', '=', False)]}"/>
+                            <field name="sea_customer_received_three"/>
+                            <p style="margin-top: -7px;"/>
+
+                            <field name="sea_delivery_name_four"/>
+                            <br/>
+                            <i class="fa fa-clock-o" title="Dates"
+                               attrs="{'invisible': [('sea_delivery_name_four', '=', False)]}"/>
+                            <field name="sea_customer_received_four"/>
+                        </pre>
+                    </h6>
+                </xpath>
+                <xpath expr="/form/sheet/div/button[@name='action_view_invoice']" position="after">
+                    <pre style="color: white; width: 130px; margin-bottom: -44px; line-height: 0.8;">
+                        <field name="sea_delivery_name_one"/>
+                        <br/>
+                        <i class="fa fa-clock-o" title="Dates"
+                           attrs="{'invisible': [('sea_delivery_name_one', '=', False)]}"/>
+                        <field name="sea_customer_received_one"/>
+                        <p style="margin-top: -7px;" attrs="{'invisible': [('sea_delivery_name_one', '=', False)]}"/>
+
+                        <field name="sea_delivery_name_two"/>
+                        <br/>
+                        <i class="fa fa-clock-o" title="Dates"
+                           attrs="{'invisible': [('sea_delivery_name_two', '=', False)]}"/>
+                        <field name="sea_customer_received_two"/>
+                        <p style="margin-top: -7px;" attrs="{'invisible': [('sea_delivery_name_two', '=', False)]}"/>
+
+                        <field name="sea_delivery_name_three"/>
+                        <br/>
+                        <i class="fa fa-clock-o" title="Dates"
+                           attrs="{'invisible': [('sea_delivery_name_three', '=', False)]}"/>
+                        <field name="sea_customer_received_three"/>
+                        <p style="margin-top: -7px;" attrs="{'invisible': [('sea_delivery_name_three', '=', False)]}"/>
+
+                        <field name="sea_delivery_name_four"/>
+                        <br/>
+                        <i class="fa fa-clock-o" title="Dates"
+                           attrs="{'invisible': [('sea_delivery_name_four', '=', False)]}"/>
+                        <field name="sea_customer_received_four"/>
+                    </pre>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+<!-- Option 2 -->
+<!--<odoo>
+    <data>
+        <record id="show_time_customer_receive_inherit" model="ir.ui.view">
+            <field name="name">sale.order.customer.receive.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div/button[@name='action_view_delivery']" position="inside">
+                    <h6 class="view_customer_receive">
+                        <pre>
+                            <field name="sea_customer_received"></field>
+                        </pre>
+                    </h6>
+                </xpath>
+                <xpath expr="/form/sheet/div/button[@name='action_view_invoice']" position="after">
+                    <pre style="color: white; width: 130px; margin-top: -20px; margin-bottom: -25px">
+                        <field name="sea_customer_received"></field>
+                    </pre>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>-->

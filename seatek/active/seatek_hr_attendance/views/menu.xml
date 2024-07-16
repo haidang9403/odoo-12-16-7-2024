@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_sea_hr_attendance_root" name="SeaGroup Attendances"
+              groups="seatek_hr_attendance.hr_attendance_user" action="sea_hr_attendance_action"
+              sequence="90"
+              web_icon="seatek_hr_attendance,static/description/icone.png"/>
+
+
+    <menuitem id="menu_hr_attendance_manage_attendances" groups="seatek_hr_attendance.hr_attendance_user"
+              name="Attendances" parent="menu_sea_hr_attendance_root"
+              sequence="10"/>
+    <menuitem id="menu_hr_attendance_view_attendances" name="Attendances Table"
+              groups="seatek_hr_attendance.hr_attendance_user" parent="menu_hr_attendance_manage_attendances"
+              sequence="10" action="sea_hr_attendance_action"/>
+    <menuitem id="menu_attendance_details_violation" name="Attendance Violation"
+              groups="seatek_hr_attendance.hr_attendance_manager" parent="menu_hr_attendance_manage_attendances"
+              sequence="11" action="sea_hr_attendance_detail_violation_action"/>
+<!--    <menuitem id="menu_attendance_details_overtime" name="Attendance OverTime"-->
+<!--              groups="seatek_hr_attendance.hr_attendance_manager" parent="menu_hr_attendance_manage_attendances"-->
+<!--              sequence="12" action="sea_hr_attendance_detail_overtime_action"/>-->
+    <menuitem id="menu_hr_attendance_calendar_view_attendances" groups="seatek_hr_attendance.hr_attendance_user"
+              name="Attendances Calendar"
+              parent="menu_hr_attendance_manage_attendances" sequence="15" action="sea_hr_attendance_calendar_action"/>
+    <menuitem id="menu_sea_hr_calendar_employee" groups="seatek_hr_attendance.hr_attendance_manager"
+              name="Calendar of Employee for Month" action="sea_hr_calendar_employee_action"
+              parent="menu_hr_attendance_manage_attendances" sequence="16"/>
+<!--        <menuitem id="menu_sea_hr_attendance_month" name="Attendances of Month" action="sea_hr_attendance_month_action" parent="menu_hr_attendance_manage_attendances" sequence="13"/>-->
+    <menuitem id="menu_sea_hr_calendar_of_one_employee" name="Calendar" groups="seatek_hr_attendance.hr_attendance_user"
+              action="sea_hr_calendar_of_one_employee_action"
+              parent="menu_hr_attendance_manage_attendances" sequence="17"/>
+
+
+    <menuitem id="menu_attendance_attendances" name="Timekeeper From Data"
+              groups="seatek_hr_attendance.hr_attendance_manager" parent="menu_sea_hr_attendance_root"
+              sequence="20"/>
+    <menuitem id="menu_attendance_realtime" name="Timekeeper" action="attendance_realtime_actions"
+              groups="seatek_hr_attendance.hr_attendance_manager" parent="menu_attendance_attendances"
+              sequence="10"/>
+    <menuitem id="menu_sea_hr_attendance_realtime" name="Timekeeping Details"
+              groups="seatek_hr_attendance.hr_attendance_manager" action="sea_hr_attendance_realtime_action"
+              parent="menu_attendance_attendances" sequence="12"/>
+    <menuitem id="menu_attendance_details" name="Details Shifts" action="sea_hr_attendance_detail_action"
+              parent="menu_attendance_attendances" groups="seatek_hr_attendance.hr_attendance_manager" sequence="13"/>
+
+
+    <menuitem id="menu_hr_attendance_configuration_shifts" name="Configuration"
+              groups="seatek_hr_attendance.hr_attendance_manager" parent="menu_sea_hr_attendance_root"
+              sequence="30"/>
+    <menuitem id="menu_sea_hr_attendance_config_shifts_company" name="Shifts for Company"
+              action="sea_hr_attendance_shift_action" groups="seatek_hr_attendance.hr_attendance_administrator"
+              parent="menu_hr_attendance_configuration_shifts" sequence="10"/>
+    <menuitem id="menu_sea_hr_timesheet_symbol" name="Timesheet Symbol" action="sea_hr_timesheet_symbol_action"
+              parent="menu_hr_attendance_configuration_shifts" groups="seatek_hr_attendance.hr_attendance_administrator"
+              sequence="11"/>
+    <menuitem id="menu_sea_hr_attendance_config_shifts_employee" name="Shifts for Employee "
+              action="sea_hr_attendance_shift_employee_action" groups="seatek_hr_attendance.hr_attendance_administrator"
+              parent="menu_hr_attendance_configuration_shifts"
+              sequence="12"/>
+    <menuitem id="menu_shifts_employee_date_from_to" name="Shifts for Employee Date from - to"
+              action="shift_employee_date_from_to_action" groups="seatek_hr_attendance.hr_attendance_manager"
+              parent="menu_hr_attendance_configuration_shifts"
+              sequence="13"/>
+
+    <!--    <menuitem id="menu_sea_hr_attendance_report" name="Reporting" parent="menu_sea_hr_attendance_root" sequence="40" action="employee_report_attendance_action"/>-->
+
+
+    <menuitem id="menu_hr_attendance_configuration_timekeeper" name="Configuration Attendance"
+              groups="seatek_hr_attendance.hr_attendance_administrator" parent="menu_sea_hr_attendance_root"
+              sequence="40"/>
+<!--    <menuitem id="menu_sea_office" name="Sea Office"-->
+<!--              action="sea_office_action" groups="seatek_hr_attendance.hr_attendance_administrator"-->
+<!--              parent="menu_hr_attendance_configuration_timekeeper"-->
+<!--              sequence="5"/>-->
+    <menuitem id="menu_sea_timekeeper" name="Sea TimeKeeper"
+              action="sea_timekeeper_action" groups="seatek_hr_attendance.hr_attendance_administrator"
+              parent="menu_hr_attendance_configuration_timekeeper"
+              sequence="10"/>
+    <menuitem id="menu_sea_network_domain" name="Sea Network Domain"
+              action="sea_network_domain_action" groups="seatek_hr_attendance.hr_attendance_administrator"
+              parent="menu_hr_attendance_configuration_timekeeper"
+              sequence="15"/>
+    <menuitem id="menu_sea_gps_location" name="Sea GPS Location"
+              action="sea_gps_location_action" groups="seatek_hr_attendance.hr_attendance_administrator"
+              parent="menu_hr_attendance_configuration_timekeeper"
+              sequence="20"/>
+
+
+</odoo>

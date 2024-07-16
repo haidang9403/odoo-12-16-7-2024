@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+		<record id="invoice_supplier_form" model="ir.ui.view">
+			<field name="name">account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="replace">
+					<field name="purchase_vendor_id" readonly="1" string="Vendor"/>
+					<field string="Payment Vendor" name="partner_id"
+                              widget="res_partner_many2one"
+                              context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1, 'default_is_company': True, 'show_vat': True}"
+                              domain="[('supplier', '=', True)]"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_bank_id']" position="after">
+					<field name="advance_file_id"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

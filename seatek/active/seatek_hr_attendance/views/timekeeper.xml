@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--    <record id="sea_office_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Sea Office</field>-->
+<!--        <field name="res_model">sea.office</field>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--        <field name="domain">[]</field>-->
+<!--        <field name="view_id" eval="False"/>-->
+<!--    </record>-->
+    <record id="sea_timekeeper_action" model="ir.actions.act_window">
+        <field name="name">Sea TimeKeeper</field>
+        <field name="res_model">sea.timekeeper</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[]</field>
+        <field name="view_id" eval="False"/>
+    </record>
+    <record id="sea_network_domain_action" model="ir.actions.act_window">
+        <field name="name">Sea Network Domain</field>
+        <field name="res_model">sea.network.domain</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[]</field>
+        <field name="view_id" eval="False"/>
+    </record>
+    <record id="sea_gps_location_action" model="ir.actions.act_window">
+        <field name="name">Sea GPS Location</field>
+        <field name="res_model">sea.gps.location</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[]</field>
+        <field name="view_id" eval="False"/>
+    </record>
+
+    <record id="sea_timekeeper_view_tree" model="ir.ui.view">
+        <field name="name">sea.timekeeper.tree</field>
+        <field name="model">sea.timekeeper</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string="Sea TimeKeeper" class="treeview_scrollable">
+                <field name="name"/>
+                <field name="serial_number"/>
+                <field name="sea_office_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sea_network_domain_view_tree" model="ir.ui.view">
+        <field name="name">sea.network.domain.tree</field>
+        <field name="model">sea.network.domain</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string="Sea Network Domain" class="treeview_scrollable">
+                <field name="name"/>
+                <field name="domain"/>
+                <field name="sea_office_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sea_gps_location_view_tree" model="ir.ui.view">
+        <field name="name">sea.gps.location.tree</field>
+        <field name="model">sea.gps.location</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string="Sea GPS Location" class="treeview_scrollable">
+                <field name="name"/>
+                <field name="gps"/>
+                <field name="sea_office_id"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    <record id="sea_office_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">sea.office.tree</field>-->
+<!--        <field name="model">sea.office</field>-->
+<!--&lt;!&ndash;        <field name="priority">10</field>&ndash;&gt;-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Sea Office" class="treeview_scrollable">-->
+<!--                <field name="name"/>-->
+<!--                <field name="office_code"/>-->
+<!--                <field name="address"/>-->
+<!--                <field name="active" widget="boolean_toggle"/>-->
+<!--                <field name="timekeeper_id" widget="many2many_tags"/>-->
+<!--                <field name="network_domain_id" widget="many2many_tags"/>-->
+<!--                <field name="gps_location_id" widget="many2many_tags"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="attendance_office_form" model="ir.ui.view">-->
+<!--        <field name="name">sea.office.form</field>-->
+<!--        <field name="model">sea.office</field>-->
+<!--&lt;!&ndash;        <field name="priority">10</field>&ndash;&gt;-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Sea Office" duplicate="0">-->
+<!--                <sheet>-->
+<!--                    <div class="oe_button_box" name="button_box">-->
+<!--                        <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">-->
+<!--                            <field name="active" widget="boolean_button"-->
+<!--                                   options='{"terminology": "archive"}'/>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                    <div class="oe_title">-->
+<!--                        <label for="name" string="Office Name" class="oe_edit_only"/>-->
+<!--                        <h1><field name="name"/></h1>-->
+<!--                    </div>-->
+<!--                    <group>-->
+<!--                        <field name="office_code"/>-->
+<!--                        <field name="address" />-->
+<!--                    </group>-->
+<!--                    <notebook>-->
+<!--                        <page name="timekeeper" string="TimeKeeper">-->
+<!--                            <field name="timekeeper_id"/>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                    <notebook>-->
+<!--                        <page name="timekeeper" string="Network Location">-->
+<!--                            <field name="network_domain_id"/>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                    <notebook>-->
+<!--                        <page name="timekeeper" string="GPS Location">-->
+<!--                            <field name="gps_location_id"/>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="sea_office_view_action_tree" model="ir.actions.act_window.view">-->
+<!--        <field name="sequence" eval="0"/>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--        <field name="view_id" ref="sea_office_view_tree"/>-->
+<!--        <field name="act_window_id" ref="sea_office_action"/>-->
+<!--    </record>-->
+<!--    <record id="attendance_office_action_form" model="ir.actions.act_window.view">-->
+<!--        <field name="sequence" eval="0"/>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_id" ref="attendance_office_form"/>-->
+<!--        <field name="act_window_id" ref="sea_office_action"/>-->
+<!--    </record>-->
+</odoo>

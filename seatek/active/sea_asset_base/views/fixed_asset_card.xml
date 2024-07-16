@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fixed_asset_card_form" model="ir.ui.view">
+            <field name="name">fixed.asset.card.form</field>
+            <field name="model">fixed.asset.card</field>
+            <field name="arch" type="xml">
+                <form string="Fixed Asset Card" duplicate="0">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="so_bb" string="Số Biên bản" class="oe_edit_only"/>
+                            <h1><field name="so_bb"/></h1>
+                            <br/>
+                            <br/>
+                            <p><label for="create_date" string="Ngày tạo" class="oe_edit_only"/><field name="create_date"/></p>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date_bbbg" />
+                                <field name="department_id_deliver" />
+                                <field name="employee_multi_id_ks" />
+                                <field name="department_id_receive" />
+                                <field name="employee_multi_id_receive" />
+                            </group>
+                            <group>
+                                <field name="office_location_from" />
+                                <field name="office_location_to" />
+                                <field name="transfer_type" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="fixed_asset_card_tree" model="ir.ui.view">
+            <field name="name">fixed.asset.card.tree</field>
+            <field name="model">fixed.asset.card</field>
+            <field name="arch" type="xml">
+                <tree string="Fixed Asset Card">
+                    <field name="so_bb"/>
+                    <field name="date_bbbg"/>
+                    <field name="create_date"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_fixed_asset_card" model="ir.actions.act_window">
+            <field name="name">Fixed Asset Card</field>
+            <field name="res_model">fixed.asset.card</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+
+        <menuitem id="menu_asset_fixed_asset_card"
+          name="THẺ TÀI SẢN CỐ ĐỊNH-CCDC"
+          parent="menu_asset_form"
+          action="action_fixed_asset_card"
+          sequence="1"/>
+
+    </data>
+</odoo>

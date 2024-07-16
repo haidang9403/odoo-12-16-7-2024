@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_move_line_tree_inherit" model="ir.ui.view">
+            <field name="name">account.move.line.tree.inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="arch" type="xml">
+                <tree string="Report debit" create="false">
+                    <field name="date"/>
+                    <field name="move_id"/>
+                    <field name="ref"/>
+                    <field name="partner_id"/>
+                    <field name="account_id"/>
+                    <field name="amount_residual" sum="amount residual"/>
+                    <field name="date_maturity"/>
+                </tree>
+            </field>
+    </record>
+
+        <record id="account_move_line_inherit_search_view" model="ir.ui.view">
+                <field name="name">account_move_line_inherit_search_view</field>
+                <field name="model">account.move.line</field>
+                <field eval="10" name="priority"/>
+                <field name="arch" type="xml">
+                    <search string="Total debit search">
+                        <field name="partner_id" string="Khách hàng"/>
+                        <field name="ref" string="Số tham chiếu"/>
+                         <group expand='0' string='Group by...'>
+                            <filter string='Khách hàng' name="partner_id_group" context="{'group_by': 'partner_id'}"/>
+                            <filter string='Số tham chiếu' name="ref_group" context="{'group_by': 'ref'}"/>
+                             <filter string='Bút toán sổ nhật ký' name="move_id_group" context="{'group_by': 'move_id'}"/>
+                        </group>
+                    </search>
+                </field>
+            </record>
+        <record model='ir.actions.act_window' id='action_account_move_line_total_debit'>
+                <field name="name">Tổng nợ</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">account.move.line</field>
+                <field name="search_view_id" ref="account_move_line_inherit_search_view"/>
+                <field name="view_mode">tree</field>
+                <field name="view_id" ref="account_move_line_tree_inherit"/>
+        </record>
+
+        <record model='ir.actions.act_window' id='action_account_move_line_debit_due'>
+                <field name="name">Nợ quá hạn</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">account.move.line</field>
+                <field name="search_view_id" ref="account_move_line_inherit_search_view"/>
+                <field name="view_mode">tree</field>
+                <field name="view_id" ref="account_move_line_tree_inherit"/>
+        </record>
+
+
+        <record model='ir.actions.act_window' id='action_account_move_line_debit_oldest'>
+                <field name="name">Nợ quá hạn dài nhất</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">account.move.line</field>
+                <field name="search_view_id" ref="account_move_line_inherit_search_view"/>
+                <field name="view_mode">tree</field>
+                <field name="view_id" ref="account_move_line_tree_inherit"/>
+        </record>
+    </data>
+</odoo>

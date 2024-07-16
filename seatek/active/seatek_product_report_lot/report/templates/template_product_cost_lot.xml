@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_product_cost_lot">
+        <style>
+        .panel-container {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            overflow-y: auto;
+            max-height: 780px;
+        }
+    </style>
+        <div class="o_account_financial_reports_page">
+
+            <div class="button_row">
+                <div >
+                <button class="o_account_financial_reports_print btn btn-sm oe_button"><span class="fa fa-print"/> Print</button>
+                <button class="o_account_financial_reports_export btn btn-sm oe_button"><span class="fa fa-download"/> Export</button>
+
+
+                <span style="right:100px;position:absolute;">
+                    <button  class="o_account_financial_reports_action_prev btn btn-sm oe_button">
+                        <span class="fa fa-chevron-left"/>Prev</button>
+                    <span t-field="docs.current_page"/>/<span t-field="docs.pages"/>
+                    <button class="o_account_financial_reports_action_next btn btn-sm oe_button">Next <span class="fa fa-chevron-right"/> </button>
+                </span>
+                    </div>
+            </div>
+            <div class="panel-container">
+                <t t-call="seatek_product_report_lot.report_product_cost_lot_base"/>
+            </div>
+
+        </div>
+    </template>
+    <template id="report_product_cost_lot_qweb">
+        <t t-call="web.html_container">
+
+                <div>Product Cost</div>
+                <t t-call="account_financial_report.internal_layout">
+
+                </t>
+        </t>
+    </template>
+
+    <template id="report_product_cost_lot_base">
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Log document');
+            document.querySelectorAll('button[data-toggle]').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    console.log('Click');
+                    var listId = 'list_' + button.getAttribute('data-toggle').replace('toggle_', '');
+                    var listElement = document.getElementById(listId);
+                    if (listElement.style.display === 'none') {
+                        listElement.style.display = '';
+                    } else {
+                        listElement.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <div class="page">
+        <t t-foreach="docs" t-as="o">
+            <t t-foreach="o.product_cost_lot_detail" t-as="detail">
+                    <br/>
+                    <h2>
+                        <span t-field="detail.product_id.name" />
+                    </h2>
+                    <div class="act_as_table data_table o_group_header" style="margin-top: 0px; display: none;">
+                        <div class="act_as_thead">
+                            <div class="act_as_row labels">
+                                <div class="act_as_cell" style="width: 10%;">Tên</div>
+                                <div class="act_as_cell" style="width: 10%;">SL Nhập</div>
+                                <div class="act_as_cell" style="width: 10%;">Giá vốn</div>
+                                <div class="act_as_cell" style="width: 10%;">SL xuất</div>
+                                <div class="act_as_cell" style="width: 10%;">Giá mục tiêu</div>
+                                <div class="act_as_cell" style="width: 10%;">Tổng giá bán mục tiêu</div>
+                                <div class="act_as_cell" style="width: 10%;">Tổng bán</div>
+                                <div class="act_as_cell" style="width: 10%;">Chênh lệch</div>
+                            </div>
+                        </div>
+                        <t t-foreach="detail.lot_detail" t-as="lot">
+                            <div class="act_as_row">
+
+                                <div class="act_as_cell left">
+                                    <a >
+                                    <t t-set="domain"
+                                    t-value="[('id', '=', lot.lot_id.id)]"/>
+                                        <div t-att-data-domain="domain"
+                                           t-att-data-res-model="'stock.production.lot'">
+                                    <span>
+                                        <a t-att-data-domain="domain"
+                                           t-att-data-res-model="'stock.production.lot'"
+                                           class="o_account_financial_reports_web_action_monetary_multi"
+                                           t-att-style="style">
+                                            <t t-raw="lot.lot_id.name" />
+                                        </a>
+                                    </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.lot_id.product_qty"/>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.product_cost"/>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.lot_id.product_output_qty"/>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.lot_id.product_sale_target_price"/>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.lot_id.product_sale_target_total"/>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.lot_id.product_sale_total"/>
+                                </div>
+                                <div class="act_as_cell left">
+                                    <span t-field="lot.lot_id.differential_value"/>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+            </t>
+        </t>
+    </div>
+
+    <!-- Add JavaScript to handle the toggle functionality -->
+
+</template>
+    <template id="seatek_product_report_lot.report_product_cost_lot_filters">
+        <div style="font-weight:bold;font-size:30px;text-align:center;">Product Cost - <span t-field="o.company_id.name"/></div>
+            <br/>
+        <div class="act_as_table data_table" style="width: 100%;">
+
+
+            <div class="act_as_row labels">
+                <div class="act_as_cell" style="width:25%;">Date from</div>
+                <div class="act_as_cell" style="width:25%;">Date to</div>
+                <div class="act_as_cell" style="width:25%;">Target moves filter</div>
+                <div class="act_as_cell" style="width:25%;">Reconciled</div>
+            </div>
+            <div class="act_as_row">
+                <div class="act_as_cell">
+                    <span t-field="o.date_from"/>
+                </div>
+                <div class="act_as_cell">
+                    <span t-field="o.date_to"/>
+                </div>
+                <div class="act_as_cell">
+                    <span t-field="o.target_move"/>
+                </div>
+                <div class="act_as_cell">
+                    <t t-if="o.reconciled">
+                        Yes
+                    </t>
+                    <t t-else="">
+                        No
+                    </t>
+                </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+
+
+    </template>
+
+
+
+
+
+
+</odoo>

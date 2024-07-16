@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="user_mail_view_form" model="ir.ui.view">
+            <field name="name">user.mail.tree</field>
+            <field name="model">user.mail</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model='ir.actions.act_window' id='user_mail_action'>
+            <field name="name">User Responsible For Contracts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">user.mail</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="user_mail_menu" name="User Responsible For Contracts"
+                  parent="hr.menu_human_resources_configuration" groups="hr_contract.group_hr_contract_manager" sequence="3"
+                  action="user_mail_action"/>
+    </data>
+</odoo>

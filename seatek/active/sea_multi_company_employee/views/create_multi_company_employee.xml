@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+<!--    <data>-->
+        <function
+            id = "copy_data"
+            model = "hr.employee"
+            name = "multi_company_copy_action"
+        />
+    </data>
+</odoo>

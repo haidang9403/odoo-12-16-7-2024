@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id="hr_employee_hide_history_form_view" model="ir.ui.view">-->
+<!--        <field name="name">hr.employee.view.hide.page.history</field>-->
+<!--        <field name="model">hr.employee</field>-->
+<!--        <field name="inherit_id" ref="history_employee.hr_employee_history_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//page[@name='history']" position="attributes">-->
+<!--                <attribute name="attrs">{'invisible': 1}</attribute>-->
+<!--                <attribute name="groups"></attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="view_employee_base_group" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="employee_display_personal_data" invisible="1"/>
+            </xpath>
+            <!--''' hide Organization Chart '''-->
+            <field name='child_ids' position="replace">
+                <field name="child_ids" invisible="1"/>
+            </field>
+
+            <!--'''Có tổng cộng 9 page'''-->
+            <!-- 9-Skill; 8-Resume; 7-Health; 6-Employee History; 5-SeaGroup; 4-Received Badges; 3-Company Setting(HR Setting); 2-Work Information; 1-Private Information -->
+
+            <xpath expr="//page[@name='personal_information']" position="attributes">
+                <!--Page 01-->
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//page[@name='public']" position="attributes">
+                <!--Page 02-->
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="attributes">
+                <!--Page 03-->
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//notebook/page[4]" position="attributes">
+                <!--Page Received Badges-->
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//page[@name='history']" position="attributes">
+<!--            <xpath expr="//notebook/page[6]" position="attributes">-->
+<!--                <attribute name="attrs">{'invisible': 1}</attribute>-->
+                <attribute name="groups">hr.group_hr_manager</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[7]" position="attributes">
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//notebook/page[8]" position="attributes">
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//notebook/page[9]" position="attributes">
+                <attribute name="attrs">{'invisible': 1}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']" position="attributes">
+                <attribute name="attrs">{'invisible': [('employee_display_personal_data', '!=', True)]}</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

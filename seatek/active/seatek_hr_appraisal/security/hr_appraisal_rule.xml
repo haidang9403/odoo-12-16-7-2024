@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <record model="ir.rule" id="rule_hr_appraisal">-->
+<!--            <field name="name">hr_appraisal-company</field>-->
+<!--            <field name="model_id" ref="model_hr_appraisal"/>-->
+<!--            <field name="global" eval="True"/>-->
+<!--            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>-->
+<!--        </record>-->
+        <record model="ir.rule" id="hr_survey_user_input_line">
+            <field name="name">hr_survey_user_input_line-company</field>
+            <field name="model_id" ref="model_hr_survey_user_input_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('user_input_id.company_id','child_of',[user.company_id.id]),('user_input_id.company_id','=',False)]</field>
+        </record>
+        <record model="ir.rule" id="survey_kpis_template_rule">
+            <field name="name">survey_kpis_template-department</field>
+            <field name="model_id" ref="model_survey_kpis_template"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('department_id.manager_id.user_id', '=', user.id)]</field>
+        </record>
+        <record model="ir.rule" id="survey_survey_kpis_question">
+            <field name="name">survey_kpis_question-department</field>
+            <field name="model_id" ref="model_survey_kpis_question"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('department_id.manager_id.user_id', '=', user.id)]</field>
+        </record>
+<!--        <record model="ir.rule" id="rule_hr_appraisal">-->
+<!--            <field name="name">hr_appraisal-company</field>-->
+<!--            <field name="model_id" ref="model_hr_appraisal"/>-->
+<!--            <field name="global" eval="True"/>-->
+<!--            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

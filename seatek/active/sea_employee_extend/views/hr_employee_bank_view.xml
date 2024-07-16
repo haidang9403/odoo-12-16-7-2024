@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <record id="hr_employee_bank_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.bank.view.form.inherit.opensea</field>
+        <field name="model">hr.employee</field>
+        <field name="priority" eval="-1"/>
+        <field name="inherit_id" ref="hr_employee_inherit_form_view"/>
+        <field name="arch" type="xml">
+            <field name="bank_account_id" invisible="1" position ="replace"/>
+            <field name="religion" position="after">
+                <field name="bank_id"/>
+                <field name="acc_number"/>
+                <field name="acc_holder_name"/>
+            </field>
+        </field>
+   </record>
+</odoo>

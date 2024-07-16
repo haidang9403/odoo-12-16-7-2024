@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="reconciliation.manual.line" t-extend="reconciliation.line">
+    <t t-jquery=".o_buttons" t-operation="replace">
+        <div class="float-right o_buttons">
+            <button t-attf-class="o_validate btn btn-secondary #{!state.balance.type ? '' : 'd-none'}">Reconcile</button>
+            <button t-attf-class="o_reconcile btn btn-primary #{state.balance.type &gt; 0 ? '' : 'd-none'}">Reconcile</button>
+            <button t-attf-class="o_no_valid btn btn-secondary #{state.balance.type &lt; 0 ? '' : 'd-none'}">Skip</button>
+        </div>
+    </t>
+    <t t-jquery=".accounting_view tbody" t-operation="append">
+        <t t-if='!_.filter(state.reconciliation_proposition, {"display": true}).length'>
+            <t t-set="line" t-value='{}'/>
+            <t t-call="reconciliation.line.mv_line"/>
+        </t>
+    </t>
+    <t t-jquery=".accounting_view thead tr" t-operation="replace">
+        <tr>
+            <td class="cell_action"><span class="toggle_match fa fa-cog" aria-label="Settings" role="img" title="Settings"></span></td>
+            <td colspan="4"><span/><span t-if="state.last_time_entries_checked">Last Reconciliation: <t t-esc="state.last_time_entries_checked"/></span></td>
+            <td colspan="2"><t t-esc="state.st_line.account_code"/></td>
+            <td class="cell_info_popover"></td>
+        </tr>
+    </t>
+</t>
+        <t t-name="reconciliation.line.mv_line">
+    <tr t-if="line.display !== false" t-attf-class="mv_line #{line.already_paid ? ' already_reconciled' : ''} #{line.__invalid ? 'invalid' : ''} #{line.is_tax ? 'is_tax' : ''}" t-att-data-line-id="line.id" t-att-data-selected="selected">
+        <td class="cell_action"><span class="fa fa-add-remove" role="img" aria-label="Set" title="Set"/></td>
+        <td class="cell_account_code"><t t-esc="line.account_code"/></td>
+        <td class="cell_due_date">
+            <t t-if="typeof(line.id) != 'number' &amp;&amp; line.amount">
+                <span class="badge badge-secondary">New</span>
+            </t>
+            <t t-else="" t-esc="line.date_maturity === false ? line.date : line.date_maturity"/>
+        </td>
+        <td class="cell_label">
+            <t t-if="line.partner_id &amp;&amp; line.partner_id !== state.st_line.partner_id">
+                <t t-if="line.partner_name.length">
+                    <t t-esc="line.partner_name"/>:
+                </t>
+            </t>
+            <t t-esc="line.label || line.name"/>
+            <t t-if="line.ref &amp;&amp; line.ref.length"></t>
+            <t t-esc="line.ref"/>
+        </td>
+        <td class="cell_advance">
+            <t t-esc="line.advance_file_id"/>
+        </td>
+        <td class="cell_left">
+            <t t-if="line.amount &lt; 0">
+                <t t-call="reconciliation.line.mv_line.triangle"/>
+                <span t-if="line.amount_currency_str"
+                      t-attf-class="o_multi_currency o_multi_currency_color_#{line.currency_id%8} line_info_button fa fa-money"
+                      t-att-data-content="line.amount_currency_str"/>
+                <t t-raw="line.partial_reconcile ? line.write_off_amount_str : line.amount_str"/>
+            </t>
+        </td>
+        <td class="cell_right">
+            <t t-if="line.amount &gt; 0">
+                <t t-call="reconciliation.line.mv_line.triangle"/>
+                <span t-if="line.amount_currency_str"
+                      t-attf-class="o_multi_currency o_multi_currency_color_#{line.currency_id%8} line_info_button fa fa-money"
+                      t-att-data-content="line.amount_currency_str"/>
+                <t t-raw="line.partial_reconcile ? line.write_off_amount_str : line.amount_str"/>
+            </t>
+        </td>
+        <td class="cell_info_popover"></td>
+    </tr>
+</t>
+</templates>

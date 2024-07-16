@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_company_view_kkknt" model="ir.ui.view">
+        <field name="name">res.company.view.kkknt</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="sea_no_issue_invoice_line_tax_kkknt"/>
+                <field name="auto_sign_invoice"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

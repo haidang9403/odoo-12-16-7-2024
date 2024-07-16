@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seatek_assign_order_line_search_view" model="ir.ui.view">
+        <field name="name">seatek.assign.order.line.search.tree</field>
+        <field name="model">seatek.assign.order.line</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <group expand="1" string="Group By">
+                    <filter name="groupby_ref" context="{'group_by': 'ref'}" string="Reference"/>
+                    <filter name="groupby_order" context="{'group_by': 'sale_id'}" string="Sale Order"/>
+                    <filter name="groupby_product" context="{'group_by': 'product_id'}" string="Product"/>
+                    <filter name="groupby_date" context="{'group_by': 'date'}" string="Date"/>
+                    <filter name="groupby_from" context="{'group_by': 'location_from'}" string="From"/>
+                    <filter name="groupby_to" context="{'group_by': 'location_to'}" string="To"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="assign_order_report_view_form" model="ir.ui.view">
+        <field name="name">seatek.assign.order.form</field>
+        <field name="model">seatek.assign.order</field>
+        <field name="arch" type="xml">
+            <form>
+<!--                <header>-->
+<!--                    <button name="action_get_assign_order_report_data"-->
+<!--                            string="Tính giá trị" type="object" class="btn-primary"/>-->
+<!--                    <button name="" string="Xuất bảng Excel" type="object" class="btn-primary"/>-->
+<!--                </header>-->
+<!--                <group>-->
+<!--                    <group>-->
+<!--                        <field name="name" invisible="1"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                    </group>-->
+<!--                </group>-->
+<!--                <notebook>-->
+<!--                    <page string="Chi tiết danh sách">-->
+                        <field name="assign_order_line_ids" readonly="1"/>
+<!--                    </page>-->
+<!--                </notebook>-->
+            </form>
+        </field>
+    </record>
+
+    <record id="assign_order_view_tree" model="ir.ui.view">
+        <field name="name">seatek.assign.order.tree</field>
+        <field name="model">seatek.assign.order</field>
+        <field name="arch" type="xml">
+            <tree string="Inventory report">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_assign_order_report_view" model="ir.actions.act_window">
+        <field name="name">Các dòng chuyển kho đang giữ sản phẩm nhưng chưa hoàn thành</field>
+        <field name="res_model">seatek.assign.order</field>
+        <field name="view_mode">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="assign_order_view_tree"/>
+    </record>
+
+    <record id="assign_oder_report_line_view_tree" model="ir.ui.view">
+        <field name="name">seatek.assign.order.line.tree</field>
+        <field name="model">seatek.assign.order.line</field>
+        <field name="arch" type="xml">
+            <tree string="Assign Order Line" create="false">
+                <field name="date"/>
+                <field name="ref" string="Reference"/>
+                <field name="product_id" string="Product"/>
+                <field name="location_from" string="From"/>
+                <field name="location_to" string="To"/>
+                <field name="reserve_qty" string="Reserve Qty"/>
+                <field name="sale_id" string="Sale Order"/>
+<!--                <field name="inti_qty" string="Initial Qty"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_assign_oder_report_line_view_tree" model="ir.actions.act_window">
+        <field name="name">Các dòng chuyển kho đang giữ sản phẩm nhưng chưa hoàn thành</field>
+        <field name="res_model">seatek.assign.order.line</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="assign_oder_report_line_view_tree"/>
+    </record>
+
+    <record id="assign_oder_report_line_view" model="ir.actions.act_window">
+        <field name="name">Chi tiết các dòng chuyển kho đang giữ sản phẩm nhưng chưa hoàn thành</field>
+        <field name="res_model">seatek.assign.order.line</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="action_assign_order_report" model="ir.actions.server">
+        <field name="name">Các dòng chuyển kho đang giữ sản phẩm nhưng chưa hoàn thành</field>
+        <field name="model_id" ref="model_seatek_assign_order"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_report()
+        </field>
+    </record>
+
+    <record id="action_assign_order_line_report" model="ir.actions.server">
+        <field name="name">Các dòng chuyển kho đang giữ sản phẩm nhưng chưa hoàn thành</field>
+        <field name="model_id" ref="model_seatek_assign_order_line"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_report()
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_assign_order_report"
+            name="Các dòng chuyển kho đang giữ sản phẩm nhưng chưa hoàn thành"
+            parent="stock.menu_warehouse_report"
+            sequence="170"
+            action="action_assign_order_line_report"/>
+</odoo>

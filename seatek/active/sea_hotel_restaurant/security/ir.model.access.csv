@@ -1,0 +1,27 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hotel_restaurant_branch_user,sea.hotel.restaurant.branch user,model_sea_hotel_restaurant_branch,sea_hotel_restaurant.hotel_restaurant_user,1,0,0,0
+access_pos_hotel_restaurant_user,sea.pos.hotel.restaurant user,model_sea_pos_hotel_restaurant,sea_hotel_restaurant.hotel_restaurant_user,1,0,0,0
+access_hotel_restaurant_area_user,sea.hotel.restaurant.area user,model_sea_hotel_restaurant_area,sea_hotel_restaurant.hotel_restaurant_user,1,0,0,0
+access_sea_folio_user,sea.folio user,model_sea_folio,sea_hotel_restaurant.hotel_restaurant_user,1,1,0,0
+access_restaurant_table_user,sea.restaurant.table user,model_sea_restaurant_table,sea_hotel_restaurant.hotel_restaurant_user,1,1,0,0
+access_hotel_room_user,sea.hotel.room user,model_sea_hotel_room,sea_hotel_restaurant.hotel_restaurant_user,1,1,0,0
+access_hotel_room_type_user,sea.hotel.room.type user,model_sea_hotel_room_type,sea_hotel_restaurant.hotel_restaurant_user,1,0,0,0
+access_hotel_room_line_user,sea.hotel.room.line user,model_sea_hotel_room_line,sea_hotel_restaurant.hotel_restaurant_user,1,0,0,0
+
+access_hotel_restaurant_branch_manager,sea.hotel.restaurant.branch manager,model_sea_hotel_restaurant_branch,sea_hotel_restaurant.hotel_restaurant_manager,1,0,0,0
+access_pos_hotel_restaurant_manager,sea.pos.hotel.restaurant manager,model_sea_pos_hotel_restaurant,sea_hotel_restaurant.hotel_restaurant_manager,1,0,0,0
+access_sea_folio_manager,sea.folio manager,model_sea_folio,sea_hotel_restaurant.hotel_restaurant_manager,1,1,1,1
+access_restaurant_table_manager,sea.restaurant.table manager,model_sea_restaurant_table,sea_hotel_restaurant.hotel_restaurant_manager,1,1,1,1
+access_hotel_restaurant_area_manager,sea.hotel.restaurant.area manager,model_sea_hotel_restaurant_area,sea_hotel_restaurant.hotel_restaurant_manager,1,1,1,1
+access_hotel_room_manager,sea.hotel.room manager,model_sea_hotel_room,sea_hotel_restaurant.hotel_restaurant_manager,1,1,1,1
+access_hotel_room_type_manager,sea.hotel.room.type manager,model_sea_hotel_room_type,sea_hotel_restaurant.hotel_restaurant_manager,1,1,1,1
+access_hotel_room_line_manager,sea.hotel.room.line manager,model_sea_hotel_room_line,sea_hotel_restaurant.hotel_restaurant_manager,1,1,1,1
+
+access_hotel_restaurant_branch_admin,sea.hotel.restaurant.branch admin,model_sea_hotel_restaurant_branch,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_pos_hotel_restaurant_admin,sea.pos.hotel.restaurant admin,model_sea_pos_hotel_restaurant,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_sea_folio_admin,sea.folio admin,model_sea_folio,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_restaurant_table_admin,sea.restaurant.table admin,model_sea_restaurant_table,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_hotel_restaurant_area_admin,sea.hotel.restaurant.area admin,model_sea_hotel_restaurant_area,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_hotel_room_admin,sea.hotel.room admin,model_sea_hotel_room,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_hotel_room_type_admin,sea.hotel.room.type admin,model_sea_hotel_room_type,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1
+access_hotel_room_line_admin,sea.hotel.room.line admin,model_sea_hotel_room_line,sea_hotel_restaurant.hotel_restaurant_administrator,1,1,1,1

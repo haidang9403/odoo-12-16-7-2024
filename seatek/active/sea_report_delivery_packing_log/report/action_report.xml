@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sea_delivery_log_report_custom" model="ir.ui.view">
+        <field name="name">view.sea.delivery.log.report.custom</field>
+        <field name="model">delivery.packing.log.report</field>
+        <field name="arch" type="xml">
+            <form string="Packing Log Report">
+                <group>
+                    <field name="start_date" widget="date" attrs="{'required': True}"/>
+                    <field name="end_date" widget="date" attrs="{'required': True}"/>
+                </group>
+                <group>
+                    <field name="warehouse_id" widget="selection" groups="stock.group_stock_multi_locations"/>
+                </group>
+                <footer>
+                    <button name="button_export_xlsx_by_date" string="Export (Excel)" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='action_delivery_log_report_root_menu' model='ir.actions.act_window'>
+        <field name="name">Action Delivery Log Report Root Menu</field>
+        <field name="res_model">delivery.packing.log.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_delivery_log_report" model="ir.actions.act_window">
+        <field name="name">Packing Log Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">delivery.packing.log.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <report string="Sea Report XLSX By Date"
+            id="action_sea_delivery_log_report"
+            model="delivery.packing.log.report"
+            name="sea_report_delivery_packing_log.packing_log"
+            file="packing_log"
+            report_type="xlsx"
+            attachment_use="False"/>
+
+    <menuitem
+            action="action_delivery_log_report"
+            id="menu_delivery_packing_log_report"
+            name="Packing Log"
+            parent="sea_menu_base.menu_item_stock"
+            sequence="7"
+    />
+</odoo>

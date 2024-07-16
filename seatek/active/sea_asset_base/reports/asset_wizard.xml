@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_asset_report" model="ir.ui.view">
+            <field name="name">view.asset.report</field>
+            <field name="model">asset.report</field>
+            <field name="arch" type="xml">
+                <form string="Asset Report">
+                    <group>
+                        <group>
+
+                            <field name="company_id" options='{"no_open": True, "no_create": True}' />
+                            <field name="department_id" options='{"no_open": True, "no_create": True}'/>
+                            <field name="sea_office_id"/>
+                            <field name="asset_type"/>
+                            <field name="category_id"/>
+                            <field name="latest_inventory_status"/>
+                            <field name="latest_asset_transfer_date_from"/>
+                            <field name="latest_asset_transfer_date_to"/>
+                            <field name="asset_receive_date_from"/>
+                            <field name="asset_receive_date_to"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xlsx" string="Export XLS" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!--Action report Asset profile-->
+        <record id="sea_asset_report_wizard_form" model="ir.actions.act_window">
+            <field name="name">Asset Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">asset.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <report string="Asset profile"
+                id="action_asset_report_xls"
+                model="asset.report"
+                name="sea_asset_base.asset_report_xls"
+                file="Asset profile"
+                report_type="xlsx"
+                attachment_use="False"
+                groups="group_asset_officer"/>
+
+        <menuitem action="sea_asset_report_wizard_form"
+                  id="menu_action_asset_report"
+                  name="Asset profile"
+                  parent="sea_asset_base.menu_reporting_asset"
+                  sequence='1'
+                  groups="group_asset_officer"/>
+
+    </data>
+</odoo>

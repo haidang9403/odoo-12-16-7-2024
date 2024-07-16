@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="inventory_period_view_form" model="ir.ui.view">
+        <field name="name">inventory.period.form</field>
+        <field name="model">inventory.period</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Open period" name="action_open_period" type="object" class="btn-primary"
+                            attrs="{'invisible': [('close_period', '=', False)]}"/>
+                    <button string="Close period" name="action_close_period" type="object" class="btn-primary"
+                            attrs="{'invisible': [('close_period', '=', True)]}"/>
+                    <button string="Calculation" name="action_calc_stock" type="object" class="btn-primary"
+                            attrs="{'invisible': [('close_period', '=', False)]}"/>
+                </header>
+                <group>
+                    <field name="compute_company_id_view"/>
+                    <field name="name"/>
+                    <field name="month"/>
+                    <field name="year"/>
+                    <field name="close_period" invisible="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="inventory_period_search_view" model="ir.ui.view">
+        <field name="name">inventory.period.search.view</field>
+        <field name="model">inventory.period</field>
+        <field name="arch" type="xml">
+            <search string="period_search">
+                <filter string="Open Period" name="close_period" domain="[('close_period', '=', False)]"/>
+                <filter name="group_by_year" context="{'group_by': 'year'}" string="Year"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="inventory_period_view_tree" model="ir.ui.view">
+        <field name="name">inventory.period.tree</field>
+        <field name="model">inventory.period</field>
+        <field name="arch" type="xml">
+            <tree string="Period Management">
+                <field name="name"/>
+                <field name="month"/>
+                <field name="year"/>
+                <field name="close_period"/>
+                <field name="company_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_inventory_period" model="ir.actions.act_window">
+        <field name="name">Period Management</field>
+        <field name="res_model">inventory.period</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_inventory_period" name="Period Management" parent="stock.menu_stock_root" sequence="5"/>
+
+    <menuitem id="menu_action_inventory_period" name="Period"
+              parent="seatek_inventory_period.menu_inventory_period"
+              action="action_inventory_period"
+              sequence="6"
+              groups="stock.group_stock_manager"/>
+</odoo>

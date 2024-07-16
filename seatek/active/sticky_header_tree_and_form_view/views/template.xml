@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="sale_barcode assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/sticky_header_tree_and_form_view/static/src/css/form_asset.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

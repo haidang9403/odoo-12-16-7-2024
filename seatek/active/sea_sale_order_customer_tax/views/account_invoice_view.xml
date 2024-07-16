@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="invoice_form" model="ir.ui.view">
+			<field name="name">sale.order.to.account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='payment_term_id']" position="before">
+					<field name="sea_check_customer_for_invoice" attrs="{'invisible': [('sea_hide_take_invoice_multi_company','!=','True')]}"/>
+					<field name="sea_hide_take_invoice_multi_company" invisible="1"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

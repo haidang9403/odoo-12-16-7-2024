@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_debit_overdue_tree" model="ir.ui.view">
+            <field name="name">res.partner.debit.overdue.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="false" edit="false" js_class="hide_checkbox">
+                    <field name="name" readonly="1"/>
+                    <field name="display_name" readonly="1"/>
+                    <field name="contact_code" readonly="1"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="days_past_due" readonly="1"/>
+                    <field name="total_debit" readonly="1" widget="monetary"/>
+                    <field name="debit_overdue" readonly="1" widget="monetary"/>
+                    <field name="check_debit_overdue" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_report_overdue_debit" model="ir.actions.act_window">
+            <field name="name">List of overdue debts</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[("check_debit_overdue", "=", True),('customer', '=', True)]</field>
+            <field name="view_id" eval="res_partner_debit_overdue_tree"/>
+        </record>
+        <record id="action_overdue_debit_report" model="ir.actions.server">
+            <field name="name">List of overdue debts</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_open_report()
+            </field>
+        </record>
+        <menuitem id="menu_overdue_debit_report"
+                  name="List of overdue debts"
+                  parent="account.account_reports_management_menu"
+                  sequence="12"
+                  action="action_overdue_debit_report"/>
+
+
+        <record id="res_partner_inherit" model="ir.ui.view">
+            <field name="name">res_partner_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="js_class">mark_as_todo</attribute>
+                </xpath>
+                <xpath expr="//form/sheet" position="before">
+                    <header>
+                        <field name="mark_as_todo" invisible="1"/>
+                        <button groups="sea_report_overdue_debit.group_customer_risk_management" string="Lock"
+                                name="action_confirm" type="object"
+                                class="btn-primary attendance_button"
+                                attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+                        <button groups="sea_report_overdue_debit.group_customer_risk_management"
+                                string="UnLock"
+                                name="action_un_confirm" type="object"
+                                class="btn-primary attendance_button"
+                                attrs="{'invisible': [('mark_as_todo', '=', False)]}"/>
+                    </header>
+                </xpath>
+                <xpath expr="//button[hasclass('o_res_partner_tip_opp')]" position="before">
+                    <button type="object" class="oe_stat_button" icon="fa-money" name="view_all_debit">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="total_debit" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">Total debit</span>
+                        </div>
+                    </button>
+                    <button type="object" class="oe_stat_button" icon="fa-frown-o" name="view_debit_overdue">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="debit_overdue" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">Debit overdue</span>
+                        </div>
+                    </button>
+                    <button name="view_oldest_debit"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-clock-o"
+                            attrs="{'invisible': [('debit_overdue','=',0)]}">
+                        <field name="days_past_due" widget="statinfo"/>
+                    </button>
+                    <field name="check_debit_overdue" invisible="1"/>
+                </xpath>
+                <field name="property_payment_term_id" position="before">
+                    <field name="policy_id" options="{'no_create': True}"/>
+                </field>
+            </field>
+        </record>
+
+        <!--        <record model='ir.actions.act_window' id='view_account_move_line_total_debit'>-->
+        <!--            <field name="name">Tổng nợ</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">account.move.line</field>-->
+        <!--            <field name="view_mode">tree</field>-->
+        <!--        </record>-->
+        <!--        <record model='ir.actions.act_window' id='action_report_total_debit'>-->
+        <!--            <field name="name">Tổng nợ</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">report.overdue.debit</field>-->
+        <!--            <field name="search_view_id" ref="report_overdue_debit_search_view"/>-->
+        <!--            <field name="view_mode">tree</field>-->
+        <!--        </record>-->
+        <!--        <record model='ir.actions.act_window' id='view_account_move_line_oldest_debit'>-->
+        <!--            <field name="name">Nợ quá hạn lâu nhất</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">account.move.line</field>-->
+        <!--            <field name="view_mode">tree</field>-->
+        <!--            <field name="limit">1</field>-->
+        <!--        </record>-->
+    </data>
+</odoo>

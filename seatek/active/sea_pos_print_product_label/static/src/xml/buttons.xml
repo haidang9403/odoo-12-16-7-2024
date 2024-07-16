@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="button_print_product_label">
+        <div class="left_button" title="Print Product Label">
+            <div class="button-icon">
+                <img src="/pos_retail/static/src/icons/product_label_print.png" class="pos_logo"/>
+            </div>
+            <div class="button-name">
+                Product Label
+            </div>
+        </div>
+    </t>
+</templates>

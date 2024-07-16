@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_accounting_data_report" model="ir.ui.view">
+            <field name="name">view.accounting.data.report</field>
+            <field name="model">accounting.data.report</field>
+            <field name="arch" type="xml">
+                <form string="Accounting Data Report">
+                    <group>
+                        <group>
+                            <field name="start_date" widget="date" attrs="{'required': True}"/>
+                            <field name="end_date" widget="date" attrs="{'required': True}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="button_export_accounting_data" string="Export XLS" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="report_accounting_data_wizard_form" model="ir.actions.act_window">
+            <field name="name">Accounting Data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accounting.data.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <report string="Accounting Data XLSX By Date"
+                id="action_accounting_data_by_date"
+                model="accounting.data.report"
+                name="sea_report_data_accounting.accounting_data_by_date"
+                file="Accounting data"
+                report_type="xlsx"
+                attachment_use="False"/>
+
+        <!--<menuitem
+                parent="account.menu_finance_reports"
+                id="menu_xls_reports"
+                name="XLSX reports"
+                groups="account.group_account_manager,account.group_account_user"/>
+
+        <menuitem action="report_accounting_data_wizard_form"
+                  id="menu_action_accounting_report_sale"
+                  name="Data By Accounting Date"
+                  parent="menu_xls_reports"
+                  sequence='1'/>-->
+        <menuitem action="report_accounting_data_wizard_form"
+                  id="menu_action_accounting_report_sale"
+                  name="Data By Accounting Date"
+                  parent="seatek_hr_bank_info.menu_opensea_accounting"
+                  sequence='12'/>
+    </data>
+</odoo>

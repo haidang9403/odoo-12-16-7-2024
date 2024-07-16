@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="database_uuid_view_form" model="ir.ui.view">
+            <field name="name">database.uuid.tree</field>
+            <field name="model">database.uuid</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="key"/>
+                    <field name="ip_mac"/>
+                    <field name="db_name"/>
+                    <field name="res_model_id"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_database_list_view">
+          <field name="name">Database uuid</field>
+          <field name="res_model">database.uuid</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_database_root"
+          name="Configuration"
+          parent="sea_menu_base.sea_menu_reports"
+          sequence="115"/>
+        <menuitem id="menu_database_list"
+            name="Database uuid"
+            parent="menu_database_root"
+            action="action_database_list_view"
+            sequence="1"
+        />
+    </data>
+</odoo>

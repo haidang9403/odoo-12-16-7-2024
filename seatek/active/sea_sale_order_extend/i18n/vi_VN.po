@@ -1,0 +1,407 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sea_sale_order_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-04 04:21+0000\n"
+"PO-Revision-Date: 2024-06-04 04:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__lang_partner
+msgid "All the emails and documents sent to this contact will be translated in this language."
+msgstr "Tất cả các email và tài liệu gửi đến liên hệ này sẽ được dịch qua ngôn ngữ này."
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.account_invoice_form
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.inherit_sale_order_line_tree_view
+msgid "Bill-to Address"
+msgstr "Đơn vị trả tiền"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_account_invoice__buyer_id
+msgid "Buyer"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_account_invoice__buyer_id
+msgid "Buyer for current invoice."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__customer_partner
+msgid "Check this box if this contact is a customer. It can be selected in sales orders."
+msgstr "Chọn ô này nếu liên hệ này là một khách hàng. Nó có thể được lựa chọn trong đơn đặt hàng bán."
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__supplier_partner
+msgid "Check this box if this contact is a vendor. It can be selected in purchase orders."
+msgstr "Chọn ô này nếu liên hệ này là một nhà cung cấp. Nó có thể được lựa chọn trong đơn đặt hàng mua."
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__city_partner
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "City"
+msgstr "Thành phố"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__commitment_date
+msgid "Commitment Date"
+msgstr "Ngày cam kết"
+
+#. module: sea_sale_order_extend
+#: model:ir.model,name:sea_sale_order_extend.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "Contact / Address"
+msgstr "Liên hệ / Địa chỉ"
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "Contact Name"
+msgstr "Tên liên hệ"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__country_id_partner
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "Country"
+msgstr "Quốc gia"
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:508
+#, python-format
+msgid "Create \"<strong>%s</strong>\""
+msgstr ""
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:524
+#, python-format
+msgid "Create and Edit..."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:552
+#, python-format
+msgid "Create: "
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__partner_id
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_customer_inquiry_no
+msgid "Customer Inquiry No"
+msgstr "Số yêu cầu của khách hàng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_customer_inquiry_date
+msgid "Customer InquiryDate"
+msgstr "Ngày khách hàng yêu cầu"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_customer_po_no
+msgid "CustomerPO No"
+msgstr "Số Customer PO"
+
+#. module: sea_sale_order_extend
+#: selection:sale.order,sea_payment_method:0
+msgid "Công Nợ"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__partner_shipping_id
+msgid "Delivery Address"
+msgstr "Địa chỉ giao hàng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__partner_shipping_id
+msgid "Delivery address for current sales order."
+msgstr "Địa chỉ giao hàng cho đơn hàng hiện tại."
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.inherit_sale_order_line_tree_view
+msgid "Discounted Total"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__domain_delivery
+msgid "Domain delivery"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__domain_invoice
+msgid "Domain invoice"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__domain_vat
+msgid "Domain vat"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.sc_sale_quotation_view_form
+msgid "Extra Information"
+msgstr "Thông tin thêm"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_imo_no
+msgid "IMO No"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model,name:sea_sale_order_extend.model_account_invoice
+msgid "Invoice"
+msgstr "Công nợ"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__customer_partner
+msgid "Is a Customer"
+msgstr "Là khách hàng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__supplier_partner
+msgid "Is a Vendor"
+msgstr "Là nhà cung cấp"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__lang_partner
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:87
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:185
+#, python-format
+msgid "Loading..."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: selection:sale.order,sea_payment_method:0
+msgid "Ngân Hàng"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:530
+#, python-format
+msgid "No results to show..."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:633
+#, python-format
+msgid "Open: "
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order_line__list_price
+msgid "Package price"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order_line__product_packaging_qty
+msgid "Packaging Quantity"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_payment_method
+msgid "Payment Method"
+msgstr "Hình thức thanh toán"
+
+#. module: sea_sale_order_extend
+#: model:ir.model,name:sea_sale_order_extend.model_sale_order
+msgid "Sale Order"
+msgstr "Đơn hàng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order_line__sale_with_package
+msgid "Sale with Package"
+msgstr "Bán với gói"
+
+#. module: sea_sale_order_extend
+#: model:ir.model,name:sea_sale_order_extend.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Chi tiết Đơn Bán"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__user_id_partner
+msgid "Salesperson"
+msgstr "Nhân viên kinh doanh"
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.sc_sale_quotation_view_form
+msgid "Sea Extra Info"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:484
+#, python-format
+msgid "Search More..."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#. openerp-web
+#: code:addons/sea_sale_order_extend/static/src/js/search_more_many2one.js:552
+#, python-format
+msgid "Search: "
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_ship_partner_id
+msgid "Ship"
+msgstr "Con tàu"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__sea_ship_partner_id
+msgid "Ship for Sale Order"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.sc_sale_quotation_view_form
+msgid "Shipping Address"
+msgstr "Địa chỉ giao hàng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__state_id_partner
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "State"
+msgstr "Giai đoạn"
+
+#. module: sea_sale_order_extend
+#: model:ir.model,name:sea_sale_order_extend.model_stock_rule
+msgid "Stock Rule"
+msgstr "Quy tắc tồn kho"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__street_partner
+msgid "Street"
+msgstr "Địa chỉ"
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "Street 2..."
+msgstr "Địa chỉ, đường..."
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "Street..."
+msgstr "Địa chỉ..."
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__street2_partner
+msgid "Street2"
+msgstr "Địa chỉ, đường"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_temp_contact
+msgid "Temporary Contact"
+msgstr "Liên hệ tạm thời"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sea_temp_delivery_address
+msgid "Temporary Delivery Address"
+msgstr "Địa chỉ giao hàng tạm thời"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__user_id_partner
+msgid "The internal user in charge of this contact."
+msgstr "Tài khoản người dùng nội bộ có liên kết với liên lạc này."
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__commitment_date
+msgid "This is the delivery date promised to the customer. If set, the delivery order will be scheduled based on this date rather than product lead times."
+msgstr "Đây là ngày giao hàng đã hứa với khách hàng. Nếu được đặt, lệnh giao hàng sẽ được lên lịch dựa trên ngày này thay vì thời gian dẫn sản phẩm."
+
+#. module: sea_sale_order_extend
+#: selection:sale.order,sea_payment_method:0
+msgid "Tiền Mặt"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.sc_sale_quotation_view_form
+msgid "Total"
+msgstr "Tổng"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__total
+msgid "Total Amount"
+msgstr "Tổng số tiền"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order_line__sale_line_transaction_id
+msgid "Transaction"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__sale_transaction_id
+msgid "Transaction Type"
+msgstr "Loại giao dịch"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_account_invoice__partner_vat_id
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__partner_vat_id
+msgid "VAT Address"
+msgstr "Địa chỉ hóa đơn thuế"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_account_invoice__partner_vat_id
+msgid "VAT address for current invoice."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__partner_vat_id
+msgid "VAT address for current sales order."
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: code:addons/sea_sale_order_extend/models/sale_order.py:252
+#: code:addons/sea_sale_order_extend/models/sale_order.py:264
+#: code:addons/sea_sale_order_extend/models/sale_order.py:296
+#, python-format
+msgid "WARNING!"
+msgstr ""
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,help:sea_sale_order_extend.field_sale_order__partner_id
+msgid "You can find a customer by its Name, TIN, Email or Internal Reference."
+msgstr "Bạn có thể tìm khách hàng theo tên, MST, Email hoặc mã nội bộ."
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "ZIP"
+msgstr "Mã bưu điện"
+
+#. module: sea_sale_order_extend
+#: model:ir.model.fields,field_description:sea_sale_order_extend.field_sale_order__zip_partner
+msgid "Zip"
+msgstr "Mã bưu chính"
+
+#. module: sea_sale_order_extend
+#: model_terms:ir.ui.view,arch_db:sea_sale_order_extend.view_partner_shipping_form
+msgid "internal note..."
+msgstr "ghi chú nội bộ..."
+

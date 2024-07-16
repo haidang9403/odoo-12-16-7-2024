@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sales_department_order_view_form" model="ir.ui.view">
+            <field name="name">sales.department.order.view.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="sea_sale_department" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name='team_id' position="before">
+                    <field name="sales_department_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

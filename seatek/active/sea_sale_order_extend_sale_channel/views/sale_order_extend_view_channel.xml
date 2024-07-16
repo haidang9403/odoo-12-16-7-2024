@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sale_channel_view_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//notebook' position="inside">
+                    <page string="Sale Channel">
+                        <group>
+                            <group string="Channel Information">
+                                <field name="sea_sale_channel" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                                <field name="sea_sale_channel_item" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

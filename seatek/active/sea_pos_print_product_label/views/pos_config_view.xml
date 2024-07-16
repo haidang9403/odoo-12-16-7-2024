@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="print_product_label_config_form" model="ir.ui.view">
+        <field name="name">print.product.label.config.form</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <field name="report_order_summary" position="before">
+                <field name="print_product_label"/>
+                <field name="logo_label" widget="image"/>
+            </field>
+        </field>
+    </record>
+</odoo>

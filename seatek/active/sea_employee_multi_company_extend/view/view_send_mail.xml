@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="mail_activity_create_user" model="mail.activity.type">
+            <field name="name">Mail Create User</field>
+            <field name="category">default</field>
+            <field name="icon">fa-envelope</field>
+            <field name="sequence">3</field>
+            <field name="email_from">user@seatek.vn</field>
+            <field name="email_to">vdkhanh3112@gmail.com</field>
+            <field name="subject">Hello User</field>
+            <field name="body_html">
+                ![CDATA[
+                    <h1>Hello World</h1>
+                ]]
+            </field>
+            <field name="body">Hello</field>
+            <field name="res_model_id" ref="sea_employee_multi_company_extend.model_hr_employee_create"/>
+        </record>
+    </data>
+</odoo>

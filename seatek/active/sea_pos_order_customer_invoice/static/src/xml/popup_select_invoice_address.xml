@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="select_invoice_address">
+        <t t-set="count" t-value="1"/>
+        <tr style="border-bottom: 1px solid">
+            <td class="text-center"></td>
+            <td class="text-left">Name</td>
+            <td class="text-left">Address</td>
+            <td class="text-left">VAT</td>
+            <td class="text-left">Email</td>
+        </tr>
+        <t t-foreach="sub_datas || []" t-as="client">
+            <tr class='line-select' t-att-data-id="client.id">
+                <td class="text-center"><t t-esc="count"/></td>
+                <td class="text-left"><t t-esc="client.name"/> </td>
+                <td class="text-left"><t t-if="client.address"><t t-esc="client.address"/></t> </td>
+                <td class="text-left"><t t-if="client.vat"><t t-esc="client.vat"/></t> </td>
+                <td class="text-left"><t t-if="client.email"><t t-esc="client.email"/></t> </td>
+            </tr>
+            <t t-set="count" t-value="count + 1"/>
+        </t>
+    </t>
+</templates>

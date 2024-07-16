@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="overdue_debit_seatek" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sea_sale_order_extend/static/src/js/search_more_many2one.js"/>
+        </xpath>
+    </template>
+</odoo>
+

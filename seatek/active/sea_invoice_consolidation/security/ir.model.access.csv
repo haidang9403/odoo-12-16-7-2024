@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_invoice_consolidation_employee, invoice consolidation employee,model_invoice_consolidation,base.group_user,1,0,0,0
+access_account_invoice_consolidation_advisor, invoice consolidation advisor,model_invoice_consolidation,account.group_account_manager,1,1,1,1
+access_account_invoice_consolidation_admin, invoice consolidation admin,model_invoice_consolidation,base.group_system,1,1,1,1
+access_account_invoice_line_consolidation,invoice line consolidation,model_invoice_line_consolidation,account.group_account_invoice,1,1,1,1

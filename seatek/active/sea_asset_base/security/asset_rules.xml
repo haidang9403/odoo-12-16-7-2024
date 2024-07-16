@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.rule" id="asset_hr_department_rule">
+            <field name="name">Asset HR Department</field>
+            <field name="model_id" ref="hr.model_hr_department"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('sea_asset_base.group_asset_officer'))]"/>
+        </record>
+        <record model="ir.rule" id="asset_hr_employee_temporary_rule">
+            <field name="name">Asset HR Employee Temporary</field>
+            <field name="model_id" ref="sea_asset_base.model_hr_employee_temporary"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('employee_current_status','!=','resigned')]</field>
+            <field name="groups" eval="[(4, ref('sea_asset_base.group_asset_officer'))]"/>
+        </record>
+    </data>
+</odoo>

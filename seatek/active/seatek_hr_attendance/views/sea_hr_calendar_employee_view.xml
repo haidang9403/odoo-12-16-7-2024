@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sea_hr_calendar_employee_view_search" model="ir.ui.view">
+        <field name="name">sea.hr.calendar.employee.search</field>
+        <field name="model">sea.hr.calendar.employee</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="employee_multi_id"/>
+                <field name="month"/>
+                <field name="year"/>
+                <separator/>
+                <filter string="Tháng 1" domain="[('month', '=', 1)]" name="Jan"/>
+                <filter string="Tháng 2" domain="[('month', '=', 2)]" name="Feb"/>
+                <filter string="Tháng 3" domain="[('month', '=', 3)]" name="Mar"/>
+                <filter string="Tháng 4" domain="[('month', '=', 4)]" name="Apr"/>
+                <filter string="Tháng 5" domain="[('month', '=', 5)]" name="May"/>
+                <filter string="Tháng 6" domain="[('month', '=', 6)]" name="Jun"/>
+                <filter string="Tháng 7" domain="[('month', '=', 7)]" name="Jul"/>
+                <filter string="Tháng 8" domain="[('month', '=', 8)]" name="Aug"/>
+                <filter string="Tháng 9" domain="[('month', '=', 9)]" name="Sep"/>
+                <filter string="Tháng 10" domain="[('month', '=', 10)]" name="Oct"/>
+                <filter string="Tháng 11" domain="[('month', '=', 11)]" name="Nov"/>
+                <filter string="Tháng 12" domain="[('month', '=', 12)]" name="Dec"/>
+                <separator/>
+                <filter string="Năm 2023" domain="[('year', '=', 2023)]" name="Year"/>
+                <filter string="Năm 2024" domain="[('year', '=', 2024)]" name="Year"/>
+                <filter string="Năm 2025" domain="[('year', '=', 2025)]" name="Year"/>
+                <group  expand='0' string='Group by...'>
+                    <filter string='Công ty' domain="[]" name="company_id_group" context="{'group_by': 'company_id'}"/>
+                    <filter string='Phòng Ban' domain="[]" name="department_id_group" context="{'group_by': 'department_id'}"/>
+                    <filter string='Chức vụ' domain="[]" name="job_id_group" context="{'group_by': 'job_id'}"/>
+                    <filter string='Tháng' domain="[]" name="month_group" context="{'group_by': 'month'}"/>
+                    <filter string='Năm' domain="[]" name="year_group" context="{'group_by' : 'year'}"/>
+                    <filter string='Họ và tên' domain="[]" name="employee_multi_id_group" context="{'group_by' : 'employee_multi_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="sea_hr_calendar_employee_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.calendar.employee.tree</field>
+        <field name="model">sea.hr.calendar.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="s_identification_id"/>
+                <field name="employee_multi_id"/>
+                <field name="company_id" invisible="0"/>
+                <field name="department_id"/>
+                <field name="job_id"/>
+
+                <field name="job_code_compute" invisible="1"/>
+                <field name="company_code" invisible="1"/>
+                <field name="department_code" invisible="1"/>
+                <field name="job_code" invisible="1"/>
+
+                <field name="month" invisible="0"/>
+                <field name="year" invisible="0"/>
+                <field name="month_year_compute" invisible="1"/>
+                <field name="attendance_id" invisible="1"/>
+                <field name="last_day_of_month" invisible="1"/>
+
+<!--                <field name="day_1" widget="many2many_tags"/>-->
+<!--                <field name="day_2" widget="many2many_tags"/>-->
+<!--                <field name="day_3" widget="many2many_tags"/>-->
+<!--                <field name="day_4" widget="many2many_tags"/>-->
+<!--                <field name="day_5" widget="many2many_tags"/>-->
+<!--                <field name="day_6" widget="many2many_tags"/>-->
+<!--                <field name="day_7" widget="many2many_tags"/>-->
+<!--                <field name="day_8" widget="many2many_tags"/>-->
+<!--                <field name="day_9" widget="many2many_tags"/>-->
+<!--                <field name="day_10" widget="many2many_tags"/>-->
+<!--                <field name="day_11" widget="many2many_tags"/>-->
+<!--                <field name="day_12" widget="many2many_tags"/>-->
+<!--                <field name="day_13" widget="many2many_tags"/>-->
+<!--                <field name="day_14" widget="many2many_tags"/>-->
+<!--                <field name="day_15" widget="many2many_tags"/>-->
+<!--                <field name="day_16" widget="many2many_tags"/>-->
+<!--                <field name="day_17" widget="many2many_tags"/>-->
+<!--                <field name="day_18" widget="many2many_tags"/>-->
+<!--                <field name="day_19" widget="many2many_tags"/>-->
+<!--                <field name="day_20" widget="many2many_tags"/>-->
+<!--                <field name="day_21" widget="many2many_tags"/>-->
+<!--                <field name="day_22" widget="many2many_tags"/>-->
+<!--                <field name="day_23" widget="many2many_tags"/>-->
+<!--                <field name="day_24" widget="many2many_tags"/>-->
+<!--                <field name="day_25" widget="many2many_tags"/>-->
+<!--                <field name="day_26" widget="many2many_tags"/>-->
+<!--                <field name="day_27" widget="many2many_tags"/>-->
+<!--                <field name="day_28" widget="many2many_tags"/>-->
+<!--                <field name="day_29" widget="many2many_tags"/>-->
+<!--                <field name="day_30" widget="many2many_tags"/>-->
+<!--                <field name="day_31" widget="many2many_tags"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="sea_hr_calendar_employee_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.calendar.employee.form</field>
+        <field name="model">sea.hr.calendar.employee</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <group>
+                    <group>
+                        <field name="domain_day" invisible="1" widget="many2many_tags"/>
+                        <field name="company_id"/>
+                        <field name="s_identification_id" readonly="True"/>
+                        <field name="employee_multi_id" options='{"no_open": True}'/>
+                        <field name="department_id" options='{"no_open": True}'/>
+                        <field name="job_id" options='{"no_open": True}'/>
+                        <field name="job_code_compute" invisible="1"/>
+                        <field name="attendance_id" invisible="1"/>
+                        <field name="last_day_of_month" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="month" invisible="1"/>
+                        <field name="year" invisible="1"/>
+                        <field name="month_year_compute"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <group>
+                            <field name="day_1" string="Ngày 1" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_2" string="Ngày 2" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_3" string="Ngày 3" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_4" string="Ngày 4" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_5" string="Ngày 5" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_6" string="Ngày 6" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_7" string="Ngày 7" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_8" string="Ngày 8" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_9" string="Ngày 9" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_10" string="Ngày 10" options="{'no_open':True}" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="day_11" string="Ngày 11" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_12" string="Ngày 12" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_13" string="Ngày 13" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_14" string="Ngày 14" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_15" string="Ngày 15" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_16" string="Ngày 16" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_17" string="Ngày 17" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_18" string="Ngày 18" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_19" string="Ngày 19" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_20" string="Ngày 20" options="{'no_open':True}" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="day_21" string="Ngày 21" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_22" string="Ngày 22" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_23" string="Ngày 23" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_24" string="Ngày 24" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_25" string="Ngày 25" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_26" string="Ngày 26" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_27" string="Ngày 27" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_28" string="Ngày 28" options="{'no_open':True}" widget="many2many_tags"/>
+                            <field name="day_29" string="Ngày 29" options="{'no_open':True}"
+                                   attrs="{'invisible':[('last_day_of_month','not in',[31, 30, 29])]}" widget="many2many_tags"/>
+                            <field name="day_30" string="Ngày 30" options="{'no_open':True}"
+                                   attrs="{'invisible':[('last_day_of_month','not in',[31,30])]}" widget="many2many_tags"/>
+                            <field name="day_31" string="Ngày 31" options="{'no_open':True}"
+                                   attrs="{'invisible':[('last_day_of_month','!=',31)]}" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="sea_hr_calendar_employee_action" model="ir.actions.act_window">
+        <field name="name">Calendar of Employee for Month</field>
+        <field name="res_model">sea.hr.calendar.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('company_id','in',company_ids)]</field>
+        <field name="search_view_id" ref="sea_hr_calendar_employee_view_search"/>
+        <field name="view_id" eval="False"/>
+    </record>
+</odoo>

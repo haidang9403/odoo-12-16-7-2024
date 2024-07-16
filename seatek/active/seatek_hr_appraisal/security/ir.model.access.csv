@@ -1,0 +1,47 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_hr_survey_summary_field_sum_user,hr.survey.field.sum user,model_hr_survey_summary_field_sum,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+access_hr_survey_user_input_user,hr.survey.user.input user,model_hr_survey_user_input,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+access_hr_survey_user_input_line_user,hr.survey.user.input.line user,model_hr_survey_user_input_line,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+
+access_hr_survey_summary_field_sum_manager,hr.survey.field.sum.manager,model_hr_survey_summary_field_sum,seatek_hr_appraisal.hr_appraisal_manager,1,1,1,1
+
+access_hr_survey_user_input_manager,hr.survey.user.input.manager,model_hr_survey_user_input,seatek_hr_appraisal.hr_appraisal_manager,1,1,1,1
+access_hr_survey_user_input_line_manager,hr.survey.user.input.line.manager,model_hr_survey_user_input_line,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+
+access_hr_survey_summary_field_sum_administrator,hr.survey.field.sum.administrator,model_hr_survey_summary_field_sum,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+access_hr_survey_user_input_administrator,hr.survey.user.input.administrator,model_hr_survey_user_input,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+access_hr_survey_user_input_line_administrator,hr.survey.user.input.line.administrator,model_hr_survey_user_input_line,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+
+
+
+
+
+access_hr_survey_user,hr.survey user,model_hr_survey,,0,0,0,0
+access_hr_survey_summary_user,hr.survey.summary user,model_hr_survey_summary,seatek_hr_appraisal.hr_appraisal_user,1,0,0,0
+access_hr_appraisal_period_user,hr.appraisal.period user,model_hr_appraisal_period,,0,0,0,0
+
+access_hr_appraisal_user,hr.appraisal user,model_hr_appraisal,seatek_hr_appraisal.hr_appraisal_user,1,0,0,0
+
+access_hr_appraisal_manager,hr.appraisal.manager,model_hr_appraisal,seatek_hr_appraisal.hr_appraisal_manager,1,1,1,1
+
+access_hr_survey_user,hr.survey user,model_hr_survey,seatek_hr_appraisal.hr_appraisal_manager,1,1,1,1,
+access_hr_survey_summary_user,hr.survey.summary user,model_hr_survey_summary,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+access_hr_appraisal_administrator,hr.appraisal administrator,model_hr_appraisal,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+access_hr_appraisal_period_user,hr.appraisal.period user,model_hr_appraisal_period,seatek_hr_appraisal.hr_appraisal_manager,1,1,1,1
+
+access_hr_survey_classification_user,hr.survey.classification user,model_hr_survey_classification,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+access_hr_survey_classification_link_user,hr.survey.classification.link,model_hr_survey_classification_link,seatek_hr_appraisal.hr_appraisal_administrator,1,1,1,1
+
+access_survey_import_excel_template_user,survey.import.excel.template,model_survey_import_excel_template,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+access_survey_import_excel_template_line_user,survey.import.excel.template.line,model_survey_import_excel_template_line,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+
+access_survey_kpis_question_user,survey.kpis.question,model_survey_kpis_question,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+access_survey_kpis_template_user,survey.kpis.template,model_survey_kpis_template,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1
+access_survey_import_template_user,survey.import.template,model_survey_import_template,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1,
+access_survey_assign_question_template_user,survey.assign.question.template,model_survey_assign_question_template,seatek_hr_appraisal.hr_appraisal_user,1,1,1,1,
+
+access_hr_employee_multi_company_president,hr.employee.multi.company president,sea_multi_company_employee.model_hr_employee_multi_company,seatek_hr_appraisal.hr_appraisal_president,1,1,1,0
+
+access_import_excel_appraisal,import.excel.appraisal user,model_import_excel_appraisal,seatek_hr_appraisal.hr_appraisal_user,1,1,1,0

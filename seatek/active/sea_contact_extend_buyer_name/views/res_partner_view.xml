@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="res_partner_form_buyer_name" model="ir.ui.view">
+            <field name="name">res.partner.form.buyer.name</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!--<xpath expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='comment']"
+                       position="after">
+                    <field name="sea_full_name"/>
+                </xpath>-->
+                <field name="employee" position="after">
+                    <field name="sea_full_name"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

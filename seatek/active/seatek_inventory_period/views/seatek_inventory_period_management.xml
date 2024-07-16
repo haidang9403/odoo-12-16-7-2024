@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="inventory_period_management_view_form" model="ir.ui.view">
+        <field name="name">inventory.period.name</field>
+        <field name="model">inventory.period</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="month" readonly="1"/>
+                    <field name="year" readonly="1"/>
+                    <field name="close_period" invisible="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="inventory_period_management_form_view" model="ir.ui.view">
+        <field name="name">inventory.period.management.name</field>
+        <field name="model">inventory.period.management</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Modify Period" name="auto_upgrade_period" type="object" class="btn-primary"/>
+<!--                    Ẩn tạm thời-->
+<!--                    <button string="Calculation Period (Close)" name="action_calculation_all_period" type="object"-->
+<!--                            class="btn-primary"/>-->
+                </header>
+                <group>
+                    <field name="name" invisible="1"/>
+                    <group>
+                        <field name="month_from"/>
+                        <field name="year_from"/>
+                    </group>
+                    <group>
+                        <field name="month_to"/>
+                        <field name="year_to"/>
+                    </group>
+                    <group>
+                        <field name="compute_company_id_view"/>
+                        <!--                                    <field name="company_id" readonly="1"/>-->
+                        <field name="period"/>
+                    </group>
+                </group>
+                <field name="period_ids" readonly="1"
+                       context="{'form_view_ref': 'seatek_inventory_period.inventory_period_management_view_form'}">
+                    <tree>
+                        <field name="name"/>
+                        <field name="month"/>
+                        <field name="year"/>
+                        <field name="close_period"/>
+                    </tree>
+                </field>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_inventory_period_management" model="ir.actions.act_window">
+        <field name="name">Inventory Period Management</field>
+        <field name="res_model">inventory.period.management</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="inventory_period_management_form_view"/>
+        <field name="context">{'create': 0, 'delete': 0}</field>
+    </record>
+
+    <record id="action_calc_period_management" model="ir.actions.server">
+        <field name="name">Period Management</field>
+        <field name="model_id" ref="model_inventory_period_management"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_calc_period()
+            <!--action_values = env.ref('seatek_inventory_period.action_inventory_period_management').read()[0]-->
+            <!--search = env['inventory.period.management'].search([], limit=1)-->
+            <!--if not search:-->
+            <!--    search = env['inventory.period.management'].create({'period': False})-->
+            <!--search.action_calc_period()-->
+            <!--action_values.update({'period': search.period})-->
+            <!--action = action_values-->
+        </field>
+    </record>
+
+    <menuitem id="menu_action_inventory_period_management" name="Period Management"
+              parent="seatek_inventory_period.menu_inventory_period"
+              action="action_calc_period_management"
+              sequence="50"
+              groups="stock.group_stock_manager"/>
+</odoo>

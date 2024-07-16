@@ -1,0 +1,359 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sea_report_overdue_debit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-23 07:29+0000\n"
+"PO-Revision-Date: 2024-04-23 07:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.sale_order_validate_tree
+msgid "Approve"
+msgstr "Duyệt"
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Booked from POS"
+msgstr "Đặt từ POS"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_inherit_search_view
+msgid "Bút toán sổ nhật ký"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__check_longest_overdue_debt
+msgid "Check Longest overdue debt"
+msgstr "Kiểm tra nợ quá hạn dài nhất"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__check_overdue_debt_limit
+msgid "Check Overdue debt limit"
+msgstr "Kiểm tra tổng nợ quá hạn"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__check_total_debt
+msgid "Check Total debt"
+msgstr "Kiểm tra tổng nợ"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model,name:sea_report_overdue_debit.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__create_uid
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__create_date
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_credit_policy
+#: model:ir.model,name:sea_report_overdue_debit.model_credit_policy
+#: model:ir.ui.menu,name:sea_report_overdue_debit.menu_credit_policy
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.view_form_credit_policy
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.view_tree_credit_policy
+msgid "Credit Policy"
+msgstr "Chính sách tín dụng"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_partner__policy_id
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_users__policy_id
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__policy_id
+msgid "Credit policy"
+msgstr "Chính sách tín dụng"
+
+#. module: sea_report_overdue_debit
+#: model:res.groups,name:sea_report_overdue_debit.group_customer_risk_management
+msgid "Customer Risk Management"
+msgstr "Quản trị rủi ro khách hàng"
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_report_overdue_debit
+msgid "Danh Sách Nợ Quá Hạn"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.server,name:sea_report_overdue_debit.action_overdue_debit_report
+msgid "Danh sách nợ quá hạn"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_partner__days_past_due
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_users__days_past_due
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__days_past_due
+msgid "Days past due"
+msgstr "Số ngày quá hạn"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_partner__debit_overdue
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_users__debit_overdue
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__debit_overdue
+msgid "Debit overdue"
+msgstr "Nợ quá hạn"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__display_name
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_inherit_search_view
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_search_view
+msgid "Group by..."
+msgstr "Nhóm theo..."
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__id
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__id
+msgid "ID"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__partner_id
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_inherit_search_view
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_search_view
+msgid "Khách hàng"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy____last_update
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__write_uid
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__write_date
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Locked"
+msgstr "Đã khoá"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__longest_overdue_debt
+msgid "Longest overdue debt"
+msgstr "Nợ quá hạn dài nhất"
+
+#. module: sea_report_overdue_debit
+#: code:addons/sea_report_overdue_debit/models/credit_policy.py:27
+#, python-format
+msgid "Longest overdue debt must be greater than 0"
+msgstr "Nợ quá hạn dài nhất phải lớn hơn 0"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__date_due
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_search_view
+msgid "Ngày đến hạn"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__note
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_account_move_line_debit_due
+msgid "Nợ quá hạn"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_account_move_line_debit_oldest
+msgid "Nợ quá hạn dài nhất"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.view_account_move_line_oldest_debit
+msgid "Nợ quá hạn lâu nhất"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_search_view
+msgid "Overdue debit search"
+msgstr "Tìm nợ quá hạn"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__overdue_debt_limit
+msgid "Overdue debt limit"
+msgstr "Giới hạn nợ quá hạn"
+
+#. module: sea_report_overdue_debit
+#: code:addons/sea_report_overdue_debit/models/credit_policy.py:30
+#, python-format
+msgid "Overdue debt limit must be greater than 0"
+msgstr "Giới hạn nợ quá hạn phải lớn hơn 0"
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_sale_order_validate
+#: model:ir.ui.menu,name:sea_report_overdue_debit.menu_sale_order_validate
+msgid "Pending sale order"
+msgstr "Đơn hàng đang chờ duyệt"
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Quotation"
+msgstr "Báo giá"
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Quotation Sent"
+msgstr "Báo giá đã Gửi"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__re_available_debit
+msgid "Remaining available debit "
+msgstr "Giá trị có thể nợ còn lại"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__re_available_overdue_debit
+msgid "Remaining avalable overdue debit"
+msgstr "Giá trị có thể nợ quá hạn còn lại"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model,name:sea_report_overdue_debit.model_report_overdue_debit
+msgid "Report Overdue Debit"
+msgstr "Báo cáo nợ quá hạn"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_tree_inherit
+msgid "Report debit"
+msgstr "Báo cáo nợ"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_view_tree
+msgid "Report overdue debit"
+msgstr "Báo cáo nợ quá hạn"
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Sale Folio"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model,name:sea_report_overdue_debit.model_sale_order
+msgid "Sale Order"
+msgstr "Đơn hàng"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.sale_order_validate_tree
+msgid "Sale Order draft"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Sales Order"
+msgstr "Đơn bán hàng"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__ref
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_inherit_search_view
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_search_view
+msgid "Số tham chiếu"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__residual_signed
+msgid "Số tiền còn lại phải trả"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__debit
+msgid "Số tiền phải trả"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_partner__total_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_res_users__total_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__total_debit
+msgid "Total debit"
+msgstr "Tổng nợ"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_inherit_search_view
+msgid "Total debit search"
+msgstr "Tìm kiếm tổng nợ"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_credit_policy__total_debt
+msgid "Total debt"
+msgstr "Tổng nợ"
+
+#. module: sea_report_overdue_debit
+#: code:addons/sea_report_overdue_debit/models/credit_policy.py:33
+#, python-format
+msgid "Total debt must be greater than 0"
+msgstr "Tổng nợ phải lớn hơn 0"
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_report_overdue_debit__origin
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.report_overdue_debit_search_view
+msgid "Tài liệu gốc"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_account_move_line_total_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.action_report_total_debit
+#: model:ir.actions.act_window,name:sea_report_overdue_debit.view_account_move_line_total_debit
+msgid "Tổng nợ"
+msgstr ""
+
+#. module: sea_report_overdue_debit
+#: model:ir.model.fields,field_description:sea_report_overdue_debit.field_sale_order__user_validate
+msgid "User Validating"
+msgstr "Người dùng xác nhận"
+
+#. module: sea_report_overdue_debit
+#: selection:sale.order,state:0
+msgid "Validating"
+msgstr "Đang xác nhận"
+
+#. module: sea_report_overdue_debit
+#: model_terms:ir.ui.view,arch_db:sea_report_overdue_debit.account_move_line_tree_inherit
+msgid "amount residual"
+msgstr "Giá trị còn lại"
+

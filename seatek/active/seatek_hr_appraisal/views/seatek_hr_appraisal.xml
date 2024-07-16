@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_appraisal_view" model="ir.ui.view">
+            <field name="name">hr.appraisal.kanban</field>
+            <field name="model">hr.appraisal</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_appraisal_kanban">
+                    <div>
+                        <field name="name"/>
+                    </div>
+                    <div>
+                        <field name="survey_id"/>
+                    </div>
+                    <div>
+                        <label for="appraisal_period" string="Period"/>
+                        <field name="appraisal_period"/>
+                        <field name="appraisal_mode"/>
+
+                    </div>
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click  o_hr_appraisal_kanban">
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Tiêu chí: <field name="survey_id"/></span>
+                                </div>
+                                <div>
+                                    <span>Trạng thái: <field name="appraisal_mode"/></span>
+                                </div>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+            </field>
+        </record>
+        <record id="action_appraisal_general_action" model="ir.actions.act_window" >
+            <field name="name">Appraisal</field>
+            <field name="res_model">hr.appraisal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new survey
+              </p><p>
+                You can create surveys for different purposes: customer opinion, services feedback, recruitment interviews, employee's periodical evaluations, marketing campaigns, etc.
+              </p><p>
+                Design easily your survey, send invitations to answer by email and analyse answers.
+              </p>
+            </field>
+        </record>
+        <record id="hr_appraisal_view_form" model="ir.ui.view">
+            <field name="name">hr.appraisal.view.form</field>
+            <field name="model">hr.appraisal</field>
+            <field name="arch" type="xml" >
+                <form js_class="form_appraisal" class="o_appraisal_form" delete="false" duplicate="false">
+                    <header>
+                        <field name="mark_as_todo" invisible="1"/>
+                        <button  string="Mark as Todo" name="action_confirm" attrs="{'invisible': [('mark_as_todo', '=', False)]}" type="object" class="btn-primary"/>
+
+                    </header>
+                    <group>
+                        <div class="edit_appraisal">
+                                <div>
+                                    <field name="state_done" invisible="1"/>
+                                    <label for="name" string="Tên"/>
+                                    <field name="name" string ="Name"  attrs="{'readonly':[('state_done','=',True)]}"/>
+                                </div>
+                                <div>
+                                    <label for="appraisal_mode" string="Trạng thái"/>
+                                    <field name="appraisal_mode" string ="Trạng thái" readonly="1"/>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><label for="appraisal_period" string="Period"/></td>
+                                        <td><field name="appraisal_period" attrs="{'readonly':[('state_done','=',True)]}" options="{'no_create': True}"/></td>
+                                        <div>
+                                            <td><label for="company_id" string="Công ty"/></td>
+                                            <td><field name="company_id" attrs="{'readonly':[('state_done','=',True)]}"/></td>
+                                        </div>
+                                        <!--<td><button string="Finish" type="object" name="action_finish" class="btn-primary" invisible="1"/></td>-->
+                                    </tr>
+                                </div>
+                            <span>
+                                <div>
+                                    <label for="survey_id" string="Survey"/>
+                                    <field name="survey_id" attrs="{'readonly':[('state_done','=',True)]}" options="{'no_create': True}"/>
+                                </div>
+                                <div>
+
+                                    <button string="Apply for all" type="object" class="btn-primary" invisible="1"/>
+                                </div>
+
+                            </span>
+                        </div>
+                    </group>
+                    <group string="Add appraisals">
+                        <div class="edit_appraisal1">
+                            <div attrs="{'invisible':[('state_done','=',False)]}" >
+                                <label for="company_id" string="Company" invisible="1"/>
+                                <field name="company_id" widget="appraisalUser_many2one" options="{'no_create': True}" invisible="1"/>
+                            </div>
+                            <div class="oe_edit_only">
+                                <button  string="Tạo các bảng đánh giá" name="create_appraisal" type="object" class="btn-primary" attrs="{'invisible':[('state_done','=',False)]}" groups="seatek_hr_appraisal.hr_appraisal_administrator"/>
+                            </div>
+                            <button name="close_appraisal"
+                                    string="Đóng đợt đánh giá" type="object" class="oe_highlight"
+                                    confirm="Bạn có chắc là đóng đợt đánh giá này không?"/>
+                            <field name="hr_survey_user_input" widget="survey_one2many" options="{'HDDG': False}" attrs="{'invisible':[('state_done','=',False)]}">
+                                <tree editable="bottom">
+                                    <field name="employee_multi_id"/>
+                                    <field name="manager_multi_id"/>
+                                    <field name="smanager_multi_id"/>
+                                    <field name="hddg"/>
+                                    <field name="user_id" invisible="1"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="lock_state" string="Trạng thái" readonly="1"/>
+                                    <field name="rating1_value"/>
+                                    <field name="rating2_value"/>
+                                    <field name="rating3_value"/>
+                                  </tree>
+                            </field>
+                        </div>
+                    </group>
+<!--                    <field name="select_role_close"/>-->
+                    <group colspan="4">
+                        <group class="oe_edit_only" colspan="1">
+                            <field name="company_open_close"/>
+                            <field name="close_open_all_role"/>
+                            <field name="close_open_user_role"/>
+                            <field name="close_open_manager_role"/>
+                            <field name="close_open_smanager_role"/>
+                            <field name="close_open_colleague_role"/>
+                            <field name="close_open_hddg_role"/>
+                            <button  string="Close" name="action_close_company" type="object"
+                                     class="btn-secondary"/>
+                            <button  string="Open" name="action_open_company" type="object"
+                                     class="btn-primary"/>
+                        </group>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="action_appraisal_form_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="hr_appraisal_view"/>
+            <field name="act_window_id" ref="action_appraisal_general_action"/>
+        </record>
+        <record id="action_appraisal_general_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_appraisal_view_form"/>
+            <field name="act_window_id" ref="action_appraisal_general_action"/>
+        </record>
+
+
+
+        <record id="hr_appraisal_general_view" model="ir.ui.view">
+            <field name="name">hr.appraisal.general.kanban</field>
+            <field name="model">hr.appraisal</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_appraisal_kanban">
+                    <field name="name" attrs="{'readonly':True}"/>
+                    <field name="survey_id" attrs="{'readonly':True}"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click  o_hr_appraisal_kanban">
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div>
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Criteria: <field name="survey_id"/></span>
+                                </div>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="hr_survey_classification_link_view_form" model="ir.ui.view">
+            <field name="name">hr.survey.classification.link.view.form</field>
+            <field name="model">hr.survey.classification.link</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="survey_id"/>
+                    <field name="summary_id" options='{"no_create": True}'/>
+                    <field name="survey_classification">
+                        <tree editable="true">
+                            <field name="name"/>
+                            <field name="min_score"/>
+                            <field name="max_score"/>
+                            <field name="classification"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_survey_period_view_form" model="ir.ui.view">
+            <field name="name">hr.survey.period.view.form</field>
+            <field name="model">hr.survey.classification.link</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="survey_id"/>
+                    <field name="summary_id"/>
+                    <field name="survey_classification">
+                        <tree>
+                            <field name="name"/>
+                            <field name="min_score"/>
+                            <field name="max_score"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_appraisal_classification_form" model="ir.actions.act_window" >
+            <field name="name">HR Survey Classification</field>
+            <field name="res_model">hr.survey.classification.link</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new survey
+              </p><p>
+                You can create surveys for different purposes: customer opinion, services feedback, recruitment interviews, employee's periodical evaluations, marketing campaigns, etc.
+              </p><p>
+                Design easily your survey, send invitations to answer by email and analyse answers.
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Đánh Giá Nhân Sự" id="menu_appraisal" action="action_appraisal_user_action"  sequence="71"  web_icon="survey,static/description/icon.png" groups="hr_appraisal_user,hr_appraisal_manager,hr_appraisal_administrator"/>
+
+        <menuitem name="HĐĐG ĐÁNH GIÁ" id="top_menu_hddg_appraisal" action="hddg_appraisal_action" parent="menu_appraisal" sequence="2"
+                  web_icon="survey,static/description/icon.png" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+        <menuitem name="THỰC HIỆN ĐÁNH GIÁ" id="top_menu_appraisal" parent="menu_appraisal" sequence="1"  web_icon="survey,static/description/icon.png"/>
+        <menuitem name="TỰ ĐÁNH GIÁ" id="submenu_appraisal_user" parent="top_menu_appraisal" action="action_appraisal_user_action"  sequence="1"/>
+        <menuitem name="ĐÁNH GIÁ NHÂN VIÊN/ĐỒNG NGHIỆP" id="submenu_assigned_appraisal_user" parent="top_menu_appraisal" action="action_assigned_appraisal_user_action"  sequence="2"/>
+        <!--<menuitem name="HĐĐG" id="submenu_hddg" parent="top_menu_appraisal" action="action_dhdg_action" sequence="3" groups="seatek_hr_appraisal.hr_appraisal_board_of_manager"/>-->
+
+        <menuitem name="CÀI ĐẶT" id="top_menu_appraisal_settings" parent="menu_appraisal" sequence="10" groups="seatek_hr_appraisal.hr_appraisal_administrator"/>
+        <menuitem name="MẪU ĐÁNH GIÁ" id="submenu_survey_settings_form" action="action_survey_form" parent="top_menu_appraisal_settings"  groups="seatek_hr_appraisal.hr_appraisal_administrator" sequence="1"/>
+        <menuitem name="BẢNG ĐÁNH GIÁ NS" id="submenu_general" parent="top_menu_appraisal_settings" action="action_appraisal_general_action"  sequence="2" groups="seatek_hr_appraisal.hr_appraisal_administrator"/>
+        <menuitem name="XẾP LOẠI" id="submenu_appraisal_classification_form" action="action_appraisal_classification_form" parent="top_menu_appraisal_settings" sequence="3" />
+        <menuitem name="KÌ ĐÁNH GIÁ" id="submenu_ky_danh_gia_form" action="action_ky_danh_gia_form" parent="top_menu_appraisal_settings" sequence="4" groups="seatek_hr_appraisal.hr_appraisal_administrator"/>
+
+        <menuitem name="CÀI ĐẶT TEMPLATE" id="top_menu_template_settings" parent="menu_appraisal" sequence="10" groups="seatek_hr_appraisal.hr_appraisal_user"/>
+        <menuitem name="CÀI ĐẶT TEMPLATE KPIS" id="submenu_cai_dat_kpis" action="action_cai_dat_kpi_template" parent="top_menu_template_settings" sequence="5" groups="seatek_hr_appraisal.hr_appraisal_user"/>
+        <menuitem name="DANH SÁCH CÂU HỎI KPIS" id="submenu_danh_sach_cau_hoi_kpis" action="action_survey_kips_question" parent="top_menu_template_settings" sequence="6" groups="seatek_hr_appraisal.hr_appraisal_user"/>
+
+        <menuitem name="QUẢN LÝ" id="top_menu_appraisal_hr" parent="menu_appraisal" action="menu_appraisal_hr_action" sequence="3" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+        <menuitem name="BÁO CÁO" id="top_menu_report" parent="menu_appraisal" action="menu_hr_appraisal_summary_report_action" sequence="5" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+        <menuitem name="BÁO CÁO TỔNG HỢP" id="submenu_summary_report" parent="top_menu_report" action="menu_hr_appraisal_summary_report_action" sequence="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+        <menuitem name="BÁO CÁO CHI TIẾT SEACORP" id="submenu_detail_seacorp_report" parent="top_menu_report" action="menu_hr_appraisal_seacorp_report_action" sequence="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+        <menuitem name="BÁO CÁO CHI TIẾT KPIS" id="submenu_detail_report" parent="top_menu_report" action="menu_hr_appraisal_report_action" sequence="2" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+<!--        <menuitem name="BÁO CÁO TỔNG HỢP" id="submenu_summary_report_role" parent="top_menu_appraisal" action="menu_hr_appraisal_summary_report_role_action" sequence="5" groups="seatek_hr_appraisal.hr_appraisal_user"/>-->
+<!--        <menuitem name="BÁO CÁO CHI TIẾT SEACORP" id="submenu_detail_report_role" parent="top_menu_appraisal" action="menu_hr_appraisal_detail_report_role_action" sequence="6" groups="seatek_hr_appraisal.hr_appraisal_user"/>-->
+<!--        <menuitem name="BÁO CÁO CHI TIẾT KPIS" id="submenu_detail_level2_report_role" parent="top_menu_appraisal" action="menu_hr_appraisal_detail_level2_report_role_action" sequence="7" groups="seatek_hr_appraisal.hr_appraisal_user"/>-->
+
+<!--        <menuitem name="TỔNG KẾT ĐÁNH GIÁ NHÂN SỰ" id="top_menu_tongket_dgns" parent="menu_appraisal" sequence="4" groups="seatek_hr_appraisal.hr_appraisal_manager"/>-->
+<!--        <menuitem name="ĐỀ XUẤT SAU ĐÁNH GIÁ NHÂN SỰ" id="submenu_dexuat_sau_dgns" parent="top_menu_tongket_dgns" action="menu_dexuat_sau_dgns_action" sequence="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>-->
+<!--        <menuitem name="KẾT QUẢ ĐÁNH GIÁ NHÂN SỰ" id="submenu_ket_qua_dgns" parent="top_menu_tongket_dgns" action="menu_ketqua_dgns_action" sequence="2" groups="seatek_hr_appraisal.hr_appraisal_manager"/>-->
+
+        <menuitem name="TỔNG KẾT ĐÁNH GIÁ NHÂN SỰ" id="topmenu_tongket_danhgia_nhansu" parent="menu_appraisal" sequence="4" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+        <menuitem name="ĐỀ XUẤT SAU ĐÁNH GIÁ NHÂN SỰ" id="submenu_dexuat_sau_danhgia_nhansu" parent="topmenu_tongket_danhgia_nhansu" action="dexuat_sau_danhgia_nhansu_action" sequence="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+        <menuitem name="KẾT QUẢ ĐÁNH GIÁ NHÂN SỰ" id="submenu_ketqua_danhgia_nhansu" parent="topmenu_tongket_danhgia_nhansu" action="ketqua_danhgia_nhansu_action" sequence="2" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+        <!--dkh
+        TKK-->
+        <menuitem name="IMPORT" id="top_menu_import" parent="menu_appraisal" action="import_appraisal_excel" sequence="10" groups="seatek_hr_appraisal.hr_appraisal_user"/>
+        <!---->
+    </data>
+</odoo>

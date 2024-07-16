@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_category_multi_company_employee_seatek" model="ir.module.category" >
+            <field name="name">Multi Company Employee</field>
+            <field name="description">Helps you manage your employees.</field>
+            <field name="sequence">101</field>
+        </record>
+    </data>
+</odoo>
+ 

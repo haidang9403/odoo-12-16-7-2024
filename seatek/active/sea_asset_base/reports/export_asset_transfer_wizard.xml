@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report string="Export an asset transfer"
+                id="action_export_asset_transfer"
+                model="asset.transfer"
+                name="sea_asset_base.asset_transfer_report_xls"
+                file="PhieuDieuChuyen"
+                report_type="xlsx"
+                attachment_use="False"
+        groups="group_asset_officer"/>
+    </data>
+</odoo>

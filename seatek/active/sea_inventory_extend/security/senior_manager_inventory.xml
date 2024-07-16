@@ -1,0 +1,5 @@
+<odoo>
+    <record id="senior_manager_inventory" model="res.groups">
+        <field name="name">Senior Manager Inventory</field>
+    </record>
+</odoo>

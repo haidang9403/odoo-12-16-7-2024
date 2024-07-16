@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="view_multi_company_employee_tree_inherited_tree_view" model="ir.ui.view">
+           <field name="name">hr.employee.multi.company.inherit</field>
+           <field name="model">hr.employee.multi.company</field>
+           <field name="inherit_id" ref="view_multi_company_employee_tree"/>
+           <field name="arch" type="xml">
+               <xpath expr="//tree" position="attributes">
+<!--                   <attribute name="create">false</attribute>-->
+                   <attribute name="js_class">create_employee_button</attribute>
+               </xpath>
+           </field>
+       </record>
+    </data>
+</odoo>

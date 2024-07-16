@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_sale_report_inherit" model="ir.ui.view">
+            <field name="name">view.sale.report.inherit</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="sale.view_order_product_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="region_name"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_address_form_inherit" model="ir.ui.view">
+            <field name="name">partner.address.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='zip']" position="after">
+                    <field name="district_id" placeholder="District" readonly="0" options="{'no_create': True,'no_open': True}"/>
+                    <field name="region_name" placeholder="Vietnam's Region" readonly="1"/>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_country_state_tree_inherit" model="ir.ui.view">
+            <field name="name">country.state.form.inherit</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="region_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_country_state_form_inherit" model="ir.ui.view">
+            <field name="name">country.state.form.inherit</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="region_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+        <!--('region_id', '=', None), -->
+        <record id="state_region_view_tree" model="ir.ui.view">
+            <field name="name">state.region.form</field>
+            <field name="model">state.region</field>
+            <field name="arch" type="xml">
+                <tree string="State of Region" editable="bottom">
+                    <field name="country_state_id" required="1"
+                           domain="[('code', 'ilike', 'VN'), ('region_id', '=', None)]" options='{"no_create": True}'/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="region_view_form" model="ir.ui.view">
+            <field name="name">region.form</field>
+            <field name="model">region</field>
+            <field name="arch" type="xml">
+                <form string="Vietnam's Region">
+                    <h1>
+                        <field name="name" required="1"/>
+                    </h1>
+                    <field name="state_region_ids" context="{'tree_view_ref': 'seatek_region.state_region_view_tree'}"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="region_action" model="ir.actions.act_window">
+            <field name="name">Vietnam's Region</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">region</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create New Vietnam's Region
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_region" name="Vietnam's Region" action="region_action" sequence="10"
+                  parent="contacts.menu_localisation"/>
+    </data>
+</odoo>

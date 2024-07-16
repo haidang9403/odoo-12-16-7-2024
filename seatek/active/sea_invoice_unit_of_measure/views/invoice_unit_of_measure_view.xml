@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_uom_form" model="ir.ui.view">
+            <field name="name">invoice.uom.form</field>
+            <field name="model">invoice.unit.of.measure</field>
+<!--            <field name="inherit_id" ref="stock.menu_action_inventory_form" />-->
+            <field name="arch" type="xml">
+                <form string="Invoice Unit of Measure" duplicate="0">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_uom_tree" model="ir.ui.view">
+            <field name="name">invoice.uom.tree</field>
+            <field name="model">invoice.unit.of.measure</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice Units of Measure">
+                    <field name="name"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_invoice_unit_of_measure" model="ir.actions.act_window">
+            <field name="name">Invoice Unit of Measure</field>
+            <field name="res_model">invoice.unit.of.measure</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem action="action_invoice_unit_of_measure" name="UoM Invoice"
+                  id="menu_action_invoice_unit_of_measure" parent="stock.product_uom_menu" sequence="36"/>
+    </data>
+</odoo>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- ======== Root ======== -->
+    <menuitem
+            id="hotel_management_menu"
+            name="Hotel Management"
+            web_icon="sea_hotel_restaurant,static/description/hotel.png"
+            groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+
+    <!-- ======== Menu Configuration ======== -->
+    <menuitem id="hotel_configuration_menu" name="Configuration"
+              sequence="20" parent="hotel_management_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+    <!-- ======== Folio ======== -->
+    <menuitem name="Folio" id="menu_open_folio_form_tree"
+              action="open_folio_form_tree" sequence="5"
+              parent="hotel_management_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+    <!-- ======== Dashboard ======== -->
+    <menuitem id="menu_open_hotel_restaurant_pos_form_tree" name="Dashboard"
+              action="open_hotel_restaurant_pos_form_tree" sequence="1"
+              parent="hotel_management_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+
+    <!-- ======== Branch ======== -->
+    <menuitem id="menu_open_hotel_restaurant_branch_form_tree" name="Branch"
+              action="open_hotel_restaurant_branch_form_tree" sequence="20"
+              parent="hotel_configuration_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_administrator"/>
+
+    <!-- ======== Area ======== -->
+    <menuitem id="menu_open_hotel_restaurant_area_form_tree" name="Area"
+              action="open_hotel_restaurant_area_form_tree" sequence="21"
+              parent="hotel_configuration_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+    <!-- ======== Table ======== -->
+    <menuitem id="main_menu_table"
+              name="Table config"
+              sequence="25"
+              parent="hotel_configuration_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+    <menuitem id="menu_open_restaurant_table_form_tree" name="Table"
+              action="open_restaurant_table_form_tree" sequence="27"
+              parent="main_menu_table"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"
+    />
+
+    <!-- ======== Room ======== -->
+    <menuitem id="main_menu_room"
+              name="Room config"
+              sequence="35"
+              parent="hotel_configuration_menu"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+    <menuitem id="menu_open_room_type" name="Room Type"
+              action="open_hotel_room_type_form_tree" sequence="36"
+              parent="main_menu_room"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+    <menuitem id="menu_open_hotel_room" name="Room"
+              action="open_hotel_room_form_tree" sequence="37"
+              parent="main_menu_room"
+              groups="sea_hotel_restaurant.hotel_restaurant_manager"/>
+
+
+</odoo>

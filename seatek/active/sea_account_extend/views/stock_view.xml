@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--==================//TKK//============================-->
+        <record id="view_location_form" model="ir.ui.view">
+            <field name="name">stock.location.form.warehouse</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='usage']"
+                       position="before">
+                    <field name="warehouse_id" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+        <record id="stock_location_view_tree2_editable" model="ir.ui.view">
+            <field name="name">stock.location.tree2.editable</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_tree2"/>
+            <field name="arch" type="xml">
+                <field name="location_id" position="before">
+                    <field name="warehouse_id"/>
+                </field>
+            </field>
+        </record>
+        <!--//==================//-->
+
+        <record id="stock_picking_transaction_type_form_view" model="ir.ui.view">
+            <field name="name">stock.transaction.type.form.view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="picking_type_id" position="before">
+                    <field name="sea_transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                </field>
+                <!--<field name="origin" position="after">
+                    <field name="asset_code_id"/>
+                </field>-->
+                <field name="product_uom" position="after">
+                    <field name="sea_transaction_id"/>
+                    <field name="company_id" invisible="1"/>
+                    <field name="asset_code_id" domain="[('company_id', '=', company_id)]"/>
+                    <field name="analytic_account_id"/>
+                    <field name="analytic_tag_ids" widget="many2many_tags" groups="analytic.group_analytic_tags"
+                           options="{'color_field': 'color'}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_move_transaction_type_form_view" model="ir.ui.view">
+            <field name="name">stock.move.transaction.type.form.view</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_stock_move_operations"/>
+            <field name="arch" type="xml">
+                <!--<field name="product_id" position="after">
+                    <field name="sea_transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                    <field name="asset_code_id"/>
+                </field>-->
+                <xpath expr="//group" position="inside">
+                    <group>
+                        <field name="to_refund" invisible="1"/>
+                        <field name="sea_transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                        <field name="asset_code_id"/>
+                        <!--<field name="account_id"/>-->
+                        <field name="analytic_account_id"/>
+                        <label for="analytic_tag_ids" groups="analytic.group_analytic_tags"/>
+                        <div>
+                            <field name="analytic_tag_ids" widget="many2many_tags" groups="analytic.group_analytic_tags"
+                                   options="{'color_field': 'color'}"/>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock_move_transaction_tree" model="ir.ui.view">
+            <field name="name">stock.move.transaction.tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="sea_transaction_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_move_line_transaction_view" model="ir.ui.view">
+            <field name="name">stock.move.line.transaction.view</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='qty_done']" position="after">
+                    <field name="sea_transaction_id" invisible="1"/>
+                    <!--<field name="analytic_account_id"/>
+                    <field name="analytic_tag_ids" widget="many2many_tags" nolabel="1" options="{'no_create': True}"/>-->
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock_move_line_transaction_tree" model="ir.ui.view">
+            <field name="name">stock.move.line.transaction.tree</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_tree"/>
+            <!--<field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>-->
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="sea_transaction_id"/>
+                </field>
+                <!--<xpath expr="//tree/field[@name='qty_done']" position="after">
+                    <field name="sea_transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                    <field name="analytic_account_id"/>
+                    <field name="analytic_tag_ids" widget="many2many_tags" nolabel="1" options="{'no_create': True}"/>
+                </xpath>-->
+            </field>
+        </record>
+    </data>
+</odoo>

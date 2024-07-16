@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_move_transaction_type_form_view" model="ir.ui.view">
+            <field name="name">account.move.transaction.type.form.view</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <field name="date" position="replace">
+                    <field name="date" groups="account.group_account_manager"/>
+                </field>
+                <field name="company_id" position="after">
+                    <field name="transaction_id" attrs="{'readonly':[('state','in',('posted'))]}"/>
+                </field>
+                <field name="analytic_account_id" position="before">
+                    <field name="product_id"/>
+                </field>
+                <field name="analytic_account_id" position="after">
+                    <field name="quantity"/>
+                </field>
+                <xpath expr="//page[2]" position="after">
+                    <page string="Depreciation">
+                        <group>
+                          <field name="asset_depreciation_ids"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="sea_account_extend_journal_item" model="ir.ui.view">
+            <field name="name">sea.account.extend.journal.item</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <field name='account_id' position='after'>
+                    <field name="transaction_item_id"/>
+                    <field name="advance_file_id"/>
+                </field>
+                <field name="account_id" position="before">
+                    <field name="transaction_item_id"/>
+                </field>
+                <field name="account_id" position="after">
+                    <field name="asset_code_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+    <record id="view_move_line_form" model="ir.ui.view">
+        <field name="name">account.move.line.form</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <field name="move_id" position="after">
+                <field name="advance_file_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="account_move_update_date_form_view" model="ir.ui.view">
+        <field name="name">account.move.update.date.form.view</field>
+        <field name="model">account.move.update.date</field>
+        <field name="arch" type="xml">
+            <form string="Accounting date update">
+                <group>
+                    <field name="date" string="Date"/>
+                </group>
+                <footer>
+                    <button name="update_date" string="Update" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_account_move_update_date" model="ir.actions.act_window">
+        <field name="name">Update Accounting Date</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.move.update.date</field>
+        <field name="binding_model_id" ref="model_account_move"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="account_move_update_date_form_view"/>
+    </record>
+</odoo>

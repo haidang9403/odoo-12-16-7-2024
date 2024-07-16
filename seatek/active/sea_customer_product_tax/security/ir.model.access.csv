@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_tax_category_employee,tax category employee,model_customer_product_tax,base.group_user,1,0,0,0
+access_account_tax_category_account_advisor,tax ategory advisor,model_customer_product_tax,account.group_account_manager,1,1,1,1
+access_account_tax_category_admin, tax category admin,model_customer_product_tax,base.group_system,1,1,1,1
+access_account_customer_category_employee,customer category employee,model_customer_category_tax,base.group_user,1,0,0,0
+access_account_customer_category_account_advisor,customer ategory advisor,model_customer_category_tax,account.group_account_manager,1,1,1,1
+access_account_customer_category_admin, customer category admin,model_customer_category_tax,base.group_system,1,1,1,1

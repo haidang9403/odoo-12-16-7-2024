@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_multi_company_user,hr.employee.multi.company user,model_hr_employee_multi_company,hr.group_hr_user,1,1,1,0
+access_hr_employee_view_edit,hr.employee view_edit,model_hr_employee,sea_multi_company_employee.group_hr_view_edit,1,0,0,0
+access_hr_employee_multi_company_view_edit,hr.employee.multi.company view_edit,model_hr_employee_multi_company,sea_multi_company_employee.group_hr_view_edit,1,0,0,0
+
+access_hr_employee_hr_operator,hr.employee hr_operator,model_hr_employee,sea_multi_company_employee.group_hr_operator,1,1,1,0
+access_hr_employee_multi_company_hr_operator,hr.employee.multi.company hr_operator,model_hr_employee_multi_company,sea_multi_company_employee.group_hr_operator,1,1,1,0
+
+
+

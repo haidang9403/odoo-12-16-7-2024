@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            string="Production Order"
+            id="action_report_production_order"
+            model="mrp.production"
+            name="sea_manufacture_extend.sea_report_mrporder"
+            file="sea_manufacture_extend.sea_report_mrporder"
+            report_type="qweb-pdf"
+            print_report_name="'Production Order - %s' % object.name"
+            menu="False"
+        />
+        <report
+            string="Phiếu nhập kho thành phẩm"
+            id="action_report_import_finished_product"
+            model="mrp.production"
+            name="sea_manufacture_extend.report_finished_product"
+            file="sea_manufacture_extend.report_finished_product"
+            report_type="qweb-pdf"
+            print_report_name="'Finished Product - %s' % object.name"
+        />
+    </data>
+</odoo>

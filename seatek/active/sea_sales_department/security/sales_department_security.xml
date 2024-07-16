@@ -1,0 +1,15 @@
+<odoo>
+    <record id="sales_department_comp_rule" model="ir.rule">
+        <field name="name">sales department multi-company</field>
+        <field name="model_id" ref="model_sales_department"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record id="sales_department_view_order_rule" model="ir.rule">
+        <field name="name">sales department view order</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('sales_department_id','=',False),('sales_department_id','in',[d.id for d in user.sea_user_department_ids])]</field>
+    </record>
+</odoo>

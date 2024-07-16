@@ -1,0 +1,120 @@
+table {
+
+
+    $bg-colors: (1: #cfcfcf, 2: #efeded, 3: #ededed);
+    @each $level, $bg-color in $bg-colors {
+        tbody tr.o_data_row.level-#{$level} {
+            background-color: $bg-color;
+        }
+    }
+    $colors: (0: $red,1: $red, 2: $blue, 3: $dark);
+    @each $level, $color in $colors {
+        tbody tr.o_data_row td.level-#{$level}:first-of-type {
+            min-width: 250px;
+
+            & > span, & > input {
+                @if $level == 0 {
+                    padding-left: 0px !important;
+                }
+                @else{
+                    padding-left: ($level - 1) * 25px !important;
+                }
+                display:block;
+                color: $color;
+            }
+
+            & > input {
+                position: unset !important;
+                white-space: pre-wrap !important;
+            }
+        }
+
+        tbody tr.o_data_row td.edit.level-#{$level} {
+            overflow: hidden !important;
+            padding: 0;
+        }
+    }
+
+     & tr {
+        & .o_field_value_prefix {
+            text-align: left !important;
+            width: 20px;
+        }
+        & .o_field_value_number {
+            text-align: center !important;
+            width: 80px;
+        }
+        & .o_field_value_text {
+            width: 500px;
+            min-width: 150px;
+        }
+        & .o_field_value_text_hddg {
+            width: 270px;
+        }
+        & .o_field_value_text_250 {
+            min-width: 150px;
+            width: 230px;
+        }
+        & .o_field_value_text_200 {
+            min-width: 150px;
+            width: 180px;
+        }
+
+        & .o_field_value_text_5 {
+            min-width: 5px;
+            width: 5px;
+        }
+
+    }
+
+    & .o_list_record_edit, & .o_list_record_remove {
+        width: 10px;
+    }
+
+    & .o_list_record_edit button, & .o_list_record_remove button {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+    }
+
+
+    & .o_data_cell.o_field_value_number.o_readonly_modifier > span {
+        position: relative;
+        display: inline;
+        color: red;
+        font-weight:bold;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: currentColor;
+        }
+    }
+
+    & .o_data_cell, & th.o_column_sortable {
+        text-align: left !important;
+    }
+
+    & th.o_field_value_number {
+            text-align: right !important;
+        }
+    &.de_xuat,&.de_xuat th,&.de_xuat td {
+        border:1px solid black;
+                                }
+
+
+
+}
+    .appraisal_report_header{
+    font-size:20px;
+    color: red;
+    }
+.dialog_danh_gia {
+    min-width: 1600px !important;
+  max-width: 1100px !important;
+}

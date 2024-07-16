@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sea_transaction_type_form" model="ir.ui.view">
+            <field name="name">sea.transaction.type.form</field>
+            <field name="model">transaction.type</field>
+            <field name="arch" type="xml">
+                <form string="Transaction Type" duplicate="0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="descriptions"/>
+                            </group>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="create_asset"/>
+                                <field name="src_location_id"/>
+                                <field name="dest_location_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sea_transaction_type_tree" model="ir.ui.view">
+            <field name="name">sea.transaction.type.tree</field>
+            <field name="model">transaction.type</field>
+            <field name="arch" type="xml">
+                <tree string="Transaction Type">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="src_location_id"/>
+                    <field name="dest_location_id"/>
+                    <field name="company_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_transaction_type" model="ir.actions.act_window">
+            <field name="name">Transaction Type</field>
+            <field name="res_model">transaction.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <record id="sea_account_determination_tree" model="ir.ui.view">
+            <field name="name">sea.account.determination.tree</field>
+            <field name="priority" eval="100"/>
+            <field name="model">account.determination</field>
+            <field name="arch" type="xml">
+                <tree string="Account Determination" editable="bottom" create="1" edit="1" delete="1">
+                    <field name="transaction_id"/>
+                    <field name="location_id"/>
+                    <field name="product_category" invisible="1"/>
+                    <field name="account_id"/>
+                    <field name="analytic_account_id"/>
+                    <field name="analytic_tag_ids" widget="many2many_tags" nolabel="1" options="{'no_create': True}"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_determination" model="ir.actions.act_window">
+            <field name="name">Account Determination</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.determination</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem id="menu_transaction_type"
+                  name="Transactions"
+                  parent="stock.menu_stock_config_settings"
+                  sequence="100"
+                  groups="account.group_account_manager"/>
+
+        <menuitem action="action_transaction_type"
+                  id="menu_action_transaction_type"
+                  name="Transaction Type"
+                  parent="menu_transaction_type"
+                  sequence="1"
+                  groups="account.group_account_manager"/>
+        <menuitem action="action_account_determination"
+                  id="menu_action_account_determination"
+                  name="Account Determination"
+                  parent="menu_transaction_type"
+                  sequence="10"
+                  groups="account.group_account_manager"/>
+    </data>
+</odoo>

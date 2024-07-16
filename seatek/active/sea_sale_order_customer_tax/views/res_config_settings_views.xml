@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_inherit_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.customer.tax.settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='customer_tax_settings']" position="after">
+                <h2>Take Invoice</h2>
+                <div class="row mt16 o_settings_container"
+                     id="sale_order_settings" groups="account.group_account_manager">
+                    <div class="col-lg-6 col-12 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="sea_sale_order_take_invoice_enable"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="sea_sale_order_take_invoice_enable"/>
+                            <div class="text-muted">
+                                Choose to show 'Customer don't take invoice' field for current company.
+                                Apply from sale order to invoice screen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

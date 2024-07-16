@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="custom_css_assets" name="Custom CSS Assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css"
+                      href="seatek_hr_appraisal/static/src/css/custom_style.css"/>
+                <link rel="stylesheet" type="text/css" href="seatek_hr_appraisal/static/src/css/appraisal.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

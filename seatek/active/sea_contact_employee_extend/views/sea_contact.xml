@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <record id="sea_contact_employee_inherit_partner_form" model="ir.ui.view">
+            <field name="name">Add employee_id in page Sales &amp; Purchases for contacts form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position = "attributes">
+                    <attribute name="string">Tax ID</attribute>
+                </xpath>
+                <field name="vat" position="before">
+                    <field name="is_employee" invisible="1"/>
+                    <field name="is_internal" invisible="1"/>
+                    <field name="ref"/>
+                    <field name="contact_code" readonly="1"/>
+                </field>
+                <xpath expr="//group" position="after">
+                    <group>
+                        <field name='partner_invoice_ids' widget="many2many_tags" domain="[('customer','=',True)]"/>
+                        <field name='partner_vat_ids' widget="many2many_tags"  domain="[('is_company','=',True)]"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='barcode']" position="before">
+                    <field name="employee_id" attrs="{'invisible': [('is_employee', '=', False)], 'required': [('is_employee','=',True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/form//field[@name='email']" position="before">
+                    <field name='contact_code' attrs="{'invisible':[('type','not in',['vat','invoice'])]}"/>
+                    <field name='vat'
+                           attrs="{'required': [('type', '=', 'vat')], 'invisible':[('type','not in',['vat','invoice'])]}"/>
+                    <field name='sea_business_code' attrs="{'invisible':[('type','not in',['vat','invoice'])]}"/>
+                </xpath>
+
+            </field>
+        </record>
+        <record id="sea_contact_inherit_property_form" model="ir.ui.view">
+            <field name="name">Add is_owner in page Invoicing for contacts form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_account_payable_id" position="after">
+                    <field name="is_owner" groups="sea_contact_employee_extend.group_sea_account_senior_manager"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_employee" model="ir.ui.view">
+            <field name="name">res.partner.select.employee</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="ref"/>
+                    <field name="contact_code"/>
+                    <field name="vat"/>
+                </xpath>
+                <filter name="type_company" position="after">
+                    <filter string="Employees" name="type_employee" domain="[('is_employee','=',True)]"/>
+                    <filter string="Internal" name="type_internal" domain="[('is_internal','=',True)]"/>
+                </filter>
+                <!--                <xpath expr="/search/group[@name='group_by']" position="inside">-->
+                <!--                    <filter string="Person" name="group_person" context="{'group_by': 'contact_id'}"/>-->
+                <!--                </xpath>-->
+            </field>
+        </record>
+    </data>
+</odoo>

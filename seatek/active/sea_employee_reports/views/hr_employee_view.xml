@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--
+      Copyright (C) 2020
+      Last modified 10Dec2020 by dkhieu
+    -->
+
+    <data>
+        <record id="employee_report_biendong_nhansu_detail_action_form_view" model="ir.ui.view" >
+            <field name="name">hr.employee.report.bdns.detail.form.view</field>
+            <field name="model">hr.employee.report.bdns.companies</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header></header>
+                    <group>
+                        <field name="employee_previous_month_total" readonly="1"/>
+                        <field name="employee_increase" readonly="1"/>
+                        <field name="employee_decrease" readonly="1"/>
+                        <field name="nghi_thai_san" readonly="1"/>
+                        <field name="nghi_om_dau" readonly="1"/>
+                        <field name="employee_current_working_total" readonly="1"/>
+                        <field name="bdns_employees">
+                            <tree>
+                                <field name="employee_s_identification_id"/>
+                                <field name="employee_name"/>
+                                <field name="employee_msthue"/>
+                                <field name="employee_current_status"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="employee_report_biendong_nhansu_action_form_view" model="ir.ui.view" >
+            <field name="name">DANH SÁCH BIẾN ĐỘNG NHÂN SỰ</field>
+            <field name="model">hr.employee.report.bdns</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button  string="Lấy Danh Sách Biến Động Nhân Sự (Tháng hiện tại)" name="action_lay_ds_bdns" type="object" class="btn-primary"/>
+                        <button  string="Print (Tháng hiện tại)" name="print_biendong_nhansu" type="object" class="btn-primary" invisible="0"/>
+                    </header>
+                    <group>
+                        <notebook>
+                            <page string="Danh Sách Biến Động Nhân Sự" name="danhsach_nhansu">
+                                <group>
+                                    <field name="update_date" readonly="1"/>
+                                </group>
+                                <field name="bdns_companies" readonly="1">
+                                    <tree>
+                                        <field name="company_name" readonly="1"/>
+                                        <field name="employee_previous_month_total" readonly="1"/>
+                                        <field name="employee_increase" readonly="1"/>
+                                        <field name="employee_decrease" readonly="1"/>
+                                        <field name="nghi_thai_san" readonly="1"/>
+                                        <field name="nghi_om_dau" readonly="1"/>
+                                        <field name="nghi_khong_luong" readonly="1"/>
+                                        <field name="employee_current_working_total" readonly="1"/>
+                                        <field name="employee_working_total" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="employee_report_biendong_nhansu_action_view" model="ir.actions.act_window" >
+            <field name="name">DANH SÁCH BIẾN ĐỘNG NHÂN SỰ</field>
+            <field name="res_model">hr.employee.report.bdns</field>
+            <field name="view_mode">form</field>
+<!--            <field name="view_id" eval="employee_report_biendong_nhansu_action_form_view"/>-->
+            <field name="view_id" ref="employee_report_biendong_nhansu_action_form_view"/>
+            <field name="context">{'create': 0, 'delete': 0}</field>
+        </record>
+
+<!--        <record id="employee_report_biendong_nhansu_action_form" model="ir.actions.act_window.view">-->
+<!--            <field name="sequence" eval="5"/>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="view_id" ref="employee_report_biendong_nhansu_action_form_view"/>-->
+<!--&lt;!&ndash;            <field name="act_window_id" ref="employee_report_biendong_nhansu_action"/>&ndash;&gt;-->
+<!--        </record>-->
+
+        <record id="employee_report_biendong_nhansu_action" model="ir.actions.server">
+            <field name="name">Danh Sách Biến Động Nhân Sự</field>
+            <field name="model_id" ref="model_hr_employee_report_bdns"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('sea_employee_reports.employee_report_biendong_nhansu_action_view').read()[0]
+res_id = env['hr.employee.report.bdns'].search([('user_id','=',env.user.id)], limit=1)
+if not res_id:
+    res_id = env['hr.employee.report.bdns'].create({'user_id': env.user.id})
+res_id.action_remove_biendong_nhansu()
+action_values.update({'res_id': res_id.id})
+action = action_values
+            </field>
+        </record>
+        <!---BIẾN ĐỘNG NHÂN SỰ -->
+        <report
+            id="action_report_biendong_nhansu"
+            string="DANH SÁCH BIẾN ĐỘNG NHÂN SỰ "
+            model="hr.employee.report.bdns"
+            report_type="xlsx"
+            name="sea_employee_reports.report_biendong_nhansu_xlsx"
+            file="sea_employee_reports.report_biendong_nhansu_xlsx"
+            print_report_name="'DANH SÁCH BIẾN ĐỘNG NHÂN SỰ'"
+            menu="False"/>
+        <menuitem
+            id="menu_hr_reporting_biendong_nhansu"
+            name="Danh Sách Biến Động Nhân Sự"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_user"
+            action="employee_report_biendong_nhansu_action"
+            sequence="81"/>
+
+        <!--TKK-->
+        <record id="employee_report_biendong_nhansu_theo_month_action_form_view" model="ir.ui.view" >
+            <field name="name">DANH SÁCH BIẾN ĐỘNG NHÂN SỰ</field>
+            <field name="model">hr.employee.report.bdns</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button  string="Print" name="print_biendong_nhansu_theo_month" type="object" class="btn-primary" invisible="0"/>
+                    </header>
+                    <group>
+                        <notebook>
+                            <page string="Danh Sách Biến Động Nhân Sự" name="danhsach_nhansu">
+                                <group>
+                                    <field name="update_date" readonly="1"/>
+                                </group>
+                                <field name="bdns_companies" readonly="1">
+                                    <tree>
+                                        <field name="company_name" readonly="1"/>
+                                        <field name="employee_previous_month_total" readonly="1"/>
+                                        <field name="employee_increase" readonly="1"/>
+                                        <field name="employee_decrease" readonly="1"/>
+                                        <field name="nghi_thai_san" readonly="1"/>
+                                        <field name="nghi_om_dau" readonly="1"/>
+                                        <field name="nghi_khong_luong" readonly="1"/>
+                                        <field name="employee_current_working_total" readonly="1"/>
+                                        <field name="employee_working_total" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="employee_bdns" model="ir.ui.view">
+            <field name="name">DANH SÁCH BIẾN ĐỘNG NHÂN SỰ</field>
+            <field name="model">hr.employee.report.temp.bdns</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="month"/>
+                        <field name="year"/>
+                    </group>
+                    <footer>
+                        <button  string="Xem Danh Sách" name="action_lay_ds_bdns" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="employee_report_bdns_action"
+                name="Danh Sách Biến Động Nhân Sự"
+                res_model="hr.employee.report.temp.bdns"
+                view_type="form"
+                view_mode="form"
+                view_id="employee_bdns"
+                target="new"/>
+        <menuitem
+            id="menu_hr_reporting_biendong_nhansu_month_year"
+            name="Danh Sách Biến Động Nhân Sự Theo Tháng"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager"
+            action="employee_report_bdns_action"
+            sequence="81"/>
+        <report
+            id="action_report_biendong_nhansu_theo_month"
+            string="DANH SÁCH BIẾN ĐỘNG NHÂN SỰ "
+            model="hr.employee.report.bdns"
+            report_type="xlsx"
+            name="sea_employee_reports.report_biendong_nhansu_month_xlsx"
+            file="sea_employee_reports.report_biendong_nhansu_month_xlsx"
+            print_report_name="'DANH SÁCH BIẾN ĐỘNG NHÂN SỰ - %s-%s' % (object.month, object.year)"
+            menu="False"/>
+        <!---->
+
+        <!---TÁI KÝ HĐLĐ-->
+        <record id="employee_report_tai_ky_action" model="ir.actions.server">
+            <field name="name">DANH SÁCH TÁI KÝ HĐLĐ</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">
+            action = model.print_tai_ky_report()
+            </field>
+        </record>
+        <report
+            id="action_report_tai_ky"
+            string="DANH SÁCH TÁI KÝ HĐLĐ"
+            model="hr.employee"
+            report_type="xlsx"
+            name="sea_employee_reports.report_tai_ky_xlsx"
+            file="DANH SÁCH TÁI KÝ HĐLĐ"
+            print_report_name="'DANH SÁCH TÁI KÝ HĐLĐ'"
+            menu="False"/>
+        <menuitem
+            id="menu_hr_reporting_tai_ky"
+            name="Danh Sách Tái Ký HĐLĐ"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            action="employee_report_tai_ky_action"
+            sequence="81"/>
+
+        <!---DANH SÁCH SINH NHẬT-->
+        <record id="employee_birthday" model="ir.ui.view">
+            <field name="name">DANH SÁCH SINH NHẬT</field>
+            <field name="model">hr.employee.report.birthday</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="month"/>
+                    </group>
+                    <footer>
+                         <button name="print_birthday" string="Print"
+                        type="object" default_focus="1" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="employee_report_sinh_nhat_action"
+                name="DANH SÁCH SINH NHẬT"
+                res_model="hr.employee.report.birthday"
+                view_type="form"
+                view_mode="form"
+                view_id="employee_birthday"
+                target="new"/>
+        <report
+            id="action_report_birthday"
+            string="DANH SÁCH SINH NHẬT"
+            model="hr.employee"
+            report_type="xlsx"
+            name="sea_employee_reports.report_birthday_xlsx"
+            file="DANH SÁCH SINH NHẬT"
+            print_report_name="'DANH SÁCH SINH NHẬT'"
+            menu="False"/>
+        <menuitem
+            id="menu_hr_reporting_sinh_nhat"
+            name="Danh Sách Sinh Nhật"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            action="employee_report_sinh_nhat_action"
+            sequence="82"/>
+
+        <!---DANH SÁCH LAO ĐỘNG NỮ-->
+
+        <record id="employee_report_lao_dong_nu_action" model="ir.actions.server">
+            <field name="name">Lao Dong Nu Report</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">
+            action = model.print_lao_dong_nu_report()
+            </field>
+
+        </record>
+        <report
+            id="action_report_lao_dong_nu"
+            string="DANH SÁCH LAO ĐỘNG NỮ"
+            model="hr.employee"
+            report_type="xlsx"
+            name="sea_employee_reports.report_lao_dong_nu_xlsx"
+            file="DANH SÁCH LAO ĐỘNG NỮ"
+            print_report_name="'DANH SÁCH LAO ĐỘNG NỮ'"
+            menu="False"/>
+        <menuitem
+            id="menu_hr_reporting_lao_dong_nu"
+            name="Danh Sách Lao Động Nữ"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            action="employee_report_lao_dong_nu_action"
+            sequence="83"/>
+
+        <!---DANH SÁCH QUỐC TẾ THIẾU NHI-->
+        <record id="employee_report_quoc_te_thieu_nhi_action" model="ir.actions.server">
+            <field name="name">Lao Dong Nu Report</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">
+            action = model.print_quoc_te_thieu_nhi_report()
+            </field>
+        </record>
+        <report
+            id="action_report_quoc_te_thieu_nhi"
+            string="DANH SÁCH QUỐC TẾ THIẾU NHI"
+            model="hr.employee"
+            report_type="xlsx"
+            name="sea_employee_reports.report_quoc_te_thieu_nhi_xlsx"
+            file="DANH SÁCH QUỐC TẾ THIẾU NHI"
+            print_report_name="DANH SÁCH QUỐC TẾ THIẾU NHI"
+            menu="False"/>
+        <menuitem
+            id="menu_hr_reporting_quoc_te_thieu_nhi"
+            name="Danh Sách Quốc Tế Thiếu Nhi"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            action="employee_report_quoc_te_thieu_nhi_action"
+            sequence="84"/>
+
+<!--        DANH SÁCH NHÂN SỰ CÓ QLTT / CẤP TRÊN QLTT NGHỈ VIỆC-->
+        <record id="employee_report_manager_leave_lines_action_form_view" model="ir.ui.view" >
+            <field name="name">hr.employee.report.manager.leave.lines.form.view</field>
+            <field name="model">hr.employee.report.manager.leave.lines</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header></header>
+                    <group>
+                        <field name="company_name" readonly="1"/>
+                        <field name="employee_name" readonly="1"/>
+                        <field name="employee_scid" readonly="1"/>
+                        <field name="manager_name" readonly="1"/>
+                        <field name="manager_scid" readonly="1"/>
+                        <field name="upper_manager_name" readonly="1"/>
+                        <field name="upper_manager_scid" readonly="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="employee_report_manager_leave_form_view" model="ir.ui.view" >
+            <field name="name">DANH SÁCH NHÂN SỰ CÓ QLTT / CẤP TRÊN QLTT NGHỈ VIỆC</field>
+            <field name="model">hr.employee.report.manager.leave</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Print" type="object" class="oe_highlight" name="print_manager_leave"/>
+<!--                        <button string="Test" type="object" class="oe_highlight" name="get_report_manager_leave_data"/>-->
+                    </header>
+                    <group>
+                        <notebook>
+                            <page string="Danh sách nhân sự có QLTT / cấp trên QLTT nghỉ việc">
+                                <group>
+                                    <field name="update_date" readonly="1" invisible="1"/>
+                                </group>
+                                <field name="employee_data_lines" readonly="1">
+                                    <tree>
+                                        <field name="company_name" string="Tên công ty" readonly="1"/>
+                                        <field name="employee_scid" string="Mã SC nhân sự" readonly="1"/>
+                                        <field name="employee_name" string="Tên nhân sự" readonly="1"/>
+<!--                                        <field name="employee_scid" string="Mã SC nhân sự" readonly="1"/>-->
+                                        <field name="manager_scid" string="Mã SC QLTT đã nghỉ việc" readonly="1"/>
+                                        <field name="manager_name" string="Tên QLTT đã nghỉ việc" readonly="1"/>
+                                        <field name="upper_manager_scid" string="Mã SC cấp trên QLTT đã nghỉ việc" readonly="1"/>
+                                        <field name="upper_manager_name" string="Tên cấp trên QLTT đã nghỉ việc" readonly="1"/>
+<!--                                        <field name="emplpyee_id" invisible="1"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_report_manager_leave_action_view" model="ir.actions.act_window" >
+            <field name="name">DANH SÁCH NHÂN SỰ CÓ QLTT / CẤP TRÊN QLTT NGHỈ VIỆC</field>
+            <field name="res_model">hr.employee.report.manager.leave</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="employee_report_manager_leave_form_view"/>
+            <field name="context">{'create': 0, 'delete': 0}</field>
+        </record>
+
+<!--        <record id="employee_report_manager_leave_action" model="ir.actions.server">-->
+<!--            <field name="name">Danh sách nhân sự có QLTT / cấp trên QLTT nghỉ việc</field>-->
+<!--            <field name="model_id" ref="model_hr_employee_report_manager_leave"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--action_values = env.ref('sea_employee_reports.employee_report_manager_leave_action_view').read()[0]-->
+<!--res_id = env['hr.employee.report.manager.leave'].search([('user_id','=',env.user.id)], limit=1)-->
+<!--if not res_id:-->
+<!--    res_id = env['hr.employee.report.manager.leave'].create({'user_id': env.user.id})-->
+<!--res_id.action_remove_data_lines()-->
+<!--action_values.update({'res_id': res_id.id})-->
+<!--action = action_values-->
+<!--            </field>-->
+<!--        </record>-->
+        <record id="employee_report_manager_leave_action" model="ir.actions.server">
+            <field name="name">Danh sách nhân sự có QLTT / cấp trên QLTT nghỉ việc</field>
+            <field name="model_id" ref="model_hr_employee_report_manager_leave"/>
+            <field name="state">code</field>
+            <field name="code">
+action = model.sudo().call_view_action(env.user.id)
+            </field>
+        </record>
+
+        <report
+            id="action_report_manager_leave"
+            string="DANH SÁCH NHÂN SỰ CÓ QLTT / CẤP TRÊN QLTT NGHỈ VIỆC "
+            model="hr.employee.report.manager.leave"
+            report_type="xlsx"
+            name="sea_employee_reports.report_manager_leave_xlsx"
+            file="sea_employee_reports.report_manager_leave_xlsx"
+            print_report_name="'DANH SÁCH NHÂN SỰ CÓ QLTT NGHỈ VIỆC'"
+            menu="False"/>
+
+        <menuitem
+            id="menu_hr_reporting_manager_leave"
+            name="Danh Sách Nhân Sự Có QLTT / Cấp Trên QLTT Nghỉ Việc"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            action="employee_report_manager_leave_action"
+            sequence="85"/>
+    </data>
+</odoo>

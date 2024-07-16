@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id="action_overdue_debit_report" model="ir.actions.server">-->
+<!--        <field name="name">List of overdue debt</field>-->
+<!--        <field name="model_id" ref="model_report_overdue_debit"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">action = model.action_open_report()-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+<!--    <menuitem id="menu_overdue_debit_report"-->
+<!--              name="List of overdue debt"-->
+<!--              parent="account.account_reports_management_menu"-->
+<!--              sequence="12"-->
+<!--              action="action_overdue_debit_report"/>-->
+
+    <record id="action_overdue_debit_invoice_report" model="ir.actions.server">
+        <field name="name">List of overdue invoice debt involved</field>
+        <field name="model_id" ref="model_report_overdue_debit"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_report_invoice()
+        </field>
+    </record>
+
+
+    <menuitem id="menu_overdue_debit_invoice_report"
+              name="List of overdue invoice debt involved"
+              parent="account.account_reports_management_menu"
+              sequence="13"
+              action="action_overdue_debit_invoice_report"/>
+
+    <record id="report_overdue_debit_search_view" model="ir.ui.view">
+        <field name="name">report_overdue_debit_search_view</field>
+        <field name="model">report.overdue.debit</field>
+        <field eval="10" name="priority"/>
+        <field name="arch" type="xml">
+            <search string="Overdue debit search">
+                <field name="partner_id" string="Khách hàng"/>
+                <field name="ref" string="Số tham chiếu"/>
+                <field name="date_invoice" string="Ngày hóa đơn"/>
+                <field name="date_due" string="Ngày đến hạn"/>
+                <field name="origin" string="Tài liệu gốc"/>
+                <group expand='0' string='Group by...'>
+                    <filter string='Khách hàng' name="partner_id_group" context="{'group_by': 'partner_id'}"/>
+                    <filter string='Số tham chiếu' name="ref_group" context="{'group_by': 'ref'}"/>
+                    <filter string='Ngày hóa đơn' name="date_invoice_group" context="{'group_by': 'date_invoice'}"/>
+                    <filter string='Ngày đến hạn' name="date_due_group" context="{'group_by': 'date_due'}"/>
+                    <filter string='Tài liệu gốc' name="origin_group" context="{'group_by': 'origin'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+<!--    <record model='ir.actions.act_window' id='action_report_overdue_debit'>-->
+<!--        <field name="name">List of overdue debt</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">report.overdue.debit</field>-->
+<!--        <field name="search_view_id" ref="report_overdue_debit_search_view"/>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--    </record>-->
+
+
+<!--    <record id="report_overdue_debit_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">report.overdue.debit.view.tree</field>-->
+<!--        <field name="model">report.overdue.debit</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Report overdue debit" create="false">-->
+<!--                <field name="partner_id"/>-->
+<!--                <field name="ref"/>-->
+<!--                <field name="date_due"/>-->
+<!--                <field name="origin"/>-->
+<!--                <field name="debit"/>-->
+<!--                <field name="residual_signed"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.actions.act_window.view" id="action_report_overdue_debit_view">-->
+<!--        <field name="act_window_id" ref="action_report_overdue_debit"/>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--        <field name="view_id" ref="report_overdue_debit_view_tree"/>-->
+<!--    </record>-->
+
+    <record id="report_overdue_invoice_debit_view_tree" model="ir.ui.view">
+        <field name="name">report.overdue.invoice.debit.view.tree</field>
+        <field name="model">report.overdue.debit</field>
+        <field name="arch" type="xml">
+            <tree string="Report overdue debit" create="false">
+                <field name="partner_id"/>
+                <field name="ref"/>
+                <field name="date_invoice"/>
+                <field name="date_due"/>
+                <field name="origin"/>
+                <field name="debit"/>
+                <field name="residual_signed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_report_overdue_invoice_debit" model="ir.actions.act_window">
+        <field name="name">List of overdue invoice debt involved</field>
+        <field name="res_model">report.overdue.debit</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="report_overdue_invoice_debit_view_tree"/>
+        <field name="search_view_id" ref="report_overdue_debit_search_view"/>
+    </record>
+
+<!--    <record model='ir.actions.act_window' id='action_report_overdue_invoice_debit'>-->
+<!--        <field name="name">List of overdue invoice debt involved</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">report.overdue.debit</field>-->
+<!--        <field name="search_view_id" ref="report_overdue_debit_search_view"/>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.actions.act_window.view" id="action_report_overdue_invoice_debit_view">-->
+<!--        <field name="act_window_id" ref="action_report_overdue_invoice_debit"/>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--        <field name="view_id" ref="report_overdue_invoice_debit_view_tree"/>-->
+<!--    </record>-->
+</odoo>

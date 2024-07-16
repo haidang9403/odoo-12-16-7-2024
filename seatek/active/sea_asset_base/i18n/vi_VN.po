@@ -1,0 +1,1768 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sea_asset_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-14 02:07+0000\n"
+"PO-Revision-Date: 2023-07-14 02:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.asset_qrcode_action_view
+msgid "ASSET QRCODE"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__acceptance_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__acceptance_date
+msgid "Acceptance Date"
+msgstr "Ngày BBNT"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__acceptance_number
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__acceptance_number
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__acceptance_number
+msgid "Acceptance Number"
+msgstr "Số BBNT"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__access_warning
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__access_warning
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__access_warning
+msgid "Access warning"
+msgstr "Cảnh báo truy cập"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__accident_place
+msgid "Accident place"
+msgstr "Nơi xảy ra sự cố"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__account_asset_id
+msgid "Account Asset"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_account_asset_image
+msgid "Account Asset Images"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:res.groups,name:sea_asset_base.group_asset_accounting
+msgid "Accounting"
+msgstr "Kế toán"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_needaction
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_needaction
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_needaction
+msgid "Action Needed"
+msgstr "Cần có Hành động"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__active
+msgid "Active"
+msgstr "Có hiệu lực"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__activity_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__activity_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__activity_ids
+msgid "Activities"
+msgstr "Các hoạt động"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__activity_state
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__activity_state
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__activity_state
+msgid "Activity State"
+msgstr "Trạng thái Hoạt động"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__address
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__date_adjustment
+msgid "Adjustment Date"
+msgstr "Ngày điều chỉnh"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__alt_unit
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__alt_unit
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__alt_unit
+msgid "Alt Unit"
+msgstr "Đơn vị thường gọi (ví dụ \"cái\")"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__asset_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__asset_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__asset_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__asset_id
+msgid "Asset"
+msgstr "Tài sản"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_account_asset_adjustment
+#: model:ir.model,name:sea_asset_base.model_account_asset_adjustment
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_adjustment_lines
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_repair_lines
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.account_asset_adjustment_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Adjustment"
+msgstr "Điều chỉnh số lượng tài sản"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_asset_category
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Asset Category"
+msgstr "Danh mục tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__code
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_base_view_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Code"
+msgstr "Mã tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__source_asset_user
+msgid "Asset Employee."
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_images
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Images"
+msgstr "Hình ảnh tài sản"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Information"
+msgstr "THÔNG TIN TÀI SẢN"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_asset_inventory
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_inventory_lines
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__asset_inventory_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__asset_inventory_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__asset_inventory_id
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_inventory
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Inventory"
+msgstr "Kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_inventory_committee
+msgid "Asset Inventory Committee"
+msgstr "Ban Kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_inventory_line
+msgid "Asset Inventory Line"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__asset_inventory_lines
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_list
+msgid "Asset List"
+msgstr "Quản lý tài sản"
+
+#. module: sea_asset_base
+#: model:ir.module.category,name:sea_asset_base.module_category_asset
+msgid "Asset Management"
+msgstr "Quản lý tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_management_dept_staff
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_management_dept_staff
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_base_view_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Management Dept Staff"
+msgstr "Nhân viên phòng Quản lý tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_management_dept_staff_temporary
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_management_dept_staff_temporary
+msgid "Asset Management Dept Staff #"
+msgstr "Nhân viên phòng Quản lý tài sản #"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_id
+msgid "Asset Name"
+msgstr "Tên tài sản"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_asset_qrcode
+msgid "Asset QRCode"
+msgstr "Tài sản QRCode"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__asset_qrcode
+msgid "Asset Qrcode"
+msgstr "Tài sản QRCode"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_receive_date
+msgid "Asset Receive Date"
+msgstr "Ngày nhận"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__asset_receive_date_from
+msgid "Asset Receive Date From"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__asset_receive_date_to
+msgid "Asset Receive Date To"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_asset_repair
+#: model:ir.model,name:sea_asset_base.model_asset_repair
+#: model:ir.model,name:sea_asset_base.model_asset_repair_lines
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__asset_repair_id
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_repair
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Repair"
+msgstr "Sửa chữa"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.sea_asset_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_asset_report
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_export_inventory_asset_report
+msgid "Asset Report"
+msgstr ""
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Status"
+msgstr "TÌNH TRẠNG"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_status_start
+msgid "Asset Status Start"
+msgstr "Tình trạng ban đầu"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_status_transfer
+msgid "Asset Status Transfer"
+msgstr "Tình trạng khi điều chuyển"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_transfer
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_transfer_id
+msgid "Asset Transfer"
+msgstr "Điều chuyển"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_transfer_line
+msgid "Asset Transfer Line"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_asset_transfer
+#: model:ir.actions.act_window,name:sea_asset_base.action_asset_transfer_multi
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_transfer_line
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_transfer
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset Transfers"
+msgstr "Điều chuyển"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_account_asset_type
+#: model:ir.model,name:sea_asset_base.model_account_asset_type
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_type
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__asset_type
+#: model:ir.ui.menu,name:sea_asset_base.menu_account_asset_type
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Asset Type"
+msgstr "Loại tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_user
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__asset_user_temporary
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_base_view_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Asset User"
+msgstr "Người sử dụng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_user_temporary
+msgid "Asset User #"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__asset_user
+msgid "Asset User."
+msgstr "Người sử dụng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_code
+msgid "Asset code"
+msgstr "Mã tài sản"
+
+#. module: sea_asset_base
+#: model:ir.actions.report,name:sea_asset_base.action_asset_report_xls
+#: model:ir.ui.menu,name:sea_asset_base.menu_action_asset_report
+msgid "Asset profile"
+msgstr "Báo cáo tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__asset_repair_lines
+msgid "Asset repair lines"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_account_asset_asset
+msgid "Asset/Revenue Recognition"
+msgstr "Ghi nhận tài sản / doanh thu"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_account_asset_asset_form_inherit
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_asset
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_root
+msgid "Assets"
+msgstr "Tài sản"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Assets in draft and open states"
+msgstr "Tài sản trong trạng thái nháp và mở"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_attachment_count
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_attachment_count
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số đính kèm"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Back To Done"
+msgstr "Chuyển về đã hoàn thành"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "Back To Process"
+msgstr "Chuyển về đang thực hiện"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Back To Transfer"
+msgstr "Chuyển về đang vận chuyển"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+msgid "Back to Draft"
+msgstr "Chuyển về nháp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__barcode
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Barcode"
+msgstr "Mã vạch"
+
+#. module: sea_asset_base
+#: selection:account.asset.type,type_template:0
+#: selection:asset.report,asset_type:0
+msgid "CCDC"
+msgstr ""
+
+#. module: sea_asset_base
+#: selection:account.asset.type,type_template:0
+#: selection:asset.report,asset_type:0
+msgid "CCDCCPB"
+msgstr ""
+
+#. module: sea_asset_base
+#: selection:asset.inventory,state:0
+#: selection:asset.transfer,state:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_asset_qrcode
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_asset_report
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_export_inventory_asset_report
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__category_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__category_id
+#: model:ir.ui.menu,name:sea_asset_base.menu_asset_category
+msgid "Category"
+msgstr "Danh mục"
+
+#. module: sea_asset_base
+#: model:ir.module.category,description:sea_asset_base.module_category_asset
+msgid "Category For Asset"
+msgstr "Danh mục tài sản"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Category of asset"
+msgstr "Danh mục tài sản"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,state:0
+msgid "Close"
+msgstr "Đóng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__adjustment_code
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__code
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__asset_code
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__asset_code
+msgid "Code"
+msgstr "Mã"
+
+#. module: sea_asset_base
+#: selection:asset.report,type:0
+#: selection:export.inventory.asset,type:0
+msgid "Commitment date"
+msgstr "Ngày cam kết"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__is_seagroup
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__source_company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__company_id_compute
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__dest_company
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__company_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__company_id
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Company"
+msgstr "Công ty"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__company_id
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Company Owner"
+msgstr "Công ty sở hữu"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__company_using
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Company Using"
+msgstr "Công ty sử dụng"
+
+#. module: sea_asset_base
+#: model:ir.ui.menu,name:sea_asset_base.menu_configuration_asset
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: sea_asset_base
+#: model:ir.actions.server,name:sea_asset_base.asset_transfer_multi
+msgid "Create Asset Transfer"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__create_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__create_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__access_url
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__access_url
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__access_url
+msgid "Customer Portal URL"
+msgstr "URL cổng thông tin khách hàng"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_donvi_duoc_kiemke
+msgid "Dai Dien Don Vi Duoc Kiem Ke"
+msgstr ""
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,asset_status_start:0
+#: selection:account.asset.asset,latest_inventory_status:0
+#: selection:asset.inventory.line,latest_inventory_status:0
+#: selection:asset.report,latest_inventory_status:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Damaged waiting for liquidation"
+msgstr "Hư hỏng chờ thanh lý"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,asset_status_start:0
+#: selection:account.asset.asset,latest_inventory_status:0
+#: selection:asset.inventory.line,latest_inventory_status:0
+#: selection:asset.report,latest_inventory_status:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Damaged waiting for repair"
+msgstr "Hư hỏng chờ sửa chữa"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "Danh Sách Kiểm Kê"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__start_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__repair_date
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Date"
+msgstr "Ngày"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__start_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__start_date
+msgid "Date From"
+msgstr "Từ ngày"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__end_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__end_date
+msgid "Date To"
+msgstr "Đến ngày"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Default Department"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__dest_department
+msgid "Default Department."
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__department
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__department
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__department_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__department_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__department_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__department_id
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Department"
+msgstr "Phòng/Ban"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__dest_department_temporary
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__source_department_temporary
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__dest_department_temporary
+msgid "Department #"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__dept_owner
+msgid "Department Owner"
+msgstr "Phòng/Ban sở hữu tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__dest_department
+msgid "Department."
+msgstr "Phòng/Ban"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__description
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__description
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__description
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__description
+msgid "Description"
+msgstr "Miêu tả"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__dest_company_id
+msgid "Dest Company"
+msgstr "Công ty nhận tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__dest_asset_user
+msgid "Destination Employee."
+msgstr "Người sử dụng mới"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__dest_location_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__dest_location_id
+msgid "Destination Location"
+msgstr "Địa điểm đích"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_inventory_pkk_report_xls__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_repair_report_xls__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_report_xls__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_transfer_report_xls__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_export_inventory_asset_xls__display_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__document_ref
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__document_ref
+msgid "Document Ref"
+msgstr "Văn bản tham chiếu"
+
+#. module: sea_asset_base
+#: selection:asset.repair,state:0
+#: selection:asset.transfer,state:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,state:0
+#: selection:asset.inventory,state:0
+#: selection:asset.repair,state:0
+#: selection:asset.transfer,state:0
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__draft_state
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__employee_id_temp
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__inventoried_department
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__employee_id_temp
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__employee_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__employee_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__user_id
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.hr_employee_temporary_tree
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__employee_temporary
+msgid "Employee #"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__employee_current_status
+#: model:ir.model.fields,help:sea_asset_base.field_hr_employee_temporary__employee_current_status
+msgid "Employee Status"
+msgstr "Trạng thái nhân viên"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__employee_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__employee_id
+msgid "Employee."
+msgstr "Nhân viên"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__repair_date_end
+msgid "End date"
+msgstr "Ngày cuối"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__end_time
+msgid "End time"
+msgstr "Ngày kết thúc kiểm kê"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Export"
+msgstr "Xuất"
+
+#. module: sea_asset_base
+#: model:ir.actions.report,name:sea_asset_base.action_export_asset_inventory_pkk
+msgid "Export Asset Inventory"
+msgstr "Xuất file Excel"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_asset_qrcode
+msgid "Export PDF"
+msgstr "Xuất PDF"
+
+#. module: sea_asset_base
+#: model:ir.actions.server,name:sea_asset_base.export_qrcode_asset
+msgid "Export QRCode"
+msgstr ""
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_asset_report
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_export_inventory_asset_report
+msgid "Export XLS"
+msgstr "Xuất báo cáo"
+
+#. module: sea_asset_base
+#: model:ir.actions.report,name:sea_asset_base.action_export_asset_repair
+msgid "Export an asset repair"
+msgstr "Xuất văn bản"
+
+#. module: sea_asset_base
+#: model:ir.actions.report,name:sea_asset_base.action_export_asset_transfer
+msgid "Export an asset transfer"
+msgstr "Xuất văn bản"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.export_inventory_asset
+#: model:ir.actions.report,name:sea_asset_base.action_export_inventory_asset
+#: model:ir.ui.menu,name:sea_asset_base.menu_action_export_inventory_asset
+msgid "Export an inventory of assets"
+msgstr "Báo cáo kiểm kê tài sản"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_follower_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_follower_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_follower_ids
+msgid "Followers"
+msgstr "Người dõi theo"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_channel_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_channel_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Người theo dõi (Các kênh)"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_partner_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_partner_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Các đối tác)"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "From Company"
+msgstr "Công ty giao"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "From Department"
+msgstr "Phòng/Ban giao"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__from_user
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "From User"
+msgstr "Người giao"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__source_asset_user_temporary
+msgid "From User #"
+msgstr "Người giao #"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__note
+msgid "Ghi chú"
+msgstr "Ghi chú"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__giai_trinh
+msgid "Giải trình của đơn vị"
+msgstr "Giải trình của đơn vị"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,asset_status_start:0
+#: selection:account.asset.asset,latest_inventory_status:0
+#: selection:asset.inventory.line,latest_inventory_status:0
+#: selection:asset.report,latest_inventory_status:0
+#: selection:asset.transfer.line,asset_status_transfer:0
+msgid "Good"
+msgstr "Tốt"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__value
+msgid "Gross Value"
+msgstr "Nguyên giá"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_hr_department_temporary
+msgid "HR Department Multi Company Temporary"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_hr_employee_temporary
+msgid "HR Employee Multi Company Temporary"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_ir_http
+msgid "HTTP Routing"
+msgstr "Định tuyến HTTP"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__handover_party
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__handover_party
+msgid "Handover Party"
+msgstr "Đơn vị giao"
+
+#. module: sea_asset_base
+#: selection:asset.inventory.line,status:0
+msgid "Hư Hỏng"
+msgstr "Hư hỏng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_inventory_pkk_report_xls__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_repair_report_xls__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_report_xls__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_transfer_report_xls__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_export_inventory_asset_xls__id
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__id
+msgid "ID"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__message_unread
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__message_unread
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Nếu đánh dấu chọn, các thông điệp mới yêu cầu sự có mặt của bạn."
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__message_needaction
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__message_needaction
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu đánh dấu chọn, các thông điệp mới yêu cầu sự có mặt của bạn."
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__message_has_error
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__message_has_error
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu chọn, sẽ hiển thị thông báo lỗi."
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__asset_image
+msgid "Image"
+msgstr "Hình ảnh"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__asset_filename
+msgid "Images Note"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__increase_quantity
+msgid "Increase Quantity"
+msgstr "Số lượng tăng"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_inventoried_department
+msgid "Inventoried Department"
+msgstr "Đơn vị được kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__member_of_inventory
+msgid "Inventory Committee"
+msgstr "Ban Kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_committee_position
+msgid "Inventory Committee Position"
+msgstr "Chức vụ của thành viên Ban Kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_inventory
+msgid "Inventory Of Asset"
+msgstr "Kiểm kê tài sản"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "Invetory Lines"
+msgstr ""
+
+#. module: sea_asset_base
+#: selection:asset.report,type:0
+#: selection:export.inventory.asset,type:0
+msgid "Invoice date"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_is_follower
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_is_follower
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_is_follower
+msgid "Is Follower"
+msgstr "Trở thành người theo dõi"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__job_id
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__kanban_view
+msgid "Kanban View"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_inventory_pkk_report_xls____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_repair_report_xls____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_report_xls____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_asset_transfer_report_xls____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_report_sea_asset_base_export_inventory_asset_xls____last_update
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__write_uid
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_image__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventoried_department__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__write_date
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__latest_asset_transfer_date
+msgid "Latest Asset Transfer Date"
+msgstr "Ngày điều chuyển gần nhất"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__latest_asset_transfer_date_from
+msgid "Latest Asset Transfer Date From"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__latest_asset_transfer_date_to
+msgid "Latest Asset Transfer Date To"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__latest_inventory_status
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__latest_inventory_status
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__latest_inventory_status
+msgid "Latest Inventory Status"
+msgstr "Tình trạng gần nhất"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Latest Inventory Status Good"
+msgstr "Các tài sản có tình trạng tốt"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,state:0
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__liquidation_state
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Liquidation"
+msgstr "Thanh lý"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__liquidation_date
+msgid "Liquidation Date"
+msgstr "Ngày thanh lý"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__sea_office_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__sea_office_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__sea_office_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__location_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__sea_office_id
+msgid "Location"
+msgstr "Địa điểm"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_main_attachment_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_main_attachment_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Đính kèm chính"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Management & Using Asset"
+msgstr "ĐƠN VỊ QUẢN LÝ VÀ SỬ DỤNG"
+
+#. module: sea_asset_base
+#: model:res.groups,name:sea_asset_base.group_asset_manager
+msgid "Manager"
+msgstr "Quản lý"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_has_error
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_has_error
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_has_error
+msgid "Message Delivery error"
+msgstr "Thông báo gửi đi gặp lỗi"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_ids
+msgid "Messages"
+msgstr "Thông điệp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_committee_position__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_department_temporary__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_hr_employee_temporary__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_list_asset_qrcode__name
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__activity_date_deadline
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__activity_date_deadline
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn chót lần hành động kế tiếp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__activity_summary
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__activity_summary
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__activity_type_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__activity_type_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__activity_type_id
+msgid "Next Activity Type"
+msgstr "Kiểu hành động kế tiếp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__note
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__note
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__note
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_needaction_counter
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_needaction_counter
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số lượng Hành động"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_has_error_counter
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_has_error_counter
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_has_error_counter
+msgid "Number of error"
+msgstr "Số lỗi"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__message_needaction_counter
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__message_needaction_counter
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Số thông điệp cần có hành động"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__message_has_error_counter
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__message_has_error_counter
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin gửi đi bị lỗi"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__message_unread_counter
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__message_unread_counter
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Số thông điệp chưa đọc"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_sea_office__office_code
+msgid "Office Code"
+msgstr "Mã số văn phòng"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sale_office_form
+msgid "Office Name"
+msgstr "Tên văn phòng"
+
+#. module: sea_asset_base
+#: model:res.groups,name:sea_asset_base.group_asset_officer
+msgid "Officer"
+msgstr "Cán bộ"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__old_code
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Old Asset Code"
+msgstr "Mã tài sản cũ"
+
+#. module: sea_asset_base
+#: model:ir.ui.menu,name:sea_asset_base.menu_operations_asset
+msgid "Operations"
+msgstr "Hoạt động"
+
+#. module: sea_asset_base
+#: selection:asset.inventory,activity_state:0
+#: selection:asset.repair,activity_state:0
+#: selection:asset.transfer,activity_state:0
+msgid "Overdue"
+msgstr "Quá hạn"
+
+#. module: sea_asset_base
+#: model:ir.actions.report,name:sea_asset_base.action_print_qrcode
+msgid "PRINT QR-CODE"
+msgstr ""
+
+#. module: sea_asset_base
+#: selection:hr.employee.temporary,employee_current_status:0
+msgid "Parental leave"
+msgstr "Nghỉ thai sản"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,state:0
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__pending_state
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Pending"
+msgstr "Đang chờ"
+
+#. module: sea_asset_base
+#: selection:asset.inventory,activity_state:0
+#: selection:asset.repair,activity_state:0
+#: selection:asset.transfer,activity_state:0
+msgid "Planned"
+msgstr "Đã lên kế hoạch"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__access_url
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__access_url
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__access_url
+msgid "Portal Access URL"
+msgstr "URL truy cập cổng thông tin"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_committee__position
+msgid "Position"
+msgstr "Vị trí"
+
+#. module: sea_asset_base
+#: selection:asset.inventory,state:0
+#: selection:asset.repair,state:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+msgid "Process"
+msgstr "Đang thực hiện"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__procurement_staff
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_base_view_tree
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Procurement Staff"
+msgstr "Nhân viên thu mua"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__procurement_staff_temporary
+msgid "Procurement Staff #"
+msgstr "Nhân viên thu mua #"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_qrcode__qrcode
+msgid "QRCode"
+msgstr "QRCode"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__quantity
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__quantity_demanding
+msgid "Quantity Demand"
+msgstr "Số lượng yêu cầu"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__quantity_done
+msgid "Quantity Done"
+msgstr "Số lượng hoàn tất"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__receiver_handover_party
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__receiver_handover_party
+msgid "Receiver Party"
+msgstr "Dơn vị nhận"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__asset_code
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__repair_date
+msgid "Repair Date"
+msgstr "Ngày sửa chữa"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Repair Information"
+msgstr "SỬA CHỮA TÀI SẢN"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__repair_party
+msgid "Repair party"
+msgstr "Đơn vị sửa chữa"
+
+#. module: sea_asset_base
+#: model:ir.ui.menu,name:sea_asset_base.menu_reporting_asset
+msgid "Reporting"
+msgstr "Báo cáo"
+
+#. module: sea_asset_base
+#: selection:hr.employee.temporary,employee_current_status:0
+msgid "Resigned"
+msgstr "Đã nghỉ việc"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__activity_user_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__activity_user_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__activity_user_id
+msgid "Responsible User"
+msgstr "Người chịu trách nhiệm"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,state:0
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__process_state
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Running"
+msgstr "Đang sử dụng"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Sea Assets"
+msgstr "THÔNG TIN CHUNG"
+
+#. module: sea_asset_base
+#: model:ir.actions.act_window,name:sea_asset_base.action_sea_office
+#: model:ir.ui.menu,name:sea_asset_base.menu_sea_office
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sale_office_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_office_tree
+msgid "Sea Office"
+msgstr "Văn phòng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__access_token
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__access_token
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__access_token
+msgid "Security Token"
+msgstr "Mã bảo mật"
+
+#. module: sea_asset_base
+#: selection:account.asset.asset,asset_status_start:0
+#: selection:account.asset.asset,latest_inventory_status:0
+#: selection:asset.inventory.line,latest_inventory_status:0
+#: selection:asset.report,latest_inventory_status:0
+#: selection:asset.transfer.line,asset_status_transfer:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.view_account_asset_search_inherit
+msgid "Self destruct"
+msgstr "Đã thanh lý"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Sell or Dispose"
+msgstr "Bán hoặc thanh lý"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_sea_office__active
+msgid "Set active to false to hide the tax without removing it."
+msgstr "Không chọn kích hoạt để ẩn đi thuế mà không phải xóa bỏ nó."
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Set to Draft"
+msgstr "Thiết lập về nháp"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Set to Liquidation"
+msgstr "Thanh lý"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Set to Pending"
+msgstr "Tạm ngưng sử dụng"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Set to Running"
+msgstr "Đưa vào sử dụng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__shipping_party
+msgid "Shipping Party"
+msgstr "Đơn vị vận chuyển"
+
+#. module: sea_asset_base
+#: selection:hr.employee.temporary,employee_current_status:0
+msgid "Sick leave"
+msgstr "Nghỉ ốm đau"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__source_location_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__source_location_id
+msgid "Source Location"
+msgstr "Địa điểm nguồn"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "Start Asset Inventory"
+msgstr "Bắt đầu kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__repair_date_start
+msgid "Start date"
+msgstr "Ngày bắt đầu"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__start_time
+msgid "Start time"
+msgstr "Ngày bắt đầu kiểm kê"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__state
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__state
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "State"
+msgstr "Giai đoạn"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__state
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__state
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__status
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__state
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__activity_state
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__activity_state
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Trạng thái dựa trên hoạt động\n"
+"Quá hạn: Ngày đến hạn phải được chuyển\n"
+"Hôm nay: Hôm nay là ngày phải thực hiện\n"
+"Kế hoạch: Các hoạt động trong tương lai."
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__quantity_chenh_lech
+msgid "Số Lượng Chênh Lệch"
+msgstr "Số Lượng Chênh Lệch"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__quantity_so_sach
+msgid "Số Lượng Sổ Sách"
+msgstr "Số Lượng Sổ Sách"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__quantity_thuc_te
+msgid "Số Lượng Thực Tế"
+msgstr "Số Lượng Thực Tế"
+
+#. module: sea_asset_base
+#: selection:account.asset.type,type_template:0
+#: selection:asset.report,asset_type:0
+msgid "TSCD"
+msgstr "TSCD"
+
+#. module: sea_asset_base
+#: sql_constraint:hr.department.temporary:0
+msgid "The department must be unique per company!"
+msgstr ""
+
+#. module: sea_asset_base
+#: sql_constraint:hr.employee.temporary:0
+msgid "The employee must be unique per company!"
+msgstr ""
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "To Default User"
+msgstr "Người nhận mặc định"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__source_asset_user_default_temporary
+msgid "To Default User #"
+msgstr "Người nhận mặc định #"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__to_user
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "To User"
+msgstr "Người nhận"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__dest_asset_user_temporary
+msgid "To User #"
+msgstr "Người nhận #"
+
+#. module: sea_asset_base
+#: selection:asset.inventory,activity_state:0
+#: selection:asset.repair,activity_state:0
+#: selection:asset.transfer,activity_state:0
+msgid "Today"
+msgstr "Hôm nay"
+
+#. module: sea_asset_base
+#: selection:asset.transfer,state:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Transfer"
+msgstr "Điều chuyển"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.sea_asset_view_form
+msgid "Transfer & Liquidation"
+msgstr "ĐIỀU CHUYỂN VÀ THANH LÝ"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__asset_transfer_line_ids
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Transfer Lines"
+msgstr "Tài sản điều chuyển"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_repair_form
+msgid "Transfer Repair"
+msgstr "Tài sản sửa chữa"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_report__type
+#: model:ir.model.fields,field_description:sea_asset_base.field_export_inventory_asset__type
+msgid "Type"
+msgstr "Loại"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_type__type_template
+msgid "Type Template"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair_lines__uom_id
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__uom_id
+msgid "Unit"
+msgstr "Đơn vị"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__asset_uom
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__asset_uom
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer_line__asset_uom
+msgid "Unit of Measure"
+msgstr "Đơn vị tính"
+
+#. module: sea_asset_base
+#: selection:hr.employee.temporary,employee_current_status:0
+msgid "Unpaid leave"
+msgstr "Nghỉ không lương"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_unread
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_unread
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_unread
+msgid "Unread Messages"
+msgstr "Tin chưa đọc"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__message_unread_counter
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__message_unread_counter
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Bộ đếm Thông điệp chưa đọc"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__management_dept
+msgid "Usage Management Dept"
+msgstr "Phòng/Ban sử dụng"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_transfer_form
+msgid "Validate"
+msgstr "Xác nhận"
+
+#. module: sea_asset_base
+#: selection:asset.inventory,state:0
+#: selection:asset.transfer,state:0
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "Validated"
+msgstr "Đã xác nhận"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__vendor
+msgid "Vendor"
+msgstr "Nhà cung cấp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__vendor_name
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_asset__vendor_name
+msgid "Vendor Name"
+msgstr "Tên nhà cung cấp"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory__website_message_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_repair__website_message_ids
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__website_message_ids
+msgid "Website Messages"
+msgstr "Thông điệp Website"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_asset_inventory__website_message_ids
+#: model:ir.model.fields,help:sea_asset_base.field_asset_repair__website_message_ids
+#: model:ir.model.fields,help:sea_asset_base.field_asset_transfer__website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử thông tin liên lạc website"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,help:sea_asset_base.field_account_asset_asset__state
+msgid "When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+msgstr "Khi một tài sản được tạo, trạng thái là 'Nháp'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+
+#. module: sea_asset_base
+#: selection:hr.employee.temporary,employee_current_status:0
+msgid "Working"
+msgstr "Đang làm việc"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_account_asset_adjustment__active
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_transfer__active
+msgid "active"
+msgstr ""
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_qrcode
+msgid "asset.qrcode"
+msgstr "asset.qrcode"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_asset_report
+msgid "asset.report"
+msgstr "asset.report"
+
+#. module: sea_asset_base
+#: selection:asset.transfer.line,asset_status_transfer:0
+msgid "damaged waiting for liquidation"
+msgstr "Hư hỏng chờ thanh lý"
+
+#. module: sea_asset_base
+#: selection:asset.transfer.line,asset_status_transfer:0
+msgid "damaged waiting for repair"
+msgstr "Hư hỏng chờ sửa chữa"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_export_inventory_asset
+msgid "export.inventory.asset"
+msgstr "export.inventory.asset"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_list_asset_qrcode
+msgid "list.asset.qrcode"
+msgstr "Danh sách tài sản QRCode "
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_report_sea_asset_base_asset_inventory_pkk_report_xls
+msgid "report.sea_asset_base.asset_inventory_pkk_report_xls"
+msgstr "report.sea_asset_base.asset_inventory_pkk_report_xls"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_report_sea_asset_base_asset_repair_report_xls
+msgid "report.sea_asset_base.asset_repair_report_xls"
+msgstr "report.sea_asset_base.asset_repair_report_xls"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_report_sea_asset_base_asset_report_xls
+msgid "report.sea_asset_base.asset_report_xls"
+msgstr "report.sea_asset_base.asset_report_xls"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_report_sea_asset_base_asset_transfer_report_xls
+msgid "report.sea_asset_base.asset_transfer_report_xls"
+msgstr "report.sea_asset_base.asset_transfer_report_xls"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_report_sea_asset_base_export_inventory_asset_xls
+msgid "report.sea_asset_base.export_inventory_asset_xls"
+msgstr "report.sea_asset_base.export_inventory_asset_xls"
+
+#. module: sea_asset_base
+#: model:ir.model,name:sea_asset_base.model_sea_office
+msgid "sea.office"
+msgstr "Địa điểm"
+
+#. module: sea_asset_base
+#: selection:asset.inventory.line,status:0
+msgid "Đang Sử Dụng"
+msgstr "Đang sử dụng"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__da_dan_tem
+msgid "Đã dán tem"
+msgstr "Đã dán tem"
+
+#. module: sea_asset_base
+#: model_terms:ir.ui.view,arch_db:sea_asset_base.asset_inventory_form
+msgid "Đơn Vị Được Kiểm Kê"
+msgstr "Đơn Vị Được Kiểm Kê"
+
+#. module: sea_asset_base
+#: model:ir.model.fields,field_description:sea_asset_base.field_asset_inventory_line__de_xuat_xu_ly
+msgid "Đề xuất xử lý"
+msgstr "Đề xuất xử lý"
+

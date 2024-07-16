@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_survey_user_input_line_form" model="ir.ui.view">
+            <field name="name">hr.survey.user.input.line.form</field>
+            <field name="model">hr.survey.user.input.line</field>
+            <field name="target">inline</field>
+            <field name="arch" type="xml" >
+                <form js_class="form_appraisal" delete="false" duplicate="false">
+
+                    <style>
+                            table, th, td {
+                              border: 2px solid #56b3b5;
+                                }
+                    </style>
+                    <field name="question_name"/>
+                    <field name="value"/>
+                    <field name="value_manager"/>
+                    <field name="value_smanager"/>
+                    <field name="value_hddg"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

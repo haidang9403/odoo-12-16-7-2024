@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="dannygreen_po_template">
+
+        <div class="row">
+            <div class="col-3 mb4">
+                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 100px;"
+                     alt="Logo"/>
+            </div>
+            <div class="text-center">
+                <h5 style="font-weight: bold; margin-left: 3px">
+                    <t t-esc="o.company_id.name"/>
+                </h5>
+                <h5 style="font-weight: bold">Purchase Order</h5>
+                <h6 style="font-weight: 600">(PO Type : Exceptional PO)</h6>
+            </div>
+        </div>
+        <br/>
+        <div class="row" style="font-size: 12px">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2">Vendor</div>
+                    <div class="col-10" style="margin-left: -60px">
+                        :
+                        <span style="margin-left: 10px" t-esc="o.partner_id.name"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 3px">
+                    <div class="col-2">PO No.</div>
+                    <div class="col-4" style="margin-left: -60px">
+                        :
+                        <span style="margin-left: 10px" t-esc="o.name"/>
+                    </div>
+                    <div class="col-2">Order By / Date</div>
+                    <div class="col-4" style="margin-left: -35px">
+                        :
+                        <span style="margin-left: 10px" t-field="o.date_order" t-options='{"format": "dd.MM.yyyy"}'/>
+                        /
+                        <span t-field="o.user_id.name"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 2px">
+                    <div class="col-2">Delivery to</div>
+                    <div class="col-4" style="margin-left: -60px">
+                        :
+                        <span style="margin-left: 10px" t-field="o.picking_type_id.warehouse_id.name"/>
+                    </div>
+                    <div class="col-2">Delivery Date</div>
+                    <div class="col-4" style="margin-left: -35px">
+                        :
+                        <span style="margin-left: 10px" t-field="o.date_planned" t-options='{"format": "dd.MM.yyyy"}'/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 2px">
+                    <div class="col-2">VAT</div>
+                    <div class="col-4" style="margin-left: -60px">:</div>
+                    <div class="col-2">Department</div>
+                    <div class="col-4" style="margin-left: -35px">:</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer text-right">
+                Page:
+                <span class="page"/>
+                /
+                <span class="topage"/>
+            </div>
+        </div>
+        <style type="text/css">
+            table, tr, th, td {
+            border: 1px solid black;
+            font-size: 12px;
+            }
+            th, td {
+            padding: 5px;
+            }
+            .custom-po-border {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            }
+        </style>
+        <div class="page" style="margin-top: 10px">
+            <table style="width:100%">
+                <thead>
+                    <tr class="text-center">
+                        <th>Article Code</th>
+                        <th>Unit Barcode
+                            <br/>
+                            (Mã vạch lẻ)
+                        </th>
+                        <th>Unit Barcode Description
+                            <br/>
+                            (Tên sản phẩm lẻ)
+                        </th>
+                        <th>PO
+                            <br/>
+                            Unit
+                        </th>
+                        <th>Qty.<br/>inBox
+                        </th>
+                        <th>PO Qty.</th>
+                        <th>Pur. Price<br/>(-VAT)
+                        </th>
+                        <th>Amount<br/>(-VAT)
+                        </th>
+                        <th>Free<br/>PO
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <tr>
+                            <td class="text-center">
+                                <t t-esc="line.product_id.default_code"/>
+                            </td>
+                            <td class="text-center">
+                                <t t-esc="''"/>
+                            </td>
+                            <td>
+                                <t t-esc="line.product_id.name"/>
+                            </td>
+                            <td class="text-center">
+                                <t t-esc="line.product_uom.name"/>
+                            </td>
+                            <td class="text-right">
+                                <!--<t t-esc="'{:0,.3f}'.format(line.product_qty)"/>-->
+                            </td>
+                            <td class="text-right">
+                                <t t-esc="'{:0,.3f}'.format(line.product_qty)"/>
+                            </td>
+                            <td class="text-right">
+                                <t t-esc="'{:0,.0f}'.format(line.price_unit)"/>
+                            </td>
+                            <td class="text-right">
+                                <t t-esc="'{:0,.0f}'.format(line.price_subtotal)"/>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+
+                    <table style="width:50%; page-break-inside: avoid; margin-top: 5px; margin-left: auto; border: 0px">
+                        <tr class="custom-po-border">
+                            <td style="border: 0px; font-weight: 700">Total Amount (without VAT) :</td>
+                            <td class="text-right" style="border: 0px">
+                                <t t-esc="'{:0,.0f}'.format(o.amount_untaxed)"/>
+                            </td>
+                        </tr>
+                        <tr class="custom-po-border">
+                            <td style="border: 0px; font-weight: 700">Total VAT :</td>
+                            <td class="text-right" style="border: 0px">
+                                <t t-esc="'{:0,.0f}'.format(o.amount_tax)"/>
+                            </td>
+                        </tr>
+                        <tr class="custom-po-border">
+                            <td style="border: 0px; font-weight: 700">Total Amount :</td>
+                            <td class="text-right" style="border: 0px">
+                                <t t-esc="'{:0,.0f}'.format(o.amount_total)"/>
+                            </td>
+                        </tr>
+                    </table>
+                </tbody>
+            </table>
+            <div style="margin-top: 20px; width: 70px; border: 1px solid black; font-size: 12px; font-weight: bold">
+                <span style="margin-left: 9px">Remark</span>
+            </div>
+            <div style="margin-top: -1px; width:100%; height: 80px; border: 1px solid black; font-size: 12px"/>
+
+            <div style="margin-top: 6px; margin-left: 5px; font-size: 12px">
+                Lưu ý / Attention :
+                <br/>
+                Vui lòng kiểm tra giá kỹ trước khi giao hàng. Nếu sai giá, Chúng tôi sẽ từ chối nhận hàng.
+                <br/>
+                Please check price carefully before delivery. If wrong price, We will refuse receiving goods.
+                <br/>
+                Kênh tiếp nhận thông tin đạo đức kinh doanh/Business ethics channel:
+                <br/>
+                Ý kiến quý báu của quý vị chính là nền tảng xây dựng đạo đức kinh doanh của chúng tôi.
+                <br/>
+                Mọi ý kiến liên quan sẽ được tiếp nhận xử lý và bảo mật. Xin vui lòng liên hệ bộ phận Kiểm Soát Nội
+                Bộ.
+                <br/>
+                Your valued feedback helps to build our business ethics. All relevant comments will be handled and
+                kept confidential.
+                <br/>
+                Please kindly contact Internal Audit department via:
+                <br/>
+                Hotline: <span t-esc="o.company_id.phone"/> Email: <span t-esc="o.company_id.email"/>
+                <br/>
+            </div>
+        </div>
+    </template>
+</odoo>

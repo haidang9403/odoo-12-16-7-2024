@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report string="Export Asset Inventory"
+                id="action_export_asset_inventory_pkk"
+                model="asset.inventory"
+                name="sea_asset_base.asset_inventory_pkk_report_xls"
+                file="PhieuKiemKe"
+                report_type="xlsx"
+                attachment_use="False"/>
+    </data>
+</odoo>

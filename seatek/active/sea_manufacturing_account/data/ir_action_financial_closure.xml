@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_financial_closure" model="ir.actions.server">
+            <field name="name">Financial Closure</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_mrp_production"/>
+            <field name="binding_model_id" ref="model_mrp_production"/>
+            <field name="state">code</field>
+            <field name="code">records.action_economical_closure()</field>
+        </record>
+    </data>
+</odoo>

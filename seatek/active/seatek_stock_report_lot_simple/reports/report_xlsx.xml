@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="inventory_report_lot_simple_excel"
+        model="seatek.inventory.report.lot.simple"
+        string="Chi tiết tồn kho theo ngày"
+        report_type="xlsx"
+        name="seatek_stock_report_lot_simple.report_excel"
+        file="Chi tiết tồn kho"
+        attachment_use="False"
+    />
+</odoo>

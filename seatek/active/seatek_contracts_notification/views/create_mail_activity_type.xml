@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <data noupdate="1">
+<!--    <data>-->
+        <function
+            id = "create_data_mail_activity_type"
+            model = "mail.activity.type"
+            name = "mail_activity_type_create_action"
+        />
+    </data>
+</odoo>

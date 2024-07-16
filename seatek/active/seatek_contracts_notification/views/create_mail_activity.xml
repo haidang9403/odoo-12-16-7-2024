@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+<!--        <record model="ir.cron" id="seatek_scheduled_actions">-->
+<!--            <field name="name">IR CRON: Switch off Scheduled Actions</field>-->
+<!--            <field name="interval_number">5</field>-->
+<!--            <field name="interval_type">minutes</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="doall" eval="False"/>-->
+<!--            <field name="model_id" ref="model_ir_cron"/>-->
+<!--            <field name="model">ir.cron</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.switch_ir_cron()</field>-->
+<!--        </record>-->
+
+        <record model="ir.cron" id="seatek_to_do_contracts">
+            <field name="name">Contracts: Contract notification</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hr_contract"/>
+            <field name="model">hr.contract</field>
+            <field name="state">code</field>
+            <field name="code">model.mail_activity_create()</field>
+        </record>
+
+<!--        <record id="hr_contract_view_search_ref_contract_inherit" model="ir.ui.view">-->
+<!--            <field name="name">hr.contract.search.inherit</field>-->
+<!--            <field name="model">hr.contract</field>-->
+<!--            <field name="inherit_id" ref="hr_contract_operating_unit.hr_contract_view_search"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//filter[@name='to_renew']" position="before">-->
+<!--                    <filter string="Contract" name="contract" domain="[('contract_category', '=', 'contract')]"/>-->
+<!--                    <filter string="Addition" name="contract" domain="[('contract_category', '=', 'addition')]"/>-->
+<!--                    <group expand="0" string="Group By">-->
+<!--                        <filter string="Ref Contract" name='group_by_ref_contract'  context="{'group_by': 'ref_contract_id'}"/>-->
+<!--                    </group>-->
+<!--                </xpath>-->
+
+<!--            </field>-->
+<!--        </record>-->
+        <record id="hr_contract_view_kanban" model="ir.ui.view">
+            <field name="name">hr.contract.kanban.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='job_id']" position="before">
+<!--                    <div class="text-muted o_kanban_record_subtitle">-->
+<!--                        <field name="company_id"/>-->
+<!--                    </div>-->
+                    <div class="text-muted o_kanban_record_subtitle">
+                        <field name="employee_id"/>
+                    </div>
+                    <div class="text-muted o_kanban_record_subtitle">
+                        <field name="department_id"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

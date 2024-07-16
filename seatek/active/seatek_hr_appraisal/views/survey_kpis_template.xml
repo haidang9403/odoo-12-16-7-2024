@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--IMPORT EXCEL-->
+        <record id="import_kpis_excel_view" model="ir.ui.view" >
+            <field name="name">SURVEY IMPORT EXCEL TEMPLATE</field>
+            <field name="model">survey.import.excel.template</field>
+            <field name="arch" type="xml">
+                <form edit="false"  write="false" create="0" delete="false" duplicate="false">
+                    <header>
+                        <button  string="Import" name="import_kpis_excel_action" type="object" class="btn-primary"/>
+                        <button  string="Download Template" name="get_survey_template" type="object" class="btn-primary"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="template_path" invisible="0"/>
+                        </group>
+                        <field name="kpis_template_line" widget="appraisalUser_one2many">
+                                <tree editable="bottom" create="0" delete="0">
+                                    <field name="prefix" invisible="0" string="STT"/>
+                                    <field name="question_name" invisible="0" string="Tiêu Chí"/>
+                                    <field name="percentage" invisible="0" string="Tỉ Trọng"/>
+                                    <field name="summary_level" invisible="1"/>
+                                    <field name="is_parent" invisible="1"/>
+                                    <field name="line_order" invisible="1"/>
+                                </tree>
+                        </field>
+                    </group>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record id="import_kpis_excel_action_view" model="ir.actions.act_window" >
+            <field name="name">SURVEY IMPORT EXCEL TEMPLATE</field>
+            <field name="res_model">survey.import.excel.template</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="import_kpis_excel_view"/>
+            <field name="context">{'create': 0, 'delete': 0}</field>
+        </record>
+        <record id="import_kpis_excel" model="ir.actions.server">
+            <field name="name">Survey Template</field>
+            <field name="model_id" ref="model_hr_survey_user_input"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('seatek_hr_appraisal.import_kpis_excel_action_view').read()[0]
+if record:
+    res_id = env['survey.import.excel.template'].search([('user_id','=',env.user.id),('user_input_id','=',record.id)], limit=1)
+    if not res_id:
+        res_id = env['survey.import.excel.template'].create({'user_id': env.user.id,'user_input_id':record.id})
+    action_values.update({'res_id': res_id.id})
+action = action_values
+            </field>
+        </record>
+        <!--TEMPLATE-->
+        <record id="survey_kips_template_tree_view" model="ir.ui.view">
+            <field name="name">survey.kpis.template.tree.view</field>
+            <field name="model">survey.kpis.template</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="department_id" options="{'no_create_edit': True}"/>
+                    <field name="job_position_id" options="{'no_create_edit': True}"/>
+                </tree>
+            </field>
+        </record>
+        <record id="survey_kips_template_form_view" model="ir.ui.view">
+            <field name="name">survey.kpis.template.form.view</field>
+            <field name="model">survey.kpis.template</field>
+            <field name="target">inline</field>
+            <field name="sequence" eval="1"/>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+
+                        <field name="company_id" options="{'no_open': True}"/>
+                        <field name="department_id" options="{'no_create_edit': True,'no_open': True}"/>
+                        <field name="job_position_id" options="{'no_create_edit': True}"/>
+                    </group>
+                    <group string="Câu Hỏi Thường Xuyên">
+                        <field name="question_lines_thuong_xuyen">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="action_cai_dat_kpi_template" model="ir.actions.act_window" >
+            <field name="name">CÀI ĐẶT TEMPLATE</field>
+            <field name="res_model">survey.kpis.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="action_cai_dat_kpi_template_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="survey_kips_template_tree_view"/>
+            <field name="act_window_id" ref="action_cai_dat_kpi_template"/>
+        </record>
+        <record id="action_cai_dat_kpi_template_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="5"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="survey_kips_template_form_view"/>
+            <field name="act_window_id" ref="action_cai_dat_kpi_template"/>
+        </record>
+        <!--QUESTION-->
+        <record id="action_assign_question_to_template" model="ir.actions.server">
+            <field name="name">Assign Question To Template</field>
+            <field name="model_id" ref="model_survey_kpis_question"/>
+            <field name="binding_model_id" ref="model_survey_kpis_question"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('seatek_hr_appraisal.survey_assign_question_template_action').read()[0]
+res_id = env['survey.assign.question.template'].search([('user_id','=',env.user.id)], limit=1)
+if not res_id:
+    res_id = env['survey.assign.question.template'].create({'id':record.id,'company_id':env.user.company_id.id})
+    if records:
+        res_id.get_questions(records)
+action_values.update({'res_id': res_id.id})
+action = action_values
+            </field>
+    </record>
+        <record model="ir.actions.act_window" id="action_survey_kips_question">
+            <field name="name">SURVEY IMPORT QUESTIONS TEMPLATE</field>
+            <field name="res_model">survey.kpis.question</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="survey_kips_question_tree_view" model="ir.ui.view">
+            <field name="name">survey.kpis.question.tree.view</field>
+            <field name="model">survey.kpis.question</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" invisible="0"/>
+                    <field name="job_position_id" options="{'no_create_edit': True}"/>
+                    <field name="department_id" options="{'no_create_edit': True}"/>
+
+                    <field name="line_order" invisible="1"/>
+                    <field name="summary_level" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_survey_kips_question_tree_action" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="survey_kips_question_tree_view"/>
+            <field name="act_window_id" ref="action_survey_kips_question"/>
+        </record>
+        <record id="survey_kips_question_form_view" model="ir.ui.view">
+            <field name="name">survey.kpis.question.form.view</field>
+            <field name="model">survey.kpis.question</field>
+            <field name="target">inline</field>
+            <field name="sequence" eval="1"/>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" invisible="0"/>
+                        <field name="company_id" options="{'no_create_edit': True,'no_open': True}"/>
+                        <field name="department_id" options="{'no_create_edit': True}"/>
+                        <field name="job_position_id" options="{'no_create_edit': True}"/>
+                        <field name="line_order" invisible="1"/>
+                        <field name="summary_level" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_survey_kips_question_form_action" model="ir.actions.act_window.view">
+            <field name="sequence" eval="5"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="survey_kips_question_form_view"/>
+            <field name="act_window_id" ref="action_survey_kips_question"/>
+        </record>
+
+
+
+        <!--ASSIGN QUESTION-->
+        <record id="survey_assign_question_template_action" model="ir.actions.act_window">
+            <field name="name">ASSIGN QUESTION TO TEMPLATE</field>
+            <field name="res_model">survey.assign.question.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="survey_assign_question_template_view_form" model="ir.ui.view">
+            <field name="name">survey.kpis.question.assign.to.template.view.form</field>
+            <field name="model">survey.assign.question.template</field>
+            <field name="sequence" eval="6"/>
+            <field name="target">new</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button  string="Assign" name="button_assign_question_to_template" type="object" class="btn-primary"/>
+                    </header>
+                    <group>
+                        <field name="company_id" invisible="0"/>
+                        <field name="department_id" invisible="0"/>
+                        <field name="job_position_id" invisible="0"/>
+                        <field name="template" invisible="0"/>
+
+                    </group>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record id="assign_question_to_template_action" model="ir.actions.act_window">
+            <field name="name">ASSIGN QUESTION TO TEMPLATE</field>
+            <field name="res_model">survey.assign.question.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="assign_question_template_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="survey_assign_question_template_view_form"/>
+            <field name="act_window_id" ref="assign_question_to_template_action"/>
+        </record>
+        <record id="assign_question_to_template" model="ir.actions.server">
+            <field name="name">Đánh Giá KPIS</field>
+            <field name="model_id" ref="model_survey_kpis_question"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('seatek_hr_appraisal.assign_question_to_template_action').read()[0]
+action = action_values
+            </field>
+        </record>
+        <!--IMPORT TEMPLATE-->
+        <record id="import_kpis_template_view" model="ir.ui.view" >
+            <field name="name">SURVEY IMPORT TEMPLATE</field>
+            <field name="model">survey.import.template</field>
+            <field name="arch" type="xml">
+                <form edit="false"  write="false" create="0" delete="false" duplicate="false">
+                    <header>
+                        <button  string="Import" name="import_kpis_template_action" type="object" class="btn-primary"/>
+                    </header>
+                    <group>
+                        <field name="company_id" invisible="1" />
+                        <field name="department_id" invisible="1"/>
+                        <field name="job_position_id_compute" invisible="0"/>
+                        <field name="job_position_id" invisible="1"/>
+                        <field name="user_input_id" invisible="1"/>
+                        <field name="survey_template_id" invisible="0"/>
+                    </group>
+                    <group>
+                        <field name="kpis_template_line" widget="appraisalUser_one2many">
+                            <tree editable="bottom" create="0" delete="0">
+                                <field name="prefix" invisible="0" string="STT"/>
+                                <field name="question_name" invisible="0" string="Tiêu Chí"/>
+                                <field name="percentage" invisible="0" string="Tỉ Trọng"/>
+                                <field name="summary_level" invisible="1"/>
+                                <field name="is_parent" invisible="1"/>
+                                <field name="line_order" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record id="import_kpis_template_action_view" model="ir.actions.act_window" >
+            <field name="name">SURVEY IMPORT TEMPLATE</field>
+            <field name="res_model">survey.import.template</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="import_kpis_template_view"/>
+            <field name="context">{'create': 0, 'delete': 0}</field>
+        </record>
+        <record id="import_kpis_template" model="ir.actions.server">
+            <field name="name">Survey Template</field>
+            <field name="model_id" ref="model_hr_survey_user_input"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('seatek_hr_appraisal.import_kpis_template_action_view').read()[0]
+if record:
+    user_input=env['hr.survey.user.input'].search([('id','=',record.id)])
+    res_id = env['survey.import.template'].search([('user_id','=',env.user.id),('user_input_id','=',record.id)], limit=1)
+    if not res_id:
+        res_id = env['survey.import.template'].create({'user_id': env.user.id,'user_input_id':record.id})
+    action_values.update({'res_id': res_id.id,'job_position':1})
+action = action_values
+            </field>
+        </record>
+    </data>
+</odoo>

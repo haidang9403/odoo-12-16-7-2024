@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--import css-->
+        <template id="assets_directory_table" name="directory_table" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css"
+                      href="/sea_hr_directory/static/src/css/hr_directory.css"/>
+            </xpath>
+        </template>
+<!--        view tree-->
+        <record id="hr_directory_tree" model="ir.ui.view">
+            <field name="name">hr.directory.tree</field>
+            <field name="model">hr.directory</field>
+            <field name="arch" type="xml">
+                <tree string="Directory" class="directory_treeview_scrollable" editable="bottom">
+                    <field name="name"/>
+                    <field name="position"/>
+                    <field name="internal_num"/>
+                    <field name="fax"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="parent_directory"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+<!--view form-->
+         <record id="hr_directory_form" model="ir.ui.view">
+            <field name="name">hr.directory.form</field>
+            <field name="model">hr.directory</field>
+            <field name="arch" type="xml">
+                <form string="Directory">
+                     <group col="4">
+                            <field name="name"/>
+                            <field name="parent_directory"/>
+                            <field name="position"/>
+                            <field name="note"/>
+                            <field name="internal_num"/>
+                            <field name="fax"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="company_id"/>
+                     </group>
+                </form>
+            </field>
+        </record>
+
+         <record id="hr_directory_search_view" model="ir.ui.view">
+            <field name="name">hr_directory_search_view</field>
+            <field name="model">hr.directory</field>
+            <field eval="10" name="priority"/>
+            <field name="arch" type="xml">
+                <search string="Directory Search">
+                    <field name="name" string="Name"/>
+                     <group expand='0' string='Group by...'>
+                        <filter string='Parent Directory' name="parent_directory_group" context="{'group_by': 'parent_directory'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+<!--        popup Danh ba-->
+        <record id="directory_report_temp_view" model="ir.ui.view">
+            <field name="name">Danh Sách Liên Hệ Trong Danh Bạ</field>
+            <field name="model">hr.directory.report.temp</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group><field name="company_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                       <field name="is_all_company"/>
+                    </group>
+                    <footer>
+                        <button  string="Xem Danh Sách" name="action_print_directory" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <act_window id="directory_action_report"
+                        name="Danh Sách Liên Hệ Trong Danh Bạ"
+                        res_model="hr.directory.report.temp"
+                        view_type="form"
+                        view_mode="form"
+                        view_id="directory_report_temp_view"
+                        target="new"/>
+
+         <record model='ir.actions.act_window' id='hr_directory_action'>
+            <field name="name">Directory</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.directory</field>
+            <field name="domain">[("company_id", "=",  company_ids)]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="hr_directory_search_view"/>
+        </record>
+        <menuitem id="hr_directory_menu" name="Directory"
+                   parent="hr.menu_hr_root"
+                  sequence="91"
+        action="hr_directory_action"/>
+
+        <report
+            id="report_directory"
+            string="DANH SÁCH LIÊN HỆ TRONG DANH BẠ"
+            model="hr.directory"
+            report_type="xlsx"
+            name="hr_directory_reports.report_directory_xlsx"
+            file="DANH SÁCH LIÊN HỆ TRONG DANH BẠ"
+            attachment_use="False"/>
+        <menuitem
+            id="menu_hr_directory_report"
+            name="Danh Sách Liên Hệ Trong Danh Bạ"
+            parent="hr.menu_hr_reporting_timesheet"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            action="directory_action_report"
+            sequence="90"/>
+
+
+
+    </data>
+</odoo>

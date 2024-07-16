@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seacorp_pos_receipt_tree_inherit" model="ir.ui.view">
+        <field name="name">seacorp.pos.receipt.tree.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <field name="discount" position="replace">
+                <field name="discount_ref"/>
+            </field>
+        </field>
+    </record>
+</odoo>

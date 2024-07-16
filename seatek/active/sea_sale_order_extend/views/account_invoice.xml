@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Update account invoice !-->
+        <record model="ir.ui.view" id="account_invoice_form">
+            <field name="name">Account Invoice sale</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="sale.account_invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Bill-to Address</attribute>
+                </field>
+                <data>
+                    <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                        <field name="partner_vat_id" groups="sale.group_delivery_invoice_address"
+                               attrs="{'readonly':[('state', '!=', 'draft')], 'required' :[('sea_check_customer_for_invoice', '=', False)], 'invisible' :[('sea_check_customer_for_invoice', '=', True)]}"
+                               context="{'default_is_company':True}" options='{"always_reload": True}'
+                        />
+                        <field name="buyer_id" groups="sale.group_delivery_invoice_address"
+                               attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

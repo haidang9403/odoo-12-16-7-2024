@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!---REPORT-->
+<!--    <record id="employee_attendance" model="ir.ui.view">-->
+<!--        <field name="name">BẢNG CHẤM CÔNG</field>-->
+<!--        <field name="model">sea.hr.attendance</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <group>-->
+<!--                    <field name="year"/>-->
+<!--                    <field name="month"/>-->
+<!--                </group>-->
+<!--                <footer>-->
+<!--                     <button name="print_attendance" string="Print"-->
+<!--                    type="object" default_focus="1" class="oe_highlight"/>-->
+<!--                </footer>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="employee_report_attendance_action" model="ir.actions.act_window" >-->
+<!--        <field name="name">BẢNG CHẤM CÔNG</field>-->
+<!--        <field name="res_model">sea.hr.attendance</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_type">form</field>-->
+<!--        <field name="target">new</field>-->
+<!--        <field name="view_id" ref="employee_attendance"/>-->
+<!--    </record>-->
+    <report
+            id="action_report_attendance"
+            string="BẢNG CHẤM CÔNG"
+            model="sea.hr.attendance"
+            report_type="xlsx"
+            name="seatek_hr_attendance.report_attendance_xlsx"
+            file="seatek_hr_attendance.report_attendance_xlsx"
+            print_report_name="'BẢNG CHẤM CÔNG - %s/%s - %s' % (object.month or '', object.year, object.company_id.name or '')"
+            menu="False"/>
+    <report
+            id="action_report_attendance_violation"
+            string="DANH SÁCH VI PHẠM"
+            model="sea.hr.attendance"
+            report_type="xlsx"
+            name="seatek_hr_attendance.report_attendance_violation_xlsx"
+            file="seatek_hr_attendance.report_attendance_violation_xlsx"
+            print_report_name="'DANH SÁCH VI PHẠM - %s/%s - %s' % (object.month or '', object.year, object.company_id.name or '')"
+            menu="False"/>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/sea_hide_button_pos_auto_invoice/static/src/css/screen_payment.css" />
+            </xpath>
+        </template>
+    </data>
+</odoo>

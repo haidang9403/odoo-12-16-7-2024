@@ -1,0 +1,5 @@
+id,name,model_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_country_state_user,res.country.state user,model_res_country_state,1,1,1,1
+access_res_district_user,res.district user,model_res_district,1,1,1,1
+access_res_id_issue_place_user,res.id.issue.place user,model_res_id_issue_place,1,1,1,1
+

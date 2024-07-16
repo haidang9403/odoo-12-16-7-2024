@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="inventory_report_line_view_tree_not_lot" model="ir.ui.view">
+        <field name="name">inventory.report.line.tree</field>
+        <field name="model">inventory.report.line</field>
+        <field name="arch" type="xml">
+            <tree string="Inventory report line">
+                <field name="default_code"/>
+                <field name="product_id"/>
+                <field name="uom_id"/>
+                <field name="location_id"/>
+                <field name="stock_opening" sum="Tổng"/>
+                <field name="value_stock_opening" sum="Tổng"/>
+                <field name="stock_in" sum="Tổng"/>
+                <field name="value_stock_in" sum="Tổng"/>
+                <field name="stock_out" sum="Tổng"/>
+                <field name="value_stock_out" sum="Tổng"/>
+                <field name="stock_closing" sum="Tổng"/>
+                <field name="value_stock_closing" sum="Tổng"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="inventory_report_line_view_tree_lot" model="ir.ui.view">
+        <field name="name">inventory.report.line.lot.tree</field>
+        <field name="model">inventory.report.line.lot</field>
+        <field name="arch" type="xml">
+            <tree string="Inventory report line">
+                <field name="default_code"/>
+                <field name="product_id"/>
+                <field name="uom_id"/>
+                <field name="name_lot"/>
+                <field name="location_id"/>
+                <field name="stock_opening" sum="Tổng"/>
+                <field name="value_stock_opening" sum="Tổng"/>
+                <field name="stock_in" sum="Tổng"/>
+                <field name="value_stock_in" sum="Tổng"/>
+                <field name="stock_out" sum="Tổng"/>
+                <field name="value_stock_out" sum="Tổng"/>
+                <field name="stock_closing" sum="Tổng"/>
+                <field name="value_stock_closing" sum="Tổng"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="inventory_report_view_form" model="ir.ui.view">
+        <field name="name">inventory.report.form</field>
+        <field name="model">inventory.report</field>
+        <field name="arch" type="xml">
+            <form string="Inventory report">
+                <header>
+                    <button name="action_get_report" string="Tính giá trị" type="object"
+                            class="btn-primary"/>
+                    <button name="action_get_report_excel" string="Xuất file Excel" type="object"
+                            class="btn-primary"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="date_from" widget="date"/>
+                        <field name="date_to" widget="date"/>
+                    </group>
+                    <group>
+                        <field name="display_product"/>
+                        <field name="report_with_lot"/>
+                    </group>
+                    <group>
+                        <field name="type_location"/>
+                        <field name="location_id"
+                               attrs="{'required': [('type_location','=', True)], 'invisible': [('type_location','=', False)]}"/>
+                        <field name="location_ids" options="{'no_create': True}" widget="many2many_tags"
+                               attrs="{'required': [('type_location','=', False)], 'invisible': [('type_location','=', True)]}"/>
+                    </group>
+                    <group>
+                        <field name="category_ids" options="{'no_create': 1, 'limit':1}" widget="many2many_tags"/>
+                        <field name="product_ids" options="{'no_create': 1}" widget="many2many_tags"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Chi tiết xuất nhập tồn">
+                        <!-- view not lot-->
+                        <field name="inventory_report_line_ids" readonly="1"
+                               attrs="{'invisible': ['|', ('display_product', '=', True), ('report_with_lot', '=', True)]}"/>
+                        <field name="inventory_report_line_ids_hide_display_product" readonly="1"
+                               attrs="{'invisible': ['|', ('display_product', '=', False), ('report_with_lot', '=', True)]}"/>
+
+                        <!-- view with lot-->
+                        <field name="inventory_report_line_lot_ids" readonly="1"
+                               attrs="{'invisible': ['|', ('display_product', '=', True), ('report_with_lot', '=', False)]}"/>
+                        <field name="inventory_report_line_lot_ids_hide_display_product" readonly="1"
+                               attrs="{'invisible': ['|', ('display_product', '=', False), ('report_with_lot', '=', False)]}"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_inventory_report_view" model="ir.actions.act_window">
+        <field name="name">Báo các xuất nhập tồn</field>
+        <field name="res_model">inventory.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="inventory_report_view_form"/>
+        <!-- <field name="target">new</field> -->
+    </record>
+
+    <record id="action_inventory_report" model="ir.actions.server">
+        <field name="name">Xuất nhập tồn tổng quát</field>
+        <field name="model_id" ref="model_inventory_report"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_form()
+        </field>
+    </record>
+
+    <menuitem id="menu_inventory_report" name="Báo cáo xuất nhập tồn" parent="stock.menu_warehouse_report"
+              sequence="170" action="action_inventory_report"/>
+</odoo>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="hr_appraisal_user" model="res.groups">
+            <field name="name">Appraisal User</field>
+            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>
+        </record>
+        <record id="hr_appraisal_company_manager" model="res.groups">
+            <field name="name">Company Manager</field>
+            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>
+            <field name="implied_ids" eval="[(4, ref('hr_appraisal_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+        <record id="hr_appraisal_manager" model="res.groups">
+            <field name="name">HR Appraisal</field>
+            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>
+            <field name="implied_ids" eval="[(4, ref('hr_appraisal_user')),(4, ref('hr_appraisal_company_manager'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="hr_appraisal_board_of_manager" model="res.groups">
+            <field name="name">Board of manager</field>
+            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>
+            <field name="implied_ids" eval="[(4, ref('hr_appraisal_user')),(4, ref('hr_appraisal_manager'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record id="hr_appraisal_president" model="res.groups">
+            <field name="name">President</field>
+            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>
+            <field name="implied_ids" eval="[(4, ref('hr_appraisal_user')),(4, ref('hr_appraisal_manager')),(4, ref('hr_appraisal_board_of_manager')),(4, ref('hr_appraisal_company_manager'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record id="hr_appraisal_administrator" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>
+            <field name="implied_ids" eval="[(4, ref('hr_appraisal_user')),(4, ref('hr_appraisal_manager')),(4, ref('hr_appraisal_board_of_manager'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+
+        <record id="hr.group_hr_user" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('seatek_hr_appraisal.hr_appraisal_user'))]"/>
+        </record>
+        <record id="hr.group_hr_manager" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('seatek_hr_appraisal.hr_appraisal_manager')),(4, ref('seatek_hr_appraisal.hr_appraisal_user'))]"/>
+        </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <record id="hr_appraisal_group_hr_appraisal_manager_all" model="res.groups">-->
+<!--            <field name="name">Manager</field>-->
+<!--            <field name="category_id" ref="module_category_hr_appraisal_seatek"/>-->
+<!--            <field name="implied_ids" eval="[(4, ref('hr_appraisal_group_hr_appraisal_user')), (4, ref('hr_survey_group_survey_manager'))]"/>-->
+<!--            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>-->
+<!--        </record>-->
+
+<!--        <record id="base.default_user" model="res.users">-->
+<!--            <field name="groups_id" eval="[(4,ref('hr.group_hr_user'))]"/>-->
+<!--        </record>-->
+        <!--        &lt;!&ndash; Survey users &ndash;&gt;-->
+<!--    <record id="hr_survey_group_survey_user" model="res.groups" >-->
+<!--        <field name="name">User</field>-->
+<!--        <field name="category_id" ref="module_category_survey_seatek"/>-->
+<!--    </record>-->
+
+<!--    &lt;!&ndash; Survey managers &ndash;&gt;-->
+<!--    <record id="hr_survey_group_survey_manager" model="res.groups" >-->
+<!--        <field name="name">Manager</field>-->
+<!--        <field name="category_id" ref="module_category_survey_seatek"/>-->
+<!--        <field name="implied_ids" eval="[(4, ref('hr_survey_group_survey_user'))]"/>-->
+<!--        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>-->
+<!--    </record>-->
+
+<!--    <record id="base.default_user" model="res.users">-->
+<!--        <field name="groups_id" eval="[(4,ref('hr_survey_group_survey_manager'))]"/>-->
+<!--    </record>-->
+    </data>
+</odoo>

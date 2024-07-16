@@ -1,0 +1,5 @@
+<odoo>
+    <record id="group_stock_keeper" model="res.groups">
+        <field name="name">Stock Keeper</field>
+    </record>
+</odoo>

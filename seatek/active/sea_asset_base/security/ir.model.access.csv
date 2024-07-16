@@ -1,0 +1,23 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_account_asset_asset_officer,account.asset.asset,sea_asset_base.model_account_asset_asset,group_asset_officer,1,1,1,0
+access_account_asset_asset_readonly,account.asset.asset,sea_asset_base.model_account_asset_asset,group_asset_readonly,1,0,0,0
+access_account_asset_asset_manager,account.asset.asset,sea_asset_base.model_account_asset_asset,group_asset_manager,1,1,1,0
+access_sea_office_officer,sea.office,sea_asset_base.model_sea_office,group_asset_officer,1,1,1,0
+access_sea_office_manager,sea.office,sea_asset_base.model_sea_office,group_asset_manager,1,1,1,0
+access_asset_transfer_officer,asset.transfer,sea_asset_base.model_asset_transfer,group_asset_officer,1,1,1,0
+access_asset_transfer_manager,asset.transfer,sea_asset_base.model_asset_transfer,group_asset_manager,1,1,1,0
+access_asset_transfer_line_officer,asset.transfer.line,sea_asset_base.model_asset_transfer_line,group_asset_officer,1,1,1,1
+access_asset_transfer_line_manager,asset.transfer.line,sea_asset_base.model_asset_transfer_line,group_asset_manager,1,1,1,1
+access_hr_employee_temporary_user,hr.employee.temporary,sea_asset_base.model_hr_employee_temporary,group_asset_officer,1,1,1,0
+access_asset_inventory_user,asset.inventory,sea_asset_base.model_asset_inventory,group_asset_officer,1,1,1,
+access_asset_inventory_line_user,asset.inventory.line,sea_asset_base.model_asset_inventory_line,group_asset_officer,1,1,1,1
+access_asset_inventory_committee_user,asset.inventory.committee,sea_asset_base.model_asset_inventory_committee,group_asset_officer,1,1,1,0
+access_asset_inventoried_department_user,asset.inventoried.department,sea_asset_base.model_asset_inventoried_department,group_asset_officer,1,1,1,0
+access_account_asset_adjustment_user,account.asset.adjustment,sea_asset_base.model_account_asset_adjustment,group_asset_officer,1,1,1,0
+access_asset_repair_user,asset.repair,sea_asset_base.model_asset_repair,group_asset_officer,1,1,1,0
+access_asset_repair_lines_user,asset.repair.lines,sea_asset_base.model_asset_repair_lines,group_asset_officer,1,1,1,1
+access_asset_committee_position_user, asset.committee.position,sea_asset_base.model_asset_committee_position,group_asset_officer,1,1,1,0
+access_account_asset_type_user,account.asset.type,sea_asset_base.model_account_asset_type,group_asset_officer,1,1,1,0
+access_hr_department_temporary_user,hr.department.temporary,sea_asset_base.model_hr_department_temporary,group_asset_officer,1,1,1,0
+access_account_asset_image_user,account.asset.image,sea_asset_base.model_account_asset_image,group_asset_officer,1,1,1,1
+access_asset_inventory_asset_temporary_user,asset.inventory.asset.temporary,sea_asset_base.model_asset_inventory_asset_temporary,group_asset_officer,1,1,1,1

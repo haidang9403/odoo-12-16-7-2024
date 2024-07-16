@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hotel_restaurant_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="implied_ids" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        <field name="category_id" ref="module_category_sea_hotel_restaurant"/>
+        <field name="comment">The user will have access or create sale order.</field>
+    </record>
+    <record id="hotel_restaurant_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="implied_ids"
+               eval="[(4, ref('point_of_sale.group_pos_user')), (4, ref('hotel_restaurant_user')), (4, ref('point_of_sale.group_pos_manager'))]"/>
+        <field name="category_id" ref="module_category_sea_hotel_restaurant"/>
+        <field name="comment">The user will have access or create and edit sale order - delivery - invoice.</field>
+    </record>
+    <record id="hotel_restaurant_administrator" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_sea_hotel_restaurant"/>
+        <field name="implied_ids"
+               eval="[(4, ref('hotel_restaurant_user')), (4, ref('point_of_sale.group_pos_user')), (4, ref('point_of_sale.group_pos_manager')), (4, ref('hotel_restaurant_manager'))]"/>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <!--<record model="ir.actions.act_window" id="action_account_asset_asset_form_inherit">
+        <field name="name">Assets</field>
+        <field name="res_model">account.asset.asset</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" ref="view_account_asset_asset_purchase_tree"/>
+        <field name="domain">[('category_id.type', '=', 'purchase')]</field>
+    </record>
+
+    <menuitem id="menu_asset_root"
+              name="Asset"
+              sequence="10"
+              action="action_account_asset_asset_form_inherit"
+              groups="group_asset_officer"/>-->
+</odoo>

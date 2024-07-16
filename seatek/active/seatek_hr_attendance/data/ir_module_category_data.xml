@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_category_seatek_hr_attendance" model="ir.module.category" >
+            <field name="name">Seatek Attendances</field>
+            <field name="description">Helps you manage your Attendances.</field>
+            <field name="sequence">1505</field>
+        </record>
+    </data>
+</odoo>
+ 

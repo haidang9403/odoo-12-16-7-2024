@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="multi_company_employee.create_employee_buttons">
+        <button type="button" class="btn btn-primary open_wizard_action">
+            Create
+        </button>
+    </t>
+
+    <t t-extend="ListView.buttons" t-name="multi_company_employee.buttons">
+        <t t-jquery="button.o_list_button_add" t-operation="replace">
+            <t t-call="multi_company_employee.create_employee_buttons"/>
+        </t>
+    </t>
+</templates>
+

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="asset_transfer_form" model="ir.ui.view">
+            <field name="name">asset.transfer.form</field>
+            <field name="model">asset.transfer</field>
+            <field name="arch" type="xml">
+                <form string="Asset Transfers" duplicate="false" class="o_invoice_form">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="set_state_transfer" attrs="{'invisible': [('state', '!=', 'draft')]}"
+                                string="Transfer" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_officer"/>
+                        <button name="set_state_done" attrs="{'invisible': [('state', '!=', 'transfer')]}" string="Done" type="object" class="oe_highlight"
+                                groups="sea_asset_base.group_asset_officer"/>
+                        <button name="set_state_transfer" attrs="{'invisible': [('state', '!=', 'done')]}"
+                                string="Back To Transfer" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_officer"/>
+                        <button name="set_state_validated" attrs="{'invisible': [('state', '!=', 'done')]}" string="Validate" type="object"
+                                class="oe_highlight"
+                                groups="sea_asset_base.group_asset_manager"/>
+
+                        <button name="set_state_done" attrs="{'invisible': [('state', '!=', 'validated')]}" string="Back To Done" type="object"
+                                class="oe_highlight"
+                                groups="sea_asset_base.group_asset_manager"/>
+                        <button name="export_xls" string="Export" type="object"
+                                class="oe_highlight"/>
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <group colspan="2">
+                                    <field name="name" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                <field name="acceptance_number" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                <field name="acceptance_date" widget="date" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                <field name="transfer_type" widget="selection" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                            </group>
+                                <group string="From" colspan="2">
+                                    <field name="source_location_id" invisible="1" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="owner_company_id" options="{'no_open': True, 'no_create':True}" string="Owner Company" readonly="1"/>
+                                    <field name="source_company_id" options="{'no_open': True, 'no_create':True}" string="Using Company" required="1" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="source_department_temporary" options="{'no_open': True, 'no_create':True}" string="Using Department"
+                                           invisible="1"/>
+                                </group>
+
+                                <group string="To" colspan="2">
+                                    <field name="dest_location_id" options="{'no_open': True}"
+                                           attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')],'required':True}"/>
+                                    <field name="dest_company_id" options="{'no_open': True,'no_create':True}"
+                                           attrs="{'readonly': ['|','|',('transfer_type','=','asset_recovery'),('state', '=', 'done'),('state', '=', 'validated')],'required':True}"/>
+                                    <field name="dest_department" invisible="1"/>
+                                    <field name="dest_department_temporary" options="{'no_open': True,'no_create':True}" string ="Default Department" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="dest_asset_user_default_temporary" string="To Default User" options="{'no_open': True,'no_create':True}" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                </group>
+                                <group colspan="2">
+
+                                    <field name="handover_party" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="receiver_handover_party" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="from_user" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="to_user" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="shipping_party" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    </group>
+                            </group>
+
+                        </group>
+                        <notebook colspan="4">
+                            <page name="transfer_lines" string="Transfer Lines">
+                                <field name="asset_transfer_line_ids" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}">
+                                    <tree string="Transfer Lines" editable="top" delete="1">
+                                        <field name="company_id_compute" invisible="1"/>
+                                        <field name="asset_id" options="{'no_create':True}"/>
+                                        <field name="asset_code"/>
+                                        <field name="state" invisible="1"/>
+                                        <field name="source_location_id" readonly="1"/>
+                                        <field name="dest_location_id" options="{'no_open': True}" readonly="1"/>
+                                        <field name="source_asset_user_temporary" readonly="1"/>
+                                        <field name="dest_company" options="{'no_open': True,'no_create':True}" readonly="1"/>
+                                        <field name="dest_department" options="{'no_open': True,'no_create':True}" invisible="1"/>
+                                        <field name="dest_department_temporary" options="{'no_open': True,'no_create':True}" string="Department"/>
+                                        <field name="dest_asset_user_temporary" options="{'no_open': True,'no_create':True}"
+                                               attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}" string="To User"/>
+                                        <field name="quantity_demanding" type="measure" readonly="1"/>
+                                        <field name="quantity_done" type="measure" readonly="1"/>
+                                        <field name="uom_id" groups="uom.group_uom"/>
+                                        <field name="asset_status_transfer" attrs="{'required':True}"/>
+                                        <field name="asset_management_dept_staff_temporary" options="{'no_open': True,'no_create':True}"
+                                               string="Asset Management Dept Staff" readonly="1"/>
+                                        <field name="transfer_type" string="Transfer Type" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="asset_transfer_tree" model="ir.ui.view">
+            <field name="name">asset.transfer.tree</field>
+            <field name="model">asset.transfer</field>
+            <field name="arch" type="xml">
+                <tree string="Asset Transfers" decoration-muted="state in ('cancel')" decoration-bf="state in ('transfer')" decoration-info="state in ('done')"
+                      decoration-success="state in ('validated')">
+                    <field name="name"/>
+                    <field name="acceptance_number"/>
+                    <field name="acceptance_date"/>
+                    <field name="dest_company_id"/>
+                    <field name="handover_party"/>
+                    <field name="receiver_handover_party"/>
+                    <field name="transfer_type"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_asset_transfer" model="ir.actions.act_window">
+            <field name="name">Asset Transfers</field>
+            <field name="res_model">asset.transfer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">['|','|',('owner_company_id','in',company_ids),('source_company_id','in',company_ids),('dest_company_id','in',
+                company_ids)]</field>
+        </record>
+        <record id="action_asset_transfer_multi" model="ir.actions.act_window">
+            <field name="name">Asset Transfers</field>
+            <field name="res_model">asset.transfer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_operations_asset_asset_transfer"
+                  name="Asset Transfers"
+                  parent="menu_operations_asset"
+                  action="action_asset_transfer"
+                  sequence="1"
+                  groups="group_asset_officer"/>
+        <record id="asset_transfer_form_readonly" model="ir.ui.view">
+            <field name="name">asset.transfer.form</field>
+            <field name="model">asset.transfer</field>
+            <field name="arch" type="xml">
+                <form string="Asset Transfers" duplicate="false" class="o_invoice_form"  delete="0" edit="0" create="0">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <group colspan="2">
+                                    <field name="name"/>
+                                <field name="acceptance_number" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                <field name="acceptance_date" widget="date" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                <field name="transfer_type" widget="selection" />
+                            </group>
+                                <group string="From" colspan="2">
+                                    <field name="source_location_id" invisible="1" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="owner_company_id" options="{'no_open': True, 'no_create':True}" string="Owner Company" readonly="1"/>
+                                    <field name="source_company_id" options="{'no_open': True, 'no_create':True}" string="Using Company" required="1"/>
+                                    <field name="source_department_temporary" options="{'no_open': True, 'no_create':True}" string="Using Department"
+                                           invisible="1"/>
+                                </group>
+
+                                <group string="To" colspan="2">
+                                    <field name="dest_location_id" options="{'no_open': True}"
+                                           attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')],'required':True}"/>
+                                    <field name="dest_company_id" options="{'no_open': True,'no_create':True}"
+                                           attrs="{'readonly': ['|','|',('transfer_type','=','asset_recovery'),('state', '=', 'done'),('state', '=', 'validated')],'required':True}"/>
+                                    <field name="dest_department" invisible="1"/>
+                                    <field name="dest_department_temporary" options="{'no_open': True,'no_create':True}" string ="Default Department"/>
+                                    <field name="dest_asset_user_default_temporary" string="To Default User" options="{'no_create':True}"/>
+                                </group>
+                                <group colspan="2">
+
+                                    <field name="handover_party" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="receiver_handover_party" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="from_user" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="to_user" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    <field name="shipping_party" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}"/>
+                                    </group>
+                            </group>
+
+                        </group>
+                        <notebook colspan="4">
+                            <page name="transfer_lines" string="Transfer Lines">
+                                <field name="asset_transfer_line_ids" attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}">
+                                    <tree string="Transfer Lines" editable="top" delete="1">
+                                        <field name="company_id_compute" invisible="1"/>
+                                        <field name="asset_id" options="{'no_create':True}"/>
+                                        <field name="asset_code"/>
+                                        <field name="state" invisible="1"/>
+                                        <field name="source_location_id" readonly="1"/>
+                                        <field name="dest_location_id" options="{'no_open': True}"
+                                               attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')],'required':True}"/>
+                                        <field name="source_asset_user_temporary" readonly="1"/>
+                                        <field name="dest_company" options="{'no_open': True,'no_create':True}" readonly="1"/>
+                                        <field name="dest_department" options="{'no_open': True,'no_create':True}" invisible="1"/>
+                                        <field name="dest_department_temporary" options="{'no_open': True,'no_create':True}" string="Department"/>
+                                        <field name="dest_asset_user_temporary" options="{'no_open': True,'no_create':True}"
+                                               attrs="{'readonly': ['|',('state', '=', 'done'),('state', '=', 'validated')]}" string="To User"/>
+                                        <field name="quantity_demanding" type="measure" readonly="1"/>
+                                        <field name="quantity_done" type="measure" readonly="1"/>
+                                        <field name="uom_id" groups="uom.group_uom"/>
+                                        <field name="asset_status_transfer" attrs="{'required':True}"/>
+                                        <field name="asset_management_dept_staff_temporary" options="{'no_open': True,'no_create':True}"
+                                               string="Asset Management Dept Staff" readonly="1"/>
+                                        <field name="transfer_type" string="Transfer Type" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="asset_transfer_tree_readonly" model="ir.ui.view">
+            <field name="name">asset.transfer.tree</field>
+            <field name="model">asset.transfer</field>
+            <field name="arch" type="xml">
+                <tree string="Asset Transfers" create="0" delete="0">
+                    <field name="name"/>
+                    <field name="acceptance_number"/>
+                    <field name="acceptance_date"/>
+                    <field name="dest_company_id"/>
+                    <field name="handover_party"/>
+                    <field name="receiver_handover_party"/>
+                    <field name="transfer_type"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_asset_transfer_readonly" model="ir.actions.act_window">
+            <field name="name">Asset Transfers</field>
+            <field name="res_model">asset.transfer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|','|',('owner_company_id','in',company_ids),('source_company_id','in',company_ids),('dest_company_id','in',
+                company_ids)]</field>
+        </record>
+        <record id="action_view_asset_transfer_readonly" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="asset_transfer_tree_readonly"/>
+            <field name="act_window_id" ref="action_asset_transfer_readonly"/>
+        </record>
+        <record id="action_view_asset_transfer_form_readonly" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="asset_transfer_form_readonly"/>
+            <field name="act_window_id" ref="action_asset_transfer_readonly"/>
+        </record>
+        <menuitem
+			action="action_asset_transfer_readonly"
+			id="menu_inventory_asset_transfer_readonly"
+			name="Asset Transfers"
+			parent="stock.menu_warehouse_report"
+			sequence="201"
+			groups="group_asset_readonly"/>
+        <record id="asset_transfer_multi" model="ir.actions.server">
+            <field name="name">Create Asset Transfer</field>
+            <field name="model_id" ref="sea_asset_base.model_account_asset_asset"/>
+            <field name="binding_model_id" ref="sea_asset_base.model_account_asset_asset"/>
+            <field name="state">code</field>
+            <field name="code">action_values = env.ref('sea_asset_base.action_asset_transfer_multi').read()[0]
+res_id = env['asset.transfer'].create({})
+datas=res_id.create_asset_transfer_line(records)
+action_values.update({'res_id': res_id.id})
+action = action_values</field>
+        </record>
+    </data>
+
+</odoo>

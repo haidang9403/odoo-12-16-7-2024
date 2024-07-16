@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_multi_company_employee_form_group_hr_view_edit" model="ir.ui.view">
+            <field name="name">hr.employee.multi.company.form.group_hr_view_edit</field>
+            <field name="model">hr.employee.multi.company</field>
+            <field name="groups_id" eval="[(6, 0, [ref('sea_multi_company_employee.group_hr_view_edit') ])]"/>
+            <field name="arch" type="xml">
+                <form string="Employees" edit="0" create="0">
+                    <sheet>
+                        <div id="o_employee_container">
+                            <div id="o_employee_main">
+                                <div class="oe_title">
+                                    <label for="name" class="oe_edit_only"/>
+                                    <h1>
+                                        <field name="name" placehoder="Employee's Name" required="True" readonly="1"/>
+                                    </h1>
+                                    <label for="s_identification_id" class="oe_edit_only"/>
+                                    <h3>
+                                        <field name="s_identification_id" readonly="1"/>
+                                    </h3>
+                                    <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="e.g. Part Time" readonly="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_multi_company_employee_tree_group_hr_view_edit" model="ir.ui.view">
+            <field name="name">hr.employee.multi.company.tree.group_hr_view_edit</field>
+            <field name="model">hr.employee.multi.company</field>
+            <field name="groups_id" eval="[(6, 0, [ref('sea_multi_company_employee.group_hr_view_edit') ])]"/>
+            <field name="context">{"search_default_hr_employee_multi_company_working": 1}</field>
+            <field name="arch" type="xml">
+                <tree string="Employees">
+                    <field name="name"/>
+                    <field name="job_code_compute" invisible="1"/>
+                    <field name="company_code" invisible="1"/>
+                    <field name="department_code" invisible="1"/>
+                    <field name="job_code" invisible="1"/>
+                    <field name="s_identification_id" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                    <field name="seagroup_join_date" invisible="1"/>
+                    <field name="department_id" invisible="1"/>
+                    <field name="job_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                    <field name="manager" invisible="1"/>
+                    <field name="employee_current_status" invisible="1"/>
+                    <field name="sea_employee_level" invisible="1"/>
+                    <field name="coach_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="hr_employee_view_form_group_edit_view" model="ir.ui.view">
+            <field name="name">hr.employee.group.view.edit</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <form string="Employee" edit="0">
+                    <sheet>
+                        <div id="o_employee_container">
+                            <div id="o_employee_main">
+                                <field name="image" widget="image" class="oe_avatar" options='{"preview_image":"image_medium"}' readonly="1"/>
+                                <div class="oe_title">
+                                    <label for="name" class="oe_edit_only"/>
+                                    <h1>
+                                        <field name="name" placehoder="Employee's Name" required="True" readonly="1"/>
+                                    </h1>
+                                    <label for="s_identification_id" class="oe_edit_only"/>
+                                    <h3>
+                                        <field name="s_identification_id" readonly="1"/>
+                                    </h3>
+                                    <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="e.g. Part Time" readonly="1"/>
+
+                                </div>
+                                 <notebook>
+                                    <page name="personal_information" string="Private Information">
+                                        <group>
+                                            <group string="Citizenship &amp; Other Information">
+                                                <field name="country_id" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="ethnicity"/>
+                                                <field name="religion"/>
+                                                <field name="bank_id" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="acc_number"/>
+                                                <field name="acc_holder_name"/>
+                                            </group>
+                                            <group string="Email">
+                                                <field name="sea_personal_email" widget="email"/>
+                                                <field name="main_phone_number" widget="phone"/>
+                                                <field name="second_phone_number" widget="phone"/>
+                                            </group>
+                                            <group name="permanent_personal_address" string="Permanent Address">
+                                                <field name="sea_permanent_addr"/>
+                                                <field name="permanent_country_id" string="Permanent Country Name" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="permanent_city_id" string="Permanent City Name" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="permanent_district_id" string="Permanent District Name" options='{"no_open": True, "no_create": True}'/>
+                                            </group>
+                                            <group name="temporary_personal_address" string="Temporary Address">
+                                                <field name="sea_temp_addr"/>
+                                                <field name="temporary_country_id" string="Temporary Country Name" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="temporary_city_id" string="Temporary City Name" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="temporary_district_id" string="Temporary District Name" options='{"no_open": True, "no_create": True}'/>
+                                            </group>
+                                            <group name="identification_id" string="Identification ID">
+                                                <field name="identification_id"/>
+                                                <field name="sea_id_issue_date"  attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                                                <field name="sea_id_issue_place"  attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                                                <field name="id_expiry_date"  attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                                                <field name="id_attachment_id" widget="many2many_binary" class="oe_inline" attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                                            </group>
+                                            <group name="passport_id" string="Passport ID">
+                                                <field name="passport_id"/>
+                                                <field name="sea_passport_issue_date" attrs="{'invisible': [('passport_id', 'in', [None,False])]}"/>
+                                                <field name="sea_passport_issue_place" attrs="{'invisible': [('passport_id', 'in', [None,False])]}"/>
+                                                <field name="passport_expiry_date" attrs="{'invisible': [('passport_id', 'in', [None,False])]}"/>
+                                                <field name="passport_attachment_id" widget="many2many_binary" class="oe_inline" attrs="{'invisible': [('passport_id', 'in', [None,False])]}"/>
+                                            </group>
+                                            <group string="Contact Information">
+                                                <field name="address_home_id"
+                                                    context="{
+                                                        'show_address': 1,
+                                                        'default_type': 'private',
+                                                        'form_view_ref': 'base.res_partner_view_form_private'}"
+                                                    options='{"always_reload": True, "highlight_first_line": True}'/>
+                                                <field name="is_address_home_a_company" invisible="1"/>
+                                                <div class="text-warning"
+                                                     attrs="{'invisible': [('is_address_home_a_company','=', False)]}">
+                                                    Use here the home address of the employee.
+                                                    This private address is used in the expense report reimbursement document.
+                                                    It should be different from the work address.
+                                                </div>
+                                                <field name="emergency_contact"/>
+                                                <field name="emergency_phone" class="o_force_ltr"/>
+                                                <field name="km_home_work"/>
+                                            </group>
+                                            <group string="Status">
+                                                <field name="gender"/>
+                                                <field name="marital"/>
+                                                <field name="spouse_complete_name" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}"/>
+                                                <field name="spouse_birthdate" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}"/>
+                                                <field name="children"/>
+                                            </group>
+                                            <group string="Birth">
+                                                <field name="birthday"/>
+                                                <field name="place_of_birth"/>
+                                                <field name="country_of_birth" options='{"no_open": True, "no_create": True}'/>
+                                            </group>
+                                            <group string="Work Permit" name="work_permit">
+                                                <field name="visa_no"/>
+                                                <field name="permit_no"/>
+                                                <field name="visa_expire"/>
+                                            </group>
+                                            <group string="Education">
+                                                <field name="certificate"/>
+                                                <field name="study_field"/>
+                                                <field name="study_school"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="google_drive_link" widget="url"/>
+                                        </group>
+                                        <group>
+                                            <field name="additional_note"/>
+                                        </group>
+                                        <group string="Family and Others" colspan="10">
+                                            <field name="fam_ids" nolabel="1" >
+                                                <tree editable="bottom">
+                                                    <field name="member_name"/>
+                                                    <field name="relation"/>
+                                                    <field name="emergency"/>
+                                                    <field name="member_independent"/>
+                                                    <field name="member_phone"/>
+                                                    <field name="member_gender"/>
+                                                    <field name="member_birthday"/>
+                                                    <field name="member_address"/>
+                                                    <field name="member_taxcode"/>
+                                                    <field name="member_note"/>
+
+                                                </tree>
+                                            </field>
+                                        </group>
+                                        <group string="Others">
+                                            <field name="extra_note" string="Sea Notes"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_employee_tree_group_edit_view" model="ir.ui.view">
+            <field name="name">hr.employee.tree.group_edit_view</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <tree string="Employees" decoration-bf="message_needaction==True">
+                    <field name="name"/>
+                    <field name="s_identification_id" invisible="1"/>
+                    <field name="job_code" invisible="1"/>
+                    <field name="job_code_compute" invisible="1"/>
+                    <field name="work_phone" class="o_force_ltr" invisible="1"/>
+                    <field name="work_email" invisible="1"/>
+                    <field name="company_id" groups="base.group_multi_company" invisible="1"/>
+                    <field name="website_id" groups="website.group_multi_website" invisible="1"/>
+                    <field name="department_id" invisible="1"/>
+                    <field name="job_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                    <field name="coach_id" invisible="1"/>
+                    <field name="message_needaction" invisible="1"/>
+                    <field name="company_id_compute" invisible="1"/>
+                    <field name="department_id_compute"/>
+                    <field name="job_id_compute" invisible="1"/>
+                    <field name="parent_id_compute" invisible="1"/>
+                    <field name="employee_current_status_compute" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

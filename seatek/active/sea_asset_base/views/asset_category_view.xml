@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="action_asset_category" model="ir.actions.act_window">
+            <field name="name">Asset Category</field>
+            <field name="res_model">account.asset.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_asset_category"
+              name="Category"
+              parent="menu_asset_asset"
+              action="action_asset_category"
+              sequence="2"
+              groups="group_asset_officer"/>
+    </data>
+</odoo>

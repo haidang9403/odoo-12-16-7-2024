@@ -1,0 +1,20 @@
+<odoo>
+    <!-- Inherited Stove move line tree view -->
+    <record id="pos_config_sea" model="ir.ui.view">
+        <field name="name">sea.pos.config.tree</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+               <xpath expr="//field[@name='cash_control']" position="after">
+                    <field name="default_cash_journal_id"
+                       string = "default_cash_journal_id"
+                       attrs="{'invisible': [('cash_control', '=', False)]}"
+                       groups="point_of_sale.group_pos_manager"/>
+                </xpath>
+
+
+            <xpath expr="//field[@name='journal_ids']" position="after"/>
+
+        </field>
+    </record>
+</odoo>

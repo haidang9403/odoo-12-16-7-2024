@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sea_hr_attendance_realtime_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.realtime.tree</field>
+        <field name="model">sea.hr.attendance.realtime</field>
+        <field name="arch" type="xml">
+            <tree duplicate="false" create="false" class="treeview_scrollable">
+                <field name="s_identification_id"/>
+                <field name="mark_as_todo" invisible="1"/>
+                <field name="employee_multi_id" invisible="0" string="Employee"/>
+                <field name="company_id" invisible="1"/>
+
+                <field name="datetime_compute" invisible="0"/>
+                <field name="so_cong" string="Work number" invisible="1"/>
+                <field name="symbol" invisible="0"/>
+                <field name="symbol_sign" invisible="0"/>
+
+                <field name="shift" invisible="0" domain="[('company_id', '=', company_id)]" widget="many2many_tags"/>
+                <field name="shift_details" invisible="1" domain="[('company_id', '=', company_id)]"/>
+
+                <field name="day" invisible="0"/>
+                <field name="month" invisible="0"/>
+                <field name="year" invisible="0"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sea_hr_attendance_realtime_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.realtime.form</field>
+        <field name="model">sea.hr.attendance.realtime</field>
+        <field name="arch" type="xml">
+            <form duplicate="false" create="false">
+                <header>
+                    <field name="mark_as_todo" invisible="1"/>
+                    <button groups="seatek_hr_attendance.hr_attendance_manager" string="Mark as Todo" name="action_confirm" type="object"
+                            class="btn-primary attendance_button" attrs="{'invisible': [('mark_as_todo', '=', True)]}"/>
+                    <button groups="seatek_hr_attendance.hr_attendance_manager" string="Un Mark as Todo" name="action_un_confirm" type="object"
+                            class="btn-primary attendance_button"
+                            attrs="{'invisible': [('mark_as_todo', '=', False)]}"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="company_id" invisible="0" options='{"no_open": True}' readonly="1"/>
+                        <field name="datetime_compute" invisible="0"/>
+                        <field name="domain_day" invisible="1" widget="many2many_tags"/>
+                        <field name="s_identification_id" readonly="True"/>
+                        <field name="employee_multi_id" invisible="0" options='{"no_open": True}' readonly="True"/>
+                        <field name="employee_multi_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="shift" invisible="0" widget="many2many_tags"
+                               attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="symbol" invisible="0" options='{"no_open": True}'
+                               attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="symbol_sign" invisible="0" options='{"no_open": True}'
+                               attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                        <field name="so_cong" invisible="1" readonly="True"/>
+                        <field name="day" invisible="1"/>
+                        <field name="month" invisible="1"/>
+                        <field name="year" invisible="1"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="overtime" invisible="0" widget="float_time"
+                           attrs="{'readonly':[('mark_as_todo','=',True)]}"/>
+                </group>
+                <group>
+                    <notebook>
+                        <page string="Chi tiết ca làm việc">
+                            <field name="shift_details" invisible="0" attrs="{'readonly':[('mark_as_todo','=',True)]}">
+                                <tree>
+                                    <field name="employee_multi_id" invisible="1"/>
+                                    <field name="company_id" invisible="1"/>
+
+                                    <field name="shift" invisible="0" domain="[('company_id', '=', company_id)]"/>
+                                    <field name="overtime" invisible="0" widget="float_time"/>
+                                    <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                                    <field name="overtime_sign_offline" invisible="1" widget="float_time"/>
+                                    <field name="overtime_hr" invisible="1" widget="float_time"/>
+                                    <field name="check_overtime" invisible="1" widget="float_time"/>
+                                    <field name="attendance_realtime_id" invisible="1"/>
+
+                                    <field string="Check in" name="check_in" invisible="0"/>
+                                    <field string="Check out noon" name="check_out_noon" invisible="0"/>
+                                    <field string="Check in noon" name="check_in_noon" invisible="0"/>
+                                    <field string="Check out" name="check_out" invisible="0"/>
+
+                                    <field string="Check in late" name="check_in_late" invisible="0"/>
+                                    <field string="Check out soon" name="check_out_soon" invisible="0"/>
+                                    <field string="Check out noon late" name="check_in_noon_late" invisible="0"/>
+                                    <field string="Check out noon soon" name="check_out_noon_soon" invisible="0"/>
+                                    <field name="note" invisible="0"/>
+                                    <field name="explanation_approved" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="sea_hr_attendance_realtime_action" model="ir.actions.act_window">
+        <field name="name">HR Attendances Realtime</field>
+        <field name="res_model">sea.hr.attendance.realtime</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('company_id','in',company_ids)]</field>
+        <field name="view_id" eval="False"/>
+    </record>
+
+
+    <record id="sea_hr_attendance_details_view_search" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.search</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="s_identification_id"/>
+                <field name="employee_multi_id"/>
+                <field name="month"/>
+                <field name="year"/>
+                <separator/>
+                <filter string="Explanation Approved" domain="[('explanation_approved', '=', True)]" name="Approved"/>
+                <filter string="Explanation Rejected" domain="[('explanation_approved', '=', False)]" name="Rejected"/>
+                <separator/>
+                <filter string="Tháng Hiện Tại" domain="[('month', '=', datetime.datetime.now().month)]"
+                        name="current_month"/>
+                <filter string="Tháng 1" domain="[('month', '=', 1)]" name="Jan"/>
+                <filter string="Tháng 2" domain="[('month', '=', 2)]" name="Feb"/>
+                <filter string="Tháng 3" domain="[('month', '=', 3)]" name="Mar"/>
+                <filter string="Tháng 4" domain="[('month', '=', 4)]" name="Apr"/>
+                <filter string="Tháng 5" domain="[('month', '=', 5)]" name="May"/>
+                <filter string="Tháng 6" domain="[('month', '=', 6)]" name="Jun"/>
+                <filter string="Tháng 7" domain="[('month', '=', 7)]" name="Jul"/>
+                <filter string="Tháng 8" domain="[('month', '=', 8)]" name="Aug"/>
+                <filter string="Tháng 9" domain="[('month', '=', 9)]" name="Sep"/>
+                <filter string="Tháng 10" domain="[('month', '=', 10)]" name="Oct"/>
+                <filter string="Tháng 11" domain="[('month', '=', 11)]" name="Nov"/>
+                <filter string="Tháng 12" domain="[('month', '=', 12)]" name="Dec"/>
+                <separator/>
+                <filter string="Năm 2023" domain="[('year', '=', 2023)]" name="Year"/>
+                <filter string="Năm 2024" domain="[('year', '=', 2024)]" name="Year"/>
+                <filter string="Năm 2025" domain="[('year', '=', 2025)]" name="Year"/>
+
+                <group expand='0' string='Group by...'>
+                    <filter string='Năm' domain="[]" name="year_group" context="{'group_by' : 'year'}"/>
+                    <filter string='Tháng' domain="[]" name="month_group" context="{'group_by': 'month'}"/>
+                    <filter string='Ngày' domain="[]" name="day_group" context="{'group_by' : 'day'}"/>
+                    <filter string='Công ty' domain="[]" name="company_id_group" context="{'group_by': 'company_id'}"/>
+                    <filter string='Phòng ban' domain="[]" name="department_id_group"
+                            context="{'group_by': 'department_id'}"/>
+                    <filter string='Explanation Approved' domain="[]" name="explanation_approved_group"
+                            context="{'group_by' : 'explanation_approved'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sea_hr_attendance_details_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.tree</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" class="treeview_scrollable">
+                <field name="s_identification_id"/>
+                <field name="employee_multi_id" invisible="0"/>
+                <field name="domain_shift" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+
+                <field name="symbol" invisible="0"/>
+                <field name="shift" invisible="0" domain="[('company_id', '=', company_id)]"/>
+                <field name="overtime" invisible="0" widget="float_time"/>
+                <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                <field name="overtime_sign_offline" invisible="1" widget="float_time"/>
+                <field name="overtime_hr" invisible="1" widget="float_time"/>
+                <field name="check_overtime" invisible="1" widget="float_time"/>
+                <field name="attendance_realtime_id" invisible="1"/>
+
+                <field name="location_check_id" invisible="0"/>
+                <field name="check_in" invisible="0"/>
+                <field name="check_out_noon" invisible="0"/>
+                <field name="check_in_noon" invisible="0"/>
+                <field name="check_out" invisible="0"/>
+
+                <field name="check_in_late" invisible="0"/>
+                <field name="check_out_soon" invisible="0"/>
+                <field name="check_in_noon_late" invisible="0"/>
+                <field name="check_out_noon_soon" invisible="0"/>
+                <field name="note" invisible="0"/>
+                <field name="explanation_approved" invisible="0"/>
+                <field name="day" invisible="1"/>
+                <field name="month" invisible="1"/>
+                <field name="year" invisible="1"/>
+                <field name="department_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sea_hr_attendance_details_violation_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.tree.violation</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="11"/>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" class="treeview_scrollable">
+                <field name="s_identification_id"/>
+                <field name="employee_multi_id" invisible="0"/>
+                <field name="department_id" invisible="0"/>
+                <field name="job_id" invisible="0"/>
+                <field name="domain_shift" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+
+                <field name="symbol" invisible="0"/>
+                <field name="shift" invisible="0" domain="[('company_id', '=', company_id)]"/>
+                <field name="overtime" invisible="1" widget="float_time"/>
+                <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                <field name="overtime_sign_offline" invisible="1" widget="float_time"/>
+                <field name="check_overtime" invisible="1" widget="float_time"/>
+                <field name="overtime_hr" invisible="1" widget="float_time"/>
+                <field name="attendance_realtime_id" invisible="1"/>
+
+                <field name="location_check_id" invisible="0"/>
+                <field name="check_in" invisible="0"/>
+                <field name="check_out_noon" invisible="0"/>
+                <field name="check_in_noon" invisible="0"/>
+                <field name="check_out" invisible="0"/>
+
+                <field name="check_in_late" invisible="0"/>
+                <field name="check_out_soon" invisible="0"/>
+                <field name="check_in_noon_late" invisible="0"/>
+                <field name="check_out_noon_soon" invisible="0"/>
+                <field name="note" invisible="0"/>
+                <field name="explanation_approved" invisible="0"/>
+                <field name="day" invisible="1"/>
+                <field name="month" invisible="1"/>
+                <field name="year" invisible="1"/>
+                <field name="department_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sea_hr_attendance_details_edit_note_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.tree.edit.note</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="15"/>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" js_class="attendance_details_violation_view" class="treeview_scrollable">
+                <field name="s_identification_id" invisible="1"/>
+                <field name="employee_multi_id" invisible="1"/>
+                <field name="domain_shift" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+
+                <field name="symbol" invisible="0"/>
+                <field name="shift" invisible="1" domain="[('company_id', '=', company_id)]"/>
+                <field name="overtime" invisible="1" widget="float_time"/>
+                <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                <field name="overtime_sign_offline" invisible="1" widget="float_time"/>
+                <field name="overtime_hr" invisible="1" widget="float_time"/>
+                <field name="check_overtime" invisible="1" widget="float_time"/>
+                <field name="attendance_realtime_id" invisible="1"/>
+
+                <field name="location_check_id" invisible="1"/>
+                <field name="check_in" invisible="0"/>
+                <field name="check_out_noon" invisible="0"/>
+                <field name="check_in_noon" invisible="0"/>
+                <field name="check_out" invisible="0"/>
+
+                <field name="check_in_late" invisible="0"/>
+                <field name="check_out_soon" invisible="0"/>
+                <field name="check_in_noon_late" invisible="0"/>
+                <field name="check_out_noon_soon" invisible="0"/>
+                <field name="note" invisible="0"/>
+                <field name="explanation_approved" invisible="0"/>
+                <field name="day" invisible="1"/>
+                <field name="month" invisible="1"/>
+                <field name="year" invisible="1"/>
+                <field name="department_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sea_employee_details_approved_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.tree.approved</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" js_class="attendance_details_approved_view" class="treeview_scrollable">
+                <field name="s_identification_id" invisible="0"/>
+                <field name="employee_multi_id" invisible="0"/>
+                <field name="domain_shift" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <field name="department_id" invisible="0"/>
+                <field name="job_id" invisible="0"/>
+
+                <field name="symbol" invisible="0"/>
+                <field name="shift" invisible="0" domain="[('company_id', '=', company_id)]"/>
+                <field name="overtime" invisible="1" widget="float_time"/>
+                <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                <field name="overtime_sign_offline" invisible="1" widget="float_time"/>
+                <field name="overtime_hr" invisible="1" widget="float_time"/>
+                <field name="check_overtime" invisible="1" widget="float_time"/>
+                <field name="attendance_realtime_id" invisible="1"/>
+
+                <field name="location_check_id" invisible="0"/>
+                <field name="check_in" invisible="0"/>
+                <field name="check_out_noon" invisible="0"/>
+                <field name="check_in_noon" invisible="0"/>
+                <field name="check_out" invisible="0"/>
+
+                <field name="check_in_late" invisible="0"/>
+                <field name="check_out_soon" invisible="0"/>
+                <field name="check_in_noon_late" invisible="0"/>
+                <field name="check_out_noon_soon" invisible="0"/>
+                <field name="note" invisible="0"/>
+                <field name="explanation_approved" invisible="1"/>
+                <field name="day" invisible="1"/>
+                <field name="month" invisible="1"/>
+                <field name="year" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sea_employee_details_overtime_view_tree" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.tree.overtime</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="17"/>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" class="treeview_scrollable">
+                <field name="s_identification_id" invisible="0"/>
+                <field name="employee_multi_id" invisible="0"/>
+                <field name="domain_shift" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <field name="department_id" invisible="0"/>
+                <field name="job_id" invisible="0"/>
+
+                <field name="symbol" invisible="0"/>
+                <field name="shift" invisible="0" domain="[('company_id', '=', company_id)]"/>
+                <field name="overtime" invisible="0" widget="float_time"/>
+                <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                <field name="overtime_sign_offline" invisible="1" widget="float_time"/>
+                <field name="overtime_hr" invisible="1" widget="float_time"/>
+                <field name="check_overtime" invisible="1" widget="float_time"/>
+                <field name="attendance_realtime_id" invisible="1"/>
+
+                <field name="location_check_id" invisible="0"/>
+                <field name="check_in" invisible="0"/>
+                <field name="check_out_noon" invisible="0"/>
+                <field name="check_in_noon" invisible="0"/>
+                <field name="check_out" invisible="0"/>
+
+                <field name="check_in_late" invisible="0"/>
+                <field name="check_out_soon" invisible="0"/>
+                <field name="check_in_noon_late" invisible="0"/>
+                <field name="check_out_noon_soon" invisible="0"/>
+                <field name="note" invisible="1"/>
+                <field name="explanation_approved" invisible="1"/>
+                <field name="day" invisible="1"/>
+                <field name="month" invisible="1"/>
+                <field name="year" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="sea_hr_attendance_details_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.form</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <form duplicate="false" create="false" edit="true" delete="false" js_class="attendance_form_view_hide_edit">
+                <group>
+                    <field name="company_id" invisible="0" readonly="1"/>
+                    <field name="department_id" invisible="0" readonly="1"/>
+                    <field name="job_id" invisible="0" readonly="1"/>
+                    <field name="s_identification_id" readonly="1"/>
+                    <field name="employee_multi_id" invisible="0" readonly="1"
+                           domain="[('company_id', '=', company_id)]"/>
+                    <field name="domain_shift" invisible="1"/>
+
+                    <field name="shift" invisible="0" readonly="1" domain="[('company_id', '=', company_id)]"/>
+                    <field name="work_break" invisible="1"/>
+                    <field name="day" invisible="1"/>
+                    <field name="month" invisible="1"/>
+                    <field name="year" invisible="1"/>
+                    <field name="symbol" invisible="0" readonly="1"/>
+                    <field name="location_check_id" invisible="0" readonly="1"/>
+                    <field name="attendance_realtime_id" invisible="1"/>
+                </group>
+                <group>
+                    <group>
+                        <group>
+                            <field name="check_in" invisible="0" readonly="1"/>
+                            <field name="check_in_late" invisible="0" readonly="1"/>
+                        </group>
+                        <group attrs="{'invisible':[('work_break', '=', False)]}">
+                            <field name="check_out_noon" invisible="0" readonly="1"/>
+                            <field name="check_out_noon_soon" invisible="0" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group attrs="{'invisible':[('work_break', '=', False   )]}">
+                            <field name="check_in_noon" invisible="0" readonly="1"/>
+                            <field name="check_in_noon_late" invisible="0" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="check_out" invisible="0" readonly="1"/>
+                            <field name="check_out_soon" invisible="0" readonly="1"/>
+                        </group>
+                    </group>
+                </group>
+                <group>
+                    <field name="note" invisible="0" readonly="0"/>
+                </group>
+                <group>
+                    <field name="overtime" invisible="0" widget="float_time" readonly="1"/>
+                </group>
+                <group>
+                    <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                    <field name="overtime_sign_offline" invisible="1" widget="float_time" readonly="0"/>
+                    <field name="check_overtime" invisible="1" widget="float_time"/>
+                </group>
+                <group>
+                    <field name="overtime_hr" invisible="1" widget="float_time" readonly="0"/>
+                </group>
+                <group>
+                    <field name="explanation_approved" invisible="0" readonly="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="sea_hr_attendance_details_overtime_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.form.overtime</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form duplicate="false" create="false" edit="true" delete="false" js_class="attendance_form_view_hide_edit">
+                <group>
+                    <field name="company_id" invisible="0" readonly="1"/>
+                    <field name="department_id" invisible="0" readonly="1"/>
+                    <field name="job_id" invisible="0" readonly="1"/>
+                    <field name="s_identification_id" readonly="1"/>
+                    <field name="employee_multi_id" invisible="0" readonly="1"
+                           domain="[('company_id', '=', company_id)]"/>
+                    <field name="domain_shift" invisible="1"/>
+
+                    <field name="shift" invisible="0" readonly="1" domain="[('company_id', '=', company_id)]"/>
+                    <field name="work_break" invisible="1"/>
+                    <field name="day" invisible="1"/>
+                    <field name="month" invisible="1"/>
+                    <field name="year" invisible="1"/>
+                    <field name="symbol" invisible="0" readonly="1"/>
+                    <field name="location_check_id" invisible="0" readonly="1"/>
+                    <field name="attendance_realtime_id" invisible="1"/>
+                </group>
+                <group>
+                    <group>
+                        <group>
+                            <field name="check_in" invisible="0" readonly="1"/>
+                            <field name="check_in_late" invisible="0" readonly="1"/>
+                        </group>
+                        <group attrs="{'invisible':[('work_break', '=', False)]}">
+                            <field name="check_out_noon" invisible="0" readonly="1"/>
+                            <field name="check_out_noon_soon" invisible="0" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group attrs="{'invisible':[('work_break', '=', False   )]}">
+                            <field name="check_in_noon" invisible="0" readonly="1"/>
+                            <field name="check_in_noon_late" invisible="0" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="check_out" invisible="0" readonly="1"/>
+                            <field name="check_out_soon" invisible="0" readonly="1"/>
+                        </group>
+                    </group>
+                </group>
+                <group>
+                    <field name="note" invisible="1" readonly="0"/>
+                </group>
+                <group>
+                    <field name="overtime" invisible="0" widget="float_time" readonly="1"/>
+                </group>
+                <group>
+                    <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                    <field name="overtime_sign_offline" invisible="1" widget="float_time" readonly="0"/>
+                    <field name="check_overtime" invisible="1" widget="float_time"/>
+                </group>
+                <group>
+                    <field name="overtime_hr" invisible="1" widget="float_time" readonly="0"/>
+                </group>
+                <group>
+                    <field name="explanation_approved" invisible="1" readonly="0"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="sea_hr_attendance_details_violation_view_form" model="ir.ui.view">
+        <field name="name">sea.hr.attendance.details.form.violation</field>
+        <field name="model">sea.hr.attendance.details</field>
+        <field name="priority" eval="15"/>
+        <field name="arch" type="xml">
+            <form duplicate="false" create="false" edit="true" delete="false" js_class="attendance_form_view_hide_edit">
+                <group>
+                    <field name="company_id" invisible="0" readonly="1"/>
+                    <field name="department_id" invisible="0" readonly="1"/>
+                    <field name="job_id" invisible="0" readonly="1"/>
+                    <field name="s_identification_id" readonly="1"/>
+                    <field name="employee_multi_id" invisible="0" readonly="1"
+                           domain="[('company_id', '=', company_id)]"/>
+                    <field name="domain_shift" invisible="1"/>
+
+                    <field name="shift" invisible="0" readonly="1" domain="[('company_id', '=', company_id)]"/>
+                    <field name="work_break" invisible="1"/>
+                    <field name="day" invisible="1"/>
+                    <field name="month" invisible="1"/>
+                    <field name="year" invisible="1"/>
+                    <field name="symbol" invisible="0" readonly="1"/>
+                    <field name="location_check_id" invisible="0" readonly="1"/>
+                    <field name="attendance_realtime_id" invisible="1"/>
+                </group>
+                <group>
+                    <group>
+                        <group>
+                            <field name="check_in" invisible="0" readonly="1"/>
+                            <field name="check_in_late" invisible="0" readonly="1"/>
+                        </group>
+                        <group attrs="{'invisible':[('work_break', '=', False)]}">
+                            <field name="check_out_noon" invisible="0" readonly="1"/>
+                            <field name="check_out_noon_soon" invisible="0" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group attrs="{'invisible':[('work_break', '=', False   )]}">
+                            <field name="check_in_noon" invisible="0" readonly="1"/>
+                            <field name="check_in_noon_late" invisible="0" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="check_out" invisible="0" readonly="1"/>
+                            <field name="check_out_soon" invisible="0" readonly="1"/>
+                        </group>
+                    </group>
+                </group>
+                <group>
+                    <field name="note" invisible="0" readonly="0"/>
+                </group>
+                <group>
+                    <field name="overtime" invisible="1" widget="float_time" readonly="1"/>
+                </group>
+                <group>
+                    <field name="overtime_sign" invisible="1" widget="float_time" readonly="1"/>
+                    <field name="overtime_sign_offline" invisible="1" widget="float_time" readonly="1"/>
+                    <field name="check_overtime" invisible="1" widget="float_time"/>
+                </group>
+                <group>
+                    <field name="overtime_hr" invisible="1" widget="float_time" readonly="1"/>
+                </group>
+                <group>
+                    <field name="explanation_approved" invisible="0" readonly="0"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="sea_hr_attendance_detail_action" model="ir.actions.act_window">
+        <field name="name">Attendances Details</field>
+        <field name="res_model">sea.hr.attendance.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('company_id','in',company_ids)]</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="sea_hr_attendance_details_view_search"/>
+    </record>
+    <record id="sea_hr_attendance_detail_violation_action" model="ir.actions.act_window">
+        <field name="name">Attendances Details Violation</field>
+        <field name="res_model">sea.hr.attendance.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="sea_hr_attendance_details_view_search"/>
+        <field name="domain">[('company_id','in',company_ids), ('check_late_soon', '=', True)]</field>
+        <field name="context">{'search_default_current_month':1, 'search_default_day_group':1,
+            'search_default_department_id_group':1}
+        </field>
+    </record>
+    <record id="sea_hr_attendance_detail_overtime_action" model="ir.actions.act_window">
+        <field name="name">Attendances Details OverTime</field>
+        <field name="res_model">sea.hr.attendance.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="sea_hr_attendance_details_view_search"/>
+        <field name="domain">[('company_id','in',company_ids), ('check_overtime', '=',True)]</field>
+        <field name="context">{'search_default_current_month':1, 'search_default_day_group':1,
+            'search_default_department_id_group':1}
+        </field>
+    </record>
+
+
+    <record id="sea_hr_attendance_details_violation_tree_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sea_hr_attendance_details_violation_view_tree"/>
+        <field name="act_window_id" ref="sea_hr_attendance_detail_violation_action"/>
+    </record>
+    <record id="sea_hr_attendance_details_violation_form_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sea_hr_attendance_details_violation_view_form"/>
+        <field name="act_window_id" ref="sea_hr_attendance_detail_violation_action"/>
+    </record>
+    <record id="sea_hr_attendance_details_overtime_tree_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sea_employee_details_overtime_view_tree"/>
+        <field name="act_window_id" ref="sea_hr_attendance_detail_overtime_action"/>
+    </record>
+    <record id="sea_hr_attendance_details_overtime_form_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sea_hr_attendance_details_overtime_view_form"/>
+        <field name="act_window_id" ref="sea_hr_attendance_detail_overtime_action"/>
+    </record>
+
+
+    <record id="attendance_realtime_view_tree" model="ir.ui.view">
+        <field name="name">attendance.realtime.tree</field>
+        <field name="model">attendance.realtime</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" duplicate="false" class="treeview_scrollable">
+                <field name="s_identification_id"/>
+                <field name="datetime"/>
+                <field name="category"/>
+                <field name="location_check_id"/>
+                <field name="serial_number"/>
+                <field name="gps_location"/>
+                <field name="network_domain"/>
+                <field name="type_attendance"/>
+                <field name="verify_mode"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="attendance_realtime_view_form" model="ir.ui.view">
+            <field name="name">attendance.realtime.form</field>
+            <field name="model">attendance.realtime</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false" duplicate="false" delete="false">
+                    <group>
+                        <group>
+                            <field name="s_identification_id"/>
+                            <field name="category"/>
+                            <field name="datetime"/>
+                            <field name="location_check_id"/>
+
+                            <field name="day" invisible="1"/>
+                            <field name="month" invisible="1"/>
+                            <field name="year" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="type_attendance"/>
+                            <field name="verify_mode"/>
+                            <field name="serial_number"/>
+                            <field name="gps_location"/>
+                            <field name="network_domain"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    <record id="attendance_realtime_actions" model="ir.actions.act_window">
+        <field name="name">Attendances Realtime</field>
+        <field name="res_model">attendance.realtime</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+    </record>
+</odoo>

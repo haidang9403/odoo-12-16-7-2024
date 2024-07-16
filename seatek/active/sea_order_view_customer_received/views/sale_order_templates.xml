@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/sea_order_view_customer_received/static/src/css/sale_order.css" />
+                <link rel="stylesheet" href="/web/static/lib/fontawesome/css/font-awesome.css" />
+<!--                <script type="text/javascript" src="/sea_order_view_customer_received/static/src/js/sale_order.js"/>-->
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sea_product_extend_drinks_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-06 06:49+0000\n"
+"PO-Revision-Date: 2022-10-06 06:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sea_product_extend_drinks_pos
+#: model:ir.model,name:sea_product_extend_drinks_pos.model_product_product
+msgid "Custom Stock Quantity"
+msgstr ""
+
+#. module: sea_product_extend_drinks_pos
+#: model:ir.model.fields,field_description:sea_product_extend_drinks_pos.field_product_product__sea_pos_check_drinks
+msgid "Is Drinks"
+msgstr "Là thức uống"
+

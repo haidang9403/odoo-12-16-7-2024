@@ -1,0 +1,9 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sea_contact_extend
+#
+msgid ""
+msgstr ""
+
+msgid "Employee"
+msgstr "Nhân viên"

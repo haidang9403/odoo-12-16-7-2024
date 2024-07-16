@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_shipping_cost_config_form" model="ir.ui.view">
+        <field name="name">pos.config.form.shipping.cost</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='quickly_payment_full']" position="after">
+                <field name="sea_pos_region_name"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_picking_tree_logistic_all_tree" model="ir.ui.view">
+        <field name="name">action.picking.tree.logistic.all.tree</field>
+        <field name="priority" eval="100"/>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <tree default_order="date_done desc" create="0" editable="top"
+                  decoration-muted="sea_customer_received != False"
+                  decoration-danger="not sea_customer_received and date_done and (date_done &lt; date_now)"
+                  string="Picking list">
+                <button name="received_done" type="object" string="Delivered" class="oe_highlight"
+                        attrs="{'invisible':[('sea_customer_received', '!=', False)]}"/>
+                <field name="name" readonly="1"/>
+                <field name="sales_person" readonly="1"/>
+                <!--<field name="location_id" invisible="1"/>-->
+                <field name="logistic_delivery" readonly="1"/>
+                <field name="logistic_delivery_address" readonly="1"/>
+                <!--<field name="logistic_destination_location" readonly="1"/>-->
+                <field name="location_dest_id" groups="stock.group_stock_multi_locations" readonly="1"/>
+                <field name="date" invisible="1"/>
+                <field name="scheduled_date" readonly="1" invisible="1"/>
+                <field name="date_done" readonly="1"/>
+                <field name="sea_customer_received" readonly="1"/>
+                <field name="origin" readonly="1"/>
+                <field name="group_id" invisible="1"/>
+                <field name="backorder_id" readonly="1" invisible="1"/>
+                <field name="state" readonly="1" invisible="1"/>
+                <field name="priority" invisible="1"/>
+                <field name="picking_type_id" invisible="1"/>
+                <field name="logistic_note" readonly="1"/>
+                <field name="date_now" readonly="1" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_picking_tree_logistic_all" model="ir.actions.act_window">
+        <field name="name">Transfers Logistic</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('state','=','done'), ('picking_type_id.code','in', ['outgoing', 'internal']),
+            ('pos_order_id','=',False)]
+        </field>
+        <field name="view_id" eval="False"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define a new transfer
+            </p>
+        </field>
+    </record>
+
+    <record id="view_picking_internal_search_logistic" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search.inherit.logistic</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <group expand="0" position="after">
+                <filter name="location_id" string="Source Location" domain="[]" context="{'group_by':'location_id'}"/>
+            </group>
+        </field>
+    </record>
+
+
+    <record id="action_picking_tree_logistic_all_tree_action" model="ir.actions.act_window.view">
+        <field name="sequence" eval="108"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="action_picking_tree_logistic_all_tree"/>
+        <field name="act_window_id" ref="action_picking_tree_logistic_all"/>
+    </record>
+
+    <menuitem id="menu_logistic_root"
+              name="Logistics"
+              web_icon="sea_logistics,static/description/icon.png"
+              action="action_picking_tree_logistic_all"
+              sequence="10"
+              groups="group_logistic_user"/>
+</odoo>

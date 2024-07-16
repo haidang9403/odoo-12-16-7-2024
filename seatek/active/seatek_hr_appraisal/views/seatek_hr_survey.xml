@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_survey_view">
+            <field name="name">hr.survey.kanban</field>
+            <field name="model">hr.survey</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_survey_kanban">
+                    <field name="name"/>
+                    <field name="number_of_criteria"/>
+                    <templates>
+                            <div t-name="kanban-box" t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_record_top">
+                                    <h4 class="o_kanban_record_title mb4"><field name="name"/></h4>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <span>Criteria: <field name="number_of_criteria"/></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_survey_form">
+            <field name="name">Surveys</field>
+            <field name="res_model">hr.survey</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new survey
+              </p><p>
+                You can create surveys for different purposes: customer opinion, services feedback, recruitment interviews, employee's periodical evaluations, marketing campaigns, etc.
+              </p><p>
+                Design easily your survey, send invitations to answer by email and analyse answers.
+              </p>
+            </field>
+        </record>
+        <record id="hr_survey_view_form" model="ir.ui.view">
+            <field name="name">hr.survey.view.form</field>
+            <field name="model">hr.survey</field>
+            <field name="arch" type="xml">
+                <form delete="false" duplicate="false">
+                    <header>
+                        <field name="mark_as_todo" invisible="1"/>
+                        <button  string="Mark as Todo" name="action_confirm" type="object" class="btn-primary" attrs="{'invisible': [('mark_as_todo', '=', False)]}" />
+                    </header>
+                    <field name="state_done" invisible="1"/>
+                    <div >
+                        <span>
+                            <label for="name" string="Name" class="oe_edit_only"/>
+                            <field name="name" string ="Name" attrs="{'readonly': [('state_done', '=', True)]}" required="1"/>
+                        </span>
+                    </div>
+
+                    <div class="oe_edit_only">
+                        <span>
+                            <label for="description" string="Description" />
+                            <field name="description" string ="Description" attrs="{'readonly': [('state_done', '=', True)]}" required="1"/>
+                        </span>
+                    </div>
+
+                    <field name="page_summary_ids" string="Page" widget="survey_one2many" attrs="{'readonly': [('state_done', '=', True)]}" required="1">
+                        <tree editable="bottom">
+                            <field name="prefix"/>
+                            <field name="name"/>
+                            <field name="max_score"/>
+                            <field name="calculation_method"/>
+                            <field name="is_percent"/>
+                            <field name="percentage" attrs="{'readonly': [('is_percent', '=', False)]}"/>
+                            <field name="can_input"/>
+                            <field name="data_type" invisible="1"/>
+                            <field name="hr_survey_id" invisible="1"/>
+                            <field name="fields_sum" widget="many2many_tags" attrs="{'readonly':[('can_input','=',True)]}" domain="[('hr_survey_id', '=', hr_survey_id)]"/>
+                            <field name="is_parent_page" invisible="1"/>
+                            <field name="survey_id" invisible="1"/>
+                            <field name="summary_level" invisible="1"/>
+                            <field name ="page_for_manager" invisible="1"/>
+                            <field name ="can_delete" invisible="1"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+        <record id="parent_level_view_form" model="ir.ui.view">
+            <field name="name">parent.level.view.form</field>
+            <field name="model">hr.survey.summary</field>
+            <field name="arch" type="xml">
+                <form delete="false" duplicate="false">
+                    <label for="name" class="oe_edit_only" string="Survey"/>
+                    <field name="name" string ="Name"/>
+                    <field name="summary_level" invisible="1"/>
+                    <field name="summary_ids" widget="survey_one2many" >
+                        <tree editable="bottom">
+                            <field name="prefix"/>
+                            <field name="name"/>
+                            <field name="max_score"/>
+                            <field name="calculation_method" attrs="{'readonly':[('can_input','=',True)]}"/>
+                            <field name="is_percent"/>
+                            <field name="percentage" attrs="{'readonly': [('is_percent', '=', False)]}"/>
+                            <field name="enable_edit_percentage"/>
+                            <field name="data_type" invisible="1"/>
+                            <field name="hr_survey_id" invisible="1"/>
+                            <field name="can_input"/>
+                            <field name="validation_required" attrs="{'readonly':[('can_input','!=',True)]}"/>
+                            <field name="enable_edit_title" attrs="{'readonly':[('can_input','!=',True)]}"/>
+                            <field name="survey_id" invisible="1"/>
+                            <field name="fields_sum" widget="many2many_tags" attrs="{'readonly':[('can_input','=',True)]}" domain="[('hr_survey_id', '=', hr_survey_id)]"/>
+                            <field name="summary_level" invisible="1"/>
+                            <field name ="page_for_manager" invisible="0"/>
+                            <field name ="can_delete" invisible="1"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

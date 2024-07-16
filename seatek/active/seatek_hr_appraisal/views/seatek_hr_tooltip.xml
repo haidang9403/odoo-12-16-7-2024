@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="mob assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/seatek_hr_apraisal/static/src/js/seatek_hr_tooltip.js"></script>
+        </xpath>
+    </template>
+    <!-- Make the xmlid of menus required by the My Module tour available in webclient -->
+    <record id="seatek_hr_appraisal.top_menu_appraisal" model="ir.ui.menu">
+        <field name="load_xmlid" eval="True"/>
+    </record>
+
+</odoo>

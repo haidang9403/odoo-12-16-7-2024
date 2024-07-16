@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="seatek_employees_personal_information" model="ir.ui.view">
+            <field name="name">seatek.employees.personal.information</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="seatek_employees_optional.view_employees_optional"/>
+            <field name="arch" type="xml">
+<!--                PRIVATE INFORMATION-->
+<!--                attribute required-->
+<!--                PERMANENT ADDRESS-->
+                <xpath expr="//field[@name='sea_permanent_addr']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='permanent_country_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='permanent_city_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='permanent_district_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+<!--                TEMPORARY ADDRESS-->
+                <xpath expr="//field[@name='sea_temp_addr']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='temporary_country_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='temporary_city_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='temporary_district_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+<!--                Identification ID-->
+                <xpath expr="//field[@name='identification_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='id_issue_place']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+<!--                STATUS-->
+                <xpath expr="//field[@name='gender']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+
+<!--                -->
+                <xpath expr="//field[@name='sea_personal_email']" position="after">
+                    <field name="main_phone_number" widget="phone"/>
+                    <field name="second_phone_number" widget="phone"/>
+                </xpath>
+
+                <xpath expr="//page[@name='personal_information']" position="inside">
+
+                    <group string="Family and Others" colspan="10">
+                        <field name="fam_ids" nolabel="1" >
+                            <tree editable="bottom">
+                                <field name="member_name"/>
+                                <field name="relation"/>
+                                <field name="emergency"/>
+                                <field name="member_independent"/>
+                                <field name="member_phone"/>
+                                <field name="member_gender"/>
+                                <field name="member_birthday"/>
+                                <field name="member_address"/>
+                                <field name="member_taxcode"/>
+                                <field name="member_note"/>
+
+                            </tree>
+                        </field>
+                    </group>
+
+                    <group string="Others">
+                        <field name="extra_note" string="Sea Notes"/>
+                    </group>
+                </xpath>
+
+                <!--03/04/2023-->
+                <xpath expr="//field[@name='bank_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='acc_number']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='acc_holder_name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                 <xpath expr="//page[@name='personal_information']/group[1]/group[9]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']/group[1]/group[1]" position = "attributes">
+                    <attribute name="string">Citizenship</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']/group[1]/group[1]" position="after">
+                    <group string="Birth">
+                        <field name="birthday"/>
+                        <field name="place_of_birth" groups="hr.group_hr_user"/>
+                        <field name="country_of_birth" groups="hr.group_hr_user"/>
+                    </group>
+                    <group string="Other Information">
+                        <field name="bank_id" options='{"no_open": True, "no_create": True}'/>
+                        <field name="acc_number"/>
+                        <field name="acc_holder_name"/>
+                    </group>
+                </xpath>
+
+
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

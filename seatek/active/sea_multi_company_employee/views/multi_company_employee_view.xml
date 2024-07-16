@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--import css-->
+        <template id="assets_employee_table" name="employee_table" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css"
+                      href="/sea_multi_company_employee/static/src/css/multi_company.css"/>
+            </xpath>
+        </template>
+
+        <!-- Multi Employee Company hr.employee.multi.company-->
+        <record id="view_multi_company_employee_tree" model="ir.ui.view">
+            <field name="name">hr.employee.multi.company.tree</field>
+            <field name="model">hr.employee.multi.company</field>
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_user') ])]"/>
+            <field name="context">{"search_default_hr_employee_multi_company_working": 1}</field>
+            <field name="arch" type="xml">
+                <tree string="Employees" class="employee_treeview_scrollable">
+                    <field name="name"/>
+                    <field name="job_code_compute" invisible="1"/>
+                    <field name="company_code" invisible="1"/>
+                    <field name="department_code" invisible="1"/>
+                    <field name="job_code" invisible="1"/>
+                    <field name="s_identification_id"/>
+                    <field name="user_id"/>
+                    <field name="company_id"/>
+                    <field name="seagroup_join_date"/>
+                    <field name="department_id"/>
+                    <field name="job_id"/>
+                    <field name="parent_id"/>
+                    <field name="manager"/>
+                    <field name="employee_current_status"/>
+                    <field name="sea_employee_level"/>
+                    <field name="coach_id" invisible="1"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_employee_multi_company_filter" model="ir.ui.view">
+            <field name="name">hr.employee.multi.company.search</field>
+            <field name="model">hr.employee.multi.company</field>
+            <field name="arch" type="xml">
+                <search string="Employee status">
+                    <field name="name" string="Employees" filter_domain="['|',('work_email','ilike',self),('name','ilike',self)]"/>
+                    <field name="department_id"/>
+                    <field name="job_id"/>
+                    <filter name="hr_employee_multi_company_working" string="Đang làm việc" domain="[('employee_current_status', '=', 'working')]" groups="hr.group_hr_user"/>
+                    <filter name="hr_employee_multi_company_leaving" string="Nghỉ không lương" domain="[('employee_current_status', '=', 'leaving')]" groups="hr.group_hr_user"/>
+                    <filter name="hr_employee_maternity_multi_company_leave" string="Nghỉ thai sản" domain="[('employee_current_status', '=', 'maternity_leave')]" groups="hr.group_hr_user"/>
+                    <filter name="hr_employee_sick_multi_company_leave" string="Nghỉ ốm đau" domain="[('employee_current_status', '=', 'sick_leave')]" groups="hr.group_hr_user"/>
+                    <filter name="hr_employee_multi_company_resigned" string="Đã nghỉ việc" domain="[('employee_current_status', '=', 'resigned')]" groups="hr.group_hr_user"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+
+
+                    <group expand="0" string="Group By">
+                        <filter name="group_manager" string="Manager" domain="[]" context="{'group_by':'parent_id'}"/>
+                        <filter name="group_coach" string="Coach" domain="[]" context="{'group_by':'coach_id'}"/>
+                        <filter name="group_department" string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                        <filter name="group_operating_unit" string="Operating Unit" domain="[]" context="{'group_by':'operating_unit_id'}"/>
+                        <filter name="group_job" string="Job" domain="[]" context="{'group_by':'job_id'}"/>
+                        <filter name="group_company" string="Company" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                    </group>
+                </search>
+             </field>
+         </record>
+
+        <record id="open_view_multi_company_employee_tree" model="ir.actions.act_window">
+            <field name="name">Employees</field>
+            <field name="res_model">hr.employee.multi.company</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_multi_company_employee_tree"/>
+            <field name="search_view_id" ref="view_employee_multi_company_filter"></field>
+            <field name="context">{"search_default_hr_employee_multi_company_working": 1}</field>
+        </record>
+
+    <record id="view_employee_tree_inherit_v2" model="ir.ui.view">
+        <field name="name">hr.employee.tree.inherit.v2</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="sea_employee_extend.view_employee_tree_inherit"/>
+        <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager') ])]"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="replace">
+                <field name="company_id_compute"/>
+            </field>
+            <field name="department_id" position="replace">
+                <field name="department_id_compute"/>
+            </field>
+            <field name="job_id" position="replace">
+                <field name="job_id_compute"/>
+            </field>
+            <field name="parent_id" position="replace">
+                <field name="parent_id_compute"/>
+            </field>
+            <field name="employee_current_status" position="replace">
+                <field name="employee_current_status_compute"/>
+            </field>
+        </field>
+    </record>
+
+        <menuitem
+            id="hr.menu_hr_root"
+            name="Employees"
+            action="open_view_multi_company_employee_tree"
+            groups="hr.group_hr_manager,hr.group_hr_user"
+            web_icon="sea_multi_company_employee,static/description/icone.png"
+            sequence="75"/>
+
+        <menuitem
+            id="hr.menu_open_view_employee_list_my"
+            action="open_view_multi_company_employee_tree"
+            parent="hr.menu_hr_root"
+            sequence="3"/>
+
+        <menuitem
+            id="menu_hr_employee_view_mce"
+            name="HR Employees Import"
+            parent="hr.menu_human_resources_configuration"
+            sequence="22"
+            groups="hr.group_hr_manager"
+            action="hr.open_view_employee_list_my"/>
+    </data>
+</odoo>

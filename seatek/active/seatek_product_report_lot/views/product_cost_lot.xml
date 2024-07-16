@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_production_lot_extend_cost" model="ir.ui.view">
+        <field name="model">stock.production.lot</field>
+        <field name="name">stock.production.lot.cost</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="sequence" eval="17"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='replace_product_public_price']" position="before">
+                <field name="product_cost" readonly="1"/>
+                <field name="product_output_qty" readonly="1"/>
+                <field name="product_sale_target_price" />
+                <field name="product_sale_target_total" readonly="1"/>
+                <field name="product_sale_total" readonly="1"/>
+                <field name="differential_value" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_move_form_expiry_simple" model="ir.ui.view">
+        <field name="name">stock.production.lot.inherit.form</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form_simple" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="product_cost" readonly="1"/>
+                <field name="product_output_qty" readonly="1"/>
+                <field name="product_sale_target_price" />
+                <field name="product_sale_target_total" readonly="1"/>
+                <field name="product_sale_total" readonly="1"/>
+                <field name="differential_value" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_production_lot_tree_inherit" model="ir.ui.view">
+        <field name="name">stock.production.lot.company.tree.inherit</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="product_qty"/>
+                <field name="product_cost" widget="monetary"/>
+                <field name="product_output_qty"/>
+                <field name="product_sale_target_price"/>
+                <field name="product_sale_target_total"/>
+                <field name="product_sale_total"/>
+                <field name="differential_value"/>
+
+            </field>
+        </field>
+    </record>
+
+    <record id="action_report_product_cost_lot_view" model="ir.actions.client">
+        <field name="name">Product Cost Lot</field>
+        <field name="tag">account_financial_report_backend</field>
+        <field name="context" eval="{'active_model': 'report.product.cost.lot'}" />
+    </record>
+    <report
+      id="action_report_product_cost_lot_view_qweb"
+      model="report.product.cost.lot"
+      string="Partner Ledger"
+      report_type="qweb-pdf"
+      name="seatek_product_report_lot.report_product_cost_lot_qweb"
+      file="seatek_product_report_lot.report_product_cost_lot_qweb"
+      />
+    <record id="stock.action_production_lot_form" model="ir.actions.act_window">
+        <field name="domain">[ ('product_id.company_id','in',company_ids)]</field>
+    </record>
+
+</odoo>

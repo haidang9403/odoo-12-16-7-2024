@@ -1,0 +1,23 @@
+<!--<?xml version="1.0" encoding="utf-8" ?>-->
+<!--<odoo>-->
+<!--    <data>-->
+<!--         <record id="hr_contract_extend" model="ir.ui.view">-->
+<!--            <field name="name">hr.contract.extend</field>-->
+<!--            <field name="model">hr.contract</field>-->
+<!--            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                 <xpath expr="//field[@name='state']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                     <attribute name="readonle">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='type_id']" position="attributes">-->
+<!--                    <attribute name="string">Loại hợp đồng</attribute>-->
+<!--                    <attribute name="translate">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='reported_to_secretariat']" position="after">-->
+<!--                    <field name="state" readonly="1"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->

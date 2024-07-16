@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="appraisal_internal_layout">
+        <div class="header">
+            <div style=" padding-left: 100px; padding-right: 100px; position: relative; top: 50px;">
+                <img src="seatek_hr_appraisal/static/description/logoseacorp.png" alt="logo cong ty" style="display: inline-block; width: 180px; float: left;"/>
+                <h3 class="text-center" style="font-family: 'Times New Roman', Times, serif; font-size: 15pt; line-height: 1.6;position: absolute; top: 30%; left: 300px; "><strong>BẢNG ĐÁNH GIÁ NHÂN SỰ<br/>STAFF PERFORMANCE EVALUATION</strong></h3>
+                <div style="clear: both"></div>
+            </div>
+
+        </div>
+        <br/>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+    </template>
+</odoo>

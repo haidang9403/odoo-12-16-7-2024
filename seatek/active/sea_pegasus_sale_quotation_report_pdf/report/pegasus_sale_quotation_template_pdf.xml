@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="pegasus_sale_quotation_template_pdf">
+        <div class="row">
+            <div class="col-3 mb4">
+                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 100px;"
+                     alt="Logo"/>
+            </div>
+
+            <!--Edit Quotation number (13/Jan/2023)-->
+            <t t-set="quotation_number" t-value="doc.name.split('/')[0]"/>
+
+            <div class="col-9 text-right" style="margin-right: 0px">
+                <div class="text-right" style="margin-right: 24px; font-size: 14px;">PM-QT-12.01 (01-01/06/2022)</div>
+                <h5 class="text-right" style="color: #000066; margin-right: 25px; margin-bottom: auto;">
+                    <strong style="font-size: 25px;">SALE QUOTATION</strong>
+                </h5>
+                <div class="col-7" style="float: right;">
+                    <div class="row">
+                        <div class="col-4 text-right">No:</div>
+                        <div class="col-3 text-right" style="padding: 0px">
+
+                            <!--&lt;!&ndash;Edit Quotation number (13/Jan/2023)&ndash;&gt;
+                            <t t-set="number_temp" t-value="doc.name.split('/')"/>
+                            <t t-if="len(number_temp) > 1">
+                                <t t-set="quotation_number" t-value="number_temp[1]"/>
+                            </t>
+                            <t t-else="">
+                                <t t-set="quotation_number" t-value="number_temp[0]"/>
+                            </t>-->
+                            <t t-if="doc.partner_id.sea_business_code">
+                                <t t-esc="quotation_number + '.'+ doc.partner_id.sea_business_code"/>
+                            </t>
+                            <t t-else="">
+                                <t t-esc="quotation_number"/>
+                            </t>
+                        </div>
+                        <div class="col-5 text-left" style="padding: 0px;">
+                            <span>/<t t-esc="o.date_order" t-options='{"widget":"date","format":"yyyy"}'/>/BG-PMD
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">Date:</div>
+                        <div style="padding: 0px" class="col-3 text-right" t-field="doc.date_order"
+                             t-options='{"format": "dd/MMM/yy"}'/>
+                        <div class="col-5"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">Total of pages:</div>
+                        <div class="col-8 text-left">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style type="text/css">
+            html *{
+            font-family: "Times" !important;
+            }
+            table, ul, p, div{
+            font-size: 13px;
+            }
+            .custom-table-address, .custom-table-line{
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            }
+            tr {
+            border-bottom: 1px solid black;
+            }
+            .custom-table-address tr th {
+            width: 58px;
+            }
+
+            .custom-table-address tr th:nth-child(3) {
+            width: 56px;
+            text-align: right;
+            }
+
+            .custom-table-address td:nth-child(4){
+            width: 256px;
+            }
+            tr:last-child {
+            border-bottom: 1px;
+            }
+            td, th {
+            border-right: 1px solid black;
+            padding: 3px;
+            vertical-align: middle;
+            }
+            tr td:last-child, th:last-child {
+            border-right: 1px;
+            }
+            .custom-table-line th{
+            text-align:center;
+            vertical-align: middle;
+            }
+            .custom-table-line thead tr:nth-child(2) th:nth-child(5){
+            width: 56px;
+            }
+            .custom-table-line thead tr:nth-child(2) th:nth-child(4){
+            width: 64px;
+            }
+        </style>
+        <table class="custom-table-address" style="margin-top: 7px;">
+            <tr>
+                <th>TO:</th>
+                <td colspan="3">
+                    <b>
+                        <t t-if="doc.partner_id.is_company == True">
+                            <span t-field="doc.partner_id.name"/>
+                        </t>
+                        <t t-else="">
+                            <span t-field="doc.partner_id.parent_id.name"/>
+                        </t>
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <th>Add:</th>
+                <td colspan="3">
+                    <b>
+                        <t t-if="doc.sea_temp_delivery_address">
+                            <t t-esc="doc.sea_temp_delivery_address"/>
+                        </t>
+                        <t t-else="">
+                            <span>
+                                <span t-field="doc.partner_id.street"/>
+                                ,
+                            </span>
+                            <t t-if="doc.partner_id.state_id.name">
+                                <span>
+                                    <span t-field="doc.partner_id.state_id.name"/>
+                                    ,
+                                </span>
+                            </t>
+                            <span t-field="doc.partner_id.country_id.name"/>
+                        </t>
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <th>Tel:</th>
+                <td style="border: 0px;">
+                    <t t-if="doc.partner_id.is_company == true">
+                        <span t-field="doc.partner_id.phone"/>
+                    </t>
+                    <t t-else="">
+                        <span t-field="doc.partner_shipping_id.phone"/>
+                    </t>
+                </td>
+                <th style="border: 0px;">Fax:</th>
+                <td style="border: 0px;">
+                    <!--<span t-field="doc.partner_id.fax"/>-->
+                </td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td colspan="3">
+                    <span t-field="doc.partner_id.email"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Attn:</th>
+                <td style="border: 0px;">
+                    <t t-if="doc.sea_temp_contact">
+                        <span t-esc="doc.sea_temp_contact"/>
+                    </t>
+                    <t t-else="">
+                        <t t-foreach="request.env['res.partner'].search([('parent_id', '=', doc.partner_id.id)])"
+                           t-as="obj">
+                            <!--<t t-if="not obj.custom_type_id.name">
+                                <span t-esc="obj.name"/>
+                            </t>-->
+                            <t t-if="obj.parent_id and obj.type == 'contact'">
+                                <span t-esc="obj.name"/>
+                            </t>
+                        </t>
+                    </t>
+                </td>
+                <th style="border: 0px;">HP:</th>
+                <td style="border: 0px;">
+                    <t t-if="not doc.sea_temp_contact">
+                        <t t-foreach="request.env['res.partner'].search([('parent_id', '=', doc.partner_id.id)])"
+                           t-as="obj">
+                            <t t-if="not obj.custom_type_id.name">
+                                <span t-esc="obj.mobile"/>
+                            </t>
+                        </t>
+                    </t>
+                </td>
+            </tr>
+        </table>
+        <table class="custom-table-address" style="margin-top: 10px;">
+            <tr>
+                <th>FROM:</th>
+                <td colspan="3">
+                    <b>
+                        <t t-if="doc.currency_id.name == 'VND'">
+                            <span t-field="doc.user_id.company_id.name"/>
+                        </t>
+                        <t t-else="">
+                            <span t-field="doc.user_id.company_id.sea_company_foreign"/>
+                        </t>
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <th>Add:</th>
+                <td colspan="3">
+                    <b>
+                        <t t-foreach="request.env['res.partner'].search([('parent_id', '=', doc.user_id.company_id.partner_id.id)])"
+                           t-as="obj">
+                            <t t-if="obj.type == 'invoice'">
+                                <t t-if="doc.currency_id.name == 'VND'">
+                                    <t t-esc="obj.street + ', ' + obj.city + '.'" t-if="obj.name == 'VN'"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-esc="obj.street + ', ' + obj.city + ', ' + obj.country_id.name + '.'"
+                                       t-if="obj.name == 'EN'"/>
+                                </t>
+                            </t>
+                        </t>
+                        <!--<span>
+                            <span t-field="doc.user_id.company_id.street"/>
+                            ,
+                        </span>
+                        <span>
+                            <span t-field="doc.user_id.company_id.state_id.name"/>
+                            ,
+                        </span>
+                        <span t-field="doc.user_id.company_id.country_id.name"/>-->
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <th>Tel:</th>
+                <td style="border: 0px;">
+                    <span t-field="doc.user_id.company_id.phone"/>
+                </td>
+                <th style="border: 0px;">
+                    <span>Fax:</span>
+                </th>
+                <td style="border: 0px;"/>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td colspan="3">
+                    <t t-foreach="request.env['crm.team'].search([('member_ids', '=', doc.user_id.id)])"
+                       t-as="obj">
+                        <t t-if="obj.alias_name">
+                            <span t-esc="obj.alias_name + '@pegasuscorp.com.vn'"/>
+                        </t>
+                    </t>
+                </td>
+            </tr>
+            <tr>
+                <th>P.I.C:</th>
+                <td style="border: 0px;">
+                    <span t-field="doc.user_id.name"/>
+                </td>
+                <th style="border: 0px;">
+                    <span>HP:</span>
+                </th>
+                <td style="border: 0px;">
+                    <span t-field="doc.user_id.mobile"/>
+                </td>
+            </tr>
+        </table>
+        <div class="page" style="margin-top: 5px;">
+            <table class="custom-table-line" style="border: 0px;">
+                <thead>
+                    <tr class="text-center" style="background: #CCFFFF; border: 1px solid">
+                        <th colspan="3">Customer's reference</th>
+                        <th colspan="2">Pegasus's reference</th>
+                        <th rowspan="2" colspan="3">Currency</th>
+                    </tr>
+                    <tr class="text-center" style="background: #CCFFFF; border: 1px solid">
+                        <th style="font-weight: normal; width: 58px">Inquiry No.</th>
+                        <th style="font-weight: normal; width: 100px">Inquiry Date</th>
+                        <th style="font-weight: normal">Ship's name</th>
+                        <th style="font-weight: normal">Inquiry No.</th>
+                        <th style="font-weight: normal; border-right: 1px solid black">Inquiry Date</th>
+                    </tr>
+                    <tr class="text-center" style="font-weight: bold; border: 1px solid">
+                        <td>
+                            <span t-field="doc.sea_customer_inquiry_no"/>
+                        </td>
+                        <td>
+                            <span t-field="doc.sea_customer_inquiry_date"
+                                  t-options='{"widget": "date","format": "dd/MMM"}'/>
+                        </td>
+                        <td>
+                            <t t-if="doc.sea_ship_partner_id.name">
+                                <span t-esc="(str(doc.sea_ship_partner_id.name).upper())"/>
+                            </t>
+                            <t t-else="">
+                                <t t-if="doc.partner_id.is_company == True">
+                                    <span t-field="doc.partner_id.name"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-field="doc.partner_id.parent_id.name"/>
+                                </t>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-if="doc.partner_id.sea_business_code">
+                                <t t-esc="quotation_number + '.'+ doc.partner_id.sea_business_code"/>
+                            </t>
+                            <t t-else="">
+                                <t t-esc="quotation_number"/>
+                            </t>
+                            <!--<span t-field="doc.name" t-options="{'widget': 'text'}"/>.
+                            <span t-field="doc.partner_id.sea_business_code"/>-->
+                        </td>
+                        <td>
+                            <span t-field="doc.date_order"
+                                  t-options='{"widget": "date","format": "dd/MMM"}'/>
+                        </td>
+                        <td colspan="3">
+                            <span t-field="doc.currency_id.name"/>
+                        </td>
+                    </tr>
+                    <tr style="border: 0px;">
+                        <th colspan="8" class="text-left"
+                            style="font-weight: 100; border-left: 0px; border-right: 0px;">
+                            Trả lời thư yêu cầu chào hàng trên của Quý Công ty, chúng tôi xin được báo giá dịch vụ, hàng
+                            hóa
+                            Quý Công
+                            ty
+                            yêu cầu như sau
+                            <i>(Acknowledge to your above inquiry, we hereby would like to quote for the services, goods
+                                required as
+                                follows)</i>:
+                        </th>
+                    </tr>
+                    <tr style="background: #CCFFFF; border: 1px solid">
+                        <th rowspan="2" class="text-center">Line's No</th>
+                        <th colspan="2">Items</th>
+                        <th rowspan="2">
+                            <t t-set="unit" t-value="''"/>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <t t-if="line.product_id.type == 'product'">
+                                    <t t-set="unit" t-value="unit + 'Unit '"/>
+                                </t>
+                                <t t-else="line.product_id.type == 'service'">
+                                    <t t-set="unit" t-value="unit + 'Months '"/>
+                                </t>
+                            </t>
+                            <t t-esc="unit.split(' ')[0]"/>
+                        </th>
+                        <th rowspan="2">Qty</th>
+                        <th rowspan="2" style="width: 72px">Unit Price</th>
+                        <th rowspan="2" style="width: 92px">Line's Value</th>
+                        <th rowspan="2" style="width: 92px">
+                            <t t-set="delivery_remark" t-value="''"/>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <t t-if="line.product_id.type == 'product'">
+                                    <t t-set="delivery_remark" t-value="delivery_remark + 'Delivery '"/>
+                                </t>
+                                <t t-else="line.product_id.type == 'service'">
+                                    <t t-set="delivery_remark" t-value="delivery_remark + 'Remark '"/>
+                                </t>
+                            </t>
+                            <t t-esc="delivery_remark.split(' ')[0]"/>
+                        </th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid black; background: #CCFFFF; border: 1px solid">
+                        <th class="text-center">Code</th>
+                        <th style="border-right: 1px solid black">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-set="line_no_no_tax" t-value="0"/>
+                    <t t-set="total_tax" t-value="-1"/>
+                    <t t-set="subtotal_no_tax" t-value="0"/>
+                    <t t-set="total_no_tax" t-value="0"/>
+                    <t t-set="discount_total_no_tax" t-value="0"/>
+                    <t t-set="check_type_tax_no" t-value="''"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-if="line.tax_id.name == 'Thuế GTGT - Không chịu thuế'">
+                            <t t-set="check_type_tax_no" t-value="line.tax_id.name"/>
+                            <t t-if="total_tax == -1">
+                                <t t-set="total_tax" t-value="line.tax_id.amount"/>
+                            </t>
+                            <t t-set="line_no_no_tax" t-value="line_no_no_tax + 1"/>
+                            <tr style="text-align: right; border: 1px solid">
+                                <td class="text-center">
+                                    <span t-esc="line_no_no_tax"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-set="code" t-value="line.product_id.default_code.split('_')[0]"/>
+                                    <span t-esc="code"/>
+                                </td>
+                                <td class="text-left">
+                                    <t t-if="line.product_id.type == 'service' and line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'
+                                    or line.product_id.type == 'service' and line.product_id.categ_id.name == 'DELIVERY CHARGE'">
+                                        <t t-if="line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'">
+                                            <t t-esc="line.product_id.sea_product_variant_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="line.name"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.product_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.product_id.type == 'product'">
+                                        <t t-if="line.product_uom">
+                                            <t t-set="unit" t-value="'Pc'"/>
+                                            <t t-esc="unit"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="default_code_len" t-value="len(line.product_id.default_code)"/>
+                                        <t t-set="check_months"
+                                           t-value="line.product_id.default_code[default_code_len - 4: default_code_len]"/>
+                                        <t t-set="months"
+                                           t-value="line.product_id.default_code[default_code_len - 3: default_code_len -1]"/>
+
+                                        <t t-if="check_months == '_03M' or check_months == '_06M' or check_months == '_09M' or check_months == '_12M' or check_months == '_18M' or check_months == '_24M'">
+                                            <t t-esc="months"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="'Pc'"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="line.product_uom_qty" t-options="{'widget': 'integer'}"/>
+                                </td>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_unit)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_unit)"/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <t t-set="line_price_subtotal" t-value="line.price_unit * line.product_uom_qty"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-set="subtotal_no_tax" t-value="subtotal_no_tax + line.price_subtotal"/>
+                                    <t t-set="total_no_tax" t-value="total_no_tax + line.price_subtotal"/>
+                                </td>
+                                <td>
+                                    <t t-if="line.product_id.type == 'service'">
+                                        <span t-field="line.remarks"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.delivery"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                    <t t-if="check_type_tax_no == 'Thuế GTGT - Không chịu thuế'">
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">Sub Total Amount:</td>
+                            <td/>
+                            <td style="font-weight: bold">
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(subtotal_no_tax)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(subtotal_no_tax)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+
+                        <t t-if="doc.global_order_discount">
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">
+                                    <i>Discount:</i>
+                                </td>
+                                <td>
+                                    <i><span t-esc="doc.formatNum(doc.global_order_discount)"/>%
+                                    </i>
+                                </td>
+                                <td>
+                                    <t t-set="discount_total_no_tax"
+                                       t-value="discount_total_no_tax + (subtotal_no_tax * doc.global_order_discount)/100"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(discount_total_no_tax)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(discount_total_no_tax)"/>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">Sub Total Amount:</td>
+                                <td/>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <strong>
+                                            <span t-esc="doc.formatNum(subtotal_no_tax - discount_total_no_tax)"/>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span t-esc="'{:0,.2f}'.format(subtotal_no_tax - discount_total_no_tax)"/>
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                        </t>
+
+                        <tr class="text-right" style="border: 1px solid; font-style: italic">
+                            <td colspan="5">
+                                Total Tax:
+                            </td>
+                            <td>
+                                <span t-esc="'X'"/>%
+                            </td>
+                            <td/>
+                            <td/>
+                        </tr>
+                        <tr class="text-right" style="border: 1px solid; font-weight: bold">
+                            <td colspan="5">
+                                Total Amount:
+                            </td>
+                            <td>
+                                <t t-if="doc.amount_untaxed == subtotal_no_tax">
+                                    <span t-esc="''"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'1'"/>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(total_no_tax - discount_total_no_tax)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(total_no_tax - discount_total_no_tax)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+
+                    <t t-set="line_no" t-value="line_no_no_tax"/>
+                    <t t-set="total_tax" t-value="-1"/>
+                    <t t-set="subtotal_0" t-value="0"/>
+                    <t t-set="total_0" t-value="0"/>
+                    <t t-set="discount_total_0" t-value="0"/>
+                    <t t-set="check_type_tax_0" t-value="''"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-if="line.tax_id.amount == 0 and line.tax_id.name == 'Thuế GTGT phải nộp 0%'">
+                            <t t-set="check_type_tax_0" t-value="line.tax_id.name"/>
+                            <t t-if="total_tax == -1">
+                                <t t-set="total_tax" t-value="line.tax_id.amount"/>
+                            </t>
+                            <t t-set="line_no" t-value="line_no + 1"/>
+                            <tr style="text-align: right; border: 1px solid">
+                                <td class="text-center">
+                                    <span t-esc="line_no"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-set="code" t-value="line.product_id.default_code.split('_')[0]"/>
+                                    <span t-esc="code"/>
+                                </td>
+                                <td class="text-left">
+                                    <t t-if="line.product_id.type == 'service' and line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'
+                                    or line.product_id.type == 'service' and line.product_id.categ_id.name == 'DELIVERY CHARGE'">
+                                        <t t-if="line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'">
+                                            <t t-esc="line.product_id.sea_product_variant_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="line.name"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.product_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.product_id.type == 'product'">
+                                        <t t-if="line.product_uom">
+                                            <t t-set="unit" t-value="'Pc'"/>
+                                            <t t-esc="unit"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="default_code_len" t-value="len(line.product_id.default_code)"/>
+                                        <t t-set="check_months"
+                                           t-value="line.product_id.default_code[default_code_len - 4: default_code_len]"/>
+                                        <t t-set="months"
+                                           t-value="line.product_id.default_code[default_code_len - 3: default_code_len -1]"/>
+
+                                        <t t-if="check_months == '_03M' or check_months == '_06M' or check_months == '_09M' or check_months == '_12M' or check_months == '_18M' or check_months == '_24M'">
+                                            <t t-esc="months"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="'Pc'"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="line.product_uom_qty" t-options="{'widget': 'integer'}"/>
+                                </td>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_unit)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_unit)"/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <t t-set="line_price_subtotal" t-value="line.price_unit * line.product_uom_qty"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-set="subtotal_0" t-value="subtotal_0 + line.price_subtotal"/>
+                                    <t t-set="total_0" t-value="total_0 + line.price_subtotal"/>
+                                </td>
+                                <td>
+                                    <t t-if="line.product_id.type == 'service'">
+                                        <span t-field="line.remarks"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.delivery"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                    <t t-if="check_type_tax_0 == 'Thuế GTGT phải nộp 0%'">
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">Sub Total Amount:</td>
+                            <td/>
+                            <td>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <!--                                    <t t-set="subtotal_0_str" t-value="str(doc.formatNum(subtotal_0))"/>-->
+                                    <!--                                    <t t-set="subtotal_0_doc" t-value="subtotal_0_str.replace(',', '.')"/>-->
+                                    <strong>
+                                        <!--                                        <span t-esc="subtotal_0_doc"/>-->
+                                        <span t-esc="doc.formatNum(subtotal_0)"/>
+                                    </strong>
+                                </t>
+                                <t t-else="">
+                                    <strong>
+                                        <span t-esc="'{:0,.2f}'.format(subtotal_0)"/>
+                                    </strong>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+
+                        <t t-if="doc.global_order_discount">
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">
+                                    <i>Discount:</i>
+                                </td>
+                                <td>
+                                    <i><span t-esc="doc.formatNum(doc.global_order_discount)"/>%
+                                    </i>
+                                </td>
+                                <td>
+                                    <t t-set="discount_total_0"
+                                       t-value="discount_total_0 + (subtotal_0 * doc.global_order_discount)/100"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(discount_total_0)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(discount_total_0)"/>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">Sub Total Amount:</td>
+                                <td/>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <strong>
+                                            <span t-esc="doc.formatNum(subtotal_0 - discount_total_0)"/>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span t-esc="'{:0,.2f}'.format(subtotal_0 - discount_total_0)"/>
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                        </t>
+
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">
+                                <i>Total Tax:</i>
+                            </td>
+                            <td>
+                                <i><span t-esc="doc.formatNum(total_tax)"/>%
+                                </i>
+                            </td>
+                            <td>
+                                <t t-set="subtotal_tax_0" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==0">
+                                        <t t-set="subtotal_tax_0" t-value="subtotal_tax_0 + line.price_tax"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(subtotal_tax_0)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(subtotal_tax_0)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr class="text-right" style="border: 1px solid; font-weight: bold">
+                            <td colspan="5">
+                                Total Amount:
+                            </td>
+                            <td>
+                                <t t-if="doc.amount_untaxed == subtotal_0">
+                                    <span t-esc="''"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-if="subtotal_no_tax">
+                                        <span t-esc="2"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="1"/>
+                                    </t>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(total_0 - discount_total_0)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(total_0 - discount_total_0)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+                    <t t-set="line_no_5" t-value="line_no"/>
+                    <t t-set="total_tax" t-value="-1"/>
+                    <t t-set="subtotal_5" t-value="0"/>
+                    <t t-set="total_5" t-value="0"/>
+                    <t t-set="discount_total_05" t-value="0"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-if="line.tax_id.amount == 5">
+                            <t t-if="total_tax == -1">
+                                <t t-set="total_tax" t-value="line.tax_id.amount"/>
+                            </t>
+                            <t t-set="line_no_5" t-value="line_no_5 + 1"/>
+                            <tr style="text-align: right; border: 1px solid">
+                                <td class="text-center">
+                                    <span t-esc="line_no_5"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-set="code" t-value="line.product_id.default_code.split('_')[0]"/>
+                                    <span t-esc="code"/>
+                                </td>
+                                <td class="text-left">
+                                    <t t-if="line.product_id.type == 'service' and line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'
+                                    or line.product_id.type == 'service' and line.product_id.categ_id.name == 'DELIVERY CHARGE'">
+                                        <t t-if="line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'">
+                                            <t t-esc="line.product_id.sea_product_variant_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="line.name"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.product_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.product_id.type == 'product'">
+                                        <t t-if="line.product_uom">
+                                            <t t-set="unit" t-value="'Pc'"/>
+                                            <t t-esc="unit"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="default_code_len" t-value="len(line.product_id.default_code)"/>
+                                        <t t-set="check_months"
+                                           t-value="line.product_id.default_code[default_code_len - 4: default_code_len]"/>
+                                        <t t-set="months"
+                                           t-value="line.product_id.default_code[default_code_len - 3: default_code_len -1]"/>
+
+                                        <t t-if="check_months == '_03M' or check_months == '_06M' or check_months == '_09M' or check_months == '_12M' or check_months == '_18M' or check_months == '_24M'">
+                                            <t t-esc="months"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="'Pc'"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="line.product_uom_qty" t-options="{'widget': 'integer'}"/>
+                                </td>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_unit)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_unit)"/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <t t-set="line_price_subtotal_05" t-value="line.product_uom_qty * line.price_unit"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-set="subtotal_5" t-value="subtotal_5 + line.price_subtotal"/>
+                                </td>
+                                <td>
+                                    <t t-if="line.product_id.type == 'service'">
+                                        <span t-field="line.remarks"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.delivery"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                    <t t-if="total_tax == 5">
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">Sub Total Amount:</td>
+                            <td/>
+                            <td>
+                                <t t-set="subtotal_price_05" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==5">
+                                        <t t-set="subtotal_price_05"
+                                           t-value="subtotal_price_05 + line.price_subtotal"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <strong>
+                                        <span t-esc="doc.formatNum(subtotal_price_05)"/>
+                                    </strong>
+                                </t>
+                                <t t-else="">
+                                    <strong>
+                                        <span t-esc="'{:0,.2f}'.format(subtotal_price_05)"/>
+                                    </strong>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+
+                        <t t-if="doc.global_order_discount">
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">
+                                    <i>Discount:</i>
+                                </td>
+                                <td>
+                                    <i><span t-esc="doc.formatNum(doc.global_order_discount)"/>%
+                                    </i>
+                                </td>
+                                <td>
+                                    <t t-set="discount_total_05"
+                                       t-value="discount_total_05 + (subtotal_price_05 * doc.global_order_discount)/100"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(discount_total_05)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(discount_total_05)"/>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">Sub Total Amount:</td>
+                                <td/>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <strong>
+                                            <span t-esc="doc.formatNum(subtotal_price_05 - discount_total_05)"/>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span t-esc="'{:0,.2f}'.format(subtotal_price_05 - discount_total_05)"/>
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                        </t>
+
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">
+                                <i>Total Tax:</i>
+                            </td>
+                            <td>
+                                <i><span t-esc="doc.formatNum(total_tax)"/>%
+                                </i>
+                            </td>
+                            <td>
+                                <t t-set="subtotal_tax_05" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==5">
+                                        <t t-set="subtotal_tax_05" t-value="subtotal_tax_05 + line.price_tax"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(subtotal_tax_05)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(subtotal_tax_05)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr class="text-right" style="border: 1px solid; font-weight: bold">
+                            <td colspan="5">
+                                Total Amount:
+                            </td>
+                            <td>
+                                <t t-if="doc.amount_untaxed != subtotal_5">
+                                    <t t-if="not subtotal_no_tax and not subtotal_0">
+                                        <span t-esc="1"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if="subtotal_no_tax and subtotal_0">
+                                            <span t-esc="3"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="2"/>
+                                        </t>
+                                    </t>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-set="total_5" t-value="doc.formatNum(subtotal_5 + subtotal_5 * 0.05)"/>
+                                <t t-set="total_price_05" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==5">
+                                        <t t-set="total_price_05" t-value="total_price_05 + line.price_total"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(total_price_05 - discount_total_05)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(total_price_05 - discount_total_05)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+
+                    <t t-set="line_no_8" t-value="line_no_5"/>
+                    <t t-set="total_tax" t-value="-1"/>
+                    <t t-set="subtotal_8" t-value="0"/>
+                    <t t-set="discount_total_8" t-value="0"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-if="line.tax_id.amount == 8">
+                            <t t-if="total_tax == -1">
+                                <t t-set="total_tax" t-value="line.tax_id.amount"/>
+                            </t>
+                            <t t-set="line_no_8" t-value="line_no_8 + 1"/>
+                            <tr style="text-align: right; border: 1px solid">
+                                <td class="text-center">
+                                    <span t-esc="line_no_8"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-set="code" t-value="line.product_id.default_code.split('_')[0]"/>
+                                    <span t-esc="code"/>
+                                </td>
+                                <td class="text-left">
+                                    <t t-if="
+                                    line.product_id.type == 'service' and
+                                    line.product_id.categ_id.name == 'Admiralty Vertor Chart Service' or
+                                    line.product_id.type == 'service' and
+                                    line.product_id.categ_id.name == 'DELIVERY CHARGE'
+                                    ">
+                                        <t t-if="line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'">
+                                            <t t-esc="line.product_id.sea_product_variant_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="line.name"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.product_id.name"/>
+
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.product_id.type == 'product'">
+                                        <t t-if="line.product_uom">
+                                            <t t-set="unit" t-value="'Pc'"/>
+                                            <t t-esc="unit"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="default_code_len" t-value="len(line.product_id.default_code)"/>
+                                        <t t-set="check_months"
+                                           t-value="line.product_id.default_code[default_code_len - 4: default_code_len]"/>
+                                        <t t-set="months"
+                                           t-value="line.product_id.default_code[default_code_len - 3: default_code_len -1]"/>
+
+                                        <t t-if="check_months == '_03M' or check_months == '_06M' or check_months == '_09M' or check_months == '_12M' or check_months == '_18M' or check_months == '_24M'">
+                                            <t t-esc="months"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="'Pc'"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="line.product_uom_qty" t-options="{'widget': 'integer'}"/>
+                                </td>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_unit)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_unit)"/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <t t-set="line_price_subtotal_8" t-value="line.price_unit * line.product_uom_qty"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-set="subtotal_8" t-value="subtotal_8 + line.price_subtotal"/>
+                                </td>
+                                <td>
+                                    <t t-if="line.product_id.type == 'service'">
+                                        <span t-field="line.remarks"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.delivery"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                    <t t-if="total_tax == 8">
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">Sub Total Amount:</td>
+                            <td/>
+                            <td>
+                                <t t-set="subtotal_price_8" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==8">
+                                        <t t-set="subtotal_price_8"
+                                           t-value="subtotal_price_8 + line.price_subtotal"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <strong>
+                                        <span t-esc="doc.formatNum(subtotal_price_8)"/>
+                                    </strong>
+                                </t>
+                                <t t-else="">
+                                    <strong>
+                                        <span t-esc="'{:0,.2f}'.format(subtotal_price_8)"/>
+                                    </strong>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+
+                        <t t-if="doc.global_order_discount">
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">
+                                    <i>Discount:</i>
+                                </td>
+                                <td>
+                                    <i><span t-esc="doc.formatNum(doc.global_order_discount)"/>%
+                                    </i>
+                                </td>
+                                <td>
+                                    <t t-set="discount_total_8"
+                                       t-value="discount_total_8 + (subtotal_price_8 * doc.global_order_discount)/100"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(discount_total_8)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(discount_total_8)"/>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">Sub Total Amount:</td>
+                                <td/>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <strong>
+                                            <span t-esc="doc.formatNum(subtotal_price_8 - discount_total_8)"/>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span t-esc="'{:0,.2f}'.format(subtotal_price_8 - discount_total_8)"/>
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                        </t>
+
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">
+                                <i>Total Tax:</i>
+                            </td>
+                            <td>
+                                <i><span t-esc="doc.formatNum(total_tax)"/>%
+                                </i>
+                            </td>
+                            <td>
+                                <t t-set="subtotal_tax_8" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==8">
+                                        <t t-set="subtotal_tax_8" t-value="subtotal_tax_8 + line.price_tax"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(subtotal_tax_8)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(subtotal_tax_8)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr class="text-right" style="border: 1px solid; font-weight: bold">
+                            <td colspan="5">
+                                Total Amount:
+                            </td>
+                            <td>
+                                <t t-if="doc.amount_untaxed != subtotal_8">
+                                    <t t-if="subtotal_no_tax and subtotal_0 and subtotal_5">
+                                        <span t-esc="4"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if="
+                                    subtotal_no_tax and subtotal_0 or
+                                    subtotal_no_tax and subtotal_5 or
+                                    subtotal_0 and subtotal_5
+                                    ">
+                                            <span t-esc="3"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-if="subtotal_no_tax or subtotal_0 or subtotal_5">
+                                                <span t-esc="2"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="1"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-set="total_price_8" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==8">
+                                        <t t-set="total_price_8" t-value="total_price_8 + line.price_total"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(total_price_8 - discount_total_8)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(total_price_8 - discount_total_8)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+
+                    <t t-set="line_no_10" t-value="line_no_8"/>
+                    <t t-set="total_tax" t-value="-1"/>
+                    <t t-set="subtotal_10" t-value="0"/>
+                    <t t-set="discount_total_10" t-value="0"/>
+                    <t t-foreach="doc.order_line" t-as="line">
+                        <t t-if="line.tax_id.amount == 10">
+                            <t t-if="total_tax == -1">
+                                <t t-set="total_tax" t-value="line.tax_id.amount"/>
+                            </t>
+                            <t t-set="line_no_10" t-value="line_no_10 + 1"/>
+                            <tr style="text-align: right; border: 1px solid">
+                                <td class="text-center">
+                                    <span t-esc="line_no_10"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-set="code" t-value="line.product_id.default_code.split('_')[0]"/>
+                                    <span t-esc="code"/>
+                                </td>
+                                <td class="text-left">
+                                    <t t-if="line.product_id.type == 'service' and line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'
+                                    or line.product_id.type == 'service' and line.product_id.categ_id.name == 'DELIVERY CHARGE'">
+                                        <t t-if="line.product_id.categ_id.name == 'Admiralty Vertor Chart Service'">
+                                            <t t-esc="line.product_id.sea_product_variant_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="line.name"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.product_id.name"/>
+
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.product_id.type == 'product'">
+                                        <t t-if="line.product_uom">
+                                            <t t-set="unit" t-value="'Pc'"/>
+                                            <t t-esc="unit"/>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="default_code_len" t-value="len(line.product_id.default_code)"/>
+                                        <t t-set="check_months"
+                                           t-value="line.product_id.default_code[default_code_len - 4: default_code_len]"/>
+                                        <t t-set="months"
+                                           t-value="line.product_id.default_code[default_code_len - 3: default_code_len -1]"/>
+
+                                        <t t-if="check_months == '_03M' or check_months == '_06M' or check_months == '_09M' or check_months == '_12M' or check_months == '_18M' or check_months == '_24M'">
+                                            <t t-esc="months"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="'Pc'"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="line.product_uom_qty" t-options="{'widget': 'integer'}"/>
+                                </td>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_unit)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_unit)"/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <t t-set="line_price_subtotal_10" t-value="line.price_unit * line.product_uom_qty"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(line.price_subtotal)"/>
+                                    </t>
+                                    <t t-set="subtotal_10" t-value="subtotal_10 + line.price_subtotal"/>
+                                </td>
+                                <td>
+                                    <t t-if="line.product_id.type == 'service'">
+                                        <span t-field="line.remarks"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="line.delivery"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                    <t t-if="total_tax == 10">
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">Sub Total Amount:</td>
+                            <td/>
+                            <td>
+                                <t t-set="subtotal_price_10" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==10">
+                                        <t t-set="subtotal_price_10"
+                                           t-value="subtotal_price_10 + line.price_subtotal"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <strong>
+                                        <span t-esc="doc.formatNum(subtotal_price_10)"/>
+                                    </strong>
+                                </t>
+                                <t t-else="">
+                                    <strong>
+                                        <span t-esc="'{:0,.2f}'.format(subtotal_price_10)"/>
+                                    </strong>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+
+                        <t t-if="doc.global_order_discount">
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">
+                                    <i>Discount:</i>
+                                </td>
+                                <td>
+                                    <i><span t-esc="doc.formatNum(doc.global_order_discount)"/>%
+                                    </i>
+                                </td>
+                                <td>
+                                    <t t-set="discount_total_10"
+                                       t-value="discount_total_10 + (subtotal_price_10 * doc.global_order_discount)/100"/>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <span t-esc="doc.formatNum(discount_total_10)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="'{:0,.2f}'.format(discount_total_10)"/>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                            <tr class="text-right" style="border: 1px solid">
+                                <td colspan="5">Sub Total Amount:</td>
+                                <td/>
+                                <td>
+                                    <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                        <strong>
+                                            <span t-esc="doc.formatNum(subtotal_price_10 - discount_total_10)"/>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span t-esc="'{:0,.2f}'.format(subtotal_price_10 - discount_total_10)"/>
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td/>
+                            </tr>
+                        </t>
+
+                        <tr class="text-right" style="border: 1px solid">
+                            <td colspan="5">
+                                <i>Total Tax:</i>
+                            </td>
+                            <td>
+                                <i><span t-esc="doc.formatNum(total_tax)"/>%
+                                </i>
+                            </td>
+                            <td>
+                                <t t-set="subtotal_tax_10" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==10">
+                                        <t t-set="subtotal_tax_10" t-value="subtotal_tax_10 + line.price_tax"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(subtotal_tax_10)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(subtotal_tax_10)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                        <tr class="text-right" style="border: 1px solid; font-weight: bold">
+                            <td colspan="5">
+                                Total Amount:
+                            </td>
+                            <td>
+                                <t t-if="subtotal_no_tax and subtotal_0 and subtotal_5 and subtotal_8">
+                                    <span t-esc="5"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-if="
+                                    subtotal_no_tax and subtotal_0 and subtotal_5 or
+                                    subtotal_no_tax and subtotal_0 and subtotal_8 or
+                                    subtotal_no_tax and subtotal_5 and subtotal_8 or
+                                    subtotal_0 and subtotal_5 and subtotal_8
+                                    ">
+                                        <span t-esc="4"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if="
+                                        subtotal_no_tax and subtotal_0 or
+                                        subtotal_no_tax and subtotal_5 or
+                                        subtotal_no_tax and subtotal_8 or
+                                        subtotal_0 and subtotal_5 or
+                                        subtotal_0 and subtotal_8 or
+                                        subtotal_5 and subtotal_8
+                                        ">
+                                            <span t-esc="3"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-if="subtotal_no_tax or subtotal_0 or subtotal_5 or subtotal_8">
+                                                <span t-esc="2"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-set="total_price_10" t-value="0"/>
+                                <t t-foreach="doc.order_line" t-as="line">
+                                    <t t-if="line.tax_id.amount ==10">
+                                        <t t-set="total_price_10" t-value="total_price_10 + line.price_total"/>
+                                    </t>
+                                </t>
+                                <t t-if="doc.pricelist_id.currency_id.name == 'VND'">
+                                    <span t-esc="doc.formatNum(total_price_10 - discount_total_10)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(total_price_10 - discount_total_10)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+                    <t t-if="
+                    subtotal_no_tax and subtotal_0 or subtotal_no_tax and subtotal_5 or
+                    subtotal_no_tax and subtotal_8 or subtotal_no_tax and subtotal_10 or
+                    subtotal_0 and subtotal_5 or subtotal_0 and subtotal_8 or subtotal_0 and subtotal_10 or
+                    subtotal_5 and subtotal_8 or subtotal_5 and subtotal_10 or subtotal_8 and subtotal_10
+                    ">
+                        <tr class="text-right" style="border: 1px solid; font-weight: bold">
+                            <td colspan="5">
+                                Total Amount To be Paid:
+                            </td>
+                            <td>
+                                <t t-if="subtotal_no_tax and subtotal_0 and subtotal_5 and subtotal_8 and subtotal_10">
+                                    <span t-esc="'1 + 2 + 3 + 4 + 5'"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-if="
+                                    subtotal_no_tax and subtotal_0 and subtotal_5 and subtotal_8 or
+                                    subtotal_no_tax and subtotal_0 and subtotal_5 and subtotal_10 or
+                                    subtotal_no_tax and subtotal_0 and subtotal_8 and subtotal_10 or
+                                    subtotal_no_tax and subtotal_5 and subtotal_8 and subtotal_10 or
+                                    subtotal_0 and subtotal_5 and subtotal_8 and subtotal_10
+                                    ">
+                                        <span t-esc="'1 + 2 + 3 + 4'"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if="
+                                        subtotal_no_tax and subtotal_0 and subtotal_5 or
+                                        subtotal_no_tax and subtotal_0 and subtotal_8 or
+                                        subtotal_no_tax and subtotal_0 and subtotal_10 or
+                                        subtotal_no_tax and subtotal_5 and subtotal_8 or
+                                        subtotal_no_tax and subtotal_5 and subtotal_10 or
+                                        subtotal_no_tax and subtotal_8 and subtotal_10 or
+                                        subtotal_0 and subtotal_5 and subtotal_8 or
+                                        subtotal_0 and subtotal_5 and subtotal_10 or
+                                        subtotal_0 and subtotal_8 and subtotal_10 or
+                                        subtotal_5 and subtotal_8 and subtotal_10
+                                        ">
+                                            <span t-esc="'1 + 2 + 3'"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="'1 + 2'"/>
+                                        </t>
+                                    </t>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-if="doc.currency_id.name == 'VND'">
+                                    <span t-esc="'{:0,.0f}'.format(doc.amount_total)"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="'{:0,.2f}'.format(doc.amount_total)"/>
+                                </t>
+                            </td>
+                            <td/>
+                        </tr>
+                    </t>
+                    <t t-if="doc.note">
+                        <tr style="border: none; border-collapse: collapse;">
+                            <td colspan="8" style="border: none;">
+                                <p style="margin-top: 5px; margin-bottom: auto">
+                                    <b>
+                                        <u>Điều kiện bán hàng</u>
+                                    </b>
+                                    <i>(Term of Sale):</i>
+                                </p>
+                                <p style="margin-left: 40px;">
+                                    <span t-field="doc.note"/>
+                                </p>
+                            </td>
+                        </tr>
+                    </t>
+                    <tr style="border: none">
+                        <td colspan="3" style="border: none">
+                            <p class="text-center" style="margin-bottom: auto;">
+                                <b>
+                                    <u>Xác nhận mua hàng (Order Confirmation)</u>
+                                </b>
+                            </p>
+                            <p>
+                                <i>Nếu Quý Công ty đồng ý mua hàng, vui lòng ký xác nhận vào đây và gửi lại cho chúng
+                                    tôi để tiến hành cung cấp (If you agreed with our above quotation, please help to
+                                    sign and stamp here and send back to us for official order)
+                                </i>
+                            </p>
+                        </td>
+                        <td colspan="5" style="vertical-align: top; border: none;">
+                            <p class="text-center">
+                                <b>
+                                    <u>Người chào giá (Quoted by)</u>
+                                </b>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer text-center">
+            Page:
+            <span class="page"/>
+            of
+            <span class="topage"/>
+        </div>
+    </template>
+</odoo>

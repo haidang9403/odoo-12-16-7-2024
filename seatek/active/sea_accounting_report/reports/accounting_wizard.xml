@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_accounting_report" model="ir.ui.view">
+            <field name="name">view.accounting.report</field>
+            <field name="model">accounting.report</field>
+            <field name="arch" type="xml">
+                <form string="Báo Cáo Chi Tiết Bán Hàng">
+                    <group>
+                        <group>
+                            <field name="start_date" widget="date" attrs="{'required': True}"/>
+                            <field name="end_date" widget="date" attrs="{'required': True}"/>
+                        </group>
+                        <group>
+                            <field name="type" widget="radio"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="button_export_xlsx_by_date" string="Export XLS" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="sea_accounting_report_wizard_form" model="ir.actions.act_window">
+            <field name="name">Báo Cáo Chi Tiết Bán Hàng</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accounting.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <report string="Accounting Details XLSX By Date"
+                id="action_accounting_details_by_date"
+                model="accounting.report"
+                name="sea_accounting_report.accounting_report_by_date"
+                file="Báo cáo chi tiết bán hàng"
+                report_type="xlsx"
+                attachment_use="False"/>
+
+        <menuitem action="sea_accounting_report_wizard_form"
+                  id="menu_action_accounting_report_sale"
+                  name="Báo cáo chi tiết bán hàng"
+                  parent="seatek_hr_bank_info.menu_opensea_accounting"
+                  sequence='12'/>
+    </data>
+</odoo>

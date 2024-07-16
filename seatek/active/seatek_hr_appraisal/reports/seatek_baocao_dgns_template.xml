@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TKK-->
+<odoo>
+    <report
+            id="action_report_baocao_dgns"
+            string="BÁO CÁO ĐÁNH GIÁ NHÂN SỰ"
+            model="hr.appraisal"
+            report_type="xlsx"
+            name="seatek_hr_appraisal.report_baocao_dgns_xlsx"
+            file="seatek_hr_appraisal.report_baocao_dgns_xlsx"
+            print_report_name="'BÁO CÁO ĐÁNH GIÁ NHÂN SỰ - %s' % object.name"
+            menu="False"/>
+</odoo>

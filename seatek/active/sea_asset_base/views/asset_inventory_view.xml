@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="asset_inventory_form" model="ir.ui.view">
+            <field name="name">asset.inventory.form</field>
+            <field name="model">asset.inventory</field>
+            <field name="arch" type="xml">
+                <form string="Asset Inventory" duplicate="false" class="o_invoice_form">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="start_asset_inventory"
+                                string="Lấy danh sách tài sản" type="object" class="oe_highlight" attrs="{'invisible':[('state','!=','draft')]}" groups="sea_asset_base.group_asset_officer"/>
+                        <button name="set_state_process" attrs="{'invisible': [('state', '!=', 'draft')]}"
+                                string="Process" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_officer"/>
+                        <button name="set_state_validated" attrs="{'invisible': [('state', '!=', 'process')]}" string="Validated" type="object"
+                                class="oe_highlight"
+                                groups="sea_asset_base.group_asset_manager"/>
+                        <button name="set_state_process" attrs="{'invisible': [('state', '!=', 'validated')]}"
+                                string="Back To Process" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_manager"/>
+                        <button name="export_xls" string="Export" type="object"
+                                class="oe_highlight" groups="sea_asset_base.group_asset_officer"/>
+                    </header>
+                    <sheet>
+<!--                        <div class="oe_button_box" name="button_box">-->
+<!--                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">-->
+<!--                                <field name="active" widget="boolean_button"/>-->
+<!--                            </button>-->
+<!--                        </div>-->
+                        <group>
+                            <field name="name" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                            <field name="sea_office_id" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}" widget="many2many_tags"/>
+                            <field name="company_id" options="{'no_open': True,'no_create':True}" readonly="1" />
+                            <field name="department" options="{'no_open': True,'no_create':True}"
+                                   attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}" widget="many2many_tags"/>
+
+                            <field name="start_time" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                            <field name="end_time" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                        </group>
+                        <group string="State" >
+                                <field name="draft_state" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                                <field name="process_state" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                                <field name="pending_state" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                                <field name="liquidation_state" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}"/>
+                        </group>
+                        <group>
+                            <field name="note" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                            <field name="member_of_inventory" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}">
+                                <tree  editable="bottom">
+                                    <field name="employee_id_temp" options="{'no_open': True,'no_create':True}" />
+                                    <field name="company_id"/>
+                                    <field name="employee_id" readonly="1" invisible="1" />
+                                    <field name="position"/>
+                                </tree>
+                            </field>
+                            <field name="inventoried_department" attrs="{'readonly': ['|',('state', '=', 'process'),('state', '=', 'validated')]}">
+                                <tree string ="Đơn Vị Được Kiểm Kê" editable="bottom">
+                                    <field name="company_id"/>
+                                    <field name="department" options="{'no_create':True}"/>
+                                    <field name="employee_id_temp" options="{'no_create':True}"/>
+                                    <field name="job_id" readonly="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="page_asset_inventory_lines" string="Danh Sách Kiểm Kê">
+                                <field name="asset_inventory_lines" attrs="{'readonly': [('state', '=', 'validated')]}">
+                                    <tree string="Invetory Lines" editable="bottom">
+                                        <field name="asset_id"/>
+                                        <field name="asset_code" readonly="1"/>
+                                        <field name="asset_uom" readonly="1"/>
+                                        <field name="quantity_so_sach" readonly="1"/>
+                                        <field name="quantity_thuc_te"/>
+                                        <field name="quantity_chenh_lech" readonly="1"/>
+                                        <field name="latest_inventory_status"/>
+                                        <field name="status"/>
+                                        <field name="da_dan_tem"/>
+                                        <field name="asset_user_temporary" string="Asset User" options="{'no_open': True,'no_create':True}"/>
+                                        <field name="note"/>
+                                        <field name="de_xuat_xu_ly"/>
+                                        <field name="giai_trinh"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="asset_temporary" string="Hiện vật">
+                                <field name="asset_temporary" attrs="{'readonly': [('state', '=', 'validated')]}">
+                                    <tree>
+                                        <field name="code"/>
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                        <field name="asset_images">
+                                            <field name="asset_filename"/>
+                                            <field name="asset_image"/>
+                                        </field>
+
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                        <field name="activity_ids" widget="mail_activity"/>-->
+<!--                        <field name="message_ids" widget="mail_thread"/>-->
+<!--                    </div>-->
+                </form>
+            </field>
+        </record>
+        <record id="asset_inventory_asset_temporary_form" model="ir.ui.view">
+            <field name="name">asset.inventory.asset.temporary.form</field>
+            <field name="model">asset.inventory.asset.temporary</field>
+            <field name="arch" type="xml">
+                <form duplicate="false">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="description"/>
+                            <field name="asset_images">
+                                <tree>
+                                    <field name="asset_filename"/>
+                                    <field name="asset_image"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="asset_inventory_tree" model="ir.ui.view">
+            <field name="name">asset.inventory.tree</field>
+            <field name="model">asset.inventory</field>
+            <field name="arch" type="xml">
+                <tree string="Asset Transfers">
+                    <field name="name"/>
+                    <field name="code" invisible="1"/>
+                    <field name="company_id"/>
+                    <field name="department"/>
+                    <field name="sea_office_id"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_asset_inventory" model="ir.actions.act_window">
+            <field name="name">Asset Inventory</field>
+            <field name="res_model">asset.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('company_id','in',company_ids)]</field>
+        </record>
+
+        <menuitem id="menu_asset_inventory"
+                  name="Asset Inventory"
+                  parent="menu_operations_asset"
+                  action="action_asset_inventory"
+                  sequence="1"
+                  groups="group_asset_officer"/>
+    </data>
+</odoo>

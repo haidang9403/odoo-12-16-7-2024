@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <function
+            id = "create_data_contact_for_employee"
+            model = "res.partner"
+            name = "create_contact_action"
+        />
+    </data>
+</odoo>

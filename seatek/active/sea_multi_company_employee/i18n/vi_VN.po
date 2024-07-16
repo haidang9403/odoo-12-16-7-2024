@@ -1,0 +1,619 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sea_multi_company_employee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-07 03:08+0000\n"
+"PO-Revision-Date: 2023-04-07 03:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__active
+msgid "Active"
+msgstr "Có hiệu lực"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Archived"
+msgstr "Lưu trữ"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Attendance"
+msgstr "Chấm công"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_personal_information
+msgid "Birth"
+msgstr "Ngày tháng năm sinh"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_personal_information
+msgid "Citizenship"
+msgstr "Quốc Tịch"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__coach_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__coach_id
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Coach"
+msgstr "Người huấn luyện"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__company_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__company_id
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Company"
+msgstr "Công ty"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__company_code
+msgid "Company Code"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Company Setting"
+msgstr "Thiết lập nhân lực"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Contact Information"
+msgstr "Thông tin liên hệ"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_contract_salary
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_contract_salary_company
+msgid "Contract salary"
+msgstr "Lương hợp đồng"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_contract_salary_seagroup
+msgid "Contract salary SeaGroup"
+msgstr "Lương hợp đồng ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Current Contract"
+msgstr "Hợp đồng Hiện hành"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Current Status"
+msgstr "Trạng thái hiện tại"
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,insurance_status_m:0
+#: selection:hr.employee,insurance_status_m_compute:0
+#: selection:hr.employee.multi.company,insurance_status_m:0
+msgid "Có tham gia"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__department_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__department_id
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Department"
+msgstr "Phòng/Ban"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__department_code
+msgid "Department Code"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: sea_multi_company_employee
+#: model:ir.model,name:sea_multi_company_employee.model_hr_employee
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__employee_display_personal_data
+msgid "Employee Display Personal Data"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__sea_employee_level
+msgid "Employee Level"
+msgstr "Cấp bậc nhân viên"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__employee_current_status_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__employee_current_status
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__employee_current_status_compute
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee_multi_company__employee_current_status
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Employee Status"
+msgstr "Trạng thái nhân viên"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Employee status"
+msgstr "Trạng thái nhân viên"
+
+#. module: sea_multi_company_employee
+#: model:ir.actions.act_window,name:sea_multi_company_employee.open_view_multi_company_employee_tree
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_multi_company_employee_tree
+msgid "Employees"
+msgstr "Nhân viên"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__expense_manager_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__expense_manager_id
+msgid "Expense Responsible"
+msgstr "Người duyệt chi phí"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_extend_salary_seagroup
+msgid "Extend Salary SeaGroup."
+msgstr "Phụ cấp lương ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_extend_salary
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_extend_salary_company
+msgid "Extend Salary."
+msgstr "Phụ cấp lương."
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_extend_salary
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_extend_salary_company
+msgid "Extend salary"
+msgstr "Phụ cấp lương"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_extend_salary_seagroup
+msgid "Extend salary SeaGroup"
+msgstr "Phụ cấp lương ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_personal_information
+msgid "Family and Others"
+msgstr "Gia đình và liên hệ"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: sea_multi_company_employee
+#: model:ir.model,name:sea_multi_company_employee.model_hr_department
+msgid "HR Department"
+msgstr "Bộ phận Nhân sự"
+
+#. module: sea_multi_company_employee
+#: model:ir.ui.menu,name:sea_multi_company_employee.menu_hr_employee_view_mce
+msgid "HR Employees Import"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:res.groups,name:sea_multi_company_employee.group_hr_operator
+msgid "HR Operator"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Health Insurance Number"
+msgstr "Mã số bảo hiểm y tế"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__id
+msgid "ID"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__insurance_status_m
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__insurance_status_m_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__note_insurance_status
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__insurance_status_m
+msgid "Insurance Status"
+msgstr "Tình trạng bảo hiểm"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__manager
+msgid "Is a Manager"
+msgstr "Là quản lý?"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Job"
+msgstr "Vị trí Công việc"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__job_code
+msgid "Job Code"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__job_code_compute
+msgid "Job Code Compute"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__job_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__job_id
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__job_title_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__job_title
+msgid "Job title"
+msgstr "Chức danh"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__joining_date_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__joining_date
+msgid "Joining Date"
+msgstr "Ngày gia nhập công ty"
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,insurance_status_m:0
+#: selection:hr.employee,insurance_status_m_compute:0
+#: selection:hr.employee.multi.company,insurance_status_m:0
+msgid "Không tham gia"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__main_phone_number
+msgid "Main Phone Number"
+msgstr "Số điện thoại chính"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__parent_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__parent_id
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Manager"
+msgstr "Quản lý"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_department__manager_ids
+msgid "Managers"
+msgstr "Người quản lý"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Medical Exam"
+msgstr "Khám sức khoẻ"
+
+#. module: sea_multi_company_employee
+#: model:ir.model,name:sea_multi_company_employee.model_hr_employee_multi_company
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__employee_multi_company
+msgid "Multi Company Employee"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_contract_salary_seagroup
+msgid "Net Salary SeaGroup."
+msgstr "Lương sau thuế ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_contract_salary
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_contract_salary_company
+msgid "Net Salary."
+msgstr "Lương sau thuế."
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Nghỉ không lương"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Nghỉ thai sản"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Nghỉ ốm đau"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__note_insurance_status_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__note_insurance_status
+msgid "Note Insurance Status"
+msgstr "Ghi chú cho BHXH"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__official_contract_company
+msgid "Official Contract"
+msgstr "Hợp đồng chính thức"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Official Contract (OLD VERSION)"
+msgstr "Hợp đồng chính thức (cũ)"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__official_contract_seagroup
+msgid "Official Contract SeaGroup"
+msgstr "Hợp đồng chính thức ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__operating_unit_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__operating_unit_id
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Operating Unit"
+msgstr "Đơn vị hoạt động"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_personal_information
+msgid "Other Information"
+msgstr "Tài khoản Ngân hàng"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Other Information ..."
+msgstr "Thông tin khác ..."
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_personal_information
+msgid "Others"
+msgstr "Khác"
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,employee_current_status_compute:0
+#: selection:hr.employee.multi.company,employee_current_status:0
+msgid "Parental leave"
+msgstr "Nghỉ thai sản"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Personal Income Tax"
+msgstr "Thuế thu nhập cá nhân"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__place_of_initial_medical_examination_and_treatment
+msgid "Place of initial medical examination and treatment"
+msgstr "Nơi khám chữa bệnh ban đầu"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Position"
+msgstr "Vị trí"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__primary_company_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__primary_company
+msgid "Primary Company"
+msgstr "Công ty chính"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__reason_leaving_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__reason_leaving
+msgid "Reason Leaving"
+msgstr "Lý do nghỉ"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__user_id
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Related User"
+msgstr "Tài khoản người dùng"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__resignation_date_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__resignation_date
+msgid "Resignation Date"
+msgstr "Từ ngày"
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,employee_current_status_compute:0
+#: selection:hr.employee.multi.company,employee_current_status:0
+msgid "Resigned"
+msgstr "Đã nghỉ việc"
+
+#. module: sea_multi_company_employee
+#: model:res.groups,name:sea_multi_company_employee.group_hr_view_edit
+msgid "SC user(Never for HR)"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Salary Info (Sum) (OLD VERSION)"
+msgstr "Lương tổng (cũ)"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Salary Info Company (Sum)"
+msgstr "Thông tin lương ở Công ty"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Salary Info SeaGroup (Sum)"
+msgstr "Thông tin lương ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_company_ids_temp
+msgid "Sea Companies Temp"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_personal_information
+msgid "Sea Notes"
+msgstr "Ghi chú"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__s_identification_id
+msgid "SeaCode"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__seagroup_join_date
+msgid "Seagroup Join Date"
+msgstr "Ngày gia nhập SG"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__second_phone_number
+msgid "Second Phone Number"
+msgstr "Điện thoại phụ"
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,employee_current_status_compute:0
+#: selection:hr.employee.multi.company,employee_current_status:0
+msgid "Sick leave"
+msgstr "Nghỉ ốm đau"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Social Insurance"
+msgstr "Bảo hiểm xã hội"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__child_ids_m
+msgid "Subordinates"
+msgstr "Nhân viên cấp dưới"
+
+#. module: sea_multi_company_employee
+#: model:res.groups,comment:sea_multi_company_employee.group_hr_operator
+#: model:res.groups,comment:sea_multi_company_employee.group_hr_view_edit
+msgid "The user will have access or edit personal information."
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__tz_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__tz
+msgid "Timezone"
+msgstr "Múi giờ"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_net_salary_seagroup
+msgid "Trial Salary SeaGroup."
+msgstr "Lương thử việc ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_net_salary
+#: model:ir.model.fields,help:sea_multi_company_employee.field_hr_employee__sea_net_salary_company
+msgid "Trial Salary."
+msgstr "Lương thử việc."
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_net_salary
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_net_salary_company
+msgid "Trial salary"
+msgstr "Lương thử việc"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__sea_net_salary_seagroup
+msgid "Trial salary SeaGroup"
+msgstr "Lương thử việc ở SeaGroup"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.hr_employee_view_form_inherit_expense
+msgid "Tình trạng tham gia Bảo hiểm xã hội"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,employee_current_status_compute:0
+#: selection:hr.employee.multi.company,employee_current_status:0
+msgid "Unpaid leave"
+msgstr "Nghỉ không lương"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__address_compute
+msgid "Work Address"
+msgstr "Địa chỉ làm việc"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__work_email_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__work_email
+msgid "Work Email"
+msgstr "Email công việc"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__work_location_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__work_location
+msgid "Work Location"
+msgstr "Địa điểm làm việc"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__mobile_phone_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__mobile_phone
+msgid "Work Mobile"
+msgstr "Di động"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__work_phone_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__work_phone
+msgid "Work Phone"
+msgstr "Điện thoại cty"
+
+#. module: sea_multi_company_employee
+#: selection:hr.employee,employee_current_status_compute:0
+#: selection:hr.employee.multi.company,employee_current_status:0
+msgid "Working"
+msgstr "Đang làm việc"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.seatek_employees_public
+msgid "Working Companies"
+msgstr "Công ty đang làm việc"
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__resource_calendar_id_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__resource_calendar_id
+msgid "Working Hours"
+msgstr "Giờ làm việc"
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Đang làm việc"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model_terms:ir.ui.view,arch_db:sea_multi_company_employee.view_employee_multi_company_filter
+msgid "Đã nghỉ việc"
+msgstr ""
+
+#. module: sea_multi_company_employee
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee__leaving_to_date_compute
+#: model:ir.model.fields,field_description:sea_multi_company_employee.field_hr_employee_multi_company__leaving_to_date
+msgid "Đến ngày"
+msgstr ""
+

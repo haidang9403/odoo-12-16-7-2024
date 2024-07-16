@@ -1,0 +1,11 @@
+.sticky_table_header {
+    width: 100%;
+    min-width: 100%;
+    overflow-x: visible;
+}
+
+.sticky_table_header thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}

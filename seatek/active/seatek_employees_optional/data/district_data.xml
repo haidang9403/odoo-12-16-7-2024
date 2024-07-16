@@ -1,0 +1,4259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="001" model="res.district">
+			<field name="madvhc">001</field>
+			<field name="name">Quận Ba Đình</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="002" model="res.district">
+			<field name="madvhc">002</field>
+			<field name="name">Quận Hoàn Kiếm</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="003" model="res.district">
+			<field name="madvhc">003</field>
+			<field name="name">Quận Tây Hồ</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="004" model="res.district">
+			<field name="madvhc">004</field>
+			<field name="name">Quận Long Biên</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="005" model="res.district">
+			<field name="madvhc">005</field>
+			<field name="name">Quận Cầu Giấy</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="006" model="res.district">
+			<field name="madvhc">006</field>
+			<field name="name">Quận Đống Đa</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="007" model="res.district">
+			<field name="madvhc">007</field>
+			<field name="name">Quận Hai Bà Trưng</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="008" model="res.district">
+			<field name="madvhc">008</field>
+			<field name="name">Quận Hoàng Mai</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="009" model="res.district">
+			<field name="madvhc">009</field>
+			<field name="name">Quận Thanh Xuân</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="016" model="res.district">
+			<field name="madvhc">016</field>
+			<field name="name">Huyện Sóc Sơn</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="017" model="res.district">
+			<field name="madvhc">017</field>
+			<field name="name">Huyện Đông Anh</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="018" model="res.district">
+			<field name="madvhc">018</field>
+			<field name="name">Huyện Gia Lâm</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="019" model="res.district">
+			<field name="madvhc">019</field>
+			<field name="name">Quận Nam Từ Liêm</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="020" model="res.district">
+			<field name="madvhc">020</field>
+			<field name="name">Huyện Thanh Trì</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="021" model="res.district">
+			<field name="madvhc">021</field>
+			<field name="name">Quận Bắc Từ Liêm</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="250" model="res.district">
+			<field name="madvhc">250</field>
+			<field name="name">Huyện Mê Linh</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="268" model="res.district">
+			<field name="madvhc">268</field>
+			<field name="name">Quận Hà Đông</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="269" model="res.district">
+			<field name="madvhc">269</field>
+			<field name="name">Thị xã Sơn Tây</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="271" model="res.district">
+			<field name="madvhc">271</field>
+			<field name="name">Huyện Ba Vì</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="272" model="res.district">
+			<field name="madvhc">272</field>
+			<field name="name">Huyện Phúc Thọ</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="273" model="res.district">
+			<field name="madvhc">273</field>
+			<field name="name">Huyện Đan Phượng</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="274" model="res.district">
+			<field name="madvhc">274</field>
+			<field name="name">Huyện Hoài Đức</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="275" model="res.district">
+			<field name="madvhc">275</field>
+			<field name="name">Huyện Quốc Oai</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="276" model="res.district">
+			<field name="madvhc">276</field>
+			<field name="name">Huyện Thạch Thất</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="277" model="res.district">
+			<field name="madvhc">277</field>
+			<field name="name">Huyện Chương Mỹ</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="278" model="res.district">
+			<field name="madvhc">278</field>
+			<field name="name">Huyện Thanh Oai</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="279" model="res.district">
+			<field name="madvhc">279</field>
+			<field name="name">Huyện Thường Tín</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="280" model="res.district">
+			<field name="madvhc">280</field>
+			<field name="name">Huyện Phú Xuyên</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="281" model="res.district">
+			<field name="madvhc">281</field>
+			<field name="name">Huyện Ứng Hòa</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="282" model="res.district">
+			<field name="madvhc">282</field>
+			<field name="name">Huyện Mỹ Đức</field>
+			<field name="city_madvhc">01</field>
+			<field name="city_id">736</field>
+		</record>
+		<record id="024" model="res.district">
+			<field name="madvhc">024</field>
+			<field name="name">Thành phố Hà Giang</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="026" model="res.district">
+			<field name="madvhc">026</field>
+			<field name="name">Huyện Đồng Văn</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="027" model="res.district">
+			<field name="madvhc">027</field>
+			<field name="name">Huyện Mèo Vạc</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="028" model="res.district">
+			<field name="madvhc">028</field>
+			<field name="name">Huyện Yên Minh</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="029" model="res.district">
+			<field name="madvhc">029</field>
+			<field name="name">Huyện Quản Bạ</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="030" model="res.district">
+			<field name="madvhc">030</field>
+			<field name="name">Huyện Vị Xuyên</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="031" model="res.district">
+			<field name="madvhc">031</field>
+			<field name="name">Huyện Bắc Mê</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="032" model="res.district">
+			<field name="madvhc">032</field>
+			<field name="name">Huyện Hoàng Su Phì</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="033" model="res.district">
+			<field name="madvhc">033</field>
+			<field name="name">Huyện Xín Mần</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="034" model="res.district">
+			<field name="madvhc">034</field>
+			<field name="name">Huyện Bắc Quang</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="035" model="res.district">
+			<field name="madvhc">035</field>
+			<field name="name">Huyện Quang Bình</field>
+			<field name="city_madvhc">02</field>
+			<field name="city_id">735</field>
+		</record>
+		<record id="040" model="res.district">
+			<field name="madvhc">040</field>
+			<field name="name">Thành phố Cao Bằng</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="042" model="res.district">
+			<field name="madvhc">042</field>
+			<field name="name">Huyện Bảo Lâm</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="043" model="res.district">
+			<field name="madvhc">043</field>
+			<field name="name">Huyện Bảo Lạc</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="044" model="res.district">
+			<field name="madvhc">044</field>
+			<field name="name">Huyện Thông Nông</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="045" model="res.district">
+			<field name="madvhc">045</field>
+			<field name="name">Huyện Hà Quảng</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="046" model="res.district">
+			<field name="madvhc">046</field>
+			<field name="name">Huyện Trà Lĩnh</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="047" model="res.district">
+			<field name="madvhc">047</field>
+			<field name="name">Huyện Trùng Khánh</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="048" model="res.district">
+			<field name="madvhc">048</field>
+			<field name="name">Huyện Hạ Lang</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="049" model="res.district">
+			<field name="madvhc">049</field>
+			<field name="name">Huyện Quảng Uyên</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="050" model="res.district">
+			<field name="madvhc">050</field>
+			<field name="name">Huyện Phục Hoà</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="051" model="res.district">
+			<field name="madvhc">051</field>
+			<field name="name">Huyện Hoà An</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="052" model="res.district">
+			<field name="madvhc">052</field>
+			<field name="name">Huyện Nguyên Bình</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="053" model="res.district">
+			<field name="madvhc">053</field>
+			<field name="name">Huyện Thạch An</field>
+			<field name="city_madvhc">04</field>
+			<field name="city_id">721</field>
+		</record>
+		<record id="058" model="res.district">
+			<field name="madvhc">058</field>
+			<field name="name">Thành Phố Bắc Kạn</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="060" model="res.district">
+			<field name="madvhc">060</field>
+			<field name="name">Huyện Pác Nặm</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="061" model="res.district">
+			<field name="madvhc">061</field>
+			<field name="name">Huyện Ba Bể</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="062" model="res.district">
+			<field name="madvhc">062</field>
+			<field name="name">Huyện Ngân Sơn</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="063" model="res.district">
+			<field name="madvhc">063</field>
+			<field name="name">Huyện Bạch Thông</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="064" model="res.district">
+			<field name="madvhc">064</field>
+			<field name="name">Huyện Chợ Đồn</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="065" model="res.district">
+			<field name="madvhc">065</field>
+			<field name="name">Huyện Chợ Mới</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="066" model="res.district">
+			<field name="madvhc">066</field>
+			<field name="name">Huyện Na Rì</field>
+			<field name="city_madvhc">06</field>
+			<field name="city_id">714</field>
+		</record>
+		<record id="070" model="res.district">
+			<field name="madvhc">070</field>
+			<field name="name">Thành phố Tuyên Quang</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="071" model="res.district">
+			<field name="madvhc">071</field>
+			<field name="name">Huyện Lâm Bình</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="072" model="res.district">
+			<field name="madvhc">072</field>
+			<field name="name">Huyện Nà Hang</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="073" model="res.district">
+			<field name="madvhc">073</field>
+			<field name="name">Huyện Chiêm Hóa</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="074" model="res.district">
+			<field name="madvhc">074</field>
+			<field name="name">Huyện Hàm Yên</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="075" model="res.district">
+			<field name="madvhc">075</field>
+			<field name="name">Huyện Yên Sơn</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="076" model="res.district">
+			<field name="madvhc">076</field>
+			<field name="name">Huyện Sơn Dương</field>
+			<field name="city_madvhc">08</field>
+			<field name="city_id">767</field>
+		</record>
+		<record id="080" model="res.district">
+			<field name="madvhc">080</field>
+			<field name="name">Thành phố Lào Cai</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="082" model="res.district">
+			<field name="madvhc">082</field>
+			<field name="name">Huyện Bát Xát</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="083" model="res.district">
+			<field name="madvhc">083</field>
+			<field name="name">Huyện Mường Khương</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="084" model="res.district">
+			<field name="madvhc">084</field>
+			<field name="name">Huyện Si Ma Cai</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="085" model="res.district">
+			<field name="madvhc">085</field>
+			<field name="name">Huyện Bắc Hà</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="086" model="res.district">
+			<field name="madvhc">086</field>
+			<field name="name">Huyện Bảo Thắng</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="087" model="res.district">
+			<field name="madvhc">087</field>
+			<field name="name">Huyện Bảo Yên</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="088" model="res.district">
+			<field name="madvhc">088</field>
+			<field name="name">Huyện Sa Pa</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="089" model="res.district">
+			<field name="madvhc">089</field>
+			<field name="name">Huyện Văn Bàn</field>
+			<field name="city_madvhc">10</field>
+			<field name="city_id">745</field>
+		</record>
+		<record id="094" model="res.district">
+			<field name="madvhc">094</field>
+			<field name="name">Thành phố Điện Biên Phủ</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="095" model="res.district">
+			<field name="madvhc">095</field>
+			<field name="name">Thị Xã Mường Lay</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="096" model="res.district">
+			<field name="madvhc">096</field>
+			<field name="name">Huyện Mường Nhé</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="097" model="res.district">
+			<field name="madvhc">097</field>
+			<field name="name">Huyện Mường Chà</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="098" model="res.district">
+			<field name="madvhc">098</field>
+			<field name="name">Huyện Tủa Chùa</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="099" model="res.district">
+			<field name="madvhc">099</field>
+			<field name="name">Huyện Tuần Giáo</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="100" model="res.district">
+			<field name="madvhc">100</field>
+			<field name="name">Huyện Điện Biên</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="101" model="res.district">
+			<field name="madvhc">101</field>
+			<field name="name">Huyện Điện Biên Đông</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="102" model="res.district">
+			<field name="madvhc">102</field>
+			<field name="name">Huyện Mường Ảng</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="103" model="res.district">
+			<field name="madvhc">103</field>
+			<field name="name">Huyện Nậm Pồ</field>
+			<field name="city_madvhc">11</field>
+			<field name="city_id">724</field>
+		</record>
+		<record id="105" model="res.district">
+			<field name="madvhc">105</field>
+			<field name="name">Thành phố Lai Châu</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="106" model="res.district">
+			<field name="madvhc">106</field>
+			<field name="name">Huyện Tam Đường</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="107" model="res.district">
+			<field name="madvhc">107</field>
+			<field name="name">Huyện Mường Tè</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="108" model="res.district">
+			<field name="madvhc">108</field>
+			<field name="name">Huyện Sìn Hồ</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="109" model="res.district">
+			<field name="madvhc">109</field>
+			<field name="name">Huyện Phong Thổ</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="110" model="res.district">
+			<field name="madvhc">110</field>
+			<field name="name">Huyện Than Uyên</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="111" model="res.district">
+			<field name="madvhc">111</field>
+			<field name="name">Huyện Tân Uyên</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="112" model="res.district">
+			<field name="madvhc">112</field>
+			<field name="name">Huyện Nậm Nhùn</field>
+			<field name="city_madvhc">12</field>
+			<field name="city_id">746</field>
+		</record>
+		<record id="116" model="res.district">
+			<field name="madvhc">116</field>
+			<field name="name">Thành phố Sơn La</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="118" model="res.district">
+			<field name="madvhc">118</field>
+			<field name="name">Huyện Quỳnh Nhai</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="119" model="res.district">
+			<field name="madvhc">119</field>
+			<field name="name">Huyện Thuận Châu</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="120" model="res.district">
+			<field name="madvhc">120</field>
+			<field name="name">Huyện Mường La</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="121" model="res.district">
+			<field name="madvhc">121</field>
+			<field name="name">Huyện Bắc Yên</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="122" model="res.district">
+			<field name="madvhc">122</field>
+			<field name="name">Huyện Phù Yên</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="123" model="res.district">
+			<field name="madvhc">123</field>
+			<field name="name">Huyện Mộc Châu</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="124" model="res.district">
+			<field name="madvhc">124</field>
+			<field name="name">Huyện Yên Châu</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="125" model="res.district">
+			<field name="madvhc">125</field>
+			<field name="name">Huyện Mai Sơn</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="126" model="res.district">
+			<field name="madvhc">126</field>
+			<field name="name">Huyện Sông Mã</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="127" model="res.district">
+			<field name="madvhc">127</field>
+			<field name="name">Huyện Sốp Cộp</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="128" model="res.district">
+			<field name="madvhc">128</field>
+			<field name="name">Huyện Vân Hồ</field>
+			<field name="city_madvhc">14</field>
+			<field name="city_id">760</field>
+		</record>
+		<record id="132" model="res.district">
+			<field name="madvhc">132</field>
+			<field name="name">Thành phố Yên Bái</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="133" model="res.district">
+			<field name="madvhc">133</field>
+			<field name="name">Thị xã Nghĩa Lộ</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="135" model="res.district">
+			<field name="madvhc">135</field>
+			<field name="name">Huyện Lục Yên</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="136" model="res.district">
+			<field name="madvhc">136</field>
+			<field name="name">Huyện Văn Yên</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="137" model="res.district">
+			<field name="madvhc">137</field>
+			<field name="name">Huyện Mù Căng Chải</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="138" model="res.district">
+			<field name="madvhc">138</field>
+			<field name="name">Huyện Trấn Yên</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="139" model="res.district">
+			<field name="madvhc">139</field>
+			<field name="name">Huyện Trạm Tấu</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="140" model="res.district">
+			<field name="madvhc">140</field>
+			<field name="name">Huyện Văn Chấn</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="141" model="res.district">
+			<field name="madvhc">141</field>
+			<field name="name">Huyện Yên Bình</field>
+			<field name="city_madvhc">15</field>
+			<field name="city_id">772</field>
+		</record>
+		<record id="148" model="res.district">
+			<field name="madvhc">148</field>
+			<field name="name">Thành phố Hòa Bình</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="150" model="res.district">
+			<field name="madvhc">150</field>
+			<field name="name">Huyện Đà Bắc</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="151" model="res.district">
+			<field name="madvhc">151</field>
+			<field name="name">Huyện Kỳ Sơn</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="152" model="res.district">
+			<field name="madvhc">152</field>
+			<field name="name">Huyện Lương Sơn</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="153" model="res.district">
+			<field name="madvhc">153</field>
+			<field name="name">Huyện Kim Bôi</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="154" model="res.district">
+			<field name="madvhc">154</field>
+			<field name="name">Huyện Cao Phong</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="155" model="res.district">
+			<field name="madvhc">155</field>
+			<field name="name">Huyện Tân Lạc</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="156" model="res.district">
+			<field name="madvhc">156</field>
+			<field name="name">Huyện Mai Châu</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="157" model="res.district">
+			<field name="madvhc">157</field>
+			<field name="name">Huyện Lạc Sơn</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="158" model="res.district">
+			<field name="madvhc">158</field>
+			<field name="name">Huyện Yên Thủy</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="159" model="res.district">
+			<field name="madvhc">159</field>
+			<field name="name">Huyện Lạc Thủy</field>
+			<field name="city_madvhc">17</field>
+			<field name="city_id">731</field>
+		</record>
+		<record id="167" model="res.district">
+			<field name="madvhc">164</field>
+			<field name="name">Thành phố Thái Nguyên</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="165" model="res.district">
+			<field name="madvhc">165</field>
+			<field name="name">Thành phố Sông Công</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="167" model="res.district">
+			<field name="madvhc">167</field>
+			<field name="name">Huyện Định Hóa</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="168" model="res.district">
+			<field name="madvhc">168</field>
+			<field name="name">Huyện Phú Lương</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="169" model="res.district">
+			<field name="madvhc">169</field>
+			<field name="name">Huyện Đồng Hỷ</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="170" model="res.district">
+			<field name="madvhc">170</field>
+			<field name="name">Huyện Võ Nhai</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="171" model="res.district">
+			<field name="madvhc">171</field>
+			<field name="name">Huyện Đại Từ</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="172" model="res.district">
+			<field name="madvhc">172</field>
+			<field name="name">Thị xã Phổ Yên</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="173" model="res.district">
+			<field name="madvhc">173</field>
+			<field name="name">Huyện Phú Bình</field>
+			<field name="city_madvhc">19</field>
+			<field name="city_id">765</field>
+		</record>
+		<record id="178" model="res.district">
+			<field name="madvhc">178</field>
+			<field name="name">Thành phố Lạng Sơn</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="180" model="res.district">
+			<field name="madvhc">180</field>
+			<field name="name">Huyện Tràng Định</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="181" model="res.district">
+			<field name="madvhc">181</field>
+			<field name="name">Huyện Bình Gia</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="182" model="res.district">
+			<field name="madvhc">182</field>
+			<field name="name">Huyện Văn Lãng</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="183" model="res.district">
+			<field name="madvhc">183</field>
+			<field name="name">Huyện Cao Lộc</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="184" model="res.district">
+			<field name="madvhc">184</field>
+			<field name="name">Huyện Văn Quan</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="185" model="res.district">
+			<field name="madvhc">185</field>
+			<field name="name">Huyện Bắc Sơn</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="186" model="res.district">
+			<field name="madvhc">186</field>
+			<field name="name">Huyện Hữu Lũng</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="187" model="res.district">
+			<field name="madvhc">187</field>
+			<field name="name">Huyện Chi Lăng</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="188" model="res.district">
+			<field name="madvhc">188</field>
+			<field name="name">Huyện Lộc Bình</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="189" model="res.district">
+			<field name="madvhc">189</field>
+			<field name="name">Huyện Đình Lập</field>
+			<field name="city_madvhc">20</field>
+			<field name="city_id">748</field>
+		</record>
+		<record id="193" model="res.district">
+			<field name="madvhc">193</field>
+			<field name="name">Thành phố Hạ Long</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="194" model="res.district">
+			<field name="madvhc">194</field>
+			<field name="name">Thành phố Móng Cái</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="195" model="res.district">
+			<field name="madvhc">195</field>
+			<field name="name">Thành phố Cẩm Phả</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="196" model="res.district">
+			<field name="madvhc">196</field>
+			<field name="name">Thành phố Uông Bí</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="198" model="res.district">
+			<field name="madvhc">198</field>
+			<field name="name">Huyện Bình Liêu</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="199" model="res.district">
+			<field name="madvhc">199</field>
+			<field name="name">Huyện Tiên Yên</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="200" model="res.district">
+			<field name="madvhc">200</field>
+			<field name="name">Huyện Đầm Hà</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="201" model="res.district">
+			<field name="madvhc">201</field>
+			<field name="name">Huyện Hải Hà</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="202" model="res.district">
+			<field name="madvhc">202</field>
+			<field name="name">Huyện Ba Chẽ</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="203" model="res.district">
+			<field name="madvhc">203</field>
+			<field name="name">Huyện Vân Đồn</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="204" model="res.district">
+			<field name="madvhc">204</field>
+			<field name="name">Huyện Hoành Bồ</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="205" model="res.district">
+			<field name="madvhc">205</field>
+			<field name="name">Thị xã Đông Triều</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="206" model="res.district">
+			<field name="madvhc">206</field>
+			<field name="name">Thị xã Quảng Yên</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="207" model="res.district">
+			<field name="madvhc">207</field>
+			<field name="name">Huyện Cô Tô</field>
+			<field name="city_madvhc">22</field>
+			<field name="city_id">756</field>
+		</record>
+		<record id="213" model="res.district">
+			<field name="madvhc">213</field>
+			<field name="name">Thành phố Bắc Giang</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="215" model="res.district">
+			<field name="madvhc">215</field>
+			<field name="name">Huyện Yên Thế</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="216" model="res.district">
+			<field name="madvhc">216</field>
+			<field name="name">Huyện Tân Yên</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="217" model="res.district">
+			<field name="madvhc">217</field>
+			<field name="name">Huyện Lạng Giang</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="218" model="res.district">
+			<field name="madvhc">218</field>
+			<field name="name">Huyện Lục Nam</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="219" model="res.district">
+			<field name="madvhc">219</field>
+			<field name="name">Huyện Lục Ngạn</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="220" model="res.district">
+			<field name="madvhc">220</field>
+			<field name="name">Huyện Sơn Động</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="221" model="res.district">
+			<field name="madvhc">221</field>
+			<field name="name">Huyện Yên Dũng</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="222" model="res.district">
+			<field name="madvhc">222</field>
+			<field name="name">Huyện Việt Yên</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="223" model="res.district">
+			<field name="madvhc">223</field>
+			<field name="name">Huyện Hiệp Hòa</field>
+			<field name="city_madvhc">24</field>
+			<field name="city_id">713</field>
+		</record>
+		<record id="227" model="res.district">
+			<field name="madvhc">227</field>
+			<field name="name">Thành phố Việt Trì</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="228" model="res.district">
+			<field name="madvhc">228</field>
+			<field name="name">Thị xã Phú Thọ</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="230" model="res.district">
+			<field name="madvhc">230</field>
+			<field name="name">Huyện Đoan Hùng</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="231" model="res.district">
+			<field name="madvhc">231</field>
+			<field name="name">Huyện Hạ Hoà</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="232" model="res.district">
+			<field name="madvhc">232</field>
+			<field name="name">Huyện Thanh Ba</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="233" model="res.district">
+			<field name="madvhc">233</field>
+			<field name="name">Huyện Phù Ninh</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="234" model="res.district">
+			<field name="madvhc">234</field>
+			<field name="name">Huyện Yên Lập</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="235" model="res.district">
+			<field name="madvhc">235</field>
+			<field name="name">Huyện Cẩm Khê</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="236" model="res.district">
+			<field name="madvhc">236</field>
+			<field name="name">Huyện Tam Nông</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="237" model="res.district">
+			<field name="madvhc">237</field>
+			<field name="name">Huyện Lâm Thao</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="238" model="res.district">
+			<field name="madvhc">238</field>
+			<field name="name">Huyện Thanh Sơn</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="239" model="res.district">
+			<field name="madvhc">239</field>
+			<field name="name">Huyện Thanh Thuỷ</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="240" model="res.district">
+			<field name="madvhc">240</field>
+			<field name="name">Huyện Tân Sơn</field>
+			<field name="city_madvhc">25</field>
+			<field name="city_id">753</field>
+		</record>
+		<record id="243" model="res.district">
+			<field name="madvhc">243</field>
+			<field name="name">Thành phố Vĩnh Yên</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="244" model="res.district">
+			<field name="madvhc">244</field>
+			<field name="name">Thị xã Phúc Yên</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="246" model="res.district">
+			<field name="madvhc">246</field>
+			<field name="name">Huyện Lập Thạch</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="247" model="res.district">
+			<field name="madvhc">247</field>
+			<field name="name">Huyện Tam Dương</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="248" model="res.district">
+			<field name="madvhc">248</field>
+			<field name="name">Huyện Tam Đảo</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="249" model="res.district">
+			<field name="madvhc">249</field>
+			<field name="name">Huyện Bình Xuyên</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="251" model="res.district">
+			<field name="madvhc">251</field>
+			<field name="name">Huyện Yên Lạc</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="252" model="res.district">
+			<field name="madvhc">252</field>
+			<field name="name">Huyện Vĩnh Tường</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="253" model="res.district">
+			<field name="madvhc">253</field>
+			<field name="name">Huyện Sông Lô</field>
+			<field name="city_madvhc">26</field>
+			<field name="city_id">771</field>
+		</record>
+		<record id="256" model="res.district">
+			<field name="madvhc">256</field>
+			<field name="name">Thành phố Bắc Ninh</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="258" model="res.district">
+			<field name="madvhc">258</field>
+			<field name="name">Huyện Yên Phong</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="259" model="res.district">
+			<field name="madvhc">259</field>
+			<field name="name">Huyện Quế Võ</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="260" model="res.district">
+			<field name="madvhc">260</field>
+			<field name="name">Huyện Tiên Du</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="261" model="res.district">
+			<field name="madvhc">261</field>
+			<field name="name">Thị xã Từ Sơn</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="262" model="res.district">
+			<field name="madvhc">262</field>
+			<field name="name">Huyện Thuận Thành</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="263" model="res.district">
+			<field name="madvhc">263</field>
+			<field name="name">Huyện Gia Bình</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="264" model="res.district">
+			<field name="madvhc">264</field>
+			<field name="name">Huyện Lương Tài</field>
+			<field name="city_madvhc">27</field>
+			<field name="city_id">716</field>
+		</record>
+		<record id="288" model="res.district">
+			<field name="madvhc">288</field>
+			<field name="name">Thành phố Hải Dương</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="290" model="res.district">
+			<field name="madvhc">290</field>
+			<field name="name">Thị xã Chí Linh</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="291" model="res.district">
+			<field name="madvhc">291</field>
+			<field name="name">Huyện Nam Sách</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="292" model="res.district">
+			<field name="madvhc">292</field>
+			<field name="name">Huyện Kinh Môn</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="293" model="res.district">
+			<field name="madvhc">293</field>
+			<field name="name">Huyện Kim Thành</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="294" model="res.district">
+			<field name="madvhc">294</field>
+			<field name="name">Huyện Thanh Hà</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="295" model="res.district">
+			<field name="madvhc">295</field>
+			<field name="name">Huyện Cẩm Giàng</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="296" model="res.district">
+			<field name="madvhc">296</field>
+			<field name="name">Huyện Bình Giang</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="297" model="res.district">
+			<field name="madvhc">297</field>
+			<field name="name">Huyện Gia Lộc</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="298" model="res.district">
+			<field name="madvhc">298</field>
+			<field name="name">Huyện Tứ Kỳ</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="299" model="res.district">
+			<field name="madvhc">299</field>
+			<field name="name">Huyện Ninh Giang</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="300" model="res.district">
+			<field name="madvhc">300</field>
+			<field name="name">Huyện Thanh Miện</field>
+			<field name="city_madvhc">30</field>
+			<field name="city_id">733</field>
+		</record>
+		<record id="303" model="res.district">
+			<field name="madvhc">303</field>
+			<field name="name">Quận Hồng Bàng</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="304" model="res.district">
+			<field name="madvhc">304</field>
+			<field name="name">Quận Ngô Quyền</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="305" model="res.district">
+			<field name="madvhc">305</field>
+			<field name="name">Quận Lê Chân</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="306" model="res.district">
+			<field name="madvhc">306</field>
+			<field name="name">Quận Hải An</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="307" model="res.district">
+			<field name="madvhc">307</field>
+			<field name="name">Quận Kiến An</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="308" model="res.district">
+			<field name="madvhc">308</field>
+			<field name="name">Quận Đồ Sơn</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="309" model="res.district">
+			<field name="madvhc">309</field>
+			<field name="name">Quận Dương Kinh</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="311" model="res.district">
+			<field name="madvhc">311</field>
+			<field name="name">Huyện Thuỷ Nguyên</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="312" model="res.district">
+			<field name="madvhc">312</field>
+			<field name="name">Huyện An Dương</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="313" model="res.district">
+			<field name="madvhc">313</field>
+			<field name="name">Huyện An Lão</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="314" model="res.district">
+			<field name="madvhc">314</field>
+			<field name="name">Huyện Kiến Thuỵ</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="315" model="res.district">
+			<field name="madvhc">315</field>
+			<field name="name">Huyện Tiên Lãng</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="316" model="res.district">
+			<field name="madvhc">316</field>
+			<field name="name">Huyện Vĩnh Bảo</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="317" model="res.district">
+			<field name="madvhc">317</field>
+			<field name="name">Huyện Cát Hải</field>
+			<field name="city_madvhc">31</field>
+			<field name="city_id">738</field>
+		</record>
+		<record id="323" model="res.district">
+			<field name="madvhc">323</field>
+			<field name="name">Thành phố Hưng Yên</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="325" model="res.district">
+			<field name="madvhc">325</field>
+			<field name="name">Huyện Văn Lâm</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="326" model="res.district">
+			<field name="madvhc">326</field>
+			<field name="name">Huyện Văn Giang</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="327" model="res.district">
+			<field name="madvhc">327</field>
+			<field name="name">Huyện Yên Mỹ</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="328" model="res.district">
+			<field name="madvhc">328</field>
+			<field name="name">Huyện Mỹ Hào</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="329" model="res.district">
+			<field name="madvhc">329</field>
+			<field name="name">Huyện Ân Thi</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="330" model="res.district">
+			<field name="madvhc">330</field>
+			<field name="name">Huyện Khoái Châu</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="331" model="res.district">
+			<field name="madvhc">331</field>
+			<field name="name">Huyện Kim Động</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="332" model="res.district">
+			<field name="madvhc">332</field>
+			<field name="name">Huyện Tiên Lữ</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="333" model="res.district">
+			<field name="madvhc">333</field>
+			<field name="name">Huyện Phù Cừ</field>
+			<field name="city_madvhc">33</field>
+			<field name="city_id">740</field>
+		</record>
+		<record id="336" model="res.district">
+			<field name="madvhc">336</field>
+			<field name="name">Thành phố Thái Bình</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="338" model="res.district">
+			<field name="madvhc">338</field>
+			<field name="name">Huyện Quỳnh Phụ</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="339" model="res.district">
+			<field name="madvhc">339</field>
+			<field name="name">Huyện Hưng Hà</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="340" model="res.district">
+			<field name="madvhc">340</field>
+			<field name="name">Huyện Đông Hưng</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="341" model="res.district">
+			<field name="madvhc">341</field>
+			<field name="name">Huyện Thái Thụy</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="342" model="res.district">
+			<field name="madvhc">342</field>
+			<field name="name">Huyện Tiền Hải</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="343" model="res.district">
+			<field name="madvhc">343</field>
+			<field name="name">Huyện Kiến Xương</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="344" model="res.district">
+			<field name="madvhc">344</field>
+			<field name="name">Huyện Vũ Thư</field>
+			<field name="city_madvhc">34</field>
+			<field name="city_id">762</field>
+		</record>
+		<record id="347" model="res.district">
+			<field name="madvhc">347</field>
+			<field name="name">Thành phố Phủ Lý</field>
+			<field name="city_madvhc">35</field>
+			<field name="city_id">737</field>
+		</record>
+		<record id="349" model="res.district">
+			<field name="madvhc">349</field>
+			<field name="name">Huyện Duy Tiên</field>
+			<field name="city_madvhc">35</field>
+			<field name="city_id">737</field>
+		</record>
+		<record id="350" model="res.district">
+			<field name="madvhc">350</field>
+			<field name="name">Huyện Kim Bảng</field>
+			<field name="city_madvhc">35</field>
+			<field name="city_id">737</field>
+		</record>
+		<record id="351" model="res.district">
+			<field name="madvhc">351</field>
+			<field name="name">Huyện Thanh Liêm</field>
+			<field name="city_madvhc">35</field>
+			<field name="city_id">737</field>
+		</record>
+		<record id="352" model="res.district">
+			<field name="madvhc">352</field>
+			<field name="name">Huyện Bình Lục</field>
+			<field name="city_madvhc">35</field>
+			<field name="city_id">737</field>
+		</record>
+		<record id="353" model="res.district">
+			<field name="madvhc">353</field>
+			<field name="name">Huyện Lý Nhân</field>
+			<field name="city_madvhc">35</field>
+			<field name="city_id">737</field>
+		</record>
+		<record id="356" model="res.district">
+			<field name="madvhc">356</field>
+			<field name="name">Thành phố Nam Định</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="358" model="res.district">
+			<field name="madvhc">358</field>
+			<field name="name">Huyện Mỹ Lộc</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="359" model="res.district">
+			<field name="madvhc">359</field>
+			<field name="name">Huyện Vụ Bản</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="360" model="res.district">
+			<field name="madvhc">360</field>
+			<field name="name">Huyện Ý Yên</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="361" model="res.district">
+			<field name="madvhc">361</field>
+			<field name="name">Huyện Nghĩa Hưng</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="362" model="res.district">
+			<field name="madvhc">362</field>
+			<field name="name">Huyện Nam Trực</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="363" model="res.district">
+			<field name="madvhc">363</field>
+			<field name="name">Huyện Trực Ninh</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="364" model="res.district">
+			<field name="madvhc">364</field>
+			<field name="name">Huyện Xuân Trường</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="365" model="res.district">
+			<field name="madvhc">365</field>
+			<field name="name">Huyện Giao Thủy</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="366" model="res.district">
+			<field name="madvhc">366</field>
+			<field name="name">Huyện Hải Hậu</field>
+			<field name="city_madvhc">36</field>
+			<field name="city_id">751</field>
+		</record>
+		<record id="369" model="res.district">
+			<field name="madvhc">369</field>
+			<field name="name">Thành phố Ninh Bình</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="370" model="res.district">
+			<field name="madvhc">370</field>
+			<field name="name">Thành phố Tam Điệp</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="372" model="res.district">
+			<field name="madvhc">372</field>
+			<field name="name">Huyện Nho Quan</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="373" model="res.district">
+			<field name="madvhc">373</field>
+			<field name="name">Huyện Gia Viễn</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="374" model="res.district">
+			<field name="madvhc">374</field>
+			<field name="name">Huyện Hoa Lư</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="375" model="res.district">
+			<field name="madvhc">375</field>
+			<field name="name">Huyện Yên Khánh</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="376" model="res.district">
+			<field name="madvhc">376</field>
+			<field name="name">Huyện Kim Sơn</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="377" model="res.district">
+			<field name="madvhc">377</field>
+			<field name="name">Huyện Yên Mô</field>
+			<field name="city_madvhc">37</field>
+			<field name="city_id">750</field>
+		</record>
+		<record id="380" model="res.district">
+			<field name="madvhc">380</field>
+			<field name="name">Thành phố Thanh Hóa</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="381" model="res.district">
+			<field name="madvhc">381</field>
+			<field name="name">Thị xã Bỉm Sơn</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="382" model="res.district">
+			<field name="madvhc">382</field>
+			<field name="name">Thị xã Sầm Sơn</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="384" model="res.district">
+			<field name="madvhc">384</field>
+			<field name="name">Huyện Mường Lát</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="385" model="res.district">
+			<field name="madvhc">385</field>
+			<field name="name">Huyện Quan Hóa</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="386" model="res.district">
+			<field name="madvhc">386</field>
+			<field name="name">Huyện Bá Thước</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="387" model="res.district">
+			<field name="madvhc">387</field>
+			<field name="name">Huyện Quan Sơn</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="388" model="res.district">
+			<field name="madvhc">388</field>
+			<field name="name">Huyện Lang Chánh</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="389" model="res.district">
+			<field name="madvhc">389</field>
+			<field name="name">Huyện Ngọc Lặc</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="390" model="res.district">
+			<field name="madvhc">390</field>
+			<field name="name">Huyện Cẩm Thủy</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="391" model="res.district">
+			<field name="madvhc">391</field>
+			<field name="name">Huyện Thạch Thành</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="392" model="res.district">
+			<field name="madvhc">392</field>
+			<field name="name">Huyện Hà Trung</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="393" model="res.district">
+			<field name="madvhc">393</field>
+			<field name="name">Huyện Vĩnh Lộc</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="394" model="res.district">
+			<field name="madvhc">394</field>
+			<field name="name">Huyện Yên Định</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="395" model="res.district">
+			<field name="madvhc">395</field>
+			<field name="name">Huyện Thọ Xuân</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="396" model="res.district">
+			<field name="madvhc">396</field>
+			<field name="name">Huyện Thường Xuân</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="397" model="res.district">
+			<field name="madvhc">397</field>
+			<field name="name">Huyện Triệu Sơn</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="398" model="res.district">
+			<field name="madvhc">398</field>
+			<field name="name">Huyện Thiệu Hóa</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="399" model="res.district">
+			<field name="madvhc">399</field>
+			<field name="name">Huyện Hoằng Hóa</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="400" model="res.district">
+			<field name="madvhc">400</field>
+			<field name="name">Huyện Hậu Lộc</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="404" model="res.district">
+			<field name="madvhc">401</field>
+			<field name="name">Huyện Nga Sơn</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="402" model="res.district">
+			<field name="madvhc">402</field>
+			<field name="name">Huyện Như Xuân</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="403" model="res.district">
+			<field name="madvhc">403</field>
+			<field name="name">Huyện Như Thanh</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="404" model="res.district">
+			<field name="madvhc">404</field>
+			<field name="name">Huyện Nông Cống</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="405" model="res.district">
+			<field name="madvhc">405</field>
+			<field name="name">Huyện Đông Sơn</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="406" model="res.district">
+			<field name="madvhc">406</field>
+			<field name="name">Huyện Quảng Xương</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="407" model="res.district">
+			<field name="madvhc">407</field>
+			<field name="name">Huyện Tĩnh Gia</field>
+			<field name="city_madvhc">38</field>
+			<field name="city_id">764</field>
+		</record>
+		<record id="412" model="res.district">
+			<field name="madvhc">412</field>
+			<field name="name">Thành phố Vinh</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="413" model="res.district">
+			<field name="madvhc">413</field>
+			<field name="name">Thị xã Cửa Lò</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="414" model="res.district">
+			<field name="madvhc">414</field>
+			<field name="name">Thị xã Thái Hoà</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="415" model="res.district">
+			<field name="madvhc">415</field>
+			<field name="name">Huyện Quế Phong</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="416" model="res.district">
+			<field name="madvhc">416</field>
+			<field name="name">Huyện Quỳ Châu</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="417" model="res.district">
+			<field name="madvhc">417</field>
+			<field name="name">Huyện Kỳ Sơn</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="418" model="res.district">
+			<field name="madvhc">418</field>
+			<field name="name">Huyện Tương Dương</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="419" model="res.district">
+			<field name="madvhc">419</field>
+			<field name="name">Huyện Nghĩa Đàn</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="420" model="res.district">
+			<field name="madvhc">420</field>
+			<field name="name">Huyện Quỳ Hợp</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="421" model="res.district">
+			<field name="madvhc">421</field>
+			<field name="name">Huyện Quỳnh Lưu</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="422" model="res.district">
+			<field name="madvhc">422</field>
+			<field name="name">Huyện Con Cuông</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="423" model="res.district">
+			<field name="madvhc">423</field>
+			<field name="name">Huyện Tân Kỳ</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="424" model="res.district">
+			<field name="madvhc">424</field>
+			<field name="name">Huyện Anh Sơn</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="425" model="res.district">
+			<field name="madvhc">425</field>
+			<field name="name">Huyện Diễn Châu</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="426" model="res.district">
+			<field name="madvhc">426</field>
+			<field name="name">Huyện Yên Thành</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="427" model="res.district">
+			<field name="madvhc">427</field>
+			<field name="name">Huyện Đô Lương</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="428" model="res.district">
+			<field name="madvhc">428</field>
+			<field name="name">Huyện Thanh Chương</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="429" model="res.district">
+			<field name="madvhc">429</field>
+			<field name="name">Huyện Nghi Lộc</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="430" model="res.district">
+			<field name="madvhc">430</field>
+			<field name="name">Huyện Nam Đàn</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="431" model="res.district">
+			<field name="madvhc">431</field>
+			<field name="name">Huyện Hưng Nguyên</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="432" model="res.district">
+			<field name="madvhc">432</field>
+			<field name="name">Thị xã Hoàng Mai</field>
+			<field name="city_madvhc">40</field>
+			<field name="city_id">749</field>
+		</record>
+		<record id="436" model="res.district">
+			<field name="madvhc">436</field>
+			<field name="name">Thành phố Hà Tĩnh</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="437" model="res.district">
+			<field name="madvhc">437</field>
+			<field name="name">Thị xã Hồng Lĩnh</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="439" model="res.district">
+			<field name="madvhc">439</field>
+			<field name="name">Huyện Hương Sơn</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="440" model="res.district">
+			<field name="madvhc">440</field>
+			<field name="name">Huyện Đức Thọ</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="441" model="res.district">
+			<field name="madvhc">441</field>
+			<field name="name">Huyện Vũ Quang</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="442" model="res.district">
+			<field name="madvhc">442</field>
+			<field name="name">Huyện Nghi Xuân</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="443" model="res.district">
+			<field name="madvhc">443</field>
+			<field name="name">Huyện Can Lộc</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="444" model="res.district">
+			<field name="madvhc">444</field>
+			<field name="name">Huyện Hương Khê</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="445" model="res.district">
+			<field name="madvhc">445</field>
+			<field name="name">Huyện Thạch Hà</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="446" model="res.district">
+			<field name="madvhc">446</field>
+			<field name="name">Huyện Cẩm Xuyên</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="447" model="res.district">
+			<field name="madvhc">447</field>
+			<field name="name">Huyện Kỳ Anh</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="448" model="res.district">
+			<field name="madvhc">448</field>
+			<field name="name">Huyện Lộc Hà</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="449" model="res.district">
+			<field name="madvhc">449</field>
+			<field name="name">Thị xã Kỳ Anh</field>
+			<field name="city_madvhc">42</field>
+			<field name="city_id">739</field>
+		</record>
+		<record id="450" model="res.district">
+			<field name="madvhc">450</field>
+			<field name="name">Thành Phố Đồng Hới</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="452" model="res.district">
+			<field name="madvhc">452</field>
+			<field name="name">Huyện Minh Hóa</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="453" model="res.district">
+			<field name="madvhc">453</field>
+			<field name="name">Huyện Tuyên Hóa</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="454" model="res.district">
+			<field name="madvhc">454</field>
+			<field name="name">Huyện Quảng Trạch</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="455" model="res.district">
+			<field name="madvhc">455</field>
+			<field name="name">Huyện Bố Trạch</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="456" model="res.district">
+			<field name="madvhc">456</field>
+			<field name="name">Huyện Quảng Ninh</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="457" model="res.district">
+			<field name="madvhc">457</field>
+			<field name="name">Huyện Lệ Thủy</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="458" model="res.district">
+			<field name="madvhc">458</field>
+			<field name="name">Thị xã Ba Đồn</field>
+			<field name="city_madvhc">44</field>
+			<field name="city_id">755</field>
+		</record>
+		<record id="461" model="res.district">
+			<field name="madvhc">461</field>
+			<field name="name">Thành phố Đông Hà</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="462" model="res.district">
+			<field name="madvhc">462</field>
+			<field name="name">Thị xã Quảng Trị</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="464" model="res.district">
+			<field name="madvhc">464</field>
+			<field name="name">Huyện Vĩnh Linh</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="465" model="res.district">
+			<field name="madvhc">465</field>
+			<field name="name">Huyện Hướng Hóa</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="466" model="res.district">
+			<field name="madvhc">466</field>
+			<field name="name">Huyện Gio Linh</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="467" model="res.district">
+			<field name="madvhc">467</field>
+			<field name="name">Huyện Đa Krông</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="468" model="res.district">
+			<field name="madvhc">468</field>
+			<field name="name">Huyện Cam Lộ</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="469" model="res.district">
+			<field name="madvhc">469</field>
+			<field name="name">Huyện Triệu Phong</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="470" model="res.district">
+			<field name="madvhc">470</field>
+			<field name="name">Huyện Hải Lăng</field>
+			<field name="city_madvhc">45</field>
+			<field name="city_id">759</field>
+		</record>
+		<record id="474" model="res.district">
+			<field name="madvhc">474</field>
+			<field name="name">Thành phố Huế</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="476" model="res.district">
+			<field name="madvhc">476</field>
+			<field name="name">Huyện Phong Điền</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="477" model="res.district">
+			<field name="madvhc">477</field>
+			<field name="name">Huyện Quảng Điền</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="478" model="res.district">
+			<field name="madvhc">478</field>
+			<field name="name">Huyện Phú Vang</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="479" model="res.district">
+			<field name="madvhc">479</field>
+			<field name="name">Thị xã Hương Thủy</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="480" model="res.district">
+			<field name="madvhc">480</field>
+			<field name="name">Thị xã Hương Trà</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="481" model="res.district">
+			<field name="madvhc">481</field>
+			<field name="name">Huyện A Lưới</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="482" model="res.district">
+			<field name="madvhc">482</field>
+			<field name="name">Huyện Phú Lộc</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="483" model="res.district">
+			<field name="madvhc">483</field>
+			<field name="name">Huyện Nam Đông</field>
+			<field name="city_madvhc">46</field>
+			<field name="city_id">768</field>
+		</record>
+		<record id="490" model="res.district">
+			<field name="madvhc">490</field>
+			<field name="name">Quận Liên Chiểu</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="491" model="res.district">
+			<field name="madvhc">491</field>
+			<field name="name">Quận Thanh Khê</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="492" model="res.district">
+			<field name="madvhc">492</field>
+			<field name="name">Quận Hải Châu</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="493" model="res.district">
+			<field name="madvhc">493</field>
+			<field name="name">Quận Sơn Trà</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="494" model="res.district">
+			<field name="madvhc">494</field>
+			<field name="name">Quận Ngũ Hành Sơn</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="495" model="res.district">
+			<field name="madvhc">495</field>
+			<field name="name">Quận Cẩm Lệ</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="497" model="res.district">
+			<field name="madvhc">497</field>
+			<field name="name">Huyện Hòa Vang</field>
+			<field name="city_madvhc">48</field>
+			<field name="city_id">726</field>
+		</record>
+		<record id="502" model="res.district">
+			<field name="madvhc">502</field>
+			<field name="name">Thành phố Tam Kỳ</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="503" model="res.district">
+			<field name="madvhc">503</field>
+			<field name="name">Thành phố Hội An</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="504" model="res.district">
+			<field name="madvhc">504</field>
+			<field name="name">Huyện Tây Giang</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="505" model="res.district">
+			<field name="madvhc">505</field>
+			<field name="name">Huyện Đông Giang</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="506" model="res.district">
+			<field name="madvhc">506</field>
+			<field name="name">Huyện Đại Lộc</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="507" model="res.district">
+			<field name="madvhc">507</field>
+			<field name="name">Thị xã Điện Bàn</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="508" model="res.district">
+			<field name="madvhc">508</field>
+			<field name="name">Huyện Duy Xuyên</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="509" model="res.district">
+			<field name="madvhc">509</field>
+			<field name="name">Huyện Quế Sơn</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="510" model="res.district">
+			<field name="madvhc">510</field>
+			<field name="name">Huyện Nam Giang</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="511" model="res.district">
+			<field name="madvhc">511</field>
+			<field name="name">Huyện Phước Sơn</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="512" model="res.district">
+			<field name="madvhc">512</field>
+			<field name="name">Huyện Hiệp Đức</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="513" model="res.district">
+			<field name="madvhc">513</field>
+			<field name="name">Huyện Thăng Bình</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="514" model="res.district">
+			<field name="madvhc">514</field>
+			<field name="name">Huyện Tiên Phước</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="515" model="res.district">
+			<field name="madvhc">515</field>
+			<field name="name">Huyện Bắc Trà My</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="516" model="res.district">
+			<field name="madvhc">516</field>
+			<field name="name">Huyện Nam Trà My</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="517" model="res.district">
+			<field name="madvhc">517</field>
+			<field name="name">Huyện Núi Thành</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="518" model="res.district">
+			<field name="madvhc">518</field>
+			<field name="name">Huyện Phú Ninh</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="519" model="res.district">
+			<field name="madvhc">519</field>
+			<field name="name">Huyện Nông Sơn</field>
+			<field name="city_madvhc">49</field>
+			<field name="city_id">757</field>
+		</record>
+		<record id="522" model="res.district">
+			<field name="madvhc">522</field>
+			<field name="name">Thành phố Quảng Ngãi</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="524" model="res.district">
+			<field name="madvhc">524</field>
+			<field name="name">Huyện Bình Sơn</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="525" model="res.district">
+			<field name="madvhc">525</field>
+			<field name="name">Huyện Trà Bồng</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="526" model="res.district">
+			<field name="madvhc">526</field>
+			<field name="name">Huyện Tây Trà</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="527" model="res.district">
+			<field name="madvhc">527</field>
+			<field name="name">Huyện Sơn Tịnh</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="528" model="res.district">
+			<field name="madvhc">528</field>
+			<field name="name">Huyện Tư Nghĩa</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="529" model="res.district">
+			<field name="madvhc">529</field>
+			<field name="name">Huyện Sơn Hà</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="530" model="res.district">
+			<field name="madvhc">530</field>
+			<field name="name">Huyện Sơn Tây</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="531" model="res.district">
+			<field name="madvhc">531</field>
+			<field name="name">Huyện Minh Long</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="532" model="res.district">
+			<field name="madvhc">532</field>
+			<field name="name">Huyện Nghĩa Hành</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="533" model="res.district">
+			<field name="madvhc">533</field>
+			<field name="name">Huyện Mộ Đức</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="534" model="res.district">
+			<field name="madvhc">534</field>
+			<field name="name">Huyện Đức Phổ</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="535" model="res.district">
+			<field name="madvhc">535</field>
+			<field name="name">Huyện Ba Tơ</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="536" model="res.district">
+			<field name="madvhc">536</field>
+			<field name="name">Huyện Lý Sơn</field>
+			<field name="city_madvhc">51</field>
+			<field name="city_id">758</field>
+		</record>
+		<record id="540" model="res.district">
+			<field name="madvhc">540</field>
+			<field name="name">Thành phố Qui Nhơn</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="542" model="res.district">
+			<field name="madvhc">542</field>
+			<field name="name">Huyện An Lão</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="543" model="res.district">
+			<field name="madvhc">543</field>
+			<field name="name">Huyện Hoài Nhơn</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="544" model="res.district">
+			<field name="madvhc">544</field>
+			<field name="name">Huyện Hoài Ân</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="545" model="res.district">
+			<field name="madvhc">545</field>
+			<field name="name">Huyện Phù Mỹ</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="546" model="res.district">
+			<field name="madvhc">546</field>
+			<field name="name">Huyện Vĩnh Thạnh</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="547" model="res.district">
+			<field name="madvhc">547</field>
+			<field name="name">Huyện Tây Sơn</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="548" model="res.district">
+			<field name="madvhc">548</field>
+			<field name="name">Huyện Phù Cát</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="549" model="res.district">
+			<field name="madvhc">549</field>
+			<field name="name">Thị xã An Nhơn</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="550" model="res.district">
+			<field name="madvhc">550</field>
+			<field name="name">Huyện Tuy Phước</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="551" model="res.district">
+			<field name="madvhc">551</field>
+			<field name="name">Huyện Vân Canh</field>
+			<field name="city_madvhc">52</field>
+			<field name="city_id">712</field>
+		</record>
+		<record id="555" model="res.district">
+			<field name="madvhc">555</field>
+			<field name="name">Thành phố Tuy Hoà</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="557" model="res.district">
+			<field name="madvhc">557</field>
+			<field name="name">Thị xã Sông Cầu</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="558" model="res.district">
+			<field name="madvhc">558</field>
+			<field name="name">Huyện Đồng Xuân</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="559" model="res.district">
+			<field name="madvhc">559</field>
+			<field name="name">Huyện Tuy An</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="560" model="res.district">
+			<field name="madvhc">560</field>
+			<field name="name">Huyện Sơn Hòa</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="561" model="res.district">
+			<field name="madvhc">561</field>
+			<field name="name">Huyện Sông Hinh</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="562" model="res.district">
+			<field name="madvhc">562</field>
+			<field name="name">Huyện Tây Hoà</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="563" model="res.district">
+			<field name="madvhc">563</field>
+			<field name="name">Huyện Phú Hoà</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="564" model="res.district">
+			<field name="madvhc">564</field>
+			<field name="name">Huyện Đông Hòa</field>
+			<field name="city_madvhc">54</field>
+			<field name="city_id">754</field>
+		</record>
+		<record id="568" model="res.district">
+			<field name="madvhc">568</field>
+			<field name="name">Thành phố Nha Trang</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="569" model="res.district">
+			<field name="madvhc">569</field>
+			<field name="name">Thành phố Cam Ranh</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="570" model="res.district">
+			<field name="madvhc">570</field>
+			<field name="name">Huyện Cam Lâm</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="571" model="res.district">
+			<field name="madvhc">571</field>
+			<field name="name">Huyện Vạn Ninh</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="572" model="res.district">
+			<field name="madvhc">572</field>
+			<field name="name">Thị xã Ninh Hòa</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="573" model="res.district">
+			<field name="madvhc">573</field>
+			<field name="name">Huyện Khánh Vĩnh</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="574" model="res.district">
+			<field name="madvhc">574</field>
+			<field name="name">Huyện Diên Khánh</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="575" model="res.district">
+			<field name="madvhc">575</field>
+			<field name="name">Huyện Khánh Sơn</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="576" model="res.district">
+			<field name="madvhc">576</field>
+			<field name="name">Huyện Trường Sa</field>
+			<field name="city_madvhc">56</field>
+			<field name="city_id">742</field>
+		</record>
+		<record id="582" model="res.district">
+			<field name="madvhc">582</field>
+			<field name="name">Thành phố Phan Rang-Tháp Chàm</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="584" model="res.district">
+			<field name="madvhc">584</field>
+			<field name="name">Huyện Bác Ái</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="585" model="res.district">
+			<field name="madvhc">585</field>
+			<field name="name">Huyện Ninh Sơn</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="586" model="res.district">
+			<field name="madvhc">586</field>
+			<field name="name">Huyện Ninh Hải</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="587" model="res.district">
+			<field name="madvhc">587</field>
+			<field name="name">Huyện Ninh Phước</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="588" model="res.district">
+			<field name="madvhc">588</field>
+			<field name="name">Huyện Thuận Bắc</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="589" model="res.district">
+			<field name="madvhc">589</field>
+			<field name="name">Huyện Thuận Nam</field>
+			<field name="city_madvhc">58</field>
+			<field name="city_id">752</field>
+		</record>
+		<record id="593" model="res.district">
+			<field name="madvhc">593</field>
+			<field name="name">Thành phố Phan Thiết</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="594" model="res.district">
+			<field name="madvhc">594</field>
+			<field name="name">Thị xã La Gi</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="595" model="res.district">
+			<field name="madvhc">595</field>
+			<field name="name">Huyện Tuy Phong</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="596" model="res.district">
+			<field name="madvhc">596</field>
+			<field name="name">Huyện Bắc Bình</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="597" model="res.district">
+			<field name="madvhc">597</field>
+			<field name="name">Huyện Hàm Thuận Bắc</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="598" model="res.district">
+			<field name="madvhc">598</field>
+			<field name="name">Huyện Hàm Thuận Nam</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="599" model="res.district">
+			<field name="madvhc">599</field>
+			<field name="name">Huyện Tánh Linh</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="600" model="res.district">
+			<field name="madvhc">600</field>
+			<field name="name">Huyện Đức Linh</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="601" model="res.district">
+			<field name="madvhc">601</field>
+			<field name="name">Huyện Hàm Tân</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="602" model="res.district">
+			<field name="madvhc">602</field>
+			<field name="name">Huyện Phú Quí</field>
+			<field name="city_madvhc">60</field>
+			<field name="city_id">719</field>
+		</record>
+		<record id="608" model="res.district">
+			<field name="madvhc">608</field>
+			<field name="name">Thành phố Kon Tum</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="610" model="res.district">
+			<field name="madvhc">610</field>
+			<field name="name">Huyện Đắk Glei</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="611" model="res.district">
+			<field name="madvhc">611</field>
+			<field name="name">Huyện Ngọc Hồi</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="612" model="res.district">
+			<field name="madvhc">612</field>
+			<field name="name">Huyện Đắk Tô</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="613" model="res.district">
+			<field name="madvhc">613</field>
+			<field name="name">Huyện Kon Plông</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="614" model="res.district">
+			<field name="madvhc">614</field>
+			<field name="name">Huyện Kon Rẫy</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="615" model="res.district">
+			<field name="madvhc">615</field>
+			<field name="name">Huyện Đắk Hà</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="616" model="res.district">
+			<field name="madvhc">616</field>
+			<field name="name">Huyện Sa Thầy</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="617" model="res.district">
+			<field name="madvhc">617</field>
+			<field name="name">Huyện Tu Mơ Rông</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="618" model="res.district">
+			<field name="madvhc">618</field>
+			<field name="name">Huyện Ia H' Drai</field>
+			<field name="city_madvhc">62</field>
+			<field name="city_id">743</field>
+		</record>
+		<record id="622" model="res.district">
+			<field name="madvhc">622</field>
+			<field name="name">Thành phố Pleiku</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="623" model="res.district">
+			<field name="madvhc">623</field>
+			<field name="name">Thị xã An Khê</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="624" model="res.district">
+			<field name="madvhc">624</field>
+			<field name="name">Thị xã Ayun Pa</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="625" model="res.district">
+			<field name="madvhc">625</field>
+			<field name="name">Huyện KBang</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="626" model="res.district">
+			<field name="madvhc">626</field>
+			<field name="name">Huyện Đăk Đoa</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="627" model="res.district">
+			<field name="madvhc">627</field>
+			<field name="name">Huyện Chư Păh</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="628" model="res.district">
+			<field name="madvhc">628</field>
+			<field name="name">Huyện Ia Grai</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="629" model="res.district">
+			<field name="madvhc">629</field>
+			<field name="name">Huyện Mang Yang</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="630" model="res.district">
+			<field name="madvhc">630</field>
+			<field name="name">Huyện Kông Chro</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="631" model="res.district">
+			<field name="madvhc">631</field>
+			<field name="name">Huyện Đức Cơ</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="632" model="res.district">
+			<field name="madvhc">632</field>
+			<field name="name">Huyện Chư Prông</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="633" model="res.district">
+			<field name="madvhc">633</field>
+			<field name="name">Huyện Chư Sê</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="634" model="res.district">
+			<field name="madvhc">634</field>
+			<field name="name">Huyện Đăk Pơ</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="635" model="res.district">
+			<field name="madvhc">635</field>
+			<field name="name">Huyện Ia Pa</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="637" model="res.district">
+			<field name="madvhc">637</field>
+			<field name="name">Huyện Krông Pa</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="638" model="res.district">
+			<field name="madvhc">638</field>
+			<field name="name">Huyện Phú Thiện</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="639" model="res.district">
+			<field name="madvhc">639</field>
+			<field name="name">Huyện Chư Pưh</field>
+			<field name="city_madvhc">64</field>
+			<field name="city_id">730</field>
+		</record>
+		<record id="643" model="res.district">
+			<field name="madvhc">643</field>
+			<field name="name">Thành phố Buôn Ma Thuột</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="644" model="res.district">
+			<field name="madvhc">644</field>
+			<field name="name">Thị Xã Buôn Hồ</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="645" model="res.district">
+			<field name="madvhc">645</field>
+			<field name="name">Huyện Ea H'leo</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="646" model="res.district">
+			<field name="madvhc">646</field>
+			<field name="name">Huyện Ea Súp</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="647" model="res.district">
+			<field name="madvhc">647</field>
+			<field name="name">Huyện Buôn Đôn</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="648" model="res.district">
+			<field name="madvhc">648</field>
+			<field name="name">Huyện Cư M'gar</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="649" model="res.district">
+			<field name="madvhc">649</field>
+			<field name="name">Huyện Krông Búk</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="650" model="res.district">
+			<field name="madvhc">650</field>
+			<field name="name">Huyện Krông Năng</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="651" model="res.district">
+			<field name="madvhc">651</field>
+			<field name="name">Huyện Ea Kar</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="652" model="res.district">
+			<field name="madvhc">652</field>
+			<field name="name">Huyện M'Đrắk</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="653" model="res.district">
+			<field name="madvhc">653</field>
+			<field name="name">Huyện Krông Bông</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="654" model="res.district">
+			<field name="madvhc">654</field>
+			<field name="name">Huyện Krông Pắc</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="655" model="res.district">
+			<field name="madvhc">655</field>
+			<field name="name">Huyện Krông A Na</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="656" model="res.district">
+			<field name="madvhc">656</field>
+			<field name="name">Huyện Lắk</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="657" model="res.district">
+			<field name="madvhc">657</field>
+			<field name="name">Huyện Cư Kuin</field>
+			<field name="city_madvhc">66</field>
+			<field name="city_id">725</field>
+		</record>
+		<record id="660" model="res.district">
+			<field name="madvhc">660</field>
+			<field name="name">Thị xã Gia Nghĩa</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="661" model="res.district">
+			<field name="madvhc">661</field>
+			<field name="name">Huyện Đăk Glong</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="662" model="res.district">
+			<field name="madvhc">662</field>
+			<field name="name">Huyện Cư Jút</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="663" model="res.district">
+			<field name="madvhc">663</field>
+			<field name="name">Huyện Đắk Mil</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="664" model="res.district">
+			<field name="madvhc">664</field>
+			<field name="name">Huyện Krông Nô</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="665" model="res.district">
+			<field name="madvhc">665</field>
+			<field name="name">Huyện Đắk Song</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="666" model="res.district">
+			<field name="madvhc">666</field>
+			<field name="name">Huyện Đắk R'Lấp</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="667" model="res.district">
+			<field name="madvhc">667</field>
+			<field name="name">Huyện Tuy Đức</field>
+			<field name="city_madvhc">67</field>
+			<field name="city_id">728</field>
+		</record>
+		<record id="672" model="res.district">
+			<field name="madvhc">672</field>
+			<field name="name">Thành phố Đà Lạt</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="673" model="res.district">
+			<field name="madvhc">673</field>
+			<field name="name">Thành phố Bảo Lộc</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="674" model="res.district">
+			<field name="madvhc">674</field>
+			<field name="name">Huyện Đam Rông</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="657" model="res.district">
+			<field name="madvhc">675</field>
+			<field name="name">Huyện Lạc Dương</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="676" model="res.district">
+			<field name="madvhc">676</field>
+			<field name="name">Huyện Lâm Hà</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="677" model="res.district">
+			<field name="madvhc">677</field>
+			<field name="name">Huyện Đơn Dương</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="678" model="res.district">
+			<field name="madvhc">678</field>
+			<field name="name">Huyện Đức Trọng</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="679" model="res.district">
+			<field name="madvhc">679</field>
+			<field name="name">Huyện Di Linh</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="680" model="res.district">
+			<field name="madvhc">680</field>
+			<field name="name">Huyện Bảo Lâm</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="681" model="res.district">
+			<field name="madvhc">681</field>
+			<field name="name">Huyện Đạ Huoai</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="682" model="res.district">
+			<field name="madvhc">682</field>
+			<field name="name">Huyện Đạ Tẻh</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="683" model="res.district">
+			<field name="madvhc">683</field>
+			<field name="name">Huyện Cát Tiên</field>
+			<field name="city_madvhc">68</field>
+			<field name="city_id">747</field>
+		</record>
+		<record id="688" model="res.district">
+			<field name="madvhc">688</field>
+			<field name="name">Thị xã Phước Long</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="689" model="res.district">
+			<field name="madvhc">689</field>
+			<field name="name">Thị xã Đồng Xoài</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="690" model="res.district">
+			<field name="madvhc">690</field>
+			<field name="name">Thị xã Bình Long</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="691" model="res.district">
+			<field name="madvhc">691</field>
+			<field name="name">Huyện Bù Gia Mập</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="692" model="res.district">
+			<field name="madvhc">692</field>
+			<field name="name">Huyện Lộc Ninh</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="693" model="res.district">
+			<field name="madvhc">693</field>
+			<field name="name">Huyện Bù Đốp</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="694" model="res.district">
+			<field name="madvhc">694</field>
+			<field name="name">Huyện Hớn Quản</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="695" model="res.district">
+			<field name="madvhc">695</field>
+			<field name="name">Huyện Đồng Phú</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="696" model="res.district">
+			<field name="madvhc">696</field>
+			<field name="name">Huyện Bù Đăng</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="697" model="res.district">
+			<field name="madvhc">697</field>
+			<field name="name">Huyện Chơn Thành</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="698" model="res.district">
+			<field name="madvhc">698</field>
+			<field name="name">Huyện Phú Riềng</field>
+			<field name="city_madvhc">70</field>
+			<field name="city_id">717</field>
+		</record>
+		<record id="703" model="res.district">
+			<field name="madvhc">703</field>
+			<field name="name">Thành phố Tây Ninh</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="705" model="res.district">
+			<field name="madvhc">705</field>
+			<field name="name">Huyện Tân Biên</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="706" model="res.district">
+			<field name="madvhc">706</field>
+			<field name="name">Huyện Tân Châu</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="707" model="res.district">
+			<field name="madvhc">707</field>
+			<field name="name">Huyện Dương Minh Châu</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="708" model="res.district">
+			<field name="madvhc">708</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="709" model="res.district">
+			<field name="madvhc">709</field>
+			<field name="name">Huyện Hòa Thành</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="710" model="res.district">
+			<field name="madvhc">710</field>
+			<field name="name">Huyện Gò Dầu</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="711" model="res.district">
+			<field name="madvhc">711</field>
+			<field name="name">Huyện Bến Cầu</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="712" model="res.district">
+			<field name="madvhc">712</field>
+			<field name="name">Huyện Trảng Bàng</field>
+			<field name="city_madvhc">72</field>
+			<field name="city_id">766</field>
+		</record>
+		<record id="718" model="res.district">
+			<field name="madvhc">718</field>
+			<field name="name">Thành phố Thủ Dầu Một</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="719" model="res.district">
+			<field name="madvhc">719</field>
+			<field name="name">Huyện Bàu Bàng</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="720" model="res.district">
+			<field name="madvhc">720</field>
+			<field name="name">Huyện Dầu Tiếng</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="721" model="res.district">
+			<field name="madvhc">721</field>
+			<field name="name">Thị xã Bến Cát</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="722" model="res.district">
+			<field name="madvhc">722</field>
+			<field name="name">Huyện Phú Giáo</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="723" model="res.district">
+			<field name="madvhc">723</field>
+			<field name="name">Thị xã Tân Uyên</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="724" model="res.district">
+			<field name="madvhc">724</field>
+			<field name="name">Thị xã Dĩ An</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="725" model="res.district">
+			<field name="madvhc">725</field>
+			<field name="name">Thị xã Thuận An</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="726" model="res.district">
+			<field name="madvhc">726</field>
+			<field name="name">Huyện Bắc Tân Uyên</field>
+			<field name="city_madvhc">74</field>
+			<field name="city_id">711</field>
+		</record>
+		<record id="731" model="res.district">
+			<field name="madvhc">731</field>
+			<field name="name">Thành phố Biên Hòa</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="732" model="res.district">
+			<field name="madvhc">732</field>
+			<field name="name">Thị xã Long Khánh</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="734" model="res.district">
+			<field name="madvhc">734</field>
+			<field name="name">Huyện Tân Phú</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="735" model="res.district">
+			<field name="madvhc">735</field>
+			<field name="name">Huyện Vĩnh Cửu</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="736" model="res.district">
+			<field name="madvhc">736</field>
+			<field name="name">Huyện Định Quán</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="737" model="res.district">
+			<field name="madvhc">737</field>
+			<field name="name">Huyện Trảng Bom</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="738" model="res.district">
+			<field name="madvhc">738</field>
+			<field name="name">Huyện Thống Nhất</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="739" model="res.district">
+			<field name="madvhc">739</field>
+			<field name="name">Huyện Cẩm Mỹ</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="740" model="res.district">
+			<field name="madvhc">740</field>
+			<field name="name">Huyện Long Thành</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="741" model="res.district">
+			<field name="madvhc">741</field>
+			<field name="name">Huyện Xuân Lộc</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="742" model="res.district">
+			<field name="madvhc">742</field>
+			<field name="name">Huyện Nhơn Trạch</field>
+			<field name="city_madvhc">75</field>
+			<field name="city_id">727</field>
+		</record>
+		<record id="747" model="res.district">
+			<field name="madvhc">747</field>
+			<field name="name">Thành phố Vũng Tàu</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="748" model="res.district">
+			<field name="madvhc">748</field>
+			<field name="name">Thành phố Bà Rịa</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="750" model="res.district">
+			<field name="madvhc">750</field>
+			<field name="name">Huyện Châu Đức</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="751" model="res.district">
+			<field name="madvhc">751</field>
+			<field name="name">Huyện Xuyên Mộc</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="752" model="res.district">
+			<field name="madvhc">752</field>
+			<field name="name">Huyện Long Điền</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="753" model="res.district">
+			<field name="madvhc">753</field>
+			<field name="name">Huyện Đất Đỏ</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="754" model="res.district">
+			<field name="madvhc">754</field>
+			<field name="name">Huyện Tân Thành</field>
+			<field name="city_madvhc">77</field>
+			<field name="city_id">718</field>
+		</record>
+		<record id="760" model="res.district">
+			<field name="madvhc">760</field>
+			<field name="name">Quận 1</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="761" model="res.district">
+			<field name="madvhc">761</field>
+			<field name="name">Quận 12</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="762" model="res.district">
+			<field name="madvhc">762</field>
+			<field name="name">Quận Thủ Đức</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="763" model="res.district">
+			<field name="madvhc">763</field>
+			<field name="name">Quận 9</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="764" model="res.district">
+			<field name="madvhc">764</field>
+			<field name="name">Quận Gò Vấp</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="765" model="res.district">
+			<field name="madvhc">765</field>
+			<field name="name">Quận Bình Thạnh</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="766" model="res.district">
+			<field name="madvhc">766</field>
+			<field name="name">Quận Tân Bình</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="767" model="res.district">
+			<field name="madvhc">767</field>
+			<field name="name">Quận Tân Phú</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="768" model="res.district">
+			<field name="madvhc">768</field>
+			<field name="name">Quận Phú Nhuận</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="769" model="res.district">
+			<field name="madvhc">769</field>
+			<field name="name">Quận 2</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="770" model="res.district">
+			<field name="madvhc">770</field>
+			<field name="name">Quận 3</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="771" model="res.district">
+			<field name="madvhc">771</field>
+			<field name="name">Quận 10</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="772" model="res.district">
+			<field name="madvhc">772</field>
+			<field name="name">Quận 11</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="773" model="res.district">
+			<field name="madvhc">773</field>
+			<field name="name">Quận 4</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="774" model="res.district">
+			<field name="madvhc">774</field>
+			<field name="name">Quận 5</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="775" model="res.district">
+			<field name="madvhc">775</field>
+			<field name="name">Quận 6</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="776" model="res.district">
+			<field name="madvhc">776</field>
+			<field name="name">Quận 8</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="777" model="res.district">
+			<field name="madvhc">777</field>
+			<field name="name">Quận Bình Tân</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="778" model="res.district">
+			<field name="madvhc">778</field>
+			<field name="name">Quận 7</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="783" model="res.district">
+			<field name="madvhc">783</field>
+			<field name="name">Huyện Củ Chi</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="784" model="res.district">
+			<field name="madvhc">784</field>
+			<field name="name">Huyện Hóc Môn</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="785" model="res.district">
+			<field name="madvhc">785</field>
+			<field name="name">Huyện Bình Chánh</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="786" model="res.district">
+			<field name="madvhc">786</field>
+			<field name="name">Huyện Nhà Bè</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="787" model="res.district">
+			<field name="madvhc">787</field>
+			<field name="name">Huyện Cần Giờ</field>
+			<field name="city_madvhc">79</field>
+			<field name="city_id">732</field>
+		</record>
+		<record id="794" model="res.district">
+			<field name="madvhc">794</field>
+			<field name="name">Thành phố Tân An</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="795" model="res.district">
+			<field name="madvhc">795</field>
+			<field name="name">Thị xã Kiến Tường</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="796" model="res.district">
+			<field name="madvhc">796</field>
+			<field name="name">Huyện Tân Hưng</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="797" model="res.district">
+			<field name="madvhc">797</field>
+			<field name="name">Huyện Vĩnh Hưng</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="798" model="res.district">
+			<field name="madvhc">798</field>
+			<field name="name">Huyện Mộc Hóa</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="799" model="res.district">
+			<field name="madvhc">799</field>
+			<field name="name">Huyện Tân Thạnh</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="800" model="res.district">
+			<field name="madvhc">800</field>
+			<field name="name">Huyện Thạnh Hóa</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="801" model="res.district">
+			<field name="madvhc">801</field>
+			<field name="name">Huyện Đức Huệ</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="802" model="res.district">
+			<field name="madvhc">802</field>
+			<field name="name">Huyện Đức Hòa</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="803" model="res.district">
+			<field name="madvhc">803</field>
+			<field name="name">Huyện Bến Lức</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="804" model="res.district">
+			<field name="madvhc">804</field>
+			<field name="name">Huyện Thủ Thừa</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="805" model="res.district">
+			<field name="madvhc">805</field>
+			<field name="name">Huyện Tân Trụ</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="806" model="res.district">
+			<field name="madvhc">806</field>
+			<field name="name">Huyện Cần Đước</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="807" model="res.district">
+			<field name="madvhc">807</field>
+			<field name="name">Huyện Cần Giuộc</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="808" model="res.district">
+			<field name="madvhc">808</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">80</field>
+			<field name="city_id">744</field>
+		</record>
+		<record id="815" model="res.district">
+			<field name="madvhc">815</field>
+			<field name="name">Thành phố Mỹ Tho</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="816" model="res.district">
+			<field name="madvhc">816</field>
+			<field name="name">Thị xã Gò Công</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="817" model="res.district">
+			<field name="madvhc">817</field>
+			<field name="name">Thị xã Cai Lậy</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="818" model="res.district">
+			<field name="madvhc">818</field>
+			<field name="name">Huyện Tân Phước</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="819" model="res.district">
+			<field name="madvhc">819</field>
+			<field name="name">Huyện Cái Bè</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="820" model="res.district">
+			<field name="madvhc">820</field>
+			<field name="name">Huyện Cai Lậy</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="821" model="res.district">
+			<field name="madvhc">821</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="822" model="res.district">
+			<field name="madvhc">822</field>
+			<field name="name">Huyện Chợ Gạo</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="823" model="res.district">
+			<field name="madvhc">823</field>
+			<field name="name">Huyện Gò Công Tây</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="824" model="res.district">
+			<field name="madvhc">824</field>
+			<field name="name">Huyện Gò Công Đông</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="825" model="res.district">
+			<field name="madvhc">825</field>
+			<field name="name">Huyện Tân Phú Đông</field>
+			<field name="city_madvhc">82</field>
+			<field name="city_id">763</field>
+		</record>
+		<record id="829" model="res.district">
+			<field name="madvhc">829</field>
+			<field name="name">Thành phố Bến Tre</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="831" model="res.district">
+			<field name="madvhc">831</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="832" model="res.district">
+			<field name="madvhc">832</field>
+			<field name="name">Huyện Chợ Lách</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="833" model="res.district">
+			<field name="madvhc">833</field>
+			<field name="name">Huyện Mỏ Cày Nam</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="834" model="res.district">
+			<field name="madvhc">834</field>
+			<field name="name">Huyện Giồng Trôm</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="835" model="res.district">
+			<field name="madvhc">835</field>
+			<field name="name">Huyện Bình Đại</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="836" model="res.district">
+			<field name="madvhc">836</field>
+			<field name="name">Huyện Ba Tri</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="837" model="res.district">
+			<field name="madvhc">837</field>
+			<field name="name">Huyện Thạnh Phú</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="838" model="res.district">
+			<field name="madvhc">838</field>
+			<field name="name">Huyện Mỏ Cày Bắc</field>
+			<field name="city_madvhc">83</field>
+			<field name="city_id">720</field>
+		</record>
+		<record id="842" model="res.district">
+			<field name="madvhc">842</field>
+			<field name="name">Thành phố Trà Vinh</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="844" model="res.district">
+			<field name="madvhc">844</field>
+			<field name="name">Huyện Càng Long</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="845" model="res.district">
+			<field name="madvhc">845</field>
+			<field name="name">Huyện Cầu Kè</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="846" model="res.district">
+			<field name="madvhc">846</field>
+			<field name="name">Huyện Tiểu Cần</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="847" model="res.district">
+			<field name="madvhc">847</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="848" model="res.district">
+			<field name="madvhc">848</field>
+			<field name="name">Huyện Cầu Ngang</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="849" model="res.district">
+			<field name="madvhc">849</field>
+			<field name="name">Huyện Trà Cú</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="850" model="res.district">
+			<field name="madvhc">850</field>
+			<field name="name">Huyện Duyên Hải</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="851" model="res.district">
+			<field name="madvhc">851</field>
+			<field name="name">Thị xã Duyên Hải</field>
+			<field name="city_madvhc">84</field>
+			<field name="city_id">769</field>
+		</record>
+		<record id="855" model="res.district">
+			<field name="madvhc">855</field>
+			<field name="name">Thành phố Vĩnh Long</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="857" model="res.district">
+			<field name="madvhc">857</field>
+			<field name="name">Huyện Long Hồ</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="858" model="res.district">
+			<field name="madvhc">858</field>
+			<field name="name">Huyện Mang Thít</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="859" model="res.district">
+			<field name="madvhc">859</field>
+			<field name="name">Huyện  Vũng Liêm</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="860" model="res.district">
+			<field name="madvhc">860</field>
+			<field name="name">Huyện Tam Bình</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="861" model="res.district">
+			<field name="madvhc">861</field>
+			<field name="name">Thị xã Bình Minh</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="862" model="res.district">
+			<field name="madvhc">862</field>
+			<field name="name">Huyện Trà Ôn</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="863" model="res.district">
+			<field name="madvhc">863</field>
+			<field name="name">Huyện Bình Tân</field>
+			<field name="city_madvhc">86</field>
+			<field name="city_id">770</field>
+		</record>
+		<record id="866" model="res.district">
+			<field name="madvhc">866</field>
+			<field name="name">Thành phố Cao Lãnh</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="867" model="res.district">
+			<field name="madvhc">867</field>
+			<field name="name">Thành phố Sa Đéc</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="868" model="res.district">
+			<field name="madvhc">868</field>
+			<field name="name">Thị xã Hồng Ngự</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="869" model="res.district">
+			<field name="madvhc">869</field>
+			<field name="name">Huyện Tân Hồng</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="870" model="res.district">
+			<field name="madvhc">870</field>
+			<field name="name">Huyện Hồng Ngự</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="871" model="res.district">
+			<field name="madvhc">871</field>
+			<field name="name">Huyện Tam Nông</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="872" model="res.district">
+			<field name="madvhc">872</field>
+			<field name="name">Huyện Tháp Mười</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="873" model="res.district">
+			<field name="madvhc">873</field>
+			<field name="name">Huyện Cao Lãnh</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="874" model="res.district">
+			<field name="madvhc">874</field>
+			<field name="name">Huyện Thanh Bình</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="875" model="res.district">
+			<field name="madvhc">875</field>
+			<field name="name">Huyện Lấp Vò</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="876" model="res.district">
+			<field name="madvhc">876</field>
+			<field name="name">Huyện Lai Vung</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="877" model="res.district">
+			<field name="madvhc">877</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">87</field>
+			<field name="city_id">729</field>
+		</record>
+		<record id="883" model="res.district">
+			<field name="madvhc">883</field>
+			<field name="name">Thành phố Long Xuyên</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="884" model="res.district">
+			<field name="madvhc">884</field>
+			<field name="name">Thành phố Châu Đốc</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="886" model="res.district">
+			<field name="madvhc">886</field>
+			<field name="name">Huyện An Phú</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="887" model="res.district">
+			<field name="madvhc">887</field>
+			<field name="name">Thị xã Tân Châu</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="888" model="res.district">
+			<field name="madvhc">888</field>
+			<field name="name">Huyện Phú Tân</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="889" model="res.district">
+			<field name="madvhc">889</field>
+			<field name="name">Huyện Châu Phú</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="890" model="res.district">
+			<field name="madvhc">890</field>
+			<field name="name">Huyện Tịnh Biên</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="891" model="res.district">
+			<field name="madvhc">891</field>
+			<field name="name">Huyện Tri Tôn</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="892" model="res.district">
+			<field name="madvhc">892</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="893" model="res.district">
+			<field name="madvhc">893</field>
+			<field name="name">Huyện Chợ Mới</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="894" model="res.district">
+			<field name="madvhc">894</field>
+			<field name="name">Huyện Thoại Sơn</field>
+			<field name="city_madvhc">89</field>
+			<field name="city_id">710</field>
+		</record>
+		<record id="899" model="res.district">
+			<field name="madvhc">899</field>
+			<field name="name">Thành phố Rạch Giá</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="900" model="res.district">
+			<field name="madvhc">900</field>
+			<field name="name">Thị xã Hà Tiên</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="902" model="res.district">
+			<field name="madvhc">902</field>
+			<field name="name">Huyện Kiên Lương</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="903" model="res.district">
+			<field name="madvhc">903</field>
+			<field name="name">Huyện Hòn Đất</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="904" model="res.district">
+			<field name="madvhc">904</field>
+			<field name="name">Huyện Tân Hiệp</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="905" model="res.district">
+			<field name="madvhc">905</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="906" model="res.district">
+			<field name="madvhc">906</field>
+			<field name="name">Huyện Giồng Riềng</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="907" model="res.district">
+			<field name="madvhc">907</field>
+			<field name="name">Huyện Gò Quao</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="908" model="res.district">
+			<field name="madvhc">908</field>
+			<field name="name">Huyện An Biên</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="909" model="res.district">
+			<field name="madvhc">909</field>
+			<field name="name">Huyện An Minh</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="910" model="res.district">
+			<field name="madvhc">910</field>
+			<field name="name">Huyện Vĩnh Thuận</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="911" model="res.district">
+			<field name="madvhc">911</field>
+			<field name="name">Huyện Phú Quốc</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="912" model="res.district">
+			<field name="madvhc">912</field>
+			<field name="name">Huyện Kiên Hải</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="913" model="res.district">
+			<field name="madvhc">913</field>
+			<field name="name">Huyện U Minh Thượng</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="914" model="res.district">
+			<field name="madvhc">914</field>
+			<field name="name">Huyện Giang Thành</field>
+			<field name="city_madvhc">91</field>
+			<field name="city_id">741</field>
+		</record>
+		<record id="916" model="res.district">
+			<field name="madvhc">916</field>
+			<field name="name">Quận Ninh Kiều</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="917" model="res.district">
+			<field name="madvhc">917</field>
+			<field name="name">Quận Ô Môn</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="918" model="res.district">
+			<field name="madvhc">918</field>
+			<field name="name">Quận Bình Thuỷ</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="919" model="res.district">
+			<field name="madvhc">919</field>
+			<field name="name">Quận Cái Răng</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="923" model="res.district">
+			<field name="madvhc">923</field>
+			<field name="name">Quận Thốt Nốt</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="924" model="res.district">
+			<field name="madvhc">924</field>
+			<field name="name">Huyện Vĩnh Thạnh</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="925" model="res.district">
+			<field name="madvhc">925</field>
+			<field name="name">Huyện Cờ Đỏ</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="926" model="res.district">
+			<field name="madvhc">926</field>
+			<field name="name">Huyện Phong Điền</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="927" model="res.district">
+			<field name="madvhc">927</field>
+			<field name="name">Huyện Thới Lai</field>
+			<field name="city_madvhc">92</field>
+			<field name="city_id">723</field>
+		</record>
+		<record id="930" model="res.district">
+			<field name="madvhc">930</field>
+			<field name="name">Thành phố Vị Thanh</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="931" model="res.district">
+			<field name="madvhc">931</field>
+			<field name="name">Thị xã Ngã Bảy</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="932" model="res.district">
+			<field name="madvhc">932</field>
+			<field name="name">Huyện Châu Thành A</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="933" model="res.district">
+			<field name="madvhc">933</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="934" model="res.district">
+			<field name="madvhc">934</field>
+			<field name="name">Huyện Phụng Hiệp</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="935" model="res.district">
+			<field name="madvhc">935</field>
+			<field name="name">Huyện Vị Thuỷ</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="936" model="res.district">
+			<field name="madvhc">936</field>
+			<field name="name">Huyện Long Mỹ</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="937" model="res.district">
+			<field name="madvhc">937</field>
+			<field name="name">Thị xã Long Mỹ</field>
+			<field name="city_madvhc">93</field>
+			<field name="city_id">734</field>
+		</record>
+		<record id="941" model="res.district">
+			<field name="madvhc">941</field>
+			<field name="name">Thành phố Sóc Trăng</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="942" model="res.district">
+			<field name="madvhc">942</field>
+			<field name="name">Huyện Châu Thành</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="943" model="res.district">
+			<field name="madvhc">943</field>
+			<field name="name">Huyện Kế Sách</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="944" model="res.district">
+			<field name="madvhc">944</field>
+			<field name="name">Huyện Mỹ Tú</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="945" model="res.district">
+			<field name="madvhc">945</field>
+			<field name="name">Huyện Cù Lao Dung</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="946" model="res.district">
+			<field name="madvhc">946</field>
+			<field name="name">Huyện Long Phú</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="947" model="res.district">
+			<field name="madvhc">947</field>
+			<field name="name">Huyện Mỹ Xuyên</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="948" model="res.district">
+			<field name="madvhc">948</field>
+			<field name="name">Thị xã Ngã Năm</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="949" model="res.district">
+			<field name="madvhc">949</field>
+			<field name="name">Huyện Thạnh Trị</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="950" model="res.district">
+			<field name="madvhc">950</field>
+			<field name="name">Thị xã Vĩnh Châu</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="951" model="res.district">
+			<field name="madvhc">951</field>
+			<field name="name">Huyện Trần Đề</field>
+			<field name="city_madvhc">94</field>
+			<field name="city_id">761</field>
+		</record>
+		<record id="954" model="res.district">
+			<field name="madvhc">954</field>
+			<field name="name">Thành phố Bạc Liêu</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="956" model="res.district">
+			<field name="madvhc">956</field>
+			<field name="name">Huyện Hồng Dân</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="957" model="res.district">
+			<field name="madvhc">957</field>
+			<field name="name">Huyện Phước Long</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="958" model="res.district">
+			<field name="madvhc">958</field>
+			<field name="name">Huyện Vĩnh Lợi</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="959" model="res.district">
+			<field name="madvhc">959</field>
+			<field name="name">Thị xã Giá Rai</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="960" model="res.district">
+			<field name="madvhc">960</field>
+			<field name="name">Huyện Đông Hải</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="961" model="res.district">
+			<field name="madvhc">961</field>
+			<field name="name">Huyện Hoà Bình</field>
+			<field name="city_madvhc">95</field>
+			<field name="city_id">715</field>
+		</record>
+		<record id="964" model="res.district">
+			<field name="madvhc">964</field>
+			<field name="name">Thành phố Cà Mau</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="966" model="res.district">
+			<field name="madvhc">966</field>
+			<field name="name">Huyện U Minh</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="967" model="res.district">
+			<field name="madvhc">967</field>
+			<field name="name">Huyện Thới Bình</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="968" model="res.district">
+			<field name="madvhc">968</field>
+			<field name="name">Huyện Trần Văn Thời</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="969" model="res.district">
+			<field name="madvhc">969</field>
+			<field name="name">Huyện Cái Nước</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="970" model="res.district">
+			<field name="madvhc">970</field>
+			<field name="name">Huyện Đầm Dơi</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="971" model="res.district">
+			<field name="madvhc">971</field>
+			<field name="name">Huyện Năm Căn</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="972" model="res.district">
+			<field name="madvhc">972</field>
+			<field name="name">Huyện Phú Tân</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+		<record id="973" model="res.district">
+			<field name="madvhc">973</field>
+			<field name="name">Huyện Ngọc Hiển</field>
+			<field name="city_madvhc">96</field>
+			<field name="city_id">722</field>
+		</record>
+	</data>
+</odoo>

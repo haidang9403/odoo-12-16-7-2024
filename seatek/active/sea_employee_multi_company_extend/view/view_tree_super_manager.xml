@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+         <record id="super_manager_tree_view" model="ir.ui.view">
+            <field name="name">super.manager.tree.view</field>
+            <field name="model">hr.employee.multi.company</field>
+            <field name="inherit_id" ref="sea_multi_company_employee.view_multi_company_employee_tree"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='parent_id']" position="after">
+                     <field name="super_manager_company" />
+                 </xpath>
+                <xpath expr="//field[@name='parent_id']" position="before">
+                     <field name="is_ceo"  />
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

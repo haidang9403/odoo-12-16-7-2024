@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_department,sale.department,sea_sales_department.model_sales_department,,1,1,1,0

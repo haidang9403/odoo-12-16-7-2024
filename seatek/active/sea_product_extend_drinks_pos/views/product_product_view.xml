@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sea_product_extend_drinks_pos_view">
+        <field name="name">product.product.view.form.drinks.pos</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="sea_pos_check_drinks"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="sea_hr_employee_history_form_view">
+            <field name="name">sea.hr.employee.history.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="sea_multi_company_employee.view_employee_base_group"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//notebook/page[6]" position="replace" >
+                    <page name="seatek_history" string="Employee History" groups="hr.group_hr_manager">
+                        <group>
+                            <group>
+                                <group>
+                                    <button type="object" name="sea_salary_history"  class="oe_highlight">Salary History</button>
+                                </group>
+                                <group>
+                                    <button type="object" name="sea_salary_chart"  class="oe_highlight">Salary Chart</button>
+                                </group>
+                            </group>
+                            <group>
+                                <group>
+                                    <button type="object" name="sea_employee_history" class="oe_highlight">Employee History</button>
+                                </group>
+                                <group>
+                                    <button type="object" name="sea_employee_status_history" class="oe_highlight">Employee Status History</button>
+                                </group>
+                            </group>
+                        </group>
+                    </page>
+                 </xpath>
+            </field>
+         </record>
+    </data>
+</odoo>

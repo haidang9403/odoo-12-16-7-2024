@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="asset_profile_pager_format" model="report.paperformat">
+            <field name="name">Asset Profile Pager Format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">90</field>
+        </record>
+    <report
+        id="export_asset_profile"
+        string="Asset Profile"
+        model="account.asset.asset"
+        report_type="xlsx"
+        name="sea_asset_base.export_asset_profile_xls"
+        file="sea_asset_base.export_asset_profile_xls"
+        print_report_name="'Asset Profile'"
+        menu="True"/>
+<!--    <record id="export_asset_profile" model="ir.actions.server">-->
+<!--        <field name="name">Export Asset Profile</field>-->
+<!--        <field name="model_id" ref="sea_asset_base.model_account_asset_asset"/>-->
+<!--        <field name="binding_model_id" ref="sea_asset_base.model_account_asset_asset"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">-->
+<!--res_id = env['asset.qrcode'].create({'user_id': env.user.id})-->
+<!--datas=res_id.get_datas(records)-->
+
+<!--action = env.ref('sea_asset_base.export_asset_profile').report_action(res_id,data=datas)</field>-->
+<!--    </record>-->
+    </data>
+
+</odoo>

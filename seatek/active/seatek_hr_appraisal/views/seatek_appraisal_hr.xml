@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="appraisal_hr_action_tree_view" model="ir.ui.view">
+            <field name="name">HR Appraisal Manage View</field>
+            <field name="model">hr.survey.user.input</field>
+            <field name="groups_id" eval="[(4, ref('seatek_hr_appraisal.hr_appraisal_company_manager'))]"/>
+            <field name="arch" type="xml">
+                <tree editable="top" delete="0" class="appraisal_treeview_scrollable sticky_table_header">
+                    <!--TKK-->
+                    <field name="job_code_compute" invisible="1"/>
+                    <!--  END  -->
+                    <field name="security_board_of_manager_and_hr_manager" invisible="1"/>
+                    <field name="appraisal_id" readonly="0"  options="{'no_create': True}" attrs="{'required':True}" domain="[('appraisal_mode','=','open')]"/>
+
+                    <field name="employee_id" invisible="1" options="{'no_create': True}"
+                           domain="[('employee_current_status', '=', 'working')]" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="company_id" invisible="1" options="{'no_create': True}"/>
+                    <field name="user_id" readonly="0" groups="seatek_hr_appraisal.hr_appraisal_administrator" options="{'no_create': True}" invisible="1"/>
+
+                    <field name="manager_id" invisible="1" domain="[('id', '!=', employee_id),('id', '!=', smanager_id),('employee_current_status', '=', 'working')]" options="{'no_create': True}" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+                    <field name="smanager_id" invisible="1" domain="[('id', '!=', employee_id),('id', '!=', manager_id),('employee_current_status', '=', 'working')]" options="{'no_create': True}" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="colleague_id" invisible="1" domain="[('id', '!=', employee_id),('id', '!=', manager_id),('employee_current_status', '=', 'working')]" options="{'no_create': True}" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="s_identification_id" string="SeaCode NV"/>
+                    <field name="employee_multi_id" attrs="{'required':True}"  options="{'no_create': True}"
+                           domain="[('employee_current_status', '!=', 'resigned')]"/>
+                    <field name="s_identification_id_manager" string="SeaCode QLTT"/>
+                    <field name="manager_multi_id"
+                           domain="[('id', '!=', employee_multi_id),('id', '!=', smanager_multi_id),('id','!=',colleague_multi_id),('id','!=',colleague2_multi_id),('id','!=',colleague3_multi_id),('employee_current_status', '!=', 'resigned')]"
+                           groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="s_identification_id_smanager" string="SeaCode Cấp Trên QLTT"/>
+                    <field name="smanager_multi_id"
+                           domain="[('id', '!=', employee_multi_id),('id', '!=', manager_multi_id),('id','!=',colleague_multi_id),('id','!=',colleague2_multi_id),('id','!=',colleague3_multi_id),('employee_current_status', '!=', 'resigned')]"
+                           groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="colleague_multi_id"
+                           domain="[('id', '!=', employee_multi_id),('id', '!=', manager_multi_id),('id', '!=', smanager_multi_id),('id','!=',colleague2_multi_id),('id','!=',colleague3_multi_id),('employee_current_status', '!=', 'resigned')]" groups="seatek_hr_appraisal.hr_appraisal_board_of_manager"/>
+                    <field name="colleague2_multi_id"
+                           domain="[('id', '!=', employee_multi_id),('id', '!=', manager_multi_id),('id', '!=', smanager_multi_id),('id','!=',colleague_multi_id),('id','!=',colleague3_multi_id),('employee_current_status', '!=', 'resigned')]" groups="seatek_hr_appraisal.hr_appraisal_board_of_manager"/>
+                    <field name="colleague3_multi_id"
+                           domain="[('id', '!=', employee_multi_id),('id', '!=', manager_multi_id),('id', '!=', smanager_multi_id),('id','!=',colleague_multi_id),('id','!=',colleague2_multi_id),('employee_current_status', '!=', 'resigned')]" groups="seatek_hr_appraisal.hr_appraisal_board_of_manager"/>
+                    <field name="lock_state"
+                           string="Đánh Giá?"
+                           groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="department_id"/>
+                    <field name="job_position_id"/>
+
+                    <field name="rating1_value"
+                           readonly="1"
+                           groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="rating2_value" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+<!--                    <field name="rating3_value" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>-->
+<!--                    <field name="rating4_value_compute" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>-->
+                    <field name="user_input_status" string="Trạng Thái" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                    <field name="company_id" string="Công Ty"
+                           attrs="{'readonly':[('id','!=',1)]}"
+                           groups="seatek_hr_appraisal.hr_appraisal_manager"
+                           widget="many2one_company_shortname"
+                           required="1" />
+                    <field name="short_name_compute" string="Công Ty" invisible="1" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"
+                           widget="appraisal_many2one"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="menu_appraisal_hr_action" model="ir.actions.act_window">
+            <field name="name">QUẢN LÝ</field>
+            <field name="res_model">hr.survey.user.input</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('company_id','in',company_ids)]</field>
+            <field name="view_id" eval="False"/>
+            <!-- Khánh 19/12/2022-->
+            <!-- <field name="context">{'search_default_open_state': 1}</field>            -->
+            <field name="context">{'search_default_group_appraisal_id':1}</field>
+            <field name="search_view_id" ref="hr_survey_user_input_hddg_view_search_view"/>
+            <field name="limit">100</field>
+        </record>
+
+
+        <record id="menu_appraisal_hr_action_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="151"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="appraisal_hr_action_tree_view"/>
+            <field name="act_window_id" ref="menu_appraisal_hr_action"/>
+        </record>
+    </data>
+</odoo>

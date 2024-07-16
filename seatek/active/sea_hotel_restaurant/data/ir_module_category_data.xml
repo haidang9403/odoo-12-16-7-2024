@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_category_sea_hotel_restaurant" model="ir.module.category" >
+            <field name="name">Hotel and Restaurant</field>
+            <field name="description">Helps you manage your Hotel and Restaurant.</field>
+            <field name="sequence">1506</field>
+        </record>
+    </data>
+</odoo>
+ 

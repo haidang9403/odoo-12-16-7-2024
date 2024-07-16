@@ -1,0 +1,54 @@
+/* Khoi 9/3/2023 16:27*/
+/* employee table with sticky header and columns */
+
+.treeview_scrollable {
+    width: 100%;
+    max-width: 180%; /* Set the maximum height of the tree view */
+    overflow-x: visible; /* Enable vertical scrolling */
+}
+
+
+
+/*sticky table header*/
+
+.treeview_scrollable thead {
+    position: sticky;
+    top: 0;
+
+}
+
+.attendance_button {
+    margin-left: 10px;
+    background-color: #875a7b;
+    border-color: #5f5e97;
+}
+.attendance_button:hover {
+    background-color: #68465f;
+    border-color: #5f5e97;
+}
+
+select#attendanceSelect {
+    height: 2%;
+    width: 50%;
+    padding: 4.5px 9px;
+    background-color: #E2E2E0;
+    appearance: none; /* Ẩn biểu tượng mặc định của trình duyệt */
+    padding-right: 20px; /* Duy trì khoảng trắng bên phải để không che phủ biểu tượng */
+    background-position: right center; /* Đặt vị trí của biểu tượng (ở đây là phải giữa) */
+    background-repeat: no-repeat; /* Không lặp lại biểu tượng */
+    font-size: 15px;
+}
+
+select#attendanceSelect option {
+    padding: 5px;
+    font-size: 15px;
+    color: #212529;
+    background-color: #fff;
+}
+select#attendanceSelect option:checked {
+    background-color: #E2E2E0;
+    color: #212529;
+}
+.filter_att {
+    padding-top: 0.5%;
+}

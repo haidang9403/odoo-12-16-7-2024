@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_credit_policy_user,credit.policy user,model_credit_policy,,1,0,0,0
+access_credit_policy_manager,credit.policy manager,model_credit_policy,sea_report_overdue_debit.group_customer_risk_management,1,1,1,1
+access_sale_order_customer_risk_management,sale.order.customer.risk.management,sale.model_sale_order,sea_report_overdue_debit.group_customer_risk_management,1,1,0,0

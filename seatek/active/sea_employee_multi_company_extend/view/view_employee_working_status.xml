@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <data>
+        <record id="working_status_form_view" model="ir.ui.view">
+            <field name="name">working.status.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='user_id']" position="after">-->
+<!--                     <field name="send_to_mails" widget="many2many_tags"/>-->
+<!--                 </xpath>-->
+<!--                 <xpath expr="//field[@name='user_id']" position="after">-->
+<!--                     <field name="working_status_in_coporation"/>-->
+<!--                 </xpath>-->
+                <xpath expr="//field[@name='parent_id_compute']" position="after">
+                     <field name="super_manager" readonly="0"/>
+
+                 </xpath>
+                <xpath expr="//field[@name='parent_id_compute']" position="before">
+                     <field name="is_ceo_compute" readonly="0"/>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

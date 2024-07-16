@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery="div.payment-buttons" t-operation="append">
+            <t t-if="widget.pos.config.sea_customer_get_invoice">
+                <span class="left_button get_invoice">
+                    <div class="button-icon">
+                        <img src="/pos_retail/static/src/icons/invoice.png" class="pos_logo"/>
+                    </div>
+                    <div class="button-name">
+                        Khách lấy hóa đơn
+                    </div>
+                </span>
+            </t>
+        </t>
+    </t>
+</templates>

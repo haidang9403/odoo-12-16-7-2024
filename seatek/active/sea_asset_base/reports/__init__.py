@@ -1,0 +1,5 @@
+from . import asset_report,asset_qrcode
+from . import asset_report_xls
+from . import export_inventory_asset,asset_asset_transfer,asset_repair,asset_inventory_pkk
+from . import export_inventory_asset_xls,asset_inventory_report,asset_inventory_report_xls,export_asset_profile_xls
+

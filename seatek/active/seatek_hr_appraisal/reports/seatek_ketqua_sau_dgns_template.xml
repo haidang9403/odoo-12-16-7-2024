@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_seatek_ketqua_sau_dgns"><!--report_holidayssummary-->
+        <t t-foreach="docs" t-as="form">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout" t-lang="o.user_id.lang">
+                <style>
+                    .page {
+                        font-size: 16px;
+                    }
+                    table, th, td {
+                      border: 1px solid #333 !important;
+                    }
+                    .table__heading {
+                        text-transform: uppercase;
+                        font-size: 20px;
+                    }
+                    .vertical-center {
+                        vertical-align: middle !important;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+
+                    .only-vertical-center {
+                        vertical-align: middle !important;
+                    }
+
+                    .text-vertical-center {
+                        vertical-align: middle !important;
+                        text-align: center;
+                    }
+
+                    .title {
+                        text-transform: uppercase;
+                        font-size: 16px !important;
+                    }
+                </style>
+                <div class="page">
+                    <h3><br/></h3>
+                    <h4 class="table__heading"><strong>I. Thông tin nhân sự.</strong></h4>
+                </div>
+
+            </t>
+            </t>
+        </t>
+    </template>
+    <report
+            id="action_report_ketqua_sau_dgns"
+            string="KẾT QUẢ ĐÁNH GIÁ NHÂN SỰ"
+            model="hr.appraisal"
+            report_type="xlsx"
+            name="seatek_hr_appraisal.report_ketqua_sau_dgns_xlsx"
+            file="seatek_hr_appraisal.report_ketqua_sau_dgns_xlsx"
+            print_report_name="'KẾT QUẢ ĐÁNH GIÁ NHÂN SỰ - %s' % object.name"
+            menu="False"/>
+
+
+</odoo>

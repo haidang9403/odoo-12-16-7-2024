@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="danh_gia_seacorp_action" model="ir.actions.act_window">
+            <field name="name">Đánh Giá Seacorp</field>
+            <field name="res_model">hr.survey.user.input</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="hr_survey_user_input_seacorp_view_form" model="ir.ui.view">
+            <field name="name">hr.survey.user.input.seacorp.view.form</field>
+            <field name="model">hr.survey.user.input</field>
+            <field name="sequence" eval="6"/>
+            <field name="arch" type="xml">
+                <form js_class="form_appraisal" class="o_user_input_dialog" create="0" delete="false" duplicate="false" style="width:150% !important"
+                      options="{'appraisal':True}">
+                    <field name="is_manager" invisible="1"/>
+                    <field name="user_id_compute" invisible="1"/>
+                    <field name="nhansu_status" invisible="1"/>
+                    <field name="lock_state_compute" invisible="1"/>
+                    <field name="open_state" invisible="1"/>
+                    <field name="achievement_name" invisible="1"/>
+                    <field name="lock_state" invisible="1"/>
+                    <group  string="THÔNG TIN NHÂN SỰ">
+                                <field name="employee_name" string="Tên"/>
+                                <field name="company_id" invisible="0"/>
+                                <field name="department_name" invisible="1"/>
+                                <field name="job_position" invisible="1"/>
+                                <field name="lock_state" string="Đánh giá" invisible="1"/>
+                                <field name="manager_name" invisible="1"/>
+                                <field name="smanager_name" invisible="1"/>
+                                <field name="survey_id" readonly="1" invisible="1"/>
+                                <field name="employee_id" invisible="1"/>
+                            </group>
+                    <group string="SEACORP">
+                        <notebook string="Seacorp">
+                        <page string="question_1">
+                            <field name="questions_1" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="seacorp" class="edit_table_SEACORP">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" invisible="1" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 2">
+                            <field name="questions_2" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="seacorp" class="edit_table_SEACORP">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" invisible="1" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 3">
+                            <field name="questions_3" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="seacorp" class="edit_table_SEACORP">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" invisible="1" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 4">
+                            <field name="questions_4" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="seacorp" class="edit_table_SEACORP">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" invisible="1" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 5">
+                            <field name="questions_5" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="seacorp" class="edit_table_SEACORP">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" invisible="1" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+<!--         <record id="fair_hide_view_hr_survey_user_seacorp_form" model="ir.ui.view">-->
+<!--            <field name="name">hr.survey.user.input.hide</field>-->
+<!--            <field name="model">hr.survey.user.input</field>-->
+<!--            <field name="inherit_id" ref="seatek_hr_appraisal.hr_survey_user_input_seacorp_view_form"/>-->
+<!--            <field name="open_state"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="/form" position="attributes">-->
+<!--                    <attribute name="attrs">{'edit': [('open_state', '==', True)]}</attribute>-->
+<!--&lt;!&ndash;                    <attribute name="edit" position="replace">"[('open_state', '=', True)]"</attribute>&ndash;&gt;-->
+
+<!--                </xpath>-->
+<!--&lt;!&ndash;                <attribute name="edit">false</attribute>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <xpath expr="/form" position="attributes">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <attribute name="edit" position="replace">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <expr>[('open_state', '=', False)]</expr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </attribute>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </xpath>&ndash;&gt;-->
+
+<!--            </field>-->
+<!--        </record>-->
+        <record id="danh_gia_seacorp_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_survey_user_input_seacorp_view_form"/>
+            <field name="act_window_id" ref="danh_gia_seacorp_action"/>
+        </record>
+        <record id="hr_survey_danh_gia_seacorp" model="ir.actions.server">
+            <field name="name">Đánh Giá Seacorp</field>
+            <field name="model_id" ref="model_hr_survey_user_input"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('seatek_hr_appraisal.danh_gia_seacorp_action').read()[0]
+res_id = env['hr.survey.user.input'].search([('id','=',record.id)], limit=1)
+
+if res_id:
+    if res_id.user_open_state and res_id.open_state:
+        action_values.update({'context':{'edit':1}})
+    else:
+        action_values.update({'context':{'edit':0}})
+    action_values.update({'res_id': res_id.id})
+action = action_values
+            </field>
+        </record>
+        <!--KPIS-->
+        <record id="danh_gia_kpis_action" model="ir.actions.act_window">
+            <field name="name">Đánh Giá KPIS</field>
+            <field name="res_model">hr.survey.user.input</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="hr_survey_user_input_kpis_view_form" model="ir.ui.view">
+            <field name="name">hr.survey.user.input.kpis.view.form</field>
+            <field name="model">hr.survey.user.input</field>
+            <field name="sequence" eval="6"/>
+            <field name="arch" type="xml">
+                <form js_class="form_appraisal" class="o_user_input_dialog" create="0" delete="false" duplicate="false" style="width:150% !important"  options="{'appraisal':True}">
+                    <field name="is_manager" invisible="1"/>
+                    <field name="user_id_compute" invisible="1"/>
+                    <field name="nhansu_status" invisible="1"/>
+                    <field name="lock_state_compute" invisible="1"/>
+                    <field name="open_state" invisible="1"/>
+                    <field name="achievement_name" invisible="1"/>
+                    <field name="lock_state" invisible="1"/>
+                    <group  string="THÔNG TIN NHÂN SỰ">
+                        <field name="employee_name" string="Tên"/>
+                        <field name="department_name" invisible="1"/>
+                        <field name="job_position" invisible="1"/>
+                        <field name="lock_state" string="Đánh giá" invisible="1"/>
+                        <field name="manager_name" invisible="1"/>
+                        <field name="smanager_name" invisible="1"/>
+                        <field name="survey_id" readonly="1" invisible="1"/>
+                        <field name="employee_id" invisible="1"/>
+                    </group>
+                    <group string="KPIS">
+                        <notebook string="kpi">
+                        <page string="Page 6">
+                            <field name="questions_6" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="kpis" class="edit_table_KPIs">
+                                    <field name="appraisal_role" invisible="1"/>
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" attrs="{'readonly':[('enable_edit_title','=',False)]}" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 7">
+                            <field name="questions_7" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" class="edit_table_KPIs">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 8">
+                            <field name="questions_8" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" class="edit_table_KPIs">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 9">
+                            <field name="questions_9" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" class="edit_table_KPIs">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Page 10">
+                            <field name="questions_10" widget="appraisalUser_one2many"  options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" class="edit_table_KPIs">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="question_name" readonly="1" class="o_field_value_text"/>
+                                    <field name="enable_edit_percentage" invisible="1"/>
+                                    <field name="percentage" attrs="{'invisible':[('enable_edit_percentage','=',False)]}" readonly="1"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" attrs="{'readonly':[('can_input','=',False)]}" class="o_field_value_number"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="max_score" invisible="1"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="danh_gia_kpis_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_survey_user_input_kpis_view_form"/>
+            <field name="act_window_id" ref="danh_gia_kpis_action"/>
+        </record>
+        <record id="hr_survey_danh_gia_kpis" model="ir.actions.server">
+            <field name="name">Đánh Giá KPIS</field>
+            <field name="model_id" ref="model_hr_survey_user_input"/>
+            <field name="state">code</field>
+            <field name="code">
+action_values = env.ref('seatek_hr_appraisal.danh_gia_kpis_action').read()[0]
+res_id = env['hr.survey.user.input'].search([('id','=',record.id)], limit=1)
+if res_id:
+    if res_id.user_open_state and res_id.open_state:
+        action_values.update({'context':{'edit':1}})
+    else:
+        action_values.update({'context':{'edit':0}})
+    action_values.update({'res_id': res_id.id})
+action = action_values
+            </field>
+        </record>
+        <record id="hr_survey_user_input_view_kanban" model="ir.ui.view">
+            <field name="name">hr.survey.user.input.kanban</field>
+            <field name="model">hr.survey.user.input</field>
+            <field name="priority">10</field>
+
+            <field name="arch" type="xml">
+                <kanban class="o_hr_appraisal_user_input_kanban" create="0">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="lock_state_compute" invisible="1"/>
+                    <field name="nhansu_status" invisible="1"/>
+                    <field name="open_state" invisible="1"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click  o_hr_appraisal_kanban">
+
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <field name="nhansu_status_name" string="Trạng Thái"/>
+                                    <p>
+                                        <field name="appraisal_id"/>
+                                    </p>
+
+                                    <span attrs="{'invisible':[('manager_multi_id','=',False)]}">QLTT: <field name="manager_multi_id" /> - <field
+                                            name="manager_status_name"/></span>
+                                    <div>
+                                        <span attrs="{'invisible':[('smanager_multi_id','=',False)]}">CẤP TRÊN QLTT: <field name="smanager_multi_id"/> - <field
+                                                name="smanager_status_name"/></span>
+                                    </div>
+                                    <button  string="Đã Hoàn Thành" name="nhansu_status_action" type="object" class="btn-primary"  attrs="{'invisible': ['|',('nhansu_status', '=', True),('open_state', '=', False)]}">Đã Hoàn Thành</button>
+                                    <button  string="Tiếp Tục Đánh Giá" name="nhansu_status_action" type="object" class="btn-primary"  attrs="{'invisible': ['|',('nhansu_status', '=', False),('open_state', '=', False)]}">Tiếp Tục Đánh Giá</button>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="hr_survey_user_input_view_form" model="ir.ui.view">
+            <field name="name">hr.survey.user.input.view.form</field>
+            <field name="model">hr.survey.user.input</field>
+            <field name="target">inline</field>
+            <field name="sequence" eval="1"/>
+            <field name="arch" type="xml">
+                <form js_class="form_appraisal" class="o_user_input" create="0" delete="false" duplicate="false">
+                    <field name="is_manager" invisible="1"/>
+                    <field name="user_id_compute" invisible="1"/>
+                    <field name="nhansu_status" invisible="1"/>
+                    <field name="lock_state_compute" invisible="1"/>
+                    <field name="open_state" invisible="1"/>
+                    <field name="user_open_state" invisible="1"/>
+                    <field name="achievement_name" invisible="1"/>
+                    <header>
+                        <button  string="Đã Hoàn Thành" name="nhansu_status_action" type="object" class="btn-primary"  attrs="{'invisible': ['|',('nhansu_status', '=', True),('open_state', '=', False)]}"/>
+                        <button  string="Tiếp Tục Đánh Giá" name="nhansu_status_action" type="object" class="btn-primary"  attrs="{'invisible': ['|',('nhansu_status', '=', False),('open_state', '=', False)]}"/>
+                        <button  string="Đánh Giá SEACORP" name="%(hr_survey_danh_gia_seacorp)d" type="action" class="btn-primary" style="margin-left:12px;"/>
+                        <button  string="Đánh Giá KPIS" name="%(hr_survey_danh_gia_kpis)d" type="action" class="btn-primary" style="margin-left:12px;"/>
+                        <button  string="Export Excel" name="export_excel_appraisal" type="object" class="btn-primary" invisible="0"/>
+                    </header>
+                    <field name="lock_state" invisible="1"/>
+
+                    <div style="margin-top:12px;" attrs="{'invisible': ['|',('nhansu_status', '=', False),('open_state', '=', False)]}">
+                        <span>ANH CHỊ ĐÃ HOÀN THÀNH ĐÁNH GIÁ - NẾU CẦN ĐÁNH GIÁ LẠI ANH CHỊ CHỌN "TIẾP TỤC ĐÁNH GIÁ"</span>
+                    </div>
+                    <div style="margin-top:12px;" attrs="{'invisible': ['|',('nhansu_status', '=', True),('open_state', '=', False)]}">
+                        <span>ANH CHỊ CHỌN "ĐÃ HOÀN THÀNH" ĐỂ HOÀN THÀNH BÀI ĐÁNH GIÁ</span>
+                    </div>
+                    <group>
+                        <group colspan="2">
+                            <group  string="THÔNG TIN NHÂN SỰ">
+                                <field name="appraisal_id" string="Kỳ" options="{'no_open': True}" readonly="1"/>
+                                <field name="employee_name" string="Tên"/>
+                                <field name="company_id" string="Công ty" options="{'no_open': True}" context="{'test_company': True}" readonly="1"/>
+                                <field name="department_name"/>
+                                <field name="job_position"/>
+                                <field name="lock_state" string="Đánh giá" invisible="1"/>
+                                <field name="manager_name"/>
+                                <field name="smanager_name"/>
+                                <field name="survey_id" readonly="1" invisible="1"/>
+                                <field name="employee_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <span>HƯỚNG DẪN XẾP LOẠI</span><br/>
+                                <table style="width:100%" class="de_xuat">
+
+                                    <tr style="text-align:center;">
+                                        <th rowspan="2">XẾP LOẠI</th>
+                                        <th rowspan="2">ĐIỂM TB CHUNG</th>
+                                        <th colspan="2">THÀNH TÍCH</th>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <th>SEACORP</th>
+                                        <th>KPIs</th>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>A</td>
+                                        <td>Từ 4,5 đến 5,0</td>
+                                        <td>TIÊU BIỂU</td>
+                                        <td>CHUYÊN NGHIỆP</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>B</td>
+                                        <td>Từ 3,5 đến 4,5</td>
+                                        <td>PHÁT HUY TỐT</td>
+                                        <td>HOÀN THÀNH TỐT</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>C</td>
+                                        <td>Từ 2,5 đến 3,5</td>
+                                        <td>PHÁT HUY</td>
+                                        <td>HOÀN THÀNH</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>D</td>
+                                        <td>Từ 1,5 đến 2,5</td>
+                                        <td>CHƯA PHÁT HUY</td>
+                                        <td>KHÔNG HOÀN THÀNH</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>E</td>
+                                        <td>Dưới 1,5</td>
+                                        <td>KHÔNG PHÙ HỢP</td>
+                                        <td>KHÔNG PHÙ HỢP</td>
+                                    </tr>
+                                </table><br/>
+                                <div style="margin-top:12px;"></div>
+                                <br/>
+                            </group>
+                        </group><br/>
+                        <group colspan="2" string="Đề Xuất Lên Hội Đồng Đánh Giá">
+                             <table style="width:100%" class="de_xuat">
+                                <tr>
+                                    <th style="text-align:center;">Người Đề Xuất</th>
+                                    <th style="text-align:center;">Đề Xuất</th>
+                                    <th  style="text-align:center;width:40%;">Lý Do</th>
+                                </tr>
+                                <tr>
+                                    <td>Nhân Viên: <field name="employee_name" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="de_xuat_dg_tai_hddg_user"
+                                                                          attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),('user_open_state','=',False)]}"/></td>
+                                    <td><field name="de_xuat_lydo_user"
+                                               attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),
+                                        ('user_open_state','=',False)]}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>QLTT: <field name="manager_name" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="de_xuat_dg_tai_hddg_manager" readonly="1"/></td>
+                                    <td><field name="de_xuat_lydo_manager" readonly="1"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Cấp Trên QLTT: <field name="smanager_name" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="de_xuat_dg_tai_hddg_smanager" readonly="1"/></td>
+                                    <td><field name="de_xuat_lydo_smanager" readonly="1"/></td>
+                                </tr>
+                            </table><br/>
+                        </group><br/>
+                        <group colspan="1" string="Đề Xuất Lương - Thưởng - Chức Vụ - Thuyên Chuyển">
+                             <table style="width:100%" class="de_xuat">
+                                <tr>
+                                    <th style="text-align:center;">Người Đề Xuất</th>
+                                    <th style="text-align:center;">Lương</th>
+                                    <th style="text-align:center;">Thưởng</th>
+                                    <th style="text-align:center;">Chức Vụ</th>
+                                    <th style="text-align:center;">Thuyên Chuyển</th>
+                                    <th style="text-align:center;">Ý Kiến Đánh Giá</th>
+                                </tr>
+                                <tr>
+                                    <td>Nhân Viên: <field name="employee_name" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="dexuat_salary_user" attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),('user_open_state','=',False)]}"/></td>
+                                    <td style="text-align:center;"><field name="dexuat_thuong_user" attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),('user_open_state','=',False)]}"/></td>
+                                    <td><field name="dexuat_chucvu_user"
+                                               attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),('user_open_state','=',False)]}"/></td>
+                                    <td><field name="dexuat_thuyenchuyen_user" attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),('user_open_state','=',False)]}"/></td>
+                                    <td><field name="user_opinion" attrs="{'readonly':['|','|','|',('lock_state','=','no'),('nhansu_status','=',True),('open_state','=',False),('user_open_state','=',False)]}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>QLTT: <field name="manager_name" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="dexuat_salary_manager" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="dexuat_thuong_manager" readonly="1"/></td>
+                                    <td><field name="dexuat_chucvu_manager" readonly="1"/></td>
+                                    <td><field name="dexuat_thuyenchuyen_manager" readonly="1"/></td>
+                                    <td><field name="manager_opinion" readonly="1"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Cấp Trên QLTT: <field name="smanager_name" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="dexuat_salary_smanager" readonly="1"/></td>
+                                    <td style="text-align:center;"><field name="dexuat_thuong_smanager" readonly="1"/></td>
+                                    <td><field name="dexuat_chucvu_smanager" readonly="1"/></td>
+                                    <td><field name="dexuat_thuyenchuyen_smanager" readonly="1"/></td>
+                                    <td><field name="smanager_opinion" readonly="1"/></td>
+                                </tr>
+                                <tr>
+                                    <td>HĐĐG</td>
+                                    <td  style="text-align:center;"><field name="dexuat_salary_hddg" readonly="1"/></td>
+                                    <td  style="text-align:center;"><field name="dexuat_thuong_hddg" readonly="1"/></td>
+                                    <td><field name="dexuat_chucvu_hddg" readonly="1"/></td>
+                                    <td><field name="dexuat_thuyenchuyen_hddg" readonly="1"/></td>
+                                    <td><field name="hddg_opinion" readonly="1"/></td>
+                                </tr>
+                             </table>
+                        </group>
+                    </group>
+                    <group>
+                        <notebook string="TỔNG HỢP">
+                        <page string="Page 0">
+                            <field name="question_general" widget="appraisalUser_one2many" options="{'no_create':True}" attrs="{'readonly':['|',('lock_state','=','no'),('open_state','=',False)]}">
+                                <tree editable="top" pages="seacorp" general="True" class="edit_table_SEACORP">
+                                    <field name="can_input" invisible="1"/>
+                                    <field name="enable_edit_title" invisible="1"/>
+                                    <field name="page_name" invisible="1"/>
+                                    <field name="prefix" invisible="0" class="o_field_value_prefix edit_STT" readonly="1"/>
+                                    <field name="question_name" attrs="{'readonly':[('enable_edit_title','=',False)]}" class="o_field_value_text"/>
+                                    <field name="user_comment" attrs="{'readonly':[('is_rating','=',True)]}" class="o_field_value_text"/>
+                                    <field name="value" readonly="1" class="o_field_value_number"/>
+                                    <field name="all_comment_no_colleague" readonly="1" class="o_field_value_text"/>
+                                    <field name="value_manager"  readonly="1" class="o_field_value_number"/>
+                                    <field name="value_smanager" readonly="1" class="o_field_value_number"/>
+                                    <field name="value_hddg" readonly="1" class="o_field_value_number"/>
+                                    <field name="summary_level" invisible="0"/>
+                                    <field name="is_rating" invisible="0"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_appraisal_user_action" model="ir.actions.act_window" >
+            <field name="name">ĐÁNH GIÁ CÁ NHÂN</field>
+            <field name="res_model">hr.survey.user.input</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[('user_id','=',uid),('lock_state','=','yes')]</field>
+            <field name="context">{'search_default_group_appraisal_id': 1,'get_short_name':True}</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="action_appraisal_user_action_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="hr_survey_user_input_view_kanban"/>
+            <field name="act_window_id" ref="action_appraisal_user_action"/>
+        </record>
+        <record id="action_appraisal_user_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="5"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_survey_user_input_view_form"/>
+            <field name="act_window_id" ref="action_appraisal_user_action"/>
+        </record>
+        <record id="hr_survey_user_input_view_tree" model="ir.ui.view">
+            <field name="name">hr.survey.user.input.view.tree</field>
+            <field name="model">hr.survey.user.input</field>
+            <field name="arch" type="xml">
+                <tree class="sticky_table_header" create="0">
+                    <field name="job_code_compute" invisible="1"/>
+                    <field name="appraisal_id" string="Kỳ đánh giá" readonly="0"
+                           options="{'no_create': True}" attrs="{'required':True}"
+                           domain="[('appraisal_mode','=','open')]"/>
+                    <field name="company_id"/>
+                    <field name="employee_id" invisible="1" attrs="{'required':True}"/>
+                    <field name="employee_multi_id" attrs="{'required':True}" string="Nhân sự"/>
+                    <field name="manager_multi_id" string="QLTT" readonly="1"/>
+                    <field name="smanager_multi_id" string="Cấp trên QLTT" readonly="1"/>
+                    <field name="lock_state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_appraisal_user_action_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="3"/>
+            <field name="view_mode">tree</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="hr_survey_user_input_view_tree"/>
+            <field name="act_window_id" ref="action_appraisal_user_action"/>
+        </record>
+    </data>
+</odoo>

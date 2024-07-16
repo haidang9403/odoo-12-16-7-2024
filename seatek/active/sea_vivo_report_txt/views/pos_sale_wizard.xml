@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_pos_sale_report_vivo" model="ir.ui.view">
+            <field name="name">view.pos.sales.report.vivo</field>
+            <field name="model">pos.sale.vivo</field>
+            <field name="arch" type="xml">
+                <form string="Report File TXT for Vivo">
+                    <group>
+                        <group>
+                            <field name="start_date" widget="date" attrs="{'required': True}"/>
+                            <field name="end_date" widget="date" attrs="{'required': True}"/>
+                        </group>
+                        <!--<field name="sea_vivo_file_txt" filename="sea_vivo_file_txt"/>
+                        <field name="sea_vivo_filename_txt" filename="sea_vivo_file_txt"/>-->
+                        <group>
+                        <field name="pos_config_ids" mode="tree" colspan="4" nolabel="1"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="button_get_txt" string="Download File (TXT)" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="sea_pos_sale_vivo_report" model="ir.actions.act_window">
+            <field name="name">Sale Report TXT of Vivo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.sale.vivo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="sea_pos_sale_vivo_report" id="menu_action_pos_sale_vivo_report"
+                  name="VivoCity Report" parent="point_of_sale.menu_point_rep" sequence='21'/>
+    </data>
+</odoo>

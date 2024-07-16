@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="hr_employee_temporary" model="hr.employee.temporary">
+            <field name="name">Huỳnh Thái Khoa</field>
+            <field name="company_id">5</field>
+            <field name="employee_id">574</field>
+            <field name="department_id">187</field>
+        </record>
+    </data>
+    <data noupdate="1">
+        <record id="hr_department_temporary" model="hr.department.temporary">
+            <field name="name">TỔ TÀI XẾ</field>
+            <field name="company_id">3</field>
+            <field name="department_id">160</field>
+        </record>
+    </data>
+
+</odoo>

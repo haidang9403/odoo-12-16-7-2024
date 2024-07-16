@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="asset_qrcode_pager_format" model="report.paperformat">
+        <field name="name">Asset QR Code</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">24</field><!--28mm-->
+        <field name="page_width">60</field><!--50-->
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">1</field>
+        <field name="margin_bottom">1</field>
+        <field name="margin_left">1</field>
+        <field name="margin_right">1</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+        <report
+            id="action_print_qrcode"
+            string="PRINT QR-CODE"
+            model="account.asset.asset"
+            report_type="qweb-pdf"
+            name="sea_asset_base.print_qrcode"
+            file="sea_asset_base.print_qrcode"
+            print_report_name="'QRCODE'"
+            paperformat="sea_asset_base.asset_qrcode_pager_format"
+            menu="False"/>
+
+        <record id="view_asset_qrcode" model="ir.ui.view">
+            <field name="name">view.asset.qrcode</field>
+            <field name="model">asset.qrcode</field>
+            <field name="arch" type="xml">
+                <form string="Asset QRCode">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group colspan="1">
+                            <field name="start_date"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="export_xlsx" string="Export PDF" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" type="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!--Action report Asset profile-->
+        <record id="asset_qrcode_action_view" model="ir.actions.act_window" >
+            <field name="name">ASSET QRCODE</field>
+            <field name="res_model">asset.qrcode</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_asset_qrcode"/>
+            <field name="context">{'create': 0, 'delete': 0}</field>
+            <field name="target">new</field>
+        </record>
+        <record id="export_qrcode_asset" model="ir.actions.server">
+            <field name="name">Export QRCode</field>
+            <field name="model_id" ref="sea_asset_base.model_account_asset_asset"/>
+            <field name="binding_model_id" ref="sea_asset_base.model_account_asset_asset"/>
+            <field name="state">code</field>
+            <field name="code">
+res_id = env['asset.qrcode'].create({'user_id': env.user.id})
+datas=res_id.get_datas(records)
+action = env.ref('sea_asset_base.action_print_qrcode').report_action(res_id,data=datas)
+            </field>
+        </record>
+    </data>
+</odoo>

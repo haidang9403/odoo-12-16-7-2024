@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+         <record id="hr_contract_type_view_form_extend" model="ir.ui.view">
+            <field name="name">hr.contract.type.form</field>
+            <field name="model">hr.contract.type</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_type_view_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="after">
+                     <field name="remaining_day_to_renew"/>
+                 </xpath>
+            </field>
+        </record>
+        <record id="hr_contract_type_view_tree_extend" model="ir.ui.view">
+            <field name="name">hr.contract.type.tree</field>
+            <field name="model">hr.contract.type</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_type_view_tree"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="after">
+                     <field name="remaining_day_to_renew"/>
+                 </xpath>
+            </field>
+        </record>
+        <record id="hr_contract_period_extend" model="ir.ui.view">
+            <field name="name">hr.contract.period.form</field>
+            <field name="model">hr.contract.period</field>
+            <field name="inherit_id" ref="sea_contract_extend.action_hr_contract_period_tree"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="after">
+                     <field name="remaining_day_to_renew"/>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_order_customer_invoice_consolidation_form" model="ir.ui.view">
+        <field name="name">pos.order.customer.invoice.consolidation.form</field>
+        <field name="model">invoice.consolidation</field>
+        <field name="inherit_id" ref="sea_issue_invoice_with_ts24.sea_issue_invoice_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="original" position="after">
+                <field name="invoice_pos_branch_id" readonly="1"/>
+                <field name="pos_auto_issue_invoice_customer" readonly="1"/>
+                <field name="pos_auto_issue_invoice_not_customer" readonly="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>

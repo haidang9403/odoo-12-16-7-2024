@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_report_bdns_user,hr.employee.report.bdns user,model_hr_employee_report_bdns,hr.group_hr_user,1,1,1,1
+access_hr_employee_report_bdns_user,hr.employee.report.bdns user,model_hr_employee_report_bdns,hr.group_hr_user,1,1,1,1
+access_hr_employee_report_bdns_lines_user,hr.employee.report.bdns.lines user,model_hr_employee_report_bdns_lines,hr.group_hr_user,1,1,1,1
+access_hr_employee_report_bdns_companies_user,hr.employee.report.bdns.companies user,model_hr_employee_report_bdns_companies,hr.group_hr_user,1,1,1,1
+
+access_hr_employee_report_manager_leave_user,hr.employee.report.manager.leave user,model_hr_employee_report_manager_leave,hr.group_hr_user,1,1,1,1
+access_hr_employee_report_manager_leave_lines_user,hr.employee.report.manager.leave.lines user,model_hr_employee_report_manager_leave_lines,hr.group_hr_user,1,1,1,1

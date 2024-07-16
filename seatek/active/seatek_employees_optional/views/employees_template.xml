@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="employees optional" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/seatek_employees_optional/static/src/js/employees_optional.js"></script>
+        </xpath>
+    </template>
+</odoo>

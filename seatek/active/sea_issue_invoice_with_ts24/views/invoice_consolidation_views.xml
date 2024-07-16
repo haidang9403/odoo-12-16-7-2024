@@ -1,0 +1,98 @@
+<odoo>
+    <record id="sea_issue_invoice_form_inherit" model="ir.ui.view">
+        <field name="name">sea_issue_invoice_form_inherit</field>
+        <field name="model">invoice.consolidation</field>
+        <field name="inherit_id" ref="sea_invoice_consolidation.invoice_consolidation_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="action_issue_invoices" type="object" string="Issue Invoice" class="oe_highlight"
+                        attrs="{'invisible': [('state', '!=', 'open')]}"
+                        confirm="This will connect TS24 S-Invoice then generate a legal invoice for you. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>
+                <button name="action_edit_invoices" type="object" string="Edit Invoice" class="oe_highlight"
+                        attrs="{'invisible': ['|', ('state', 'not in', ['issued']), ('invoice_sign_status', '!=', 'no')]}"
+                        confirm="This will Edit TS24 invoice. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>
+                <!--<button name="search_invoice" type="object" string="Search Invoice" class="oe_highlight"
+                        confirm="This will Edit TS24 invoice. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>-->
+                <!--<button name="lookup_invoice" type="object" string="Lookup Invoice" class="oe_highlight"
+                        confirm="This will Edit TS24 invoice. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>-->
+                <!--<button name="send_email_invoice" type="object" string="Send Email Invoice" class="oe_highlight"
+                        attrs="{'invisible': ['|', ('cqt_code_status', '!=', 'yes'), ('email_send_status', '!=', 'no')]}"
+                        confirm="This will send email invoice. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>-->
+                <!--Start Test-->
+                <!--<button name="action_issue_invoices" type="object" string="Issue Invoice" class="oe_highlight"
+                        confirm="This will connect TS24 S-Invoice then generate a legal invoice for you. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>-->
+                <!--End Test-->
+                <button name="action_adjustment_invoice" type="object" string="Adjustment Invoice" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=', 'adjustment')]}"
+                        confirm="This will push adjustment invoice to TS24. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>
+                <button name="action_replacement_invoice" type="object" string="Replace Invoice" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=', 'replacement')]}"
+                        confirm="This will push replacement invoice to TS24. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>
+                <button name="action_cancel_invoice" type="object" string="Cancel Invoice" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=', 'cancel')]}"
+                        confirm="This will cancel invoice to TS24. Are you sure you want to proceed?"
+                        groups="account.group_account_invoice"/>
+                <!--Start Test-->
+                <!--<button name="action_reset_invoice" type="object" string="Reset Invoice" class="oe_highlight"/>
+                <button name="action_reset_adjusted" type="object" string="Reset Adjustment" class="oe_highlight"/>-->
+                <!--End Test-->
+            </header>
+            <xpath expr="//h1" position="after">
+                <h2>
+                    <field name="legal_number" placeholder="Legal Number..."/>
+                </h2>
+            </xpath>
+            <xpath expr="//page[@name='invoice_lines']" position="after">
+                <page name="invoice_ts24" string="Invoice TS24">
+                    <!--attrs="{'invisible': [('sinvoice_enabled','=',False),('sinvoice_state', '=', 'not_issued')]}">-->
+                    <group>
+                        <group>
+                            <field name="invoice_issued_date"/>
+                            <field name="invoice_date_from_ts24"/>
+                            <field name="symbol_code"/>
+                            <field name="invoice_issue_user_id"/>
+                            <field name="invoice_receive_code"/>
+                            <field name="invoice_transaction_id" groups="base.group_no_one"/>
+                            <field name="invoice_sign_status"/>
+                            <field name="cqt_code_status"/>
+                            <field name="email_send_status"/>
+                        </group>
+                        <group>
+                            <!--<field name="sinvoice_invoice_date"/>
+                            &lt;!&ndash; Converted file &ndash;&gt;
+                            <field name="sinvoice_converted_filename" invisible="1"/>
+                            <field name="sinvoice_converted_file"
+                                   filename="sinvoice_converted_filename"/>-->
+
+                            <!-- PDF exchange file -->
+                            <button name="get_sinvoice_representation_files" type="object" string="Download Invoice"
+                                    class="oe_highlight" attrs="{'invisible': [('legal_number','=',False)]}"
+                                    groups="account.group_account_invoice"/>
+                            <field name="sinvoice_representation_filename_pdf"
+                                   invisible="1"/>
+                            <field name="sinvoice_representation_pdf"
+                                   filename="sinvoice_representation_filename_pdf"/>
+
+                            <!--&lt;!&ndash; HTML exchange file &ndash;&gt;
+                            <field name="sinvoice_representation_filename_html"
+                                   invisible="1"/>
+                            <field name="sinvoice_representation_html"
+                                   filename="sinvoice_representation_filename_html"/>
+
+                            <field name="sinvoice_issue_user_id"
+                                   attrs="{'invisible': [('sinvoice_issue_user_id','=',False)]}"/>-->
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

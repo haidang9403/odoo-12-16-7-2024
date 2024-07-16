@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="action_export_excel_appraisal"
+            string="Export Excel Appraisal"
+            model="hr.survey.user.input"
+            report_type="xlsx"
+            name="seatek_hr_appraisal.report_export_appraisal_xlsx"
+            file="seatek_hr_appraisal.report_export_appraisal_xlsx"
+            print_report_name="'EXPORT ĐÁNH GIÁ NHÂN SỰ - %s' % object.name"
+            menu="False"/>
+</odoo>

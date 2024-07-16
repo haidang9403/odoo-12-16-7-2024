@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- AGED PARTNER BALANCE -->
+    <record id="aged_partner_balance_for_sale" model="ir.ui.view">
+        <field name="name">Aged Partner Balance</field>
+        <field name="model">aged.partner.balance.wizard</field>
+        <field name="inherit_id" ref="account_financial_report.aged_partner_balance_wizard"/>
+        <field name="arch" type="xml">
+            <field name="receivable_accounts_only" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+        </field>
+    </record>
+
+
+    <act_window id="action_sea_trial_balance_wizard"
+                name="Aged Partner Balance"
+                res_model="aged.partner.balance.wizard"
+                view_type="form"
+                view_mode="form"
+                context="{'default_show_move_line_details': True, 'default_target_move': 'posted', 'default_receivable_accounts_only': True}"
+                view_id="aged_partner_balance_for_sale"
+                target="new"/>
+
+    <menuitem action="action_sea_trial_balance_wizard"
+              id="menu_sea_aged_partner_balance_for_sale"
+              name="Aged Partner Balance"
+              parent="sale.menu_sale_report"
+              sequence="1"
+              groups="sales_team.group_sale_manager"/>
+</odoo>

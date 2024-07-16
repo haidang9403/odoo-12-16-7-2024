@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_mail_manager,user.mail.manager,model_user_mail,hr_contract.group_hr_contract_manager,1,1,1,1
+access_database_uuid,database.uuid.manager,model_database_uuid,hr_contract.group_hr_contract_manager,1,1,1,1

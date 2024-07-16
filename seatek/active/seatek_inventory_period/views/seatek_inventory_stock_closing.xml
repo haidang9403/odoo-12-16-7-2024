@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id='stock_closing_view_search' model='ir.ui.view'>
+        <field name="name">stock.closing.month.search</field>
+        <field name="model">stock.closing.month</field>
+        <field name="arch" type="xml">
+            <search string="Search Period">
+                <group expand="1" string="Group By">
+                    <filter name="group_by_location" context="{'group_by': 'location_id'}" string="Stock Location"/>
+                    <filter name="group_by_period" context="{'group_by': 'date_to'}" string="Period"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="stock_closing_view_tree" model="ir.ui.view">
+        <field name="name">stock.closing.month.tree</field>
+        <field name="model">stock.closing.month</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Closing">
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="stock_closing"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_calc_stock_closing" model="ir.actions.act_window">
+        <field name="name">Stock Closing</field>
+        <field name="res_model">stock.closing.month</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="stock_closing_view_search"/>
+    </record>
+
+    <menuitem id="menu_action_inventory_stock_closing" name="Stock Closing"
+              parent="seatek_inventory_period.menu_inventory_period"
+              action="action_calc_stock_closing"
+              sequence="51"
+              groups="stock.group_stock_manager"/>
+</odoo>

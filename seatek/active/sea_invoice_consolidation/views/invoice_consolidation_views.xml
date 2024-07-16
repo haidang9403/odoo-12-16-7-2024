@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_consolidation_form" model="ir.ui.view">
+            <field name="name">invoice.consolidation.form</field>
+            <field name="model">invoice.consolidation</field>
+            <field name="arch" type="xml">
+                <form string="Issue Invoice" duplicate="false" class="o_invoice_form">
+                    <header>
+                        <!--<button name="" type="object" string="Issue Invoice" class="oe_highlight"/>
+                        <button name="" type="object" string="Edit Invoice" class="oe_highlight"/>-->
+                    </header>
+                    <sheet>
+                        <h1 class="mt0">
+                            <!--<div attrs="{'invisible': [('sequence_number_next_prefix','!=',False)]}">
+                                <field name="number" readonly="1" class="oe_inline"/>
+                            </div>-->
+                            <div>
+                                <field name="number" class="oe_inline"/>
+                            </div>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="partner_id"/>
+                                <!--<field name="partner_id" style="text-transform: capitalize;"/>-->
+                                <field name="address"/>
+                                <field name="vat_number"/>
+                                <field name="email"/>
+                                <field name="customer_po_name"/>
+                                <field name="customer_po_code"/>
+                            </group>
+                            <group>
+                                <field name="date_invoice"/>
+                                <field name="state"/>
+                                <field name="user_id"/>
+                                <field name="currency_id"/>
+                                <field name="allow_sign_now"/>
+                                <field name="payment_term"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="invoice_lines" string="Invoice Lines">
+                                <field name="invoice_line_ids">
+                                    <tree string="Invoice Lines" editable="bottom">
+                                        <!--<field name="sequence" widget="handle"/>-->
+                                        <field name="product_id" domain="[('sale_ok','=',True)]"/>
+                                        <field name="description" widget="section_and_note_text"/>
+                                        <field name="quantity" type="measure"/>
+                                        <field name="uom_id"/>
+                                        <field name="price_unit" string="Price"/>
+                                        <field name="tax_id"/>
+                                        <field name="price_subtotal"/>
+                                        <field name="price_tax"/>
+                                        <field name="price_total" string="Total"
+                                               groups="account.group_show_line_subtotals_tax_included"/>
+                                        <field name="check_push_ts24"/>
+                                    </tree>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="amount_untaxed"/>
+                                    <field name="amount_tax"/>
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                </group>
+                            </page>
+                            <page name="other_info" string="Other Info">
+                                <group>
+                                    <group>
+                                        <field name="bill_pos"/>
+                                        <field name="original"/>
+                                        <field name="team_id"/>
+                                        <field name="sale_channel_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="invoice_id"/>
+                                        <field name="invoice_link"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_consolidation_tree" model="ir.ui.view">
+            <field name="name">invoice.consolidation.tree</field>
+            <field name="model">invoice.consolidation</field>
+            <field name="arch" type="xml">
+                <tree string="Issue Invoice" default_order="id desc">
+                    <field name="partner_id"/>
+                    <field name="address"/>
+                    <field name="vat_number"/>
+                    <field name="email_split" widget="text"/>
+                    <field name="customer_po_name"/>
+                    <field name="customer_po_code"/>
+                    <field name="date_invoice"/>
+                    <field name="number"/>
+                    <field name="legal_number"/>
+                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    <field name="origin"/>
+                    <field name="amount_untaxed"/>
+                    <field name="amount_tax"/>
+                    <field name="amount_total"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_invoice_consolidation" model="ir.actions.act_window">
+            <field name="name">Issue Invoice</field>
+            <field name="res_model">invoice.consolidation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+
+        </record>
+        <menuitem action="action_invoice_consolidation"
+                  id="menu_action_invoice_consolidation" parent="account.menu_finance_receivables" sequence="0"/>
+    </data>
+</odoo>

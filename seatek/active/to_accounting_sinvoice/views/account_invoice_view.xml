@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="invoice_form" model="ir.ui.view">
+			<field name="name">account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='action_invoice_sent'][1]"
+					position="before">
+					<field name="sinvoice_enabled" invisible="1" />
+					<button name="action_issue_sinvoices" type="object"
+						string="Issue S-Invoice" class="oe_highlight"
+						attrs="{'invisible': ['|','|',('sinvoice_enabled','=',False),('sinvoice_state', '!=', 'not_issued'), ('state', 'not in', ('open','paid'))]}"
+						confirm="This will connect TS24 S-Invoice then generate a legal invoice for you. Are you sure you want to proceed?"
+						groups="account.group_account_invoice" />
+				</xpath>
+
+				<xpath expr="//button[@name='action_invoice_sent'][1]"
+					position="before">
+					<field name="sinvoice_enabled" invisible="1" />
+					<button name="action_edit_sinvoices" type="object"
+						string="Edit S-Invoice" class="oe_highlight"
+						attrs="{'invisible': ['|','|',('sinvoice_enabled','=',False),('sinvoice_state', '!=', 'issued'), ('state', 'in', ('draft','cancel'))]}"
+						confirm="This will connect the TS24 S-Invoice then edit the invoice for you. Are you sure you want to continue?"
+						groups="account.group_account_invoice" />
+				</xpath>
+
+				<xpath expr="//button[@name='preview_invoice'][1]"
+					position="before">
+					<button name="action_sinvoice_paid" type="object"
+						string="Set S-Invoice as Paid" class="oe_highlight"
+						attrs="{'invisible': ['|','|',('sinvoice_enabled','=',False),('sinvoice_state', '!=', 'issued'), ('state', '!=', 'paid')]}"
+						groups="account.group_account_invoice" />
+					<button name="action_sinvoice_unpaid" type="object"
+						string="Set S-Invoice as Unpaid" class="oe_highlight"
+						attrs="{'invisible': ['|','|',('sinvoice_enabled','=',False),('sinvoice_state', '!=', 'paid'), ('state', 'not in', ('open','cancel'))]}"
+						groups="account.group_account_invoice" />
+					<button name="%(action_account_invoice_sinvoice_cancel)d"
+						type="action" string="Cancel S-Invoice" class="oe_highlight"
+						attrs="{'invisible': ['|','|',('sinvoice_enabled','=',False),('sinvoice_state', '!=', 'issued'), ('state', '!=', 'cancel')]}"
+						groups="account.group_account_invoice" />
+				</xpath>
+				<xpath expr="//button[@name='action_invoice_draft']"
+					position="after">
+					<button name="get_sinvoice_representation_files"
+						type="object" string="Download S-Invoice Display Version"
+						attrs="{'invisible': ['|',('sinvoice_enabled','=',False),('sinvoice_state', '=', 'not_issued')]}"
+						context="{'log_sinvoice_message':1}"
+						groups="account.group_account_invoice" />
+					<!--<button name="get_sinvoice_exchange_files" type="object"
+						string="Download S-Invoice Converted"
+						help="Download the invoice file converted from the electronic invoice."
+						attrs="{'invisible': ['|',('sinvoice_enabled','=',False),('sinvoice_state', '=', 'not_issued')]}"
+						context="{'log_sinvoice_message':1}"
+						groups="account.group_account_invoice" />-->
+				</xpath>
+				<xpath expr="//field[@name='date_due']" position="after">
+					<field name="sinvoice_state" />
+				</xpath>
+				<!--<xpath expr="//field[@name='payment_term_id']" position="before">
+					<field name="sea_check_customer_for_invoice" />
+				</xpath>-->
+				<xpath expr="//page[@name='other_info']" position="after">
+					<page name="sinvoice" string="S-Invoice"
+						attrs="{'invisible': [('sinvoice_enabled','=',False),('sinvoice_state', '=', 'not_issued')]}">
+						<group>
+							<group>
+								<field name="sinvoice_invoice_date" />
+								<!-- Converted file -->
+								<field name="sinvoice_converted_filename" invisible="1" />
+								<field name="sinvoice_converted_file"
+									filename="sinvoice_converted_filename" />
+
+								<!-- PDF exchange file -->
+								<field name="sinvoice_representation_filename_pdf"
+									invisible="1" />
+								<field name="sinvoice_representation_pdf"
+									filename="sinvoice_representation_filename_pdf" />
+
+								<!-- HTML exchange file -->
+								<field name="sinvoice_representation_filename_html"
+									invisible="1" />
+								<field name="sinvoice_representation_html"
+									filename="sinvoice_representation_filename_html" />
+
+								<field name="sinvoice_issue_user_id"
+									attrs="{'invisible': [('sinvoice_issue_user_id','=',False)]}" />
+							</group>
+							<group>
+								<field name="sinvoice_reservation_code" />
+							<!--<field name="account_sinvoice_guid_issue" />
+								<field name="account_sinvoice_issue_code" />
+								<field name="account_sinvoice_serial_id" />
+								<field name="account_sinvoice_template_id" />
+								<field name="account_sinvoice_type_id" />-->
+								<field name="sinvoice_transactionid"
+									groups="base.group_no_one" />
+							</group>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="invoice_form_legal_number" model="ir.ui.view">
+			<field name="name">account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id"
+				ref="to_legal_invoice_number.invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='date_due']" position="after">
+					<field name="lock_legal_number" invisible="1" />
+				</xpath>
+
+				<!--Add note field for accounting-->
+				<xpath expr="//field[@name='legal_number']" position="after">
+					<h5>
+						<field name="sea_invoice_note" />
+					</h5>
+				</xpath>
+
+				<!--Readonly field legal_number-->
+				<!--<xpath expr="//field[@name='legal_number']"
+					position="attributes">
+					<attribute name="attrs">{'readonly':[('lock_legal_number','=',True)]}</attribute>
+				</xpath>-->
+			</field>
+		</record>
+
+		<record id="invoice_tree" model="ir.ui.view">
+			<field name="name">account.invoice.tree</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='state']" position="after">
+					<field name="sinvoice_enabled" invisible="1" />
+					<field name="sinvoice_state"
+						attrs="{'invisible': [('sinvoice_enabled','=',False)]}" />
+				</xpath>
+
+			</field>
+		</record>
+
+		<record id="view_account_invoice_filter" model="ir.ui.view">
+			<field name="name">account.invoice.tree</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id"
+				ref="account.view_account_invoice_filter" />
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='late']" position="after">
+					<separator />
+					<filter name="ftr_sinv" string="Is S-Invoice"
+						domain="['|',('sinvoice_state','!=','not_issued'),('sinvoice_enabled','=',True)]"
+						help="Show invoices that were issued or are issuable with S-Invoice" />
+					<filter name="ftr__non_sinv" string="Is NOT S-Invoice"
+						domain="[('sinvoice_state','=','not_issued'),('sinvoice_enabled','=',False)]"
+						help="Show invoices that are not issuable with S-Invoice" />
+					<separator />
+					<filter name="ftr_sinv_not_issued"
+						string="S-Invoice Not Issued"
+						help="Show invoices the S-Invoice status which is other than Not Issued"
+						domain="[('sinvoice_state','=','not_issued')]" />
+					<filter name="ftr_sinv_issued" string="S-Invoice Issued"
+						help="Show invoices the S-Invoice status which is Issued"
+						domain="[('sinvoice_state', '=', 'issued')]" />
+					<filter name="ftr_sinv_paid" string="S-Invoice Paid"
+						help="Show invoices the S-Invoice status which is Paid"
+						domain="[('sinvoice_state', '=', 'paid')]" />
+					<filter name="ftr_sinv_cancelled"
+						string="S-Invoice Issued But Cancelled"
+						help="Show invoices the S-Invoice status which is Cancelled"
+						domain="[('sinvoice_state', '=', 'cancelled')]" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

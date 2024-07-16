@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- ======== POS ======== -->
+    <!-- Kanban view of dashboard -->
+    <record id="hotel_restaurant_dashboard_kanban_view" model="ir.ui.view">
+        <field name="name">Dashboard Kanban View</field>
+        <field name="model">sea.pos.hotel.restaurant</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard o_pos_kanban">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="hotel_restaurant_branch_id"/>
+                <field name="pos_type"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <div>
+                                    <div>
+                                        <h3>
+                                            <field name="name"/>
+                                        </h3>
+                                        <p>
+                                            <field name="hotel_restaurant_branch_id"/>
+                                        </p>
+                                    </div>
+                                    <button
+                                            name="action_open_hotel_order_view"
+                                            type="object"
+                                            class="btn-primary"
+                                            attrs="{'invisible': [('pos_type', '!=', 'hotel')]}">Hotel Order
+                                    </button>
+                                    <button
+                                            name="action_open_restaurant_order_view"
+                                            type="object"
+                                            class="btn-primary"
+                                            attrs="{'invisible': [('pos_type', '!=', 'restaurant')]}">Restaurant Order
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Form view of dashboard -->
+    <record id="hotel_restaurant_config_form_view" model="ir.ui.view">
+        <field name="name">Dashboard Form View</field>
+        <field name="model">sea.pos.hotel.restaurant</field>
+        <field name="arch" type="xml">
+            <form string="Hotel Restaurant POS Config">
+                <div class="oe_title">
+                    <separator/>
+                    <group colspan="4" col="4">
+                        <field name="company_id" string="Company" options="{'no_create': 1, 'no_open': 1}"
+                               readonly="0"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="hotel_restaurant_branch_id" string="Branch" require="1"
+                               options="{'no_create': 1, 'no_open': 1}"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <label for="name" string="Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="pos_type" string="POS's Type" require="1"/>
+                    </group>
+                </div>
+                <div>
+                    <separator string="POS users" colspan="4"/>
+                    <group colspan="4" col="4">
+                        <field name="user_ids" require="1" widget="many2many_tags"/>
+                    </group>
+                    <separator string="POS Display " colspan="4"/>
+                    <group colspan="4" col="4">
+                        <field name="limit_categories"/>
+                        <field name="iface_available_categ_ids"
+                               widget="many2many_tags"
+                               attrs="{'invisible': [('limit_categories', '=', False)], 'required': [('limit_categories','=',True)]}"
+                               options="{'no_create': 1, 'no_open': 1}"/>
+                    </group>
+                    <!--                    <group colspan="4" col="4">-->
+                    <!--                        <field name="qty_available_product" string="Show quanity available product (Maintained)"/>-->
+                    <!--                    </group>-->
+                    <separator string="Pricing" colspan="4"/>
+                    <group colspan="2" col="2">
+                        <!--                        <field name="iface_tax_included" string="Display sale price within tax (Maintained)" widget="radio"/>-->
+                        <field name="available_pricelist_id" required="True"/>
+                        <field name="available_pricelist_ids" widget="many2many_tags"
+                               help='Make several pricelists available in branch. '/>
+                    </group>
+                    <separator string="Order And Booking"/>
+                    <group colspan="4" col="4">
+                        <field name="customer_default_id"/>
+                    </group>
+
+                    <separator string="Inventory" colspan="4"/>
+                    <group colspan="4" col="4">
+                        <field name="picking_type_id" options="{'no_create': 1, 'no_open': 1}" readonly="1"
+                               domain="[('default_route_id', '=', default_route_id)]"
+                               string="Operation Type (Maintained)"/>
+                        <field name="pos_location_id" options="{'no_create': 1, 'no_open': 1}" readonly="1"
+                               string="Default POS location (Maintained)"/>
+                        <field name="default_route_id" required="1"/>
+                        <field name="custom_routes_id" widget="many2many_tags"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="allow_out_of_stock" string="Allow out of stock (Maintained)"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="payment_journal_ids" widget="many2many_tags" required="1"/>
+                        <field name="invoice_journal_id" required="1"/>
+                    </group>
+                    <!--                    <separator string="Config Check-Out" colspan="4"/>-->
+                    <!--                    <group colspan="4" col="4">-->
+                    <!--                        <field name="day_default"  required="1"/>-->
+                    <!--                        <field name="time_default" />-->
+                    <!--                    </group>-->
+                    <separator string="Printer" colspan="4"/>
+                    <button name="%(sea_hotel_restaurant.hotel_restaurant_printer_action)d" icon="fa-arrow-right"
+                            type="action" string="Printers" class="btn-link"/>
+
+                    <group colspan="2" col="2">
+                        <field name="bill_printer_id"/>
+                        <field name="printer_ids" widget="many2many_tags"/>
+                    </group>
+
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view of dashboard -->
+    <record id="view_hotel_restaurant_branch_tree" model="ir.ui.view">
+        <field name="name">Dashboard Tree View</field>
+        <field name="model">sea.pos.hotel.restaurant</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="POS's Name"/>
+                <field name="hotel_restaurant_branch_id" string="Branch"/>
+                <field name="company_id" string="Company"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action of hotel restaurant pos -->
+    <record id="open_hotel_restaurant_pos_form_tree" model="ir.actions.act_window">
+        <field name="name">Point of Sale</field>
+        <field name="res_model">sea.pos.hotel.restaurant</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">['|',('hotel_restaurant_branch_id.user_ids','child_of',uid),('user_ids','child_of',uid),
+            ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+
+</odoo>

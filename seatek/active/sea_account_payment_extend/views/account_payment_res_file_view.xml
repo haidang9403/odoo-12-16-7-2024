@@ -1,0 +1,97 @@
+<odoo>
+    <data>
+
+        <record id="view_account_payment_form_advance_file" model="ir.ui.view">
+            <field name="name">view.account.payment.form.advance.file</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="payment.view_account_payment_form_inherit_payment"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_transaction_id']"
+                   position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="advance_file_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="company_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_payment_res_file_search" model="ir.ui.view">
+            <field name="name">account.payment.res.file.search</field>
+            <field name="model">account.payment.res.file</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="partner_id"/>
+                    <field name="account_payments"/>
+                    <filter name="archive" string="Archive" domain="[('active', '=', False)]"/>
+                    <filter name="unarchive" string="Unarchive" domain="[('active', '=', True)]"/>
+                    <group  expand='0' string='Group by...'>
+                        <filter string='Applicant' domain="[]" name="partner_id_group" context="{'group_by': 'partner_id'}"/>
+                        <filter string='Account payment' domain="[]" name="account_payments_group" context="{'group_by': 'account_payments'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="account_payment_res_file_tree" model="ir.ui.view">
+            <field name="name">account.payment.res.file.tree</field>
+            <field name="model">account.payment.res.file</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="company_id"/>
+                    <field name="account_payments" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="account_payment_res_file_form" model="ir.ui.view">
+        <field name="name">account.payment.res.file.form</field>
+        <field name="model">account.payment.res.file</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <sheet>
+<!--                    <div class="oe_button_box" name="button_box">-->
+<!--                        <button name="toggle_active" type="object"-->
+<!--                                class="oe_stat_button" icon="fa-archive">-->
+<!--                            <field name="active" widget="boolean_button"-->
+<!--                                options='{"terminology": "archive"}'/>-->
+<!--                        </button>-->
+<!--                    </div>-->
+                    <div class="oe_title">
+                        <label for="code" class="oe_edit_only"/>
+                        <h1>
+                            <field name="code" placeholder="Code" required="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" invisible="1"/>
+                            <field name="partner_id" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="account_payments" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <record id="view_account_supplier_payment_tree_inherit" model="ir.ui.view">
+            <field name="name">view.account.supplier.payment.tree.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="arch" type="xml">
+                <field name='partner_id' position='after'>
+                    <field name="advance_file_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

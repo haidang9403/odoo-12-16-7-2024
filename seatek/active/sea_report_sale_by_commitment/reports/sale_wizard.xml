@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_report_sale_by_commitment_date" model="ir.ui.view">
+            <field name="name">view.report.sale.by.commitment.date</field>
+            <field name="model">sea.sale.order.report</field>
+            <field name="arch" type="xml">
+                <form string="Báo Cáo Chi Tiết Bán Hàng">
+                    <group>
+                        <group>
+                            <field name="start_date" widget="date" attrs="{'required': True}"/>
+                            <field name="end_date" widget="date" attrs="{'required': True}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="button_export_xlsx_by_date" string="Export XLS" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="sea_sale_order_report_wizard_form" model="ir.actions.act_window">
+            <field name="name">Báo Cáo Bán Hàng Theo Ngày Cam kết</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sea.sale.order.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <report string="Sale Order Details XLSX By Commitment Date"
+                id="action_sale_order_details_by_commitment_date"
+                model="sea.sale.order.report"
+                name="sea_report_sale_by_commitment.report_by_commitment_date"
+                file="Báo cáo chi tiết bán hàng (Commitment Date)"
+                report_type="xlsx"
+                attachment_use="False"/>
+
+        <menuitem action="sea_sale_order_report_wizard_form"
+                  id="menu_action_sale_order_report_sale"
+                  name="Báo Cáo Bán Hàng Theo Ngày Cam kết"
+                  parent="sea_menu_base.menu_item_sale"
+                  sequence='12'/>
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="discount_line_on_customer_form" model="ir.ui.view">
+            <field name="name">discount.line.on.customer.form</field>
+            <field name="model">discount.line.on.customer</field>
+            <field name="arch" type="xml">
+                <form string="Discount Line On Customer" duplicate="0">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <group>
+                                <field name="company_id"/>
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="discount_line_on_customer_tree" model="ir.ui.view">
+            <field name="name">discount.line.on.customer.tree</field>
+            <field name="model">discount.line.on.customer</field>
+            <field name="arch" type="xml">
+                <tree string="Discount Line On Customer" editable="top">
+                    <field name="partner_id" required="True"/>
+                    <field name="product_id" attrs="{'required': [('category_id','=',False), ('sale_channel_id','=',False)]}"/>
+                    <field name="category_id" attrs="{'required': [('product_id','=',False), ('sale_channel_id','=',False)]}"/>
+                    <field name="sale_channel_id" attrs="{'required': [('product_id','=',False), ('category_id','=',False)]}"/>
+                    <!--<field name="product_id" attrs="{'readonly':['|',('category_id','!=',False), ('sale_channel_id','!=',False)],
+                                                     'required': [('category_id','=',False), ('sale_channel_id','=',False)]}"/>
+                    <field name="category_id" attrs="{'readonly':['|',('product_id','!=',False), ('sale_channel_id','!=',False)],
+                                                      'required': [('product_id','=',False), ('sale_channel_id','=',False)]}"/>
+                    <field name="sale_channel_id" attrs="{'readonly':['|',('product_id','!=',False), ('category_id','!=',False)],
+                                                      'required': [('product_id','=',False), ('category_id','=',False)]}"/>-->
+                    <field name="discount" required="True"/>
+                    <field name="discount_type"/>
+                    <field name="company_id" readonly="True"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_discount_line_on_customer" model="ir.actions.act_window">
+            <field name="name">Discount Line On Customer</field>
+            <field name="res_model">discount.line.on.customer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem id="menu_discount_line_on_customer"
+                  name="Discount Line On Customer"
+                  parent="sale.menu_sale_config"
+                  action="action_discount_line_on_customer"
+                  sequence="0"
+                  groups="group_discount_line_on_customer"/>
+    </data>
+</odoo>

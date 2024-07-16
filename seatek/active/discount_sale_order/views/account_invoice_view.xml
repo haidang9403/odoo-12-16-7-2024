@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+    <data>
+        <record id="inherit_account_invoice_form_view" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="discount_account_invoice.inherit_account_invoice_form_view"/>
+            <field name="arch" type="xml">
+                <field name="total_discount" position="attributes">
+                    <attribute name="groups">sale.group_discount_per_so_line, discount_account_invoice.group_order_global_discount</attribute>
+                </field>
+
+                <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='discount_type']" position="attributes">
+                    <field name="groups">sale.group_discount_per_so_line</field>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='discount']" position="attributes">
+                    <field name="groups">sale.group_discount_per_so_line</field>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

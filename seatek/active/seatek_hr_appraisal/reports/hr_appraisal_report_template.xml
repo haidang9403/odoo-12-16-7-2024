@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_appraisal"><!--report_holidayssummary-->
+        <t t-foreach="docs" t-as="form">
+            <t t-call="web.html_container">
+                <t t-call="seatek_hr_appraisal.appraisal_internal_layout">
+                    <style>
+                        .page {
+                            font-size: 12pt;
+                            font-family: "Times New Roman", Times, serif;
+                            margin-top: 1px;
+                            margin-bottom: 1px;
+                        }
+                        table, th, td {
+                          border: 0.5pt solid #333 !important;
+                        }
+                        .table__heading {
+                            text-transform: uppercase;
+                            font-size: 12pt;
+                            font-family: "Times New Roman", Times, serif;
+                            margin-top: 1px;
+                            margin-bottom: 3px;
+                        }
+                        .vertical-center {
+                            vertical-align: middle !important;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 12pt;
+                            font-family: "Times New Roman", Times, serif;
+                            margin-top: 1px;
+                            margin-bottom: 1px;
+                        }
+
+                        .only-vertical-center {
+                            vertical-align: middle !important;
+                        }
+
+                        .text-vertical-center {
+                            vertical-align: middle !important;
+                            text-align: center;
+                            font-family: "Times New Roman", Times, serif;
+                            margin-top: 1px;
+                            margin-bottom: 1px;
+                        }
+
+                        .title {
+                            text-transform: uppercase;
+                            font-size: 12pt !important;
+                            font-family: "Times New Roman", Times, serif;
+                            margin-top: 1px;
+                            margin-bottom: 1px;
+                       }
+                       .text-body {
+                            font-size: 12pt
+                            font-family: "Times New Roman", Times, serif;
+                            margin-top: 1px; !important;
+                            margin-bottom: 1px; !important;
+                       }
+                    </style>
+
+                <div class="page">
+                    <h3><br/></h3>
+                    <h4 class="table__heading"><strong>I. Thông tin nhân sự</strong></h4>
+                    <table class="table table-bordered mb32" style="table-layout:auto">
+                        <tbody>
+                            <tr>
+                                <td style="width: 18%;"><strong>Họ Và Tên (NS):</strong></td>
+                                <td style="width: 40%;"><t t-esc="form['employee_name']"/></td>
+                                <td style="width: 22%;"><strong>Chức vụ:</strong></td>
+                                <td style="width: 20%;"><t t-esc="form['job_position_id'].sudo().name"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Đơn vị:</strong></td>
+                                <td><t t-esc="form['company_id'].name"/>/<t t-esc="form['department_id'].name"/></td>
+                                <td><strong>Giai đoạn đánh giá:</strong></td>
+                                <td><t t-esc="form['period_name']"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Người QLTT:</strong></td>
+                                <td><t t-esc="form['manager_name']"/></td>
+                                <td><strong>Chức vụ:</strong></td>
+                                <td><t t-esc="form['manager_job_position']"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cấp trên QLTT:</strong></td>
+                                <td><t t-esc="form['smanager_name']"/></td>
+                                <td><strong>Chức vụ:</strong></td>
+                                <td><t t-esc="form['smanager_job_position']"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page">
+                    <h4 class="table__heading"><strong>II. TỔNG ĐIỂM ĐÁNH GIÁ VÀ THÀNH TÍCH</strong></h4>
+                    <table class="table table-bordered mb32">
+                        <tbody>
+                            <tr>
+                                <td class="vertical-center" style="width: 5%;">TT</td>
+                                <td class="vertical-center" style="width: 55%;">Tiêu Chí Đánh Giá</td>
+                                <td class="vertical-center" style="width: 10%;">Nhân Sự</td>
+                                <td class="vertical-center" style="width: 10%;">QLTT</td>
+                                <td class="vertical-center" style="width: 10%;">Cấp Trên QLTT</td>
+                                <td class="vertical-center" style="width: 10%;">HĐĐG</td>
+                                <td class="vertical-center" style="width: 10%;">Đồng Nghiệp</td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">I.</td>
+                                <td><strong>SEACORP</strong></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][0].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][0].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][0].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][0].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][0].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">I.1</td>
+                                <td>QUAN HỆ TỐT</td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][1].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][1].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][1].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][1].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][1].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">I.2</td>
+                                <td>THÂN THIỆN - TỬ TẾ</td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][2].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][2].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][2].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][2].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][2].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">I.3</td>
+                                <td>CẦN MẪN - TRÁCH NHIỆM</td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][3].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][3].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][3].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][3].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][3].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">I.4</td>
+                                <td>TIÊU CHÍ CHIẾN MÃ</td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][4].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][4].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][4].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][4].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][4].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">I.5</td>
+                                <td>TIÊU CHÍ SƯ TỬ (Từ cấp Trưởng phòng/
+                                    Phó TP phụ trách phòng hoặc tương đương trở lên)
+                                </td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][5].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][5].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][5].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][5].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][5].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">II.</td>
+                                <td><strong>KPIs</strong></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][6].value"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][6].value_manager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][6].value_smanager"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][6].value_hddg"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['question_general'][6].value_colleague"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">Ʃ</td>
+                                <td><strong>TỔNG KẾT</strong></td>
+                                <td class="text-vertical-center"><t t-esc="form['rating1_value']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['rating2_value']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['rating3_value']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['rating4_value']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['rating5_value']"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+<!--                <p style="page-break-before:always;"> </p>-->
+<!--                <div class="page">-->
+<!--                    <h4 class="table__heading"><strong>III. Ý KIẾN NGƯỜI ĐƯỢC ĐÁNH GIÁ (Trình bày ngắn gọn ý kiến, đề xuất)</strong></h4>-->
+<!--                    <p class="text-body"><strong>Đánh Giá: </strong><t t-esc="form['user_opinion']"/></p>-->
+<!--                    <p></p>-->
+<!--                </div>-->
+<!--                <div class="page">-->
+<!--                    <h4><strong class="table__heading">IV. Ý KIẾN QLTT</strong></h4>-->
+<!--                    <p class="text-body"><strong>Đánh Giá: </strong><t t-esc="form['manager_opinion']"/></p>-->
+<!--                    <p></p>-->
+<!--                </div>-->
+<!--                <div class="page">-->
+<!--                    <h4 class="table__heading"><strong>V. CẤP TRÊN QLTT</strong></h4>-->
+<!--                    <p class="text-body" ><strong>Họ Và Tên:</strong> <t t-esc="form['smanager_name']"/></p>-->
+<!--                    <p class="text-body"><strong>Chức Vụ:</strong> <t t-esc="form['smanager_id'].job_title"/></p>-->
+<!--                    <p class="text-body"><strong>Đánh Giá:</strong> <t t-esc="form['smanager_opinion']"/></p>-->
+<!--                    <p></p>-->
+<!--                </div>-->
+                <div class="page">
+
+                    <h4 class="table__heading"><strong>VI. ĐỀ XUẤT ĐÁNH GIÁ TẠI HĐĐG</strong></h4>
+                    <table class="table table-bordered mb32" style="table-layout:auto">
+                        <tbody>
+                            <tr>
+                                <td class="vertical-center" style="width: 5%;">TT</td>
+                                <td class="vertical-center" style="width: 20%;">Người Đề Xuất</td>
+                                <td class="vertical-center" style="width: 15%;">Đề Xuất Đánh Giá Tại HĐĐG</td>
+                                <td class="vertical-center">Lý Do</td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">1</td>
+                                <td>NS Được Đánh Giá</td>
+                                <td class="text-vertical-center">
+                                    <t t-if="form['de_xuat_dg_tai_hddg_user'] == True">
+                                        Có
+                                    </t>
+                                    <t t-if="form['de_xuat_dg_tai_hddg_user'] == False">
+                                        Không
+                                    </t>
+                                </td>
+                                <td><t t-esc="form['de_xuat_lydo_user']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">2</td>
+                                <td>QLTT</td>
+                                <td class="text-vertical-center">
+                                    <t t-if="form['de_xuat_dg_tai_hddg_manager'] == True">
+                                        Có
+                                    </t>
+                                    <t t-if="form['de_xuat_dg_tai_hddg_manager'] == False">
+                                        Không
+                                    </t>
+                                </td>
+                                <td><t t-esc="form['de_xuat_lydo_manager']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">3</td>
+                                <td>Cấp Trên QLTT</td>
+                                <td class="text-vertical-center">
+                                    <t t-if="form['de_xuat_dg_tai_hddg_smanager'] == True">
+                                        Có
+                                    </t>
+                                    <t t-if="form['de_xuat_dg_tai_hddg_smanager'] == False">
+                                        Không
+                                    </t>
+                                </td>
+                                <td><t t-esc="form['de_xuat_lydo_smanager']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-center">4</td>
+                                <td>Đồng nghiệp</td>
+                                <td class="text-vertical-center">
+                                    <t t-if="form['de_xuat_dg_tai_hddg_colleague'] == True">
+                                        Có
+                                    </t>
+                                    <t t-if="form['de_xuat_dg_tai_hddg_colleague'] == False">
+                                        Không
+                                    </t>
+                                </td>
+                                <td><t t-esc="form['de_xuat_lydo_colleague']"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page">
+                    <h4 class="table__heading"><strong>VII. ĐỀ XUẤT TẠI HĐĐG</strong></h4>
+                </div>
+                <div class="page">
+                    <h4 class="vertical-center"><strong>Bảng Đề Xuất Của Nhân Viên</strong></h4>
+                    <table class="table table-bordered mb32" style="table-layout:auto">
+                        <tbody>
+                            <tr>
+                                <td style="width: 20%;" class="vertical-center"><strong>Người Đề Xuất</strong></td>
+                                <td style="width: 12%;" class="vertical-center"><strong>Đề Xuất Lương</strong></td>
+                                <td style="width: 12%;" class="vertical-center"><strong>Đề Xuất Thưởng</strong></td>
+                                <td style="width: 20%;" class="vertical-center"><strong>Đề Xuất Chức Vụ</strong></td>
+                                <td style="width: 20%;" class="vertical-center"><strong>Đề Xuất Thuyên Chuyển</strong></td>
+                                <td style="width: 16%;" class="vertical-center"><strong>Khác</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-vertical-center"><t t-esc="form['employee_name']"/></td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_salary_user'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_thuong_user'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_chucvu_user']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_thuyenchuyen_user']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['user_opinion']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="text-vertical-center">QLTT</td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_salary_manager'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_thuong_manager'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_chucvu_manager']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_thuyenchuyen_manager']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['manager_opinion']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="text-vertical-center">Cấp Trên QLTT</td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_salary_smanager'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_thuong_smanager'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_chucvu_smanager']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_thuyenchuyen_smanager']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['smanager_opinion']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="text-vertical-center">HĐĐG</td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_salary_hddg'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_thuong_hddg'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_chucvu_hddg']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_thuyenchuyen_hddg']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['hddg_opinion']"/></td>
+                            </tr>
+                            <tr>
+                                <td class="text-vertical-center">Đồng Nghiệp</td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_salary_colleague'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="'{0:,.0f}'.format(form['dexuat_thuong_colleague'])"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_chucvu_colleague']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['dexuat_thuyenchuyen_colleague']"/></td>
+                                <td class="text-vertical-center"><t t-esc="form['colleague_opinion']"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

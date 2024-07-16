@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_export_inventory_asset_report" model="ir.ui.view">
+            <field name="name">view.export.inventory.asset.report</field>
+            <field name="model">export.inventory.asset</field>
+            <field name="arch" type="xml">
+                <form string="Asset Report">
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="department_id"/>
+                            <field name="location_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xlsx" string="Export XLS" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="export_inventory_asset" model="ir.actions.act_window">
+            <field name="name">Export an inventory of assets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">export.inventory.asset</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <report string="Export an inventory of assets"
+                id="action_export_inventory_asset"
+                model="export.inventory.asset"
+                name="sea_asset_base.export_inventory_asset_xls"
+                file="BienBanKiemKe"
+                report_type="xlsx"
+                attachment_use="False"/>
+
+        <menuitem action="export_inventory_asset"
+                  id="menu_action_export_inventory_asset"
+                  name="Export an inventory of assets"
+                  parent="sea_asset_base.menu_reporting_asset"
+                  sequence='2'
+                  groups="group_asset_officer"/>
+    </data>
+</odoo>

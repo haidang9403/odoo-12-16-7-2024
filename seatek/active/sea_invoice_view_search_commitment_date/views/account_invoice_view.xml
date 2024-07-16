@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sea_invoice_search_commitment_date_inherit" model="ir.ui.view">
+        <field name="name">sea_invoice_search.commitment.date.tree_inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name='commitment_date' position='replace'>
+                <field name="sea_view_commitment_date" readonly="1" force_save="1" widget="date"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sea_sale_channel_view_form" model="ir.ui.view">
+            <field name="name">sea_sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="sea_sale_channel_id" options="{'no_create_edit': True}"/>
+                    <field name="sea_sale_department"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_asset_adjustment_form" model="ir.ui.view">
+            <field name="name">account.asset.adjustment.form</field>
+            <field name="model">account.asset.adjustment</field>
+            <field name="arch" type="xml">
+                <form string="Asset Adjustment" duplicate="false">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="adjustment_code"/>
+                            <field name="increase_quantity"/>
+                            <field name="date_adjustment"/>
+                            <field name="description"/>
+                            <field name="vendor"/>
+                            <field name="vendor_name"/>
+                            <field name="document_ref"/>
+                            <field name="asset_id" invisible="1"/>
+                        </group>
+                    </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                        <field name="activity_ids" widget="mail_activity"/>-->
+<!--                        <field name="message_ids" widget="mail_thread"/>-->
+<!--                    </div>-->
+                </form>
+            </field>
+        </record>
+        <record id="action_account_asset_adjustment" model="ir.actions.act_window">
+            <field name="name">Asset Adjustment</field>
+            <field name="res_model">account.asset.adjustment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

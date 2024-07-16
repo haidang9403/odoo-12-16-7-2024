@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="search_product_report_lot_filter">
+        <field name="name">Production Lots Filter</field>
+        <field name="model">product.report.lot.line</field>
+        <field name="arch" type="xml">
+            <search string="Product Lots Filter">
+                <!--                <field name="name" string="Product Lots" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>-->
+                <field name="location_id"/>
+                <field name="product_id"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_location" string="Location" domain="[]"
+                            context="{'group_by':'location_id'}"/>
+                    <filter name="group_by_product" string="Product" domain="[]" context="{'group_by':'product_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="product_report_lot_line_view_form" model="ir.ui.view">
+        <field name="name">product.report.lot.line.form</field>
+        <field name="model">product.report.lot.line</field>
+        <field name="arch" type="xml">
+            <form string="Product Report Line">
+                <group>
+                    <group>
+                        <field name="location_id"/>
+                        <field name="lot_name"/>
+                        <field name="default_code"/>
+                        <field name="product_name"/>
+                        <field name="product_id"/>
+                        <field name="product_qty"/>
+                    </group>
+                    <group>
+                        <field name="lot_create_date"/>
+                        <field name="life_date"/>
+                        <field name="use_date"/>
+                        <field name="removal_date"/>
+                        <field name="alert_date"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="log_end"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_report_lot_line_view_tree" model="ir.ui.view">
+        <field name="name">product.report.lot.line.tree</field>
+        <field name="model">product.report.lot.line</field>
+        <field name="arch" type="xml">
+            <tree string="Product report line">
+                <field name="location_id"/>
+                <field name="default_code"/>
+                <field name="product_name"/>
+                <field name="lot_name"/>
+                <field name="product_qty"/>
+                <field name="lot_create_date"/>
+                <field name="life_date"/>
+                <field name="use_date"/>
+                <field name="removal_date"/>
+                <field name="alert_date"/>
+                <field name="log_end"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_report_lot_view_form" model="ir.ui.view">
+        <field name="name">Báo cáo tình trạng tồn kho lô</field>
+        <field name="model">product.report.lot</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <header>
+                    <button name="action_report_data" string="Xuất báo cáo" type="object" class="btn-primary"/>
+                    <!--                    <button name="action_report_excel" string="Xuất bảng Excel" type="object" class="btn-primary"/>-->
+                    <button name="action_open_detail" type="object" string="Xem chi tiết"/>
+                </header>
+                <group>
+                    <group string="Chọn Địa điểm kho và Sản phẩm">
+                        <field name="location_ids" widget="many2many_tags"/>
+                        <field name="product_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="Thời gian tạo">
+                        <field name="date_from" widget="date" attrs="{'required': True}"/>
+                        <field name="date_to" widget="date" attrs="{'required': True}"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="hide_stock_closing_zero"/>
+                </group>
+                <notebook>
+                    <page string="Chi tiết sản phẩm theo lô">
+                        <field name="product_report_line_ids" readonly="1"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_report_line_view" model="ir.actions.act_window">
+        <field name="name">Chi tiết sản phẩm theo lô</field>
+        <field name="res_model">product.report.lot.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_group_by_location': 1, 'search_default_group_by_product': 1}</field>
+        <field name="search_view_id" ref="search_product_report_lot_filter"/>
+    </record>
+
+    <record id="action_product_report_lot_view" model="ir.actions.act_window">
+        <field name="name">Báo cáo tình trạng tồn kho lô</field>
+        <field name="res_model">product.report.lot</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="product_report_lot_view_form"/>
+    </record>
+
+    <record id="action_product_report_lot" model="ir.actions.server">
+        <field name="name">Xuất báo cáo sản phẩm theo lô</field>
+        <field name="model_id" ref="model_product_report_lot"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_report()
+        </field>
+    </record>
+
+    <menuitem id="menu_product_report_lot" name="Tình trạng tồn kho lô" parent="stock.menu_warehouse_report"
+              sequence="170" action="action_product_report_lot"/>
+
+    <record id="report_product_cost_lot_wizard_form" model="ir.ui.view">
+        <field name="name">Báo cáo tình trạng tồn kho lô</field>
+        <field name="model">report.product.cost.lot.wizard</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <group>
+                    <field name="product_id" widget="many2many_tags"/>
+                    <field name="lot_id" widget="many2many_tags"/>
+                    <field name="date_to" widget="date" invisible="1"/>
+                    <field name="calculate_product_cost" invisible="1"/>
+                    <field name="hide_display_zero" invisible="0"/>
+                </group>
+                <footer>
+                    <div >
+                <button name="button_export_html" string="View"
+                            type="object" default_focus="1" class="oe_highlight"/>
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_report_product_cost_lot_wizard_view" model="ir.actions.act_window">
+        <field name="name">Báo cáo giá sản phẩm theo lô</field>
+        <field name="res_model">report.product.cost.lot.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="report_product_cost_lot_wizard_form"/>
+    </record>
+
+    <record id="action_report_product_cost_lot_wizard" model="ir.actions.server">
+        <field name="name">Xuất báo cáo giá sản phẩm theo lô</field>
+        <field name="model_id" ref="model_report_product_cost_lot_wizard"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_report()
+        </field>
+    </record>
+
+
+    <menuitem id="menu_report_product_cost_lot" name="Báo cáo giá sản phẩm theo lô" parent="stock.menu_warehouse_report"
+              sequence="171" action="action_report_product_cost_lot_wizard"/>
+
+    <record id="action_product_cost_lot_xlsx" model="ir.actions.report">
+        <field name="name">Product Code XLSX</field>
+        <field name="model">report.product.cost.lot</field>
+        <field name="type">ir.actions.report</field>
+        <field name="report_name">a_f_r.report_product_cost_lot_xlsx</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_file">report_product_cost_lot_xlsx</field>
+    </record>
+
+</odoo>

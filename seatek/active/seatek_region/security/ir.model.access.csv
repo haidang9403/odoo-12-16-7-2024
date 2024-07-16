@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_region,region,model_region,,1,1,1,1
+access_state_region,state.region,model_state_region,,1,1,1,1
+access_country_state_region,res.country.state,model_res_country_state,,1,1,1,1
+access_res_partner_region,res.partner,model_res_partner,,1,1,1,1
+access_sale_report_region,sale.report,model_sale_report,,1,1,1,1
+access_sale_order_region,sale.order,model_sale_order,,1,1,1,1

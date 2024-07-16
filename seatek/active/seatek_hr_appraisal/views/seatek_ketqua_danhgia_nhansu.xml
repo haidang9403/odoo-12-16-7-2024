@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ketqua_danhgia_nhansu_action_kanban_view" model="ir.ui.view">
+            <field name="name">ketqua.danhgia.nhansu.action.kanban.view</field>
+            <field name="model">hr.appraisal</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_appraisal_user_input_kanban" create="0">
+                    <field name="name"/>
+                    <field name="survey_id"/>
+                    <field name="appraisal_mode"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click  o_hr_appraisal_kanban">
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Tiêu chí: <field name="survey_id"/></span>
+                                </div>
+                                <div>
+                                    <span>Trạng thái: <field name="appraisal_mode"/></span>
+                                </div>
+
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="ketqua_danhgia_nhansu_action_form_view" model="ir.ui.view">
+            <field name="name">ketqua.danhgia.nhansu.action.form.view</field>
+            <field name="model">hr.appraisal</field>
+            <field name="target">inline</field>
+            <field name="arch" type="xml">
+                <form create="0" delete="false" duplicate="false" edit="0">
+                    <!-- KHANH -->
+                    <header>
+                        <button  string="Print" name="print_ketqua_sau_danhgia" type="object" class="btn-primary" invisible="0"/>
+                        <button  string="In báo cáo tổng hợp" name="in_baocao_dgns" type="object" class="btn-primary" invisible="0"/>
+                    </header>
+                    <!--                    -->
+                    <div style="margin-top:12px;">
+                        <span>KẾT QUẢ SAU ĐÁNH GIÁ NHÂN SỰ</span>
+                    </div>
+                    <field name="name" readonly="1"/>
+                    <notebook>
+                        <page string="KẾT QUÁ ĐÁNH GIÁ NHÂN SỰ">
+                            <field name="hr_survey_user_input" widget="appraisalUser_one2many" edit="0" style="width:110%">
+                                <tree editable="top" condition="tree" delete="0" create="0">
+                                    <field name="sc_code" rowspan="2" row-level="1" readonly="1"/>
+                                    <field name="name" rowspan="2" row-level="1" readonly="1" />
+                                    <field name="department_id" class="o_field_value_text_250" rowspan="2" row-level="1" readonly="1"/>
+                                    <field name="job_position_id" rowspan="2" row-level="1" readonly="1"/>
+                                    <field name="seagroup_join_date" rowspan="2" row-level="1" readonly="1"/>
+
+                                    <field name="official_contract" colspan="2" data-title="HĐLĐ Chính Thức" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="contract_period" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+                                    <field name="user_seacorp" colspan="3" data-title="NS" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="user_kpi"  row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="rating1_value"  row-level="2" readonly="1" string="XL" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+                                    <field name="manager_seacorp" colspan="3" data-title="QLTT" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="manager_kpi"  row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="rating2_value"  row-level="2" readonly="1" string="XL" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+                                    <field name="smanager_seacorp" colspan="3" data-title="QLCC" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="smanager_kpi"  row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="rating3_value" row-level="2" readonly="1" string="XL" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+                                    <field name="hddg_seacorp" colspan="3" data-title="HĐĐG" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="hddg_kpi" row-level="2" readonly="1" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="rating4_value_compute"  row-level="2" readonly="1" string="XL" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+
+                                    <field name="ct_seacorp" colspan="3" data-title="Chủ Tịch Thông Qua" row-level="2" readonly="0" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="ct_kpi" row-level="2" readonly="0" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="ct_xl"  row-level="2" string="XL" readonly="0" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                    <field name="ghichu_ket_qua_dgns" rowspan="2" row-level="1" string="Ghi Chú" class="last_columns" readonly="0" groups="seatek_hr_appraisal.hr_appraisal_manager"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="ketqua_danhgia_nhansu_action" model="ir.actions.act_window" >
+            <field name="name">KẾT QUẢ ĐÁNH GIÁ NHÂN SỰ</field>
+            <field name="res_model">hr.appraisal</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="context">{'search_default_appraisal_mode': 1}</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <record id="ketqua_danhgia_nhansu_action_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="ketqua_danhgia_nhansu_action_kanban_view"/>
+            <field name="act_window_id" ref="ketqua_danhgia_nhansu_action"/>
+        </record>
+
+        <record id="ketqua_danhgia_nhansu_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="5"/>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="ketqua_danhgia_nhansu_action_form_view"/>
+            <field name="act_window_id" ref="ketqua_danhgia_nhansu_action"/>
+        </record>
+        <record id="ketqua_danhgia_nhansu_show_edit_button" model="ir.ui.view">
+            <field name="name">hr.appraisal.edit.hide</field>
+            <field name="model">hr.appraisal</field>
+            <field name="inherit_id" ref="seatek_hr_appraisal.ketqua_danhgia_nhansu_action_form_view"/>
+            <field name="groups_id" eval="[(4,ref('seatek_hr_appraisal.hr_appraisal_president'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="edit">true</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

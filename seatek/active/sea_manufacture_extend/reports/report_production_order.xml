@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sea_report_mrporder" inherit_id="mrp.report_mrporder">
+        <xpath expr="//t[@t-call='web.internal_layout']" position="replace">
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-set="colclass" t-value="('col-md-5' if report_type == 'html' else 'col-5') + ' ml-auto'"/>
+                <t t-if="not o" t-set="o" t-value="doc"/>
+                <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+                </t>
+                <t t-if="o.company_id.id == 2">
+                    <t t-call="sea_manufacture_extend.dannygreen_report_mrporder_template"/>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="dannygreen_report_mrporder_template">
+        <div class="header" style="padding-top: 20px">
+            <!--            <div style="width: 100%; font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif">-->
+            <div class="row">
+                <div class="col-2">
+                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:80%"
+                         alt="Logo"/>
+                </div>
+                <div class="col-10 text-center">
+                    <div style="font-weight: 800" t-esc="o.company_id.name"/>
+                    <div>
+                        <t t-if="o.company_id.street">
+                            <t t-esc="o.company_id.street"/>,
+                        </t>
+                        <t t-if="o.company_id.street2">
+                            <span t-esc="o.company_id.street2"/>,
+                        </t>
+                        <t t-if="o.company_id.state_id">
+                            <span t-esc="o.company_id.state_id.name"/>
+                        </t>
+                    </div>
+                    <div>
+                        MST :
+                        <span t-esc="o.company_id.vat"/>
+                    </div>
+
+                </div>
+            </div>
+            <div style="background-color:black; height:1px; margin-bottom: 10px; margin-top: 4px"/>
+            <h5 style="text-align: center; font-weight: 800; margin-bottom: 10px">LỆNH SẢN XUẤT -
+                <span t-esc="o.name"/>
+            </h5>
+        </div>
+        <div class="row">
+            <div class="col-3">Chịu trách nhiệm</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="o.user_id.name"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Ngày theo kế hoạch</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="context_timestamp(o.date_planned_start).strftime('%H:%M:%S %d/%m/%Y')"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Thành phẩm</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="o.product_id.name"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Số lượng cần sản xuất</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="o.product_qty"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Số lượng đã sản xuất</div>
+            <div class="col-9" style="margin-left: -30px">
+                <t t-set="quantity_done" t-value="0"/>
+                <t t-set="lot" t-value="''"/>
+                <t t-foreach="o.finished_move_line_ids" t-as="item">
+                    <t t-if="item.product_id.id == o.product_id.id">
+                        <t t-set="quantity_done" t-value="quantity_done + item.qty_done"/>
+                        <t t-if="item.lot_id">
+                            <t t-set="lot" t-value="lot + item.lot_id.name+ ', '"/>
+                        </t>
+                    </t>
+                </t>
+                :
+                <span t-esc="quantity_done"/>
+                <t t-if="lot">
+                    <span style="margin-left: 10px"/>
+                    Lô:
+                    <t t-if="lot">
+                        <span t-esc="lot[:-2]"/>
+                    </t>
+                </t>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Kho nhập thành phẩm</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="o.location_dest_id.name"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Kho xuất nguyên liệu</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="o.location_src_id.name"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Ngày in</div>
+            <div class="col-9" style="margin-left: -30px">:
+                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+            </div>
+        </div>
+        <style type="text/css">
+            td, th {
+            border: 1px solid black;
+            padding: 3px;
+            vertical-align: middle;
+            }
+        </style>
+        <div class="page" style="margin-top: 10px">
+            <table>
+                <thead style="border: 1px solid">
+                    <tr>
+                        <th class="text-center" style="width:58px">STT</th>
+                        <th class="text-center">Mã nguyên liệu</th>
+                        <th class="text-center">Nguyên liệu</th>
+                        <th class="text-center">ĐVT</th>
+                        <th class="text-center">Định mức</th>
+                        <th class="text-center">SL theo định mức</th>
+                        <th class="text-center">% Hao hụt</th>
+                        <th class="text-center">SL dùng thực tế</th>
+                        <th class="text-center">Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-set="line_no" t-value="0"/>
+                    <t t-set="object" t-value=""/>
+                    <t t-foreach="set(o.move_raw_ids.mapped('product_id'))" t-as="line">
+                        <t t-set="line_no" t-value="line_no + 1"/>
+                        <tr style="text-align: right; border: 1px solid">
+                            <td class="text-center">
+                                <span t-esc="line_no"/>
+                            </td>
+                            <t t-set="sltdm" t-value="0"/>
+                            <t t-set="sldtt" t-value="0"/>
+                            <t t-foreach="o.move_raw_ids" t-as="x">
+                                <t t-if="x.product_id == line">
+                                    <t t-set="sltdm" t-value="sltdm + x.product_uom_qty"/>
+                                    <t t-set="sldtt" t-value="sldtt + x.quantity_done"/>
+                                </t>
+                            </t>
+                            <td class="text-center" style="width:100px">
+                                <span t-esc="line.default_code"/>
+                            </td>
+                            <td class="text-left">
+                                <span t-esc="line.name"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="line.sea_unit_of_measure.name"/>
+                            </td>
+                            <t t-set="dm1_qty" t-value="0"/>
+                            <td class="text-right" style="width:75px">
+                                <t t-foreach="o.bom_id.bom_line_ids" t-as="product">
+                                    <t t-if="line == product.product_id">
+                                        <t t-set="dm1_qty" t-value="product.product_qty / o.bom_id.product_qty"/>
+                                        <span t-esc="'{:0,.3f}'.format(product.product_qty / o.bom_id.product_qty)"/>
+                                    </t>
+                                </t>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <span t-esc="'{:0,.3f}'.format(dm1_qty * o.product_qty)"/>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <span t-esc="''"/>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <span t-esc="'{:0,.3f}'.format(sldtt)"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="''"/>
+                            </td>
+
+                        </tr>
+                    </t>
+                    <!--<t t-set="line_no" t-value="0"/>
+                    <t t-foreach="o.move_raw_ids" t-as="line">
+                        <t t-set="line_no" t-value="line_no + 1"/>
+                        <tr style="text-align: right; border: 1px solid">
+                            <td class="text-center">
+                                <span t-esc="line_no"/>
+                            </td>
+                            <td class="text-center" style="width:100px">
+                                <span t-esc="line.product_id.default_code"/>
+                            </td>
+                            <td class="text-left">
+                                <span t-esc="line.product_id.name"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="line.product_id.sea_unit_of_measure.name"/>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <t t-foreach="o.bom_id.bom_line_ids" t-as="product">
+                                    <t t-if="line.product_id.id == product.product_id.id">
+                                        <span t-esc="'{:0,.3f}'.format(product.product_qty)"/>
+                                    </t>
+                                </t>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <span t-esc="'{:0,.3f}'.format(line.product_uom_qty)"/>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <span t-esc="''"/>
+                            </td>
+                            <td class="text-right" style="width:75px">
+                                <span t-esc="'{:0,.3f}'.format(line.quantity_done)"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="''"/>
+                            </td>
+                        </tr>
+                    </t>-->
+                </tbody>
+            </table>
+            <div class="row"
+                 style="margin-top: 20px; font-size: 17px; font-weight: 600">
+                <div class="text-center col-4">Người lập</div>
+                <div class="text-center col-4">Kế toán</div>
+                <div class="text-center col-4">Trưởng bộ phận</div>
+            </div>
+        </div>
+
+    </template>
+</odoo>

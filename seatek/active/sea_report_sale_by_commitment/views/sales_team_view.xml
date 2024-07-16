@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sea_sales_team_view_form" model="ir.ui.view">
+            <field name="name">sea_sales.team_view.form</field>
+            <field name="model">crm.team</field>
+            <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_type']" position="after">
+                    <field name="sea_sales_department"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

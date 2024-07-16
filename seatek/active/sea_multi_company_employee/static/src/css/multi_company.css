@@ -1,0 +1,18 @@
+/* Khoi 9/3/2023 16:27*/
+/* employee table with sticky header and columns */
+
+.employee_treeview_scrollable {
+    width: 100%;
+    max-width: 180%; /* Set the maximum height of the tree view */
+    overflow-x: visible; /* Enable vertical scrolling */
+}
+
+
+
+/*sticky table header*/
+
+.employee_treeview_scrollable thead {
+    position: sticky;
+    top: 0;
+    z-index:2;
+}

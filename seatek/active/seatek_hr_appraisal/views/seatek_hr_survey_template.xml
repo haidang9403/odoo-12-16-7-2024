@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="hr_survey_assets" name="employees optional">
+
+        <script src="/web/static/lib/nvd3/d3.v3.js"/>
+        <script src="/web/static/lib/nvd3/nv.d3.js"/>
+        <script type="text/javascript" src="/web/static/src/js/services/session.js"/>
+        <script type="text/javascript" src="/seatek_hr_appraisal/static/src/js/survey.js"/>
+        <script type="text/javascript" src="/web/static/src/js/chrome/public_root_widget.js"/>
+        <script type="text/javascript" src="/web/static/src/js/fields/field_utils.js"/>
+
+        <t t-call="web._assets_frontend_helpers"/>
+        <link href="/web/static/lib/nvd3/nv.d3.css" rel="stylesheet" type="text/css"/>
+        <t t-call="web._assets_bootstrap"/>
+        <link rel="stylesheet" type="text/less" href="/web/static/src/scss/fonts.scss"/>
+        <!-- Some helper classes (like mt- mb-) are required for survey templates  -->
+        <link rel="stylesheet" type="text/less" href="/web_editor/static/src/scss/web_editor.common.scss"/>
+        <link href="/seatek_hr_appraisal/static/src/css/survey_result.css" rel="stylesheet" type="text/css"/>
+
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/seatek_hr_appraisal/static/src/js/survey.js"/>
+        </xpath>
+    </template>
+
+    <template id="assets_common" name="tour" inherit_id="web.assets_common">
+        <xpath expr="//script[last()]" position="after">
+
+        </xpath>
+    </template>
+
+    <template id="assets_backend" name="employees optional" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/seatek_hr_appraisal/static/src/js/seatek_hr_survey.js"/>
+            <script type="text/javascript" src="/seatek_hr_appraisal/static/src/js/seatek_hr_appraisal.js"/>
+            <script type="text/javascript" src="/seatek_hr_appraisal/static/src/js/survey_kpis_template.js"/>
+            <script type="text/javascript" src="/seatek_hr_appraisal/static/src/js/appraisal_form.js"/>
+            <script type="text/javascript"
+                    src="/seatek_hr_appraisal/static/src/js/seatek_hr_appraisal_user.js"/>
+            <link rel="stylesheet" type="text/scss"
+                  href="/seatek_hr_appraisal/static/src/scss/seatek_hr_appraisal.scss"/>
+            <link rel="stylesheet" type="text/scss"
+                  href="/seatek_hr_appraisal/static/src/scss/seatek_hr_user_input.scss"/>
+        </xpath>
+    </template>
+
+    <template id="403">
+        <t t-call="seatek_hr_appraisal.layout">
+            <div id="wrap">
+                <div class="container">
+                    <h1 class="mt32">403: Forbidden</h1>
+                    <p>The page you were looking for could not be authorized.</p>
+                    <p>Maybe you were looking for
+                        <a t-attf-href="/web#view_type=form&amp;model=survey.survey&amp;id=#{survey.id}&amp;action=survey.action_survey_form">
+                            this page
+                        </a>
+                        ?
+                    </p>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="s_finished" name="Survey Finished">
+        <t t-call="seatek_hr_appraisal.layout">
+            <div class="wrap">
+                <div class="container">
+                    <t t-call="seatek_hr_appraisal.back"/>
+                    <div class="jumbotron mt32">
+                        <h1>Thank you!</h1>
+                        <div>If you wish, you can <a t-att-href="'/hr_survey/change/%s' % (slug(survey))">review and
+                            change your answers</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="not_open" name="Survey not open">
+        <t t-call="seatek_hr_appraisal.layout">
+            <div class="wrap">
+                <div class="container">
+                    <div class="jumbotron mt32">
+                        <h1>Not open</h1>
+                        <p>This survey is not open. Thank you for your interest!</p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="auth_required" name="Login required for this survey">
+        <t t-call="seatek_hr_appraisal.layout">
+            <div class="wrap">
+                <div class="container">
+                    <div class="jumbotron mt32">
+                        <h1>Login required</h1>
+                        <p>Vui lòng đăng nhập để đánh giá. <a
+                                t-attf-href="/web/login?redirect=%2Fhr_survey%2Fstart%2F#{ slug(survey) }">Log in</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Back Button to redirect in form view of survey -->
+    <template id="back" name="Back">
+        <div groups="website.group_website_publisher" t-ignore="true" class="float-right">
+            <a role="button"
+               t-attf-href="/web#view_type=form&amp;model=survey.survey&amp;id=#{survey.id}&amp;action=survey.action_survey_form"
+               class="btn btn-secondary">Back to Survey
+            </a>
+        </div>
+    </template>
+
+    <template id="seatek_hr_appraisal.layout" name="Survey Layout">
+        <t t-call="web.layout">
+            <t t-set="head">
+                <t t-call-assets="web.assets_common"/>
+                <t t-call-assets="seatek_hr_appraisal.hr_survey_assets"/>
+            </t>
+            <body>
+                <header>
+                    <div>
+                        <title>Odoo</title>
+                    </div>
+                    <div class="text-center">
+                        <img t-attf-src="/web/binary/company_logo" alt="Logo"/>
+                    </div>
+                </header>
+                <div id="wrap" class="oe_structure oe_empty"/>
+                <main>
+                    <t t-raw="0"/>
+                </main>
+            </body>
+            <xpath expr="//footer" position="replace">
+                <div class="container mt16 mb8">
+                    <div class="float-right" t-ignore="true" t-if="not editable">
+                        Create a <a target="_blank" href="https://www.odoo.com/page/website-builder">free website</a> with
+                        <a target="_blank" class="badge badge-danger" href="https://www.odoo.com/page/website-builder">
+                            Odoo
+                        </a>
+                    </div>
+                    <div class="float-left text-muted" itemscope="itemscope" itemtype="https://schema.org/Organization">
+                        Copyright &amp;copy;
+                        <span t-field="res_company.name" itemprop="name">Company name</span>
+                    </div>
+                </div>
+            </xpath>
+        </t>
+    </template>
+
+    <template id="survey_init" name="Survey">
+        <t t-call="seatek_hr_appraisal.layout">
+            <div class="wrap">
+                <div class="oe_structure" id="oe_structure_survey_init_1"/>
+                <div class="container">
+                    <t t-call="seatek_hr_appraisal.back"/>
+                    <div class='jumbotron mt32'>
+                        <h1 t-field='survey.name'/>
+                        <div class="oe_no_empty">
+                            <h4 t-field="survey.description"/>
+                        </div>
+                        <a role="button" class="btn btn-primary btn-lg"
+                           t-att-href="'/hr_survey/fill/%s' % (slug(survey))">
+                            Start survey
+                        </a>
+                    </div>
+                </div>
+                <div class="oe_structure" id="oe_structure_survey_init_2"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- A survey -->
+    <template id="survey" name="Survey">
+        <t t-call="seatek_hr_appraisal.layout">
+            <div class="wrap">
+                <div class="oe_structure" id="oe_structure_survey_survey_1"/>
+                <div class="container">
+                    <t t-call="seatek_hr_appraisal.back"/>
+                    <t t-call="seatek_hr_appraisal.summary"/>
+                </div>
+                <div class="oe_structure" id="oe_structure_survey_survey_2"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- A page -->
+    <template id="summary" name="Page">
+        <div class="o_page_header">
+            <p class="float-right">Page
+                <span t-raw='page_nr + 1'/>
+                of
+                <span t-raw="total_page"/>
+            </p>
+            <h1 t-field='survey.name'/>
+            <div class="oe_no_empty">
+                <h4 t-field="survey.description"/>
+            </div>
+        </div>
+
+        <form role="form" method="post" class="js_surveyform" t-att-name="'%s_%s' % (survey.id, page.id)"
+              t-att-action="'/hr_survey/fill/%s' % (slug(survey))"
+              t-att-data-prefill="'/hr_survey/prefill/%s/%s' % (slug(survey), slug(page))"
+              t-att-data-validate="'/hr_survey/validate/%s' % (slug(survey))"
+              t-att-data-submit="'/hr_survey/submit/%s' % (slug(survey))">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <input type="hidden" name="page_id" t-att-value="page.id"/>
+            <h2 class="text-center" t-field="page.name"/>
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__col">
+                        <h3>Question</h3>
+                    </div>
+                    <div class="grid__col">
+                        <h3>Answer</h3>
+                    </div>
+                    <div class="grid__col">
+                        <h3>Comment</h3>
+                    </div>
+                </div>
+                <t t-foreach='questions' t-as='question'>
+                    <t t-set="prefix" t-value="'%s_%s' % (question.page_id.id, question.question_id.id)"/>
+                    <div class="js_question-wrapper" t-att-id="prefix">
+                        <div class="grid__row">
+                            <div class="grid__col">
+                                <span t-call="seatek_hr_appraisal.question_level"/>
+                            </div>
+                            <div class="grid__col">
+                                <span t-call="seatek_hr_appraisal.number_input"/>
+                                <span t-if="question.validation_required == True" class="text-danger">*</span>
+                            </div>
+                            <div class="grid__col">
+                                <span t-call="seatek_hr_appraisal.comment_input"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+
+            </div>
+
+            <!--            <t t-foreach='page.question_ids' t-as='question'>-->
+            <!--                <t t-set="prefix" t-value="'%s' % (survey.id)" />-->
+            <!--                <div class="js_question-wrapper" t-att-id="prefix">-->
+            <!--                    <h2>-->
+            <!--                        <span t-field='question.question' />-->
+            <!--                        <span t-if="question.constr_mandatory" class="text-danger">*</span>-->
+            <!--                    </h2>-->
+            <!--                    <div t-field='question.description' class="text-muted oe_no_empty"/>-->
+            <!--                    <t t-if="question.type == 'free_text'"><t t-call="survey.free_text"/></t>-->
+            <!--                    <t t-if="question.type == 'textbox'"><t t-call="survey.textbox"/></t>-->
+            <!--                    <t t-if="question.type == 'numerical_box'"><t t-call="survey.numerical_box"/></t>-->
+            <!--                    <t t-if="question.type == 'date'"><t t-call="survey.date"/></t>-->
+            <!--                    <t t-if="question.type == 'simple_choice'"><t t-call="survey.simple_choice"/></t>-->
+            <!--                    <t t-if="question.type == 'multiple_choice'"><t t-call="survey.multiple_choice"/></t>-->
+            <!--                    <t t-if="question.type == 'matrix'"><t t-call="survey.matrix"/></t>-->
+            <!--                    <div class="js_errzone alert alert-danger" style="display:none;" role="alert"></div>-->
+            <!--                </div>-->
+            <!--            </t>-->
+            <div class="text-center mt16 mb16">
+                <button t-if="page_nr > 0" type="submit" class="btn btn-secondary" name="button_submit"
+                        value="previous">Previous page
+                </button>
+                <button t-if="not last" type="submit" class="btn btn-primary" name="button_submit" value="next">Next
+                    page
+                </button>
+                <button t-if="last" type="submit" class="btn btn-primary" name="button_submit" value="finish">Submit
+                    survey
+                </button>
+            </div>
+        </form>
+
+        <!-- Modal used to display error message, i.c.o. ajax error -->
+        <div role="dialog" class="modal fade" id="AJAXErrorModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h4 class="modal-title">A problem has occured</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&amp;times;</button>
+                    </header>
+                    <main class="modal-body">
+                        <p>Something went wrong while contacting survey server. <strong class="text-danger">Your answers
+                            have probably not been recorded.
+                        </strong> Try refreshing.
+                        </p>
+                    </main>
+                    <footer class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+    <template id="textbox" name="Text box">
+        <input type="text" class="form-control" t-att-name="prefix"/>
+    </template>
+
+    <template id="numerical_box" name="Numerical box">
+        <input type="number" step="any" class="form-control" t-att-name="prefix"/>
+    </template>
+
+    <template id="question_level">
+        <t t-if="question.enable_edit_title == False">
+            <t t-if="question.summary_level == 1">
+                <h2 class="question-level1" t-field="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 2">
+                <h2 class="question-level2" t-field="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 3">
+                <h2 class="question-level3" t-field="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 4">
+                <h2 class="question-level4" t-field="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 5">
+                <h2 class="question-level5" t-field="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level &gt; 5">
+                <h2 class="question-level5" t-field="question.question_name"/>
+            </t>
+        </t>
+        <t t-if="question.enable_edit_title == True">
+            <t t-set="prefix_question"
+               t-value="'%s_%s_%s' % (question.page_id.id, question.question_id.id, 'question')"/>
+            <t t-if="question.summary_level == 1">
+                <input type="text" class="form-control question-level1" t-att-name="prefix_question" t-att-value="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 2">
+                <input type="text" class="form-control question-level2" t-att-name="prefix_question" t-att-value="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 3">
+                <input type="text" class="form-control question-level3" t-att-name="prefix_question" t-att-value="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level == 4">
+                <input type="text" class="form-control question-level4" t-att-name="prefix_question" t-att-value="question.question_name" />
+            </t>
+            <t t-if="question.summary_level == 5">
+                <input type="text" class="form-control question-level5" t-att-name="prefix_question" t-att-value="question.question_name"/>
+            </t>
+            <t t-if="question.summary_level &gt; 5">
+                <input type="text" class="form-control question-level5" t-att-name="prefix_question" t-att-value="question.question_name"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="number_input">
+        <t t-if="question.can_input == True">
+            <input type="text" class="form-control" t-att-name="prefix"/>
+        </t>
+    </template>
+
+    <template id="comment_input">
+        <t t-set="prefix_comment" t-value="'%s_%s_%s' % (question.page_id.id, question.question_id.id, 'comment')" />
+        <t t-if="question.can_input == True">
+            <input type="text" class="form-control" t-att-name="prefix_comment" t-att-value="question.user_comment"/>
+        </t>
+    </template>
+</odoo>

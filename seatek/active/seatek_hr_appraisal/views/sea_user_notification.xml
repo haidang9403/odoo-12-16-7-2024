@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="mail_act_hr_survey_user_input_active_type" model="mail.activity.type">
+            <field name="name">Đánh Giá Nhân Sự</field>
+            <field name="icon">fa-dollar</field>
+            <field name="category">appraisal</field>
+            <field name="res_model_id" ref="seatek_hr_appraisal.model_hr_survey_user_input"/>
+        </record>
+        <record id="mail_act_hr_survey_user_input_active_type_colleague" model="mail.activity.type">
+            <field name="name">Đánh Giá Nhân Sự Đồng Nghiệp</field>
+            <field name="icon">fa-dollar</field>
+            <field name="category">appraisal_colleague</field>
+            <field name="res_model_id" ref="seatek_hr_appraisal.model_hr_survey_user_input"/>
+        </record>
+        <record id="mail_act_sign_document" model="mail.activity.type">
+            <field name="name">Sign Document</field>
+            <field name="icon">fa-dollar</field>
+            <field name="category">sign_document</field>
+<!--            <field name="res_model_id" ref="seatek_hr_appraisal.model_hr_survey_user_input"/>-->
+        </record>
+    </data>
+</odoo>

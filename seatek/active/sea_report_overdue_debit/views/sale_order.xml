@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sale_order_inherit_debit" model="ir.ui.view">
+            <field name="name">view_sale_order_inherit_debit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box']" position="attributes">
+                    <attribute name="style">width: 500px;</attribute> <!-- Thêm thuộc tính style vào phần tử div -->
+                </xpath>
+                <button name="action_cancel" position="attributes">
+                    <attribute name="states">draft,sent,sale,validate</attribute>
+                </button>
+
+                <xpath expr="//field[@name='picking_ids']" position="after">
+                    <field name="policy_id" invisible="1"/>
+                    <button
+                            name="view_all_f"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-clock-o"
+                            attrs="{'invisible': ['|',('partner_id','=',False),('debit_overdue','=',0)]}"
+                            disabled="True">
+                        <field name="days_past_due" widget="statinfo"/>
+                    </button>
+                    <button type="object" class="oe_stat_button" icon="fa-frown-o" name="view_all_f"
+                            attrs="{'invisible': ['|',('partner_id','=',False),('debit_overdue','=',0)]}"
+                            disabled="True">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="debit_overdue" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">Debit overdue</span>
+                        </div>
+                    </button>
+                    <button disabled="True" type="object" class="oe_stat_button" icon="fa-money" name="view_all_f"
+                            attrs="{'invisible': ['|',('partner_id','=',False)]}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="total_debit" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">Total debit</span>
+                        </div>
+                    </button>
+                </xpath>
+                <field name="payment_term_id" position="before">
+                    <field name="policy_id" readonly="1" options='{"no_open": True}'/>
+                </field>
+            </field>
+        </record>
+
+        <!--sale order draft-->
+        <record id="sale_order_validate_tree" model="ir.ui.view">
+            <field name="name">sale.order.validate.view</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="Sale Order validating" create="false"
+                      decoration-muted="state!='validate'" js_class="sale_order_approved_view">
+                    <field name="message_needaction" invisible="1"/>
+                    <field name="commitment_date" invisible="1"/>
+                    <field name="expected_date" invisible="1"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="state" invisible="1"/>
+
+                    <field name="name" readonly="1"/>
+                    <field name="date_order" readonly="1"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="user_id" readonly="1" options='{"no_open": True}' invisible="1"/>
+                    <field name="amount_total" widget="monetary" readonly="1"/>
+                    <field name="policy_id" readonly="1"/>
+                    <field name="days_past_due" readonly="1"/>
+                    <field name="debit_overdue" readonly="1"/>
+                    <field name="re_available_overdue_debit" readonly="1"/>
+                    <field name="total_debit" readonly="1"/>
+                    <field name="re_available_debit" readonly="1"/>
+                    <field name="state" readonly="1" invisible="1"/>
+                    <field name="user_validate" readonly="1" options='{"no_open": True}'/>
+                    <!--                    <field name="approve" widget="boolean_toggle"/>-->
+                    <button name="action_confirm" string="Approve" type="object" class="btn-primary"
+                            attrs="{'invisible': [('state', '!=', 'validate')]}"/>
+                </tree>
+            </field>
+        </record>
+        <!--        <record id="sale_order_validate_form" model="ir.ui.view">-->
+        <!--            <field name="name">sale.order.draft.view.form</field>-->
+        <!--            <field name="model">sale.order</field>-->
+        <!--            <field name="priority" eval="30"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form string="Pending sale order" class="o_sale_order" modifiers="{}" create="false" edit="false">-->
+        <!--                    <header modifiers="{}">-->
+        <!--                        <field name="authorized_transaction_ids" invisible="1" can_create="false" can_write="false"-->
+        <!--                               modifiers="{'invisible':true,'readonly':true}"/>-->
+        <!--                        <button name="action_confirm" states="validate" type="object" string="Approve"-->
+        <!--                                class="btn-primary" groups="sea_report_overdue_debit.group_customer_risk_management"/>-->
+        <!--                        />-->
+        <!--                    </header>-->
+        <!--                    <div class="oe_button_box" name="button_box" modifiers="{}">-->
+        <!--                        <button name="view_all_debit" type="object" class="oe_stat_button" icon="fa-money"-->
+        <!--                                attrs="{'invisible': [('partner_id','=',False)]}" options="{}">-->
+        <!--                            <field name="total_debit" widget="statinfo" modifiers="{'readonly':true}"/>-->
+        <!--                        </button>-->
+        <!--                        <button name="view_debit_overdue" type="object" class="oe_stat_button" icon="fa-frown-o"-->
+        <!--                                attrs="{'invisible': [('partner_id','=',False)]}">-->
+        <!--                            <field name="debit_overdue" widget="statinfo" modifiers="{'readonly':true}"/>-->
+        <!--                        </button>-->
+        <!--                        <button name="view_oldest_debit" type="object" class="oe_stat_button" icon="fa-clock-o"-->
+        <!--                                attrs="{'invisible': [('debit_overdue','=',0)]}">-->
+        <!--                            <field name="days_past_due" widget="statinfo" modifiers="{'readonly':true}"/>-->
+        <!--                        </button>-->
+        <!--                    </div>-->
+        <!--                    <div class="oe_title" modifiers="{}">-->
+        <!--                        <h1 modifiers="{}">-->
+        <!--                            <field name="name" readonly="1" modifiers="{'readonly':true,'required':true}"/>-->
+        <!--                        </h1>-->
+        <!--                    </div>-->
+        <!--                    <group modifiers="{}">-->
+        <!--                        <group modifiers="{}">-->
+        <!--                            <field name="state" invisible="1"/>-->
+        <!--                            <field name="company_id" invisible="1"/>-->
+        <!--                            <field name="sea_hide_take_invoice_multi_company" invisible="1"/>-->
+        <!--                            <field name="sea_check_customer_for_invoice" invisible="1"/>-->
+
+        <!--                            <field name="partner_id"/>-->
+        <!--                            <field name="policy_id"/>-->
+        <!--                            <field name="partner_invoice_id" context="{'default_type':'invoice'}"-->
+        <!--                                   options="{'always_reload': True}" invisible="1"/>-->
+        <!--                            <field name="partner_shipping_id" context="{'default_type':'delivery'}"-->
+        <!--                                   options="{'always_reload': True}" invisible="1"/>-->
+        <!--                            <field name="sale_order_template_id" context="{'company_id': company_id}" invisible="1"/>-->
+        <!--                            <field name="sale_transaction_id" invisible="1"/>-->
+        <!--                        </group>-->
+        <!--                        <group modifiers="{}">-->
+        <!--                            <field name="validity_date" attrs="{'invisible': [('state', 'in', ['sale', 'done'])]}"/>-->
+        <!--                            <field name="confirmation_date"-->
+        <!--                                   attrs="{'invisible': [('state', 'in', ['draft', 'sent', 'cancel'])]}"/>-->
+        <!--                            <field name="pricelist_id" options='{"no_open": True}' on_change="1" can_create="true"-->
+        <!--                                   can_write="true"/>-->
+
+        <!--                            <field name="custom_seq" invisible="1"/>-->
+        <!--                            <field name="system_seq" invisible="1"/>-->
+        <!--                            <field name="sale_name" invisible="1"/>-->
+        <!--                            <field name="currency_id" invisible="1"/>-->
+        <!--                            <field name="id" invisible="1"/>-->
+        <!--                            <field name="available_carrier_ids" invisible="1"/>-->
+
+        <!--                            <field name="payment_term_id" options="{'no_create': True}"/>-->
+        <!--                            <field name="ean13"/>-->
+        <!--                            <field name="book_order"/>-->
+        <!--                            <field name="delivery_phone" attrs="{'invisible': [('book_order', '=', False)]}"/>-->
+        <!--                            <field name="delivery_address" attrs="{'invisible': [('book_order', '=', False)]}"/>-->
+        <!--                            <field name="delivered_date" attrs="{'invisible': [('book_order', '=', False)]}"/>-->
+        <!--                            <field name="payment_partial_amount"-->
+        <!--                                   attrs="{'invisible': [('book_order', '=', False)]}"/>-->
+        <!--                            <field name="payment_partial_journal_id"-->
+        <!--                                   attrs="{'invisible': [('book_order', '=', False)]}"/>-->
+        <!--                            <field name="signature" widget="image"-->
+        <!--                                   attrs="{'invisible': [('book_order', '=', False)]}"/>-->
+        <!--                        </group>-->
+        <!--                    </group>-->
+        <!--                    <notebook>-->
+        <!--                        <page string="Order Lines" name="order_lines">-->
+        <!--                            <field-->
+        <!--                                    name="order_line"-->
+        <!--                                    mode="tree"-->
+        <!--                                    readonly="1"-->
+        <!--                                    options='{"no_open": True}'-->
+        <!--                            >-->
+        <!--                                <form>-->
+        <!--                                    <field name="display_type" invisible="1"/>-->
+        <!--                                    <field name="sequence" invisible="1"/>-->
+        <!--                                    <group>-->
+        <!--                                        <group attrs="{'invisible': [('display_type', '!=', False)]}">-->
+        <!--                                            <field name="product_updatable" invisible="1"/>-->
+        <!--                                            <field name="product_id"-->
+        <!--                                                   context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"-->
+        <!--                                                   attrs="{-->
+        <!--                                                    'readonly': [('product_updatable', '=', False)],-->
+        <!--                                                    'required': [('display_type', '=', False)],-->
+        <!--                                                }"-->
+        <!--                                                   force_save="1"-->
+        <!--                                            />-->
+        <!--                                            <field name="invoice_status" invisible="1"/>-->
+        <!--                                            <field name="qty_to_invoice" invisible="1"/>-->
+        <!--                                            <field name="qty_delivered_manual" invisible="1"/>-->
+        <!--                                            <field name="qty_delivered_method" invisible="1"/>-->
+        <!--                                            <field name="price_total" invisible="1"/>-->
+        <!--                                            <field name="price_tax" invisible="1"/>-->
+        <!--                                            <field name="price_subtotal" invisible="1"/>-->
+        <!--                                            <label for="product_uom_qty" string="Ordered Quantity"/>-->
+        <!--                                            <div>-->
+        <!--                                                <field-->
+        <!--                                                        context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"-->
+        <!--                                                        name="product_uom_qty" class="oe_inline"/>-->
+        <!--                                                <field-->
+        <!--                                                        name="product_uom"-->
+        <!--                                                        force_save="1"-->
+        <!--                                                        groups="uom.group_uom"-->
+        <!--                                                        class="oe_inline oe_no_button"-->
+        <!--                                                        attrs="{-->
+        <!--                                                        'readonly': [('state', 'in', ('sale', 'done', 'cancel'))],-->
+        <!--                                                        'required': [('display_type', '=', False)],-->
+        <!--                                                    }"-->
+        <!--                                                />-->
+        <!--                                            </div>-->
+        <!--                                            <label for="qty_delivered" string="Delivered Quantity"-->
+        <!--                                                   attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>-->
+        <!--                                            <div attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">-->
+        <!--                                                <field name="qty_delivered"-->
+        <!--                                                       attrs="{'readonly': [('qty_delivered_method', '!=', 'manual')]}"/>-->
+        <!--                                            </div>-->
+        <!--                                            <label for="qty_invoiced" string="Invoiced Quantity"-->
+        <!--                                                   attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>-->
+        <!--                                            <div attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">-->
+        <!--                                                <field name="qty_invoiced"-->
+        <!--                                                       attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>-->
+        <!--                                            </div>-->
+        <!--                                            <field name="price_unit"/>-->
+        <!--                                            <field name="tax_id" widget="many2many_tags"/>-->
+        <!--                                            <label for="analytic_tag_ids" groups="analytic.group_analytic_tags"/>-->
+        <!--                                            <div>-->
+        <!--                                                <field name="analytic_tag_ids" widget="many2many_tags"-->
+        <!--                                                       groups="analytic.group_analytic_tags"-->
+        <!--                                                       options="{'color_field': 'color'}"/>-->
+        <!--                                            </div>-->
+        <!--                                            &lt;!&ndash;-->
+        <!--                                                We need the sequence field to be here-->
+        <!--                                                because we want to be able to overwrite the default sequence value in the JS-->
+        <!--                                                in order for new lines to be added at the correct position.-->
+        <!--                                                NOTE: at some point we want to fix this in the framework so that an invisible field is not required.-->
+        <!--                                            &ndash;&gt;-->
+        <!--                                            <field name="sequence" invisible="1"/>-->
+        <!--                                        </group>-->
+        <!--                                        <group attrs="{'invisible': [('display_type', '!=', False)]}">-->
+        <!--                                            <field name="line_amount_subtotal" string="Subtotal" widget="monetary"-->
+        <!--                                                   groups="account.group_show_line_subtotals_tax_excluded"-->
+        <!--                                                   sum="lines subtotal"/>-->
+        <!--                                            <field name="line_amount_total" string="Total" widget="monetary"-->
+        <!--                                                   groups="account.group_show_line_subtotals_tax_included"-->
+        <!--                                                   sum="lines total"/>-->
+        <!--                                            <field name="discount_type" groups="sale.group_discount_per_so_line"-->
+        <!--                                                   attrs="{'required' :[('discount', '>', 0.0)]}"/>-->
+        <!--                                            <field name="discount" groups="sale.group_discount_per_so_line"/>-->
+        <!--                                            <field name="price_subtotal" widget="monetary"-->
+        <!--                                                   groups="account.group_show_line_subtotals_tax_excluded"/>-->
+        <!--                                            <field name="price_total" widget="monetary" string="Discounted Total"-->
+        <!--                                                   groups="account.group_show_line_subtotals_tax_included"/>-->
+
+        <!--                                        </group>-->
+        <!--                                    </group>-->
+        <!--                                    <label for="remarks" string="Remarks"-->
+        <!--                                           attrs="{'invisible': [('remarks', '=', False)]}"/>-->
+        <!--                                    <div>-->
+        <!--                                        <field name="remarks"/>-->
+        <!--                                    </div>-->
+
+        <!--                                    <label for="name" string="Description"-->
+        <!--                                           attrs="{'invisible': [('display_type', '!=', False)]}"/>-->
+        <!--                                    <label for="name" string="Section Name (eg. Products, Services)"-->
+        <!--                                           attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>-->
+        <!--                                    <label for="name" string="Note"-->
+        <!--                                           attrs="{'invisible': [('display_type', '!=', 'line_note')]}"/>-->
+        <!--                                    <field name="name"/>-->
+
+        <!--                                    <field name="state" invisible="1"/>-->
+        <!--                                </form>-->
+        <!--                                &lt;!&ndash; This is inherited below to make the order lines non-editable (inline)-->
+        <!--                                    for the members of some usability groups (packaging, event):-->
+        <!--                                    Indeed in those cases we need a dialog because there are additional fields to input.-->
+        <!--                                &ndash;&gt;-->
+        <!--                                <tree-->
+        <!--                                        string="Sales Order Lines"-->
+        <!--                                        decoration-info="(not display_type and invoice_status == 'to invoice')"-->
+        <!--                                >-->
+        <!--                                    <field name="sequence" widget="handle"/>-->
+        <!--                                    &lt;!&ndash; We do not display the type because we don't want the user to be bothered with that information if he has no section or note. &ndash;&gt;-->
+        <!--                                    <field name="display_type" invisible="1"/>-->
+
+        <!--                                    <field name="product_updatable" invisible="1"/>-->
+        <!--                                    <field-->
+        <!--                                            name="product_id"-->
+        <!--                                            attrs="{-->
+        <!--                                            'readonly': [('product_updatable', '=', False)],-->
+        <!--                                            'required': [('display_type', '=', False)],-->
+        <!--                                        }"-->
+        <!--                                            force_save="1"-->
+        <!--                                            context="{-->
+        <!--                                            'partner_id': parent.partner_id,-->
+        <!--                                            'quantity': product_uom_qty,-->
+        <!--                                            'pricelist': parent.pricelist_id,-->
+        <!--                                            'uom':product_uom,-->
+        <!--                                            'company_id': parent.company_id,-->
+        <!--                                            'default_lst_price': price_unit,-->
+        <!--                                            'default_description_sale': name-->
+        <!--                                        }"-->
+        <!--                                    />-->
+        <!--                                    <field name="product_custom_attribute_value_ids" invisible="1"/>-->
+        <!--                                    <field name="product_no_variant_attribute_value_ids" invisible="1"/>-->
+        <!--                                    <field name="qty_delivered_manual" invisible="1"/>-->
+        <!--                                    <field name="qty_delivered_method" invisible="1"/>-->
+        <!--                                    <field name="qty_to_invoice" invisible="1"/>-->
+        <!--                                    <field name="state" invisible="1"/>-->
+        <!--                                    <field name="invoice_status" invisible="1"/>-->
+        <!--                                    <field name="customer_lead" invisible="1"/>-->
+        <!--                                    <field name="currency_id" invisible="1"/>-->
+        <!--                                    <field name="price_tax" invisible="1"/>-->
+
+        <!--                                    <field name="name" widget="section_and_note_text"/>-->
+        <!--                                    <field-->
+        <!--                                            name="product_uom_qty"-->
+        <!--                                            string="Ordered Qty"-->
+        <!--                                            context="{-->
+        <!--                                        'partner_id': parent.partner_id,-->
+        <!--                                        'quantity': product_uom_qty,-->
+        <!--                                        'pricelist': parent.pricelist_id,-->
+        <!--                                        'uom': product_uom,-->
+        <!--                                        'company_id': parent.company_id-->
+        <!--                                        }"-->
+        <!--                                    />-->
+        <!--                                    <field-->
+        <!--                                            name="qty_delivered"-->
+        <!--                                            attrs="{-->
+        <!--                                        'column_invisible': [('parent.state', 'not in', ['sale', 'done'])],-->
+        <!--                                        'readonly': [('qty_delivered_method', '!=', 'manual')]-->
+        <!--                                        }"-->
+        <!--                                    />-->
+        <!--                                    <field-->
+        <!--                                            name="qty_invoiced"-->
+        <!--                                            attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])]}"-->
+
+        <!--                                    />-->
+        <!--                                    <field-->
+        <!--                                            name="product_uom"-->
+        <!--                                            force_save="1"-->
+        <!--                                            attrs="{-->
+        <!--                                        'readonly': [('state', 'in', ('sale','done', 'cancel'))],-->
+        <!--                                        'required': [('display_type', '=', False)],-->
+        <!--                                        }"-->
+        <!--                                            context="{'company_id': parent.company_id}"-->
+        <!--                                            groups="uom.group_uom"-->
+        <!--                                            options='{"no_open": True}'-->
+        <!--                                    />-->
+        <!--                                    <field-->
+        <!--                                            name="analytic_tag_ids"-->
+        <!--                                            groups="analytic.group_analytic_tags"-->
+        <!--                                            widget="many2many_tags"-->
+        <!--                                            options="{'color_field': 'color'}"-->
+        <!--                                    />-->
+        <!--                                    <field-->
+        <!--                                            name="price_unit"-->
+        <!--                                            attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"-->
+        <!--                                    />-->
+        <!--                                    <field name="remarks"/>-->
+        <!--                                    <field-->
+        <!--                                            name="tax_id"-->
+        <!--                                            widget="many2many_tags"-->
+        <!--                                            options="{'no_create': True}"-->
+        <!--                                            domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"-->
+        <!--                                            attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"-->
+        <!--                                    />-->
+        <!--                                    <field name="line_amount_subtotal" string="Subtotal" widget="monetary"-->
+        <!--                                           groups="account.group_show_line_subtotals_tax_excluded"-->
+        <!--                                           sum="lines subtotal"/>-->
+        <!--                                    <field name="line_amount_total" string="Total" widget="monetary"-->
+        <!--                                           groups="account.group_show_line_subtotals_tax_included"-->
+        <!--                                           sum="lines total"/>-->
+        <!--                                    <field name="discount_type" groups="sale.group_discount_per_so_line"-->
+        <!--                                           attrs="{'required' :[('discount', '>', 0.0)]}"/>-->
+
+        <!--                                    <field name="discount" groups="sale.group_discount_per_so_line"/>-->
+        <!--                                    <field name="price_subtotal" widget="monetary"-->
+        <!--                                           groups="account.group_show_line_subtotals_tax_excluded"/>-->
+        <!--                                    <field name="price_total" widget="monetary" string="Discounted Total"-->
+        <!--                                           groups="account.group_show_line_subtotals_tax_included"/>-->
+        <!--                                </tree>-->
+        <!--                            </field>-->
+        <!--                            <group>-->
+        <!--                                <group>-->
+        <!--                                    <field name="global_discount_type"-->
+        <!--                                           groups="discount_account_invoice.group_order_global_discount"-->
+        <!--                                           class="oe_inline"-->
+        <!--                                           attrs="{'required' :[('global_order_discount', '>', 0.0)], 'readonly' : [('state', 'in', ['sale', 'done'])]}"/>-->
+        <!--                                    <field name="global_order_discount"-->
+        <!--                                           groups="discount_account_invoice.group_order_global_discount"-->
+        <!--                                           class="oe_inline"-->
+        <!--                                           attrs="{'readonly' : [('state', 'in', ['sale', 'done'])]}"/>-->
+        <!--                                </group>-->
+        <!--                                <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">-->
+        <!--                                    <field name="amount_untaxed" widget='monetary'-->
+        <!--                                           options="{'currency_field': 'currency_id'}"/>-->
+        <!--                                    <field name="amount_tax" widget='monetary'-->
+        <!--                                           options="{'currency_field': 'currency_id'}"/>-->
+        <!--                                    <field name="total_discount" widget='monetary'-->
+        <!--                                           groups="sale.group_discount_per_so_line, discount_account_invoice.group_order_global_discount"-->
+        <!--                                           options="{'currency_field': 'currency_id'}"/>-->
+        <!--                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">-->
+        <!--                                        <label for="amount_total"/>-->
+        <!--                                    </div>-->
+        <!--                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator"-->
+        <!--                                           widget='monetary' options="{'currency_field': 'currency_id'}"/>-->
+        <!--                                </group>-->
+        <!--                            </group>-->
+        <!--                            <field name="note" class="oe_inline"-->
+        <!--                                   placeholder="Terms and conditions... (note: you can setup default ones in the Configuration menu)"/>-->
+        <!--                            <div class="oe_clear"/>-->
+        <!--                        </page>-->
+        <!--                    </notebook>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="action_sale_order_validate" model="ir.actions.act_window">
+            <field name="name">Pending sale order</field>
+            <!--            <field name="type">ir.actions.act_window</field>-->
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|',('state', '=', 'validate'),('user_validate','!=', False)]</field>
+            <field name="view_id" eval="sale_order_validate_tree"/>
+            <field name="context">{}</field>
+            <!--            <field name="view_ids" eval="[(5,0,0),-->
+            <!--                          (0,0,{'view_mode':'tree', 'view_id': ref('sale_order_validate_tree')}),-->
+            <!--                          (0,0,{'view_mode':'form', 'view_id': ref('sale_order_validate_form')})]"/>-->
+        </record>
+        <menuitem
+                id="menu_sale_order_validate"
+                action="action_sale_order_validate"
+                parent="account.menu_finance_receivables"
+                sequence="2" groups="sea_report_overdue_debit.group_customer_risk_management"/>
+    </data>
+</odoo>

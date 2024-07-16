@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="credit_policy_search" model="ir.ui.view">
+            <field name="name">credit.policy.search</field>
+            <field name="model">credit.policy</field>
+            <field name="arch" type="xml">
+                <search string="Search Credit Policy">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="longest_overdue_debt"/>
+                    <field name="overdue_debt_limit"/>
+                    <field name="total_debt"/>
+                    <field name="note"/>
+                    <filter name="filter_un_archive" string="UnArchive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="view_tree_credit_policy" model="ir.ui.view">
+            <field name="name">view.tree.credit.policy</field>
+            <field name="model">credit.policy</field>
+            <field name="arch" type="xml">
+                <tree string="Credit Policy" decoration-muted="active==False" delete="0">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="overdue_debt_limit" widget="monetary"/>
+                    <field name="longest_overdue_debt"/>
+                    <field name="total_debt" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_credit_policy" model="ir.ui.view">
+            <field name="name">view.form.credit.policy</field>
+            <field name="model">credit.policy</field>
+            <field name="arch" type="xml">
+                <form string="Credit Policy" delete="false">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"
+                             groups="sea_report_overdue_debit.group_customer_risk_management">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <h2>
+                            <field name="company_id" options="{'no_create': True}"/>
+                        </h2>
+                        <group>
+                            <group>
+                                <field name="currency_id" options="{'no_create': True,'no_open': True}" invisible="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="total_debt" widget="monetary"
+                                       attrs="{'readonly': [('check_total_debt', '==', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="check_total_debt"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="longest_overdue_debt"
+                                       attrs="{'readonly': [('check_longest_overdue_debt', '==', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="check_longest_overdue_debt"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="overdue_debt_limit" widget="monetary"
+                                       attrs="{'readonly': [('check_overdue_debt_limit', '==', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="check_overdue_debt_limit"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_credit_policy" model="ir.actions.act_window">
+            <field name="name">Credit Policy</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">credit.policy</field>
+            <field name="view_ids" eval="[(5,0,0),
+                          (0,0,{'view_mode':'tree', 'view_id': ref('view_tree_credit_policy')}),
+                          (0,0,{'view_mode':'form', 'view_id': ref('view_form_credit_policy')})]"/>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[("company_id", "=", company_ids)]</field>
+            <field name="search_view_id" ref="credit_policy_search"/>
+        </record>
+        <menuitem id="menu_credit_policy"
+                  action="action_credit_policy"
+                  parent="account.account_management_menu"
+                  sequence="2" groups="sea_report_overdue_debit.group_customer_risk_management"/>
+    </data>
+</odoo>

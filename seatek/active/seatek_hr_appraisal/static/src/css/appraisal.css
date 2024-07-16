@@ -1,0 +1,161 @@
+
+.edit_appraisal{
+    width: 50%;
+}
+
+.edit_appraisal .btn-primary{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.edit_appraisal .o_field_widget.o_field_many2one.o_with_button {
+    width: 100%;
+}
+
+.appraisal_treeview_scrollable {
+
+  width: 160% !important;
+  max-width: 180% !important; /* Set the maximum height of the tree view */
+  overflow-x: visible; /* Enable vertical scrolling */
+}
+
+.edit_appraisal .o_field_many2manytags.o_input.o_field_widget {
+    width: 45%;
+}
+.edit_appraisal .o_field_many2manytags.o_field_widget{
+    width:40%;
+}
+.edit_appraisal1 .o_field_widget.o_field_many2one.o_with_button {
+    width: 45%;
+}
+.edit_appraisal1 .btn-primary {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+// Button box
+.oe_khongdanhgia_button_box {
+        width: 600px;
+        text-align: right;
+        float: right;
+        margin-bottom: 4px;
+
+        &, & + .oe_avatar {
+            + .oe_title {
+                width: 600px;
+            }
+        }
+
+
+
+
+    /* Khanh 09:07 20/09/2022 */
+
+    /*KPIs*/
+.edit_table_KPIs .o_list_view td.o_data_cell.level-1.edit_STT {
+    min-width: 55px;
+}
+
+.edit_table_KPIs .o_list_view td.o_data_cell.level-1.edit_STT > span {
+    margin-left: 5px;
+}
+
+.edit_table_KPIs .o_list_view td.o_data_cell.level-2.edit_STT {
+    min-width: 55px;
+}
+
+.edit_table_KPIs .o_list_view td.o_data_cell.level-3.edit_STT {
+    min-width: 65px;
+}
+
+.edit_table_KPIs .o_list_view th.o_column_sortable {
+    background-color: #875A7B;
+    color: white;
+    font-weight: 400;
+}
+.edit_table_KPIs .o_list_view th.o_field_value_text {
+    background-color: #875A7B;
+    color: white;
+    font-weight: 400;
+
+}
+.edit_table_KPIs .o_list_view th.o_field_value_text_hddg {
+    background-color: #875A7B;
+    color: white;
+    font-weight: 400;
+}
+
+.edit_table_KPIs .o_list_view tr.o_data_row.level-1 {
+    background: #f7e5a3;
+    color: black;
+}
+
+.edit_table_KPIs .o_list_view tr.o_data_row.level-2 {
+    color: black;
+    background-color: #FFFEE2;
+
+}
+
+.edit_table_KPIs tr.o_data_row.level-3 {
+    background-color: ivory;
+}
+
+.edit_table_KPIs th.o_column_sortable.o_field_value_number {
+    min-width: 80px;
+}
+
+.edit_table_KPIs th.o_column_sortable.o_field_value_number {
+    text-align: center !important;
+}
+
+
+    /*.edit_table_SEACORP*/
+.edit_table_SEACORP .o_list_view td.o_data_cell.level-1.edit_STT {
+    min-width: 55px;
+}
+
+.edit_table_SEACORP .o_list_view td.o_data_cell.level-1.edit_STT > span {
+    margin-left: 5px;
+}
+
+.edit_table_SEACORP .o_list_view td.o_data_cell.level-2.edit_STT {
+    min-width: 55px;
+}
+
+.edit_table_SEACORP .o_list_view td.o_data_cell.level-3.edit_STT {
+    min-width: 65px;
+}
+
+.edit_table_SEACORP .o_list_view th.o_column_sortable {
+    background-color: #875A7B;
+    color: #edeaea;
+    font-weight: 400;
+
+}
+.edit_table_SEACORP .o_list_view th.o_field_value_text {
+    background-color: #875A7B;
+    color: #edeaea;
+    font-weight: 400;
+}
+.edit_table_SEACORP .o_list_view th.o_field_value_text_hddg {
+    background-color: #875A7B;
+    color: #edeaea;
+    font-weight: 400;
+
+}
+
+.edit_table_SEACORP .o_list_view tr.o_data_row.level-1 {
+    background: #f7e5a3;
+    color: black;
+}
+.edit_table_SEACORP .o_list_view tr.o_data_row.level-2 {
+    color: black;
+    background-color: #FFFEE2;
+}
+
+.edit_table_SEACORP tr.o_data_row.level-3 {
+    background-color: ivory;
+}
+
+/*.edit_table_SEACORP th.o_column_sortable.o_field_value_number {
+    min-width: 130px;
+}*/

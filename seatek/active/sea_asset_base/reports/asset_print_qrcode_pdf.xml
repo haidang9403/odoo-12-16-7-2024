@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="print_qrcode">
+        <t t-call="web.basic_layout">
+            <style>
+                .page {
+                    font-size: 12pt;
+                    font-family: "Times New Roman", Times, serif;
+                    margin-top: 1px;
+                    margin-bottom: 1px;
+                }
+
+               .asset_ìnfo_text {
+                    font-size: 50px;
+                    font-family: "Times New Roman", Times, serif;
+                    text-align: left;
+                    text-align: top !important;
+                    margin-left: 20pt; !important;
+                    border:0px;
+               }
+                .qr_code_text {
+                    font-size: 6pt;
+                    font-family: "Times New Roman", Times, serif;
+                    text-align: left;
+                    text-align: top !important;
+                    margin-left: 1pt; !important;
+                    border:0px;
+               }
+                .qr_code {
+                    width: 40pt;
+                    height:40pt;
+                    margin-top: 5pt; !important;
+                    margin-left: 1px; !important;
+                    border:0px;
+                    vertical-align: top !important;
+                }
+            </style>
+            <div class="page">
+
+                    <t t-foreach="asset" t-as="rows">
+
+                        <table style="width=100%;border=0px; border-collapse: collapse;">
+
+                        <tr style="vertical-align: top;">
+                            <td>
+                                <img t-if="rows['qr_code']" t-att-src="'data:image/png;base64,'+rows['qr_code']" class="qr_code"
+                                     style="padding: 0px; margin-left: -10px;font-size:14px;width:60px;height:60px;" />
+                            </td>
+                            <td colspan="2" align="center"
+                                style="text-align: top; vertical-align: top;margin-top:5px !important;margin-left:1px font-size:12px;">
+                                <div t-esc="rows['company']" align="center" style="font-size:10px;margin-left:1px;"/>
+                                <div  t-esc="rows['sea_office']" align="center" style="font-size:10px;margin-left:1px;" />
+                                <div t-esc="rows['name']" align="center" style=" font-weight:bold; margin-top:1px;font-size:12px;margin-left:10px;"/>
+
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;" align="center">
+                            <td colspan="3">
+                            <span t-esc="rows['code']" align="center" style="font-size:12px;margin-left:1px;margin-top:10px"/>
+                            </td>
+                        </tr>
+
+                        </table>
+                        <div style="page-break-after: always;"></div>
+                    </t>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

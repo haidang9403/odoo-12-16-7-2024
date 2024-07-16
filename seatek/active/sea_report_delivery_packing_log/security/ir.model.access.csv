@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+
+access_sea_deliery_log_report,access.sea.delivery.log.report,model_delivery_packing_log_report,,1,1,1,1

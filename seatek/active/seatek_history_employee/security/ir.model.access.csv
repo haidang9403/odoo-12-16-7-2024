@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+view_employee_history,view.employee_history.user,model_sea_employee_history,base.group_user,1,0,0,0
+view_employee_history_current_status,view.employee_history_current_status.user,model_sea_employee_history_current_status,base.group_user,1,0,0,0
+view_sea_employee_history_salary,view.sea_employee_history_salary.user,model_sea_employee_history_salary,base.group_user,1,0,0,0
+view_employee_history_manager,view.employee_history.manager,model_sea_employee_history,hr.group_hr_manager,1,0,1,0
+view_employee_history_current_status_manager,view.employee_history_current_status.manager,model_sea_employee_history_current_status,hr.group_hr_manager,1,1,1,0
+view_sea_employee_history_salary_manager,view.sea_employee_history_salary.manager,model_sea_employee_history_salary,hr.group_hr_manager,1,0,1,0

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="city_data" model="res.city">
+            <field name="name">Cần Thơ</field>
+            <field name="phone_code">0</field>
+            <field name="country_code">241</field>
+        </record>
+		<record id="city_data" model="res.city">
+            <field name="name">Hồ Chí Minh</field>
+            <field name="phone_code">0</field>
+            <field name="country_code">241</field>
+        </record>
+		<record id="city_data" model="res.city">
+            <field name="name">Sóc Trăng</field>
+            <field name="phone_code">0</field>
+            <field name="country_code">241</field>
+        </record>
+    </data>
+</odoo>

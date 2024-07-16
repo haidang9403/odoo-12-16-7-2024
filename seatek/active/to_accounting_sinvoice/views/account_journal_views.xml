@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_account_journal_form" model="ir.ui.view">
+			<field name="name">account.journal.form</field>
+			<field name="model">account.journal</field>
+			<field name="inherit_id"
+				ref="account.view_account_journal_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='advanced_settings']"
+					position="after">
+					<page name="sinvoice_integration"
+						string="S-Invoice Integration"
+						groups="account.group_account_manager,base.group_system"
+						attrs="{'invisible': [('type','!=','sale')]}">
+						<field name='company_sinvoice_enabled' invisible="1" />
+						<div class="text-muted"
+							attrs="{'invisible': [('company_sinvoice_enabled','=',True)]}">
+							S-Invoice is not enabled for the current company yet.
+							Please go to Accounting > Configuration > Settings to enabled
+							S-Invoice if you want.
+						</div>
+						<group>
+							<group>
+								<field name="sinvoice_disabled"
+									attrs="{'invisible': [('company_sinvoice_enabled','=',False)]}" />
+								<field name="sinvoice_enabled" invisible="1" />
+								<field name="sinvoice_item_name"
+									attrs="{'invisible': ['|',('sinvoice_disabled','=',True),('company_sinvoice_enabled','=',False)]}" />
+								<field name="send_mail_sinvoice_disabled" />
+								<field name="sinvoice_send_mail_option"
+									attrs="{'invisible': [('send_mail_sinvoice_disabled','=',True)]}" />
+							</group>
+<!--							<group>-->
+<!--								<field name="account_sinvoice_serial_id"-->
+<!--									attrs="{'invisible': ['|',('sinvoice_disabled','=',True),('company_sinvoice_enabled','=',False)]}" />-->
+<!--								<field name="account_sinvoice_template_id"-->
+<!--									attrs="{'invisible': ['|',('sinvoice_disabled','=',True),('company_sinvoice_enabled','=',False)]}" />-->
+<!--								<field name="account_sinvoice_type_id"-->
+<!--									attrs="{'invisible': ['|',('sinvoice_disabled','=',True),('company_sinvoice_enabled','=',False)]}" />-->
+<!--							</group>-->
+						</group>
+						<group attrs="{'invisible': ['|',('sinvoice_disabled','=',True),('company_sinvoice_enabled','=',False)]}">
+							<group>
+								<field name="sinvoice_item_name_new_line_replacement" />
+								<field name="sinvoice_item_name_limit" />							
+							</group>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</odoo>

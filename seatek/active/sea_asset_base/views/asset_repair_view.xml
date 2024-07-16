@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="asset_repair_form" model="ir.ui.view">
+            <field name="name">asset.repair.form</field>
+            <field name="model">asset.repair</field>
+            <field name="arch" type="xml">
+                <form string="Asset Repair" duplicate="false">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="set_to_process" attrs="{'invisible': [('state', '=', 'process')]}"
+                                string="Process" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_officer"/>
+                        <button name="set_to_done" attrs="{'invisible': [('state', '!=', 'process')]}"
+                                string="Done" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_officer"/>
+
+                        <button name="set_back_to_draft" attrs="{'invisible': [('state', '!=', 'process')]}"
+                                string="Back to Draft" type="object" class="oe_highlight" groups="sea_asset_base.group_asset_manager"/>
+                        <button name="export_xls" string="Export" type="object"
+                                class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="company_id" readonly="1" options="{'no_open':True}"></field>
+                            <field name="repair_date" attrs="{'readonly': [('state', '=', 'done')]}" widget="date"/>
+                            <field name="employee_temporary" string="Employee" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="repair_lines" string="Transfer Repair">
+                                <field name="asset_repair_lines" attrs="{'readonly': [('state', '=', 'done')]}">
+                                    <tree editable="top">
+                                        <field name="asset_id"/>
+                                        <field name="company_id" invisible="1"/>
+                                        <field name="asset_code"/>
+                                        <field name="quantity"/>
+                                        <field name="uom_id"/>
+                                        <field name="repair_date_start" widget="date"/>
+                                        <field name="repair_date_end" widget="date"/>
+                                        <field name="repair_party"/>
+                                        <field name="accident_place"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="asset_repair_tree" model="ir.ui.view">
+            <field name="name">asset.repair.tree</field>
+            <field name="model">asset.repair</field>
+            <field name="arch" type="xml">
+                <tree string="Asset Transfers">
+                    <field name="company_id"/>
+                    <field name="repair_date"/>
+                    <field name="employee_temporary" string="Employee" options="{'no_create':True}"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_asset_repair" model="ir.actions.act_window">
+            <field name="name">Asset Repair</field>
+            <field name="res_model">asset.repair</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('company_id','=',company_ids)]</field>
+        </record>
+
+
+        <menuitem id="menu_asset_repair"
+                  name="Asset Repair"
+                  parent="menu_operations_asset"
+                  action="action_asset_repair"
+                  sequence="1"
+                  groups="group_asset_officer"/>
+    </data>
+</odoo>

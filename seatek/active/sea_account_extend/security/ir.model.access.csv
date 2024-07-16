@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_transaction_type_admin,transaction.type admin,model_transaction_type,account.group_account_manager,1,1,1,1
+access_account_determination_admin,account.determination admin,model_account_determination,account.group_account_manager,1,1,1,1

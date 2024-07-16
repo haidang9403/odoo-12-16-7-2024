@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_partner_shipping_form" model="ir.ui.view">
+            <field name="name">res.partner.shipping.form.custom</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Contact / Address">
+                    <sheet>
+                        <!-- parent_id and type fields needed in attrs in base_address_city module which overwrites
+                        _fields_view_get() of partner. It would be better to put those fields there but the web client
+                        dosen't support when a field is displayed several times in the same view.-->
+                        <field name="type" required="1" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                        <field name="parent_id" invisible="1"/>
+                        <hr/>
+                        <group>
+                            <group>
+                                <!--                                attrs="{'invisible': [('type','=', 'contact')]}">-->
+                                <label for="street" string="Address"/>
+                                <div>
+                                    <div class="o_address_format" name="div_address">
+                                        <field name="street" placeholder="Street..." class="o_address_street"/>
+                                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                        <field name="city" placeholder="City" class="o_address_city"/>
+                                        <field name="state_id" class="o_address_state" placeholder="State"
+                                               options='{"no_open": True}'
+                                               context="{'country_id': country_id, 'zip': zip}"/>
+                                        <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                        <field name="country_id" placeholder="Country" class="o_address_country"
+                                               options='{"no_open": True, "no_create": True}'/>
+                                    </div>
+                                </div>
+                            </group>
+                            <group>
+                                <field name='contact_type' readonly='0' invisible="1"/>
+                                <!--            domain="[('customer', '=', True), ('type', '=', 'contact')]"-->
+                                <!--                                <field name="contact_id" string="Contact"-->
+                                <!--                                       attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"/>-->
+                                <field name="name" string="Contact Name"
+                                       required="True"/>
+                                <!--                                , 'invisible': [('contact_type','=','attached')]-->
+                                <!--                                <field name="title" placeholder="e.g. Mr."-->
+                                <!--                                       attrs="{'invisible': [('type','!=', 'contact')]}"/>-->
+                                <!--                                <field name="function" placeholder="e.g. Sales Director"-->
+                                <!--                                       attrs="{'invisible': [('type','!=', 'contact')]}"/>-->
+
+                                <!--                                <field name='contact_code' attrs="{'invisible':[('type','not in',['vat','invoice'])]}"/>-->
+                                <!--                                <field name='vat'-->
+                                <!--                                       attrs="{'required': [('type', '=', 'vat')], 'invisible':[('type','not in',['vat','invoice'])]}"-->
+                                <!--                                       string="VAT"/>-->
+                                <!--                                <field name='sea_business_code'-->
+                                <!--                                       attrs="{'invisible':[('type','not in',['vat','invoice'])]}"/>-->
+                                <field name="email"/>
+                                <field name="phone" widget="phone"/>
+                                <field name="mobile" widget="phone"/>
+                                <field name="comment" placeholder="internal note..."/>
+                            </group>
+                        </group>
+                        <field name="supplier" invisible="True"/>
+                        <field name="customer" invisible="True"/>
+                        <field name="lang" invisible="True"/>
+                        <field name="image" invisible="True"/>
+                        <field name="user_id" invisible="True"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sc_sale_quotation_view_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name='partner_id' position="replace">
+                    <field name="domain_delivery" invisible="1"/>
+                    <field name="domain_vat" invisible="1"/>
+                    <field name="domain_invoice" invisible="1"/>
+                    <field name="street_partner" invisible="1"/>
+                    <field name="street2_partner" invisible="1"/>
+                    <field name="state_id_partner" invisible="1"/>
+                    <field name="zip_partner" invisible="1"/>
+                    <field name="city_partner" invisible="1"/>
+                    <field name="country_id_partner" invisible="1"/>
+                    <field name="supplier_partner" invisible="1"/>
+                    <field name="customer_partner" invisible="1"/>
+                    <field name="lang_partner" invisible="1"/>
+                    <field name="user_id_partner" invisible="1"/>
+                    <field name="partner_id"/>
+                </field>
+                <field name="partner_shipping_id" position="attributes">
+                    <attribute name="domain">[('id','in',domain_delivery)]</attribute>
+                    <attribute name="string">Shipping Address</attribute>
+                    <attribute name="context">{'default_type':'delivery',
+                        'default_parent_id': partner_id, 'default_street': street_partner,
+                        'default_street2': street2_partner, 'default_city': city_partner,
+                        'default_state_id': state_id_partner, 'default_zip': zip_partner,
+                        'default_country_id': country_id_partner, 'default_supplier': supplier_partner,
+                        'default_customer': customer_partner, 'default_lang': lang_partner,
+                        'default_user_id': user_id_partner,
+                        'form_view_ref':'sea_sale_order_extend.view_partner_shipping_form',
+                        'order_by': 'type DESC'}
+                    </attribute>
+                </field>
+                <field name="partner_invoice_id" position="attributes">
+                    <attribute name="domain">[]</attribute>
+                    <attribute name="context">{'default_customer':True,'domain':domain_invoice,'domain_search_more':'[[\'customer\', \'=\', true],[\'parent_id\', \'=\', false]]'}</attribute>
+                    <attribute name="widget">many2one_search_more_partner</attribute>
+                </field>
+                <field name='partner_invoice_id' position="after">
+                    <field name="partner_vat_id" groups="sale.group_delivery_invoice_address"
+                           context="{'default_is_company':True, 'order_by': 'type DESC','domain':domain_vat,'domain_search_more':'[[\'is_company\', \'=\', true]]'}"
+                           options="{'always_reload': True}"
+                           domain="[]"
+                           attrs="{'readonly':[('state','not in',('draft','sent','sale'))],'required' :[('sea_check_customer_for_invoice', '=', False)],'invisible' :[('sea_check_customer_for_invoice', '=', True)]}"
+                           widget="many2one_search_more_partner"
+                    />
+                    <!--                    <label for="partner_vat_id" class="oe_edit_only"-->
+                    <!--                           string="VAT Address"/>-->
+                    <!--                    <div class="o_field_widget o_required_modifier d-flex align-items-center">-->
+                    <!--                        <field name="partner_vat_id" groups="sale.group_delivery_invoice_address"-->
+                    <!--                               context="{'default_is_company':True, 'default_type':'vat', 'order_by': 'type DESC','domain':domain_vat,'domain_search_more':'[[\'is_company\', \'=\', true]]'}"-->
+                    <!--                               options='{"no_open": True, "always_reload": True}'-->
+                    <!--                               domain="[('id','in',domain_vat)]"-->
+                    <!--                               attrs="{'required' :[('sea_check_customer_for_invoice', '=', False)]}"-->
+                    <!--                               widget="many2one_search_more_partner"-->
+                    <!--                        />-->
+                    <!--                        <span class="ml-2 btn btn-secondary btn-add-vat"><i class="fa fa-fw o_button_icon fa-plus"/></span>-->
+                    <!--                    </div>-->
+                    <!--                    -->
+                </field>
+                <!--                <field name='product_id' position="after">-->
+                <!--                    <field name="sale_line_transaction_id" attrs="{'required' :[('price_unit','=',0)], 'readonly':[('state','in',('done'))]}"/>-->
+                <!--                </field>-->
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_id']"
+                       position="before">
+                    <field name="sale_line_transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                </xpath>
+                <field name='sale_order_template_id' position="after">
+                    <field name="sale_transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                    <field name="warehouse_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                </field>
+                <field name='payment_term_id' position="after">
+                    <field name="sea_payment_method" attrs="{'readonly':[('state','in',('done'))]}"/>
+                </field>
+
+                <xpath expr='//notebook' position="inside">
+                    <page string="Sea Extra Info">
+                        <group>
+                            <group string="Extra Information">
+                                <!--group string="Information" attrs="{'invisible': [('company_id', '!=', 11)]}" -->
+                                <field name="sea_ship_partner_id" domain="[('type','=','ship')]"
+                                       options='{"always_reload": True}'/>
+                                <field name="sea_temp_contact"/>
+                                <field name="sea_temp_delivery_address"/>
+                                <field name="sea_customer_inquiry_no"/>
+                                <field name="sea_customer_inquiry_date"/>
+                                <field name="sea_customer_po_no"/>
+                                <field name="sea_imo_no" attrs="{'invisible': [('company_id', '!=', 11)]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <!--TKK-->
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='route_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='product_packaging']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='route_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='delivery']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_uom']"
+                       position="after">
+                    <field
+                            name="price_unit"
+                            attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"
+                    />
+
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_total']"
+                       position="after">
+                    <field name="route_id" groups="sale_stock.group_route_so_lines" options="{'no_create': True}"/>
+                    <field name="delivery"/>
+                </xpath>
+                <!--                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='tax_id']" position="after">-->
+                <!--                    <field name="sale_with_package" invisible="1" groups="product.group_stock_packaging"/>-->
+                <!--                    <field name="product_packaging"-->
+                <!--                           attrs="{'invisible': ['|', ('product_id', '=', False), ('sale_with_package', '=', False)]}"-->
+                <!--                           context="{'default_product_id': product_id, 'tree_view_ref':'product.product_packaging_tree_view', 'form_view_ref':'product.product_packaging_form_view'}"-->
+                <!--                           domain="[('product_id','=',product_id)]" groups="product.group_stock_packaging"/>-->
+                <!--                    <field name="product_packaging_qty"-->
+                <!--                           attrs="{'invisible': ['|', ('product_packaging', '=', False), ('sale_with_package', '=', False)]}"-->
+                <!--                           groups="product.group_stock_packaging"/>-->
+                <!--                    <field name="list_price"-->
+                <!--                           attrs="{'invisible': ['|', '|', ('product_packaging', '=', False), ('sale_with_package', '=', False), ('product_packaging_qty', '=', 0)]}"-->
+                <!--                           groups="product.group_stock_packaging"/>-->
+                <!--                </xpath>-->
+                <xpath expr="//page/field[@name='order_line']/form/group/group/label[@for='product_uom_qty']"
+                       position="before">
+                    <field name="sale_with_package" invisible="1" groups="product.group_stock_packaging"/>
+                    <field name="product_packaging"
+                           attrs="{'invisible': ['|', ('product_id', '=', False), ('sale_with_package', '=', False)]}"
+                           context="{'default_product_id': product_id, 'tree_view_ref':'product.product_packaging_tree_view', 'form_view_ref':'product.product_packaging_form_view'}"
+                           domain="[('product_id','=',product_id)]" groups="product.group_stock_packaging"/>
+                    <field name="product_packaging_qty"
+                           attrs="{'invisible': ['|', ('product_packaging', '=', False), ('sale_with_package', '=', False)]}"
+                           groups="product.group_stock_packaging"/>
+                    <field name="list_price"
+                           attrs="{'invisible': ['|', '|', ('product_packaging', '=', False), ('sale_with_package', '=', False), ('product_packaging_qty', '=', 0)]}"
+                           groups="product.group_stock_packaging"/>
+                </xpath>
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='tax_id']"
+                       position="replace">
+                    <field name="sale_line_transaction_id"
+                           attrs="{'readonly':[('state','in',('done'))]}"/>
+                    <field name="route_id" groups="sale_stock.group_route_so_lines" options="{'no_create': True}"/>
+                </xpath>
+                <field name='product_uom' position="before">
+                    <field name="product_uom_select" invisible="1"/>
+                </field>
+                <xpath expr="//page/field[@name='order_line']/form/group/group/div/field[@name='product_uom']" position="attributes">
+                    <attribute name="attrs">
+                        {
+                        'readonly': ['|', ('product_uom_select','=', False), ('state', 'in', ('sale', 'done',
+                        'cancel'))],
+                        'required': [('display_type', '=', False)],
+                        }
+                    </attribute>
+                </xpath>
+                <field name='product_id' position="after">
+                    <field name="tax_id" widget="many2many_tags" options="{'no_create': True}"
+                           context="{'search_view_ref': 'account.account_tax_view_search'}"
+                           domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+                           attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
+                </field>
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='product_uom_qty']" position="before">
+                    <field name="product_packaging" groups="product.group_stock_packaging"/>
+                    <field name="product_packaging_qty" groups="product.group_stock_packaging"/>
+                </xpath>
+
+
+                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='price_unit']"
+                       position="after">
+                    <field name="line_amount_total" string="Total"/>
+                </xpath>
+                <!--                <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='discount_type']" position="after">-->
+                <!--                    <field name="price_total"/>-->
+                <!--                </xpath>-->
+            </field>
+        </record>
+        <!--TKK-->
+        <record id="product_template_form_view_invisible_packaging_ids" model="ir.ui.view">
+            <field name="name">product.template.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="pos_retail.product_template_form_view_retail"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='packaging_ids']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('sale_with_package', '=', False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="inherit_sale_order_line_tree_view" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="discount_sale_order.inherit_sale_order_line_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="partner_invoice_id" position="attributes">
+                    <attribute name="string">Bill-to Address</attribute>
+                </field>
+                <xpath expr="//field[@name='order_line']//form//div[@name='discount_type']" position="after">
+                    <field name="price_total" string="Discounted Total"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- TKK lấy từ pos_retail qua -->
+        <record id="booking_order_sale_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree.retail.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="ean13"/>
+                    <field name="book_order"/>
+                    <field name="delivery_phone"/>
+                    <field name="delivery_date"/>
+                    <field name="delivery_address"/>
+                    <field name="delivered_date"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

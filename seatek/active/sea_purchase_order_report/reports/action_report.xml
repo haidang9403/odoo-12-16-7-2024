@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="action_purchase_order_report"
+                string="Purchase Order - PDF"
+                model="purchase.order"
+                report_type="qweb-pdf"
+                groups=""
+                name="sea_purchase_order_report.report_sea_purchases"
+                file="sea_purchase_order_report.report_sea_purchases"
+                print_report_name="'PO - %s' % (object.name)"
+        />
+    </data>
+    <template id="report_sea_purchases">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name"
+                     t-att-data-oe-id="o and o.id"
+                     t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    <t t-set="colclass" t-value="('col-md-5' if report_type == 'html' else 'col-5') + ' ml-auto'"/>
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                    <t t-if="not o" t-set="o" t-value="doc"/>
+                    <t t-if="not company">
+                        <!-- Multicompany -->
+                        <t t-if="company_id">
+                            <t t-set="company" t-value="company_id"/>
+                        </t>
+                        <t t-elif="o and 'company_id' in o">
+                            <t t-set="company" t-value="o.company_id.sudo()"/>
+                        </t>
+                        <t t-else="else">
+                            <t t-set="company" t-value="res_company"/>
+                        </t>
+                    </t>
+                    <!-- Call Template By Company-->
+                    <t t-if="o.company_id.id == 2 or o.company_id.id == 25">
+                        <t t-call="sea_purchase_order_report.dannygreen_po_template"
+                           t-lang="doc.partner_id.lang"/>
+                    </t>
+                    <!--<t t-if="o.company_id.id == 11">
+                        <t t-call="sea_purchase_order_report.pegasus_po_template"
+                           t-lang="doc.partner_id.lang"/>
+                    </t>-->
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

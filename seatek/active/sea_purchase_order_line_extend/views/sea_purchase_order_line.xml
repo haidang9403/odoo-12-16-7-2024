@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sea_purchase_order_line" model="ir.ui.view">
+            <field name="name">purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='company_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="before">
+                    <field name="transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                    <field name="asset_code"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                    <field name="sea_hscode" attrs="{'invisible': [('company_id','!=',11)]}"/>
+                    <field name="advance_file_id"/>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('company_id', '!=', 11)]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="sea_vessel_name" attrs="{'invisible': [('company_id','!=',11)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="payment_vendor" widget="res_partner_many2one"
+                           context="{'search_default_supplier':1, 'default_supplier':1, 'default_customer':0, 'show_vat': True}"
+                           domain="[('supplier','=',True)]"
+                           placeholder="Tên, MST, Email, hoặc Mã"/>
+                </xpath>
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group/group" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group/group" position="before">
+                    <group>
+                        <field name="dest_address_id"
+                               attrs="{'invisible': [('default_location_dest_id_usage', '!=', 'customer')], 'required': [('default_location_dest_id_usage', '=', 'customer')]}"
+                               can_create="true" can_write="true"
+                               modifiers="{'invisible':[['default_location_dest_id_usage','!=','customer']],'readonly':[['state','in',['purchase','done','cancel']]],'required':[['default_location_dest_id_usage','=','customer']]}"/>
+                        <field name="default_location_dest_id_usage" invisible="1"
+                               modifiers="{'invisible':true,'readonly':true}"/>
+                        <field name="incoterm_id" can_create="true" can_write="true"
+                               modifiers="{'readonly':[['state','in',['done']]]}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <group>
+                        <label for="date_planned" modifiers="{}"/>
+                        <div modifiers="{}">
+                            <field name="date_planned"
+                                   attrs="{'readonly': ['|', ('id', '=', False), ('state', 'not in', ('draft', 'sent'))]}"
+                                   modifiers="{'readonly':['|',['id','=',false],['state','not in',['draft','sent']]]}"/>
+                            <button name="action_set_date_planned" type="object" states="draft,sent"
+                                    string="Set date to all order lines"
+                                    help="This changes the scheduled date of all order lines to the given date"
+                                    class="fa fa-calendar o_icon_button oe_edit_only"
+                                    modifiers="{'invisible':[['state','not in',['draft','sent']]]}" options="{}"/>
+                        </div>
+                        <!--<field name="picking_type_id" options="{'no_create': True}" on_change="1" can_create="true"
+                               can_write="true"
+                               modifiers="{'readonly':[['state','in',['purchase','done','cancel']]],'required':true}"/>-->
+                        <field name="transaction_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                        <field name="advance_file_id" attrs="{'readonly':[('state','in',('done'))]}"/>
+                        <!--<field name="company_id" invisible="1"/>-->
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="replace">
+                    <field string="Vendor" name="partner_id"
+                           widget="res_partner_many2one"
+                           context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1, 'default_is_company': True, 'show_vat': True}"
+                           domain="[('supplier', '=', True)]"/>
+                    <field name="payment_vendor_id" readonly="0" string="Payment Vendor"/>
+                    <field name="account_payment_vendor" invisible="1" string="Payment Vendor"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_bank_id']" position="after">
+					<field name="advance_file_id"/>
+				</xpath>
+            </field>
+        </record>
+
+        <record id="view_account_payment_invoice_form_inherit" model="ir.ui.view">
+            <field name="name">view.account.payment.invoice.form.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <!-- Add your fields or attributes here -->
+                        <field name="company_id" invisible="1"/>
+                        <field name="advance_file_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
